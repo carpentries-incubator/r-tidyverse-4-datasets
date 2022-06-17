@@ -66,7 +66,7 @@ will take care of supplying this token.
 If you want to use your personal account: you can go to 
 <https://github.com/settings/tokens/new?scopes=repo,workflow&description=Sandpaper%20Token>
 to create a token. Once you have created your token, you should copy it to your
-clipboard and then go to your repository's settings > secrets > actions and
+clipboard and then go to your repository's settings secrets actions and
 create or edit the `SANDPAPER_WORKFLOW` secret, pasting in the generated token.
 
 If you do not specify your token correctly, the runs will not fail and they will

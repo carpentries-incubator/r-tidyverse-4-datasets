@@ -1,0 +1,306 @@
+---
+title: "Data sorting and pipes dplyr"
+teaching: 60
+exercises: 7
+---
+
+```{r, include=FALSE}
+penguins <- palmerpenguins::penguins
+library(tidyverse)
+```
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- How can I sort the rows in my data?
+- How can I avoid storing intermediate data objects?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Use `arrange()` to sort rows
+- Use the pipe `|>` to chain commands together
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Motivation
+
+Getting an overview of our data can be challenging. Breaking it up in smaller pieces can help us get a better understanding of its content.
+Being able to subset data is one part of that, another is to be able to re-arrange rows to get a clearer idea of their content.  
+
+
+## Creating subsetted objects
+
+So far, we have kept working on the penguins data set, without actually altering it. So far, all our actions have been executed, then forgotten by R. Like it never happened. This is actually quite smart, since it makes it harder to do mistakes you can have difficulties changing. 
+
+To store the changes, we have to "assign" the data to a new object in the R environment. Like the penguins data set, which already is an object in our environment we have called "penguins". 
+
+We will now store a filtered version including only the chinstrap penguins, in an object we call `chinstraps`.
+
+```{r}
+chinstraps <- filter(penguins, species == "Chinstrap")
+```
+
+You will likely notice that when we execute this command, nothing is output to the console. That is expected. When we assign the output of a function somewhere, and everything works (*i.e.*, no errors or warnings), nothing happens in the console.
+
+But you should be able to see the new chinstraps object in your environment, and when we type `chinstraps` in the R console, it prints our chinstraps data.
+
+```{r}
+chinstraps
+```
+
+Maybe in this chinstrap data we are also not interested in the bill measurements, so we want to remove them.
+
+```{r}
+chinstraps <- select(chinstraps, -starts_with("bill"))
+chinstraps
+```
+Now our data has two less columns, and many fewer rows. A simpler data set for us to work with. But assigning the chinstrap data twice like this is a lot of typing, and there is a simpler way, using something we call the "pipe".
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Challenge 1
+Create a new data set called "biscoe", where you only have data from "Biscoe" island, and where you only have the first 4 columns of data.
+
+:::::::::::::::::::::::::::::::::::::::: solution 
+## Solution 1
+
+```{r}
+ biscoe <- filter(penguins, island == "Biscoe") 
+ biscoe <- select(biscoe, 1:4)
+```
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+## The pipe `|>`
+
+We often want to string together series of functions. This is achieved using pipe operator `|>`. This takes the value on the left, and passes it as the first argument to the function call on the right. 
+
+`|>` is not limited to {dplyr} functions. It's an alternative way of writing any R code.
+
+You can enable the pipe in RStudio by going to Tools -> Global options -> Code -> Use native pipe operator. 
+
+The shortcut to insert the pipe operator is `Ctrl`+`Shift`+`M` for Windows/Linux, and `Cmd`+`Shift`+`M` for Mac.
+
+In the `chinstraps` example, we had the following code to filter the rows and then select our columns.
+
+```{r}
+chinstraps <- filter(penguins, species == "Chinstrap")
+chinstraps <- select(chinstraps, -starts_with("bill"))
+```
+
+Here we first create the chinstraps data from the filtered penguins data set. Then use that chinstraps data to reduce the columns and write it again back to the same chinstraps object.
+It's a little messy. With the pipe, we can make it more streamlined.
+
+```{r}
+chinstraps <- penguins |> 
+  filter(species == "Chinstrap") |> 
+  select(-starts_with("bill"))
+```
+
+The end result is the same, but there is less typing and we can "read" the pipeline of data subsetting more like language, if we know how. You can read the pipe operator as **"and then"**. 
+
+So if we translate the code above to human language we could read it as:
+
+take the penguins data set, and then
+keep only rows for the chinstrap penguins, and then
+remove the columns starting with bill
+and assign the end result to chinstraps.
+
+Learning to read pipes is a great skill, R is not the only programming language that can do this (though the operator is different between languages, the functionality exists in many). 
+
+We can do the entire pipe chain step by step to see what is happening. 
+
+```{r}
+penguins
+```
+
+```{r}
+penguins |> 
+  filter(species == "Chinstrap")
+```
+
+```{r}
+penguins |> 
+  filter(species == "Chinstrap") |> 
+  select(-starts_with("bill"))
+```
+
+So, for each chain step, the output of the previous step is fed into the next step, and that way the commands build on each other until a final end result is made.
+
+And as before, we still are seeing the output of the command chain in the console, meaning we are not storing it.
+Let us do that, again using the assignment.
+
+```{r}
+chinstraps <- penguins |> 
+  filter(species == "Chinstrap") |> 
+  select(-starts_with("bill"))
+
+chinstraps
+```
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 2
+Create a new data set called "biscoe", where you only have data from "Biscoe" island, and where you only have the first 4 columns of data. This time use the pipe.
+
+:::::::::::::::::::::::::::::::::::::::: solution
+## Solution 2
+
+```{r}
+penguins |> 
+  filter(island == "Biscoe") |> 
+  select(1:4)
+```
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+## Sorting rows
+So far, we have looked at subsetting the data. But some times, we want to reorganize the data without altering it. In tables, we are used to be able to sort columns in ascending or descending order.
+ 
+This can also be done with {dplyr}'s `arrange()` function. arrange does not alter the data *per se*, just the order in which the rows are stored.
+
+```{r}
+penguins |> 
+  arrange(island)
+```
+
+Here we have sorted the data by the island column. Since island is a factor, it will order by the facor levels, which in this case has Biscoe island as the first category. 
+If we sort a numeric column, it will sort by numeric value.
+
+By default, arrange sorts in ascending order. If you want it sorted by descending order, wrap the column name in `desc()`
+
+```{r}
+penguins |> 
+  arrange(desc(island))
+```
+
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 3
+Arrange the penguins data set by `body_mass_g`.
+
+:::::::::::::::::::::::::::::::::::::::: solution
+## Solution 3
+
+```{r}
+penguins |> 
+  arrange(body_mass_g)
+```
+::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 4
+ Arrange the penguins data set by descending order of `flipper_length_mm`.
+ 
+:::::::::::::::::::::::::::::::::::::::: solution
+## Solution 4
+
+```{r}
+penguins |> 
+  arrange(desc(flipper_length_mm))
+```
+::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 5
+You can arrange on multiple columns! Try arranging the penguins data set by ascending `island` and descending `flipper_length_mm`, using a comma between the two arguments.
+
+:::::::::::::::::::::::::::::::::::::::: solution
+## Solution 5
+```{r}
+penguins |> 
+  arrange(island, desc(flipper_length_mm))
+```
+::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
+
+
+## Putting it all together
+Now that you have learned about ggplot, filter, select and arrange, we can have a look at how we can combine all these to get a better understanding and control over the data.
+By piping commands together, we can slowly build a better understanding of the data in our minds.
+
+We can for instance explore the numeric columns arranged by Island
+
+```{r}
+penguins |> 
+  arrange(island) |>
+  select(where(is.numeric)) 
+```
+
+And we can continue that by looking at the data for only male penguins
+
+```{r}
+penguins |> 
+  arrange(island) |>
+  select(island, where(is.numeric)) |>
+  filter(sex == "male")
+```
+
+Whoops! What happened there?
+Try looking at the error message and see if you can understand it.
+
+Its telling us that there is no `sex` column. How can that be?
+Well, we tok it away in our select! 
+Since we've only kept numeric data and the island column, the sex column is missing!
+
+The order in which you chain commands together matters. Since the pipe sends the output of the previous command into the next, we have two ways of being able to filter by sex: 
+
+1. by adding sex to our selection
+2. by filtering the data before our selection.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 6
+Fix the previous code bit by applying one of the two solutions suggested.
+
+:::::::::::::::::::::::::::::::::::::::: solution 
+## Solution 6
+
+```{r}
+penguins |> 
+  arrange(island) |>
+  select(sex, island, where(is.numeric)) |>
+  filter(sex == "male")
+
+penguins |> 
+  filter(sex == "male") |>
+  arrange(island) |>
+  select(island, where(is.numeric))
+```
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+We can even combine such pipes with ggplot. Perhaps, in our case so far, the most convenient can be applying a `filter` before plotting data, which would reduce the data plotted to just the data we are interested in.
+
+```{r}
+penguins |> 
+  filter(sex == "male") |>
+  ggplot(aes(bill_length_mm)) +
+  geom_bar()
+```
+
+Now we only plot data from the male penguins, if we are particularly interested in those.
+This can be quite convenient if you have particularly large data and need to reduce it to get a proper idea of what the variables really look like.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 7
+Create a plot of only data from the Dream island, putting flipper length on the y-axis and species on the x-axis. Make it a box-plot.
+_Hint: Try geom_boxplot_ 
+
+:::::::::::::::::::::::::::::::::::::::: solution
+## Solution 7
+
+```{r}
+penguins |> 
+  filter(island == "Dream") |> 
+  ggplot(aes(x = species, y = flipper_length_mm)) + 
+  geom_boxplot()
+```
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+# Wrap-up
+
+Now we've learned about subsetting and sorting our data, so we can create data sets that are suited to our needs.
+We also learned about chaining commands, the use of the pipe to create a series of commands that build on each other to create a final wanted output.

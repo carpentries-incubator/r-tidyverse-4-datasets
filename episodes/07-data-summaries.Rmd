@@ -1,0 +1,428 @@
+---
+title: "Data summaries with dplyr"
+teaching: 60
+exercises: 8
+---
+
+```{r, include=FALSE}
+penguins <- palmerpenguins::penguins
+library(tidyverse)
+```
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- How can I create summary tables of my data?
+- How can I create different types of summaries based on groups in my data?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Use `summarise()` to create data summaries
+- Use `group_by()` to create summaries of groups
+- Use `tally()`/`count()` to create a quick frequency table
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+# Motivation
+
+Next to visualizing data, creating summaries of the data in tables is a quick way to get an idea of what type of data you have at hand. 
+It might help you spot incorrect data or extreme values, or whether specific analysis approaches are needed.
+To summarize data with the {tidyverse} efficiently, we need to utilize the tools we have learned the previous days, 
+like adding new variables, tidy-selections, pivots and grouping data. All these tools combine amazingly when we start making summaries. 
+
+Let us start from the beginning with summaries, and work our way up to the more complex variations as we go.
+
+First, we must again prepare our workspace with our packages and data.
+
+```{r, eval = FALSE}
+library(tidyverse)
+penguins <- palmerpenguins::penguins
+```
+
+We should start to feel quite familiar with our penguins by now. Let us start by finding the mean of the bill length
+
+```{r}
+penguins |> 
+  summarise(bill_length_mean = mean(bill_length_mm))
+```
+
+`NA`. as we remember, there are some `NA` values in our data. 
+R is very clear about trying to do calculations when there is an `NA`. 
+If there is an `NA`, i.e. a value we do not know, it cannot create a correct calulcation, so it will return `NA` again.
+This is a nice way of quickly seeing that you have missing values in your data.
+Right now, we will ignore those.
+We can omit these by adding the `na.rm = TRUE` argument, which will remove all `NA`'s before calculating the mean.
+
+```{r}
+penguins |> 
+  summarise(bill_length_mean = mean(bill_length_mm, na.rm = TRUE))
+```
+
+An alternative way to remove missing values from a column is to pass the column to {tidyr}'s `drop_na()` function. 
+
+```{r}
+penguins |> 
+  drop_na(bill_length_mm) |> 
+  summarise(bill_length_mean = mean(bill_length_mm))
+```
+
+
+```{r}
+penguins |> 
+  drop_na(bill_length_mm) |> 
+  summarise(bill_length_mean = mean(bill_length_mm),
+            bill_length_min = min(bill_length_mm),
+            bill_length_max = max(bill_length_mm))
+```
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 1
+ First start by trying to summarise a single column, `body_mass_g`, by calculating its mean in *kilograms*.
+ 
+ :::::::::::::::::::::::::::::::::::::::: solution 
+## Solution
+
+```{r}
+penguins |> 
+  drop_na(body_mass_g) |> 
+  summarise(body_mass_kg_mean = mean(body_mass_g / 1000))
+```
+
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 2
+ Add a column with the standard deviation of `body_mass_g` on *kilogram* scale.
+ 
+:::::::::::::::::::::::::::::::::::::::: solution 
+## Solution
+```{r}
+penguins |> 
+    drop_na(body_mass_g) |> 
+    summarise(
+        body_mass_kg_mean = mean(body_mass_g / 1000),
+        body_mass_kg_sd = sd(body_mass_g / 1000)
+    )
+```
+
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 3
+ Now add the same two metrics for `flipper_length_mm` on *centimeter* scale and 
+ give the columns clear names. Why could the `drop_na()` step give us wrong results? 
+ 
+:::::::::::::::::::::::::::::::::::::::: solution 
+## Solution
+
+```{r}
+penguins |> 
+    drop_na(body_mass_g, flipper_length_mm) |> 
+    summarise(
+        body_mass_kg_mean      = mean(body_mass_g / 1000),
+        body_mass_kg_sd        = sd(body_mass_g / 1000),
+        flipper_length_cm_mean = mean(flipper_length_mm / 10),
+        flipper_length_cm_sd   = sd(flipper_length_mm / 10)
+    )
+```
+When we use drop_na on multiple columns, it will drop the _entire row_ of data where there is `NA` in 
+any of the columns we specify. This means that we might be dropping valid data from body mass because
+flipper length is missing, and vice versa.
+
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+
+## Summarising grouped data
+
+All the examples we have gone through so far with summarizing data, we have summarized the entire data set. 
+But most times, we want to have a look at groups in our data, and summarize based on these groups. 
+How can we manage to summarize while preserving grouping information?
+
+We've already worked a little with the `group_by()` function, and we will use it again! 
+Because, once we know how to summarize data, summarizing data by groups is as simple as adding one more line to our code.
+
+Let us start with our first example of getting the mean of a single column.
+
+```{r}
+penguins |> 
+  drop_na(body_mass_g) |> 
+  summarise(body_mass_g_mean = mean(body_mass_g))
+```
+
+Here, we are getting a single mean for the entire data set. 
+In order to get, for instance the means of each of the species, we can group the data set by species before we summarize.
+
+```{r}
+penguins |> 
+  drop_na(body_mass_g) |> 
+  group_by(species) |> 
+  summarise(body_mass_kg_mean = mean(body_mass_g / 1000))
+```
+
+And now we suddenly have three means! And they are tidily collected in each their row.
+To this we can keep adding as we did before.
+
+```{r}
+penguins |> 
+    drop_na(body_mass_g) |> 
+    group_by(species) |>
+    summarise(
+        body_mass_kg_mean = mean(body_mass_g / 1000),
+        body_mass_kg_min = min(body_mass_g / 1000),
+        body_mass_kg_max = max(body_mass_g / 1000)
+    )
+```
+
+Now we are suddenly able to easily compare groups within our data, since they are so neatly summarized here. 
+
+## Simple frequency tables
+
+So far, we have created custom summary tables with means and standard deviations etc.
+But what if you want a really quick count of all the records in different groups, a frequency table.
+
+One way, would be to use the summarise function together with the `n()` function, which counts the number of rows in each group.
+
+```{r}
+penguins |> 
+  group_by(species) |> 
+  summarise(n = n())
+```
+
+This is super nice, and `n()` is a nice function to remember when you are making your own custom tables.
+But if all you want is the frequency table, we would suggest using the functions `count()` or `tally()`.
+They are synonymous in what they do, so you can choose the one that feels more appropriate.
+
+```{r}
+penguins |> 
+  group_by(species) |> 
+  tally()
+
+penguins |> 
+  group_by(species) |> 
+  count()
+```
+
+These are two really nice convenience functions for getting a quick frequency table of your data.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 4
+ Create a table that gives the mean and standard deviation of bill length, grouped by island
+ 
+:::::::::::::::::::::::::::::::::::::::: solution 
+## Solution
+
+```{r}
+penguins |> 
+    drop_na(bill_length_mm) |> 
+    group_by(island) |>
+    summarise(
+        bill_length_mm_mean = mean(bill_length_mm),
+        bill_length_mm_sd   = sd(bill_length_mm )
+    )
+```
+
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 5
+ Create a table that gives the mean and standard deviation of bill length, grouped by island and sex.
+ 
+:::::::::::::::::::::::::::::::::::::::: solution 
+
+## Solution
+
+```{r}
+penguins |> 
+    drop_na(bill_length_mm) |> 
+    group_by(island, sex) |>
+    summarise(
+        bill_length_mm_mean = mean(bill_length_mm),
+        bill_length_mm_sd   = sd(bill_length_mm )
+    )
+```
+
+::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::: 
+
+
+## Ungrouping for future control
+
+We've been grouping a lot and not ungrouping. 
+Which might seem fine now, because we have not really done anything more after the summarize. 
+But in many cases we might continue our merry data handling way and do lots more, and then the 
+preserving of the grouping can give us some unexpected results. Let us explore that a little.
+
+```{r}
+penguins |> 
+  group_by(species) |> 
+  count()
+```
+
+When we group by a single column and summarize, the output data is no longer grouped. 
+In a way, the `summarize()` uses up one group while summarizing, as based on species, the data can not be condensed any further than this.
+When we group by two columns, it actually has the same behavior. 
+
+```{r}
+penguins |> 
+  group_by(species, island) |> 
+  count()
+```
+
+But because we used to have two groups, we now are left with one. 
+In this case "species" is still a  grouping variable. 
+Lets say we want a column now, that counts the total number of penguins observations. 
+That would be the sum of the "n" column.
+
+```{r}
+penguins |> 
+  group_by(species, island) |> 
+  count() |> 
+  mutate(total = sum(n))
+```
+
+But that is not what we are expecting! why? Because the data is still grouped by species, it is now taking the sum within each species, rather than the whole. To get the whole we need first to `ungroup()`, and then try again.
+
+```{r}
+penguins |> 
+  group_by(species, island) |> 
+  count() |> 
+  ungroup() |> 
+  mutate(total = sum(n))
+```
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 6
+Create a table that gives the mean and standard deviation of bill length, grouped by island and sex,
+then add another column that has the mean for all the data 
+
+:::::::::::::::::::::::::::::::::::::::: solution 
+## Solution
+
+```{r}
+penguins |> 
+    drop_na(bill_length_mm) |> 
+    group_by(island, sex) |>
+    summarise(
+        bill_length_mm_mean = mean(bill_length_mm),
+        bill_length_mm_sd   = sd(bill_length_mm )
+    ) |>
+    ungroup() |>
+    mutate(mean = mean(bill_length_mm_mean))
+```
+
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+
+## Grouped data manipulation
+
+You might have noticed that we managed to do some data manipulation (i.e. `mutate`) while the data were still grouped, 
+which in our example before produced unwanted results.
+But, often, grouping before data manipulation can unlock great new possibilities for working with our data.
+
+Let us use the data we made where we summarised the body mass of penguins in kilograms, and let us group by species and sex.
+
+```{r}
+penguins |> 
+    drop_na(body_mass_g) |> 
+    group_by(species, sex) |>
+    summarise(
+        body_mass_kg_mean = mean(body_mass_g / 1000),
+        body_mass_kg_min = min(body_mass_g / 1000),
+        body_mass_kg_max = max(body_mass_g / 1000)
+    )
+```
+
+The data we get out after that, is still grouped by species.
+Let us say that we want to know, the relative size of the penguin sexes body mass to the species mean.
+We would need the species mean, in addition to the species sex means.
+We can add this, as the data is already grouped by sex, with a mutate.
+
+```{r}
+penguins |> 
+    drop_na(body_mass_g) |> 
+    group_by(species, sex) |>
+    summarise(
+        body_mass_kg_mean = mean(body_mass_g / 1000),
+        body_mass_kg_min = min(body_mass_g / 1000),
+        body_mass_kg_max = max(body_mass_g / 1000)
+    ) |> 
+    mutate(
+        species_mean = mean(body_mass_kg_mean)
+    )
+```
+
+Notice that now, the same value is in the species_mean column for all the rows of each species.
+This means our calculation worked!
+So, in the same data set, we have everything we need to calculate the relative difference between the species mean of body mass and each of the sexes.
+
+
+```{r}
+penguins |> 
+    drop_na(body_mass_g) |> 
+    group_by(species, sex) |>
+    summarise(
+        body_mass_kg_mean = mean(body_mass_g / 1000),
+        body_mass_kg_min = min(body_mass_g / 1000),
+        body_mass_kg_max = max(body_mass_g / 1000)
+    ) |> 
+    mutate(
+        species_mean = mean(body_mass_kg_mean),
+        rel_species = species_mean - body_mass_kg_mean
+    )
+```
+
+Now we can see, with how much the male penguins usually weight compared to the female ones.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 7
+Calculate the difference in flipper length between the different species of penguin
+
+:::::::::::::::::::::::::::::::::::::::: solution 
+## Solution
+
+```{r}
+penguins |> 
+    drop_na(flipper_length_mm) |> 
+    group_by(species) |> 
+    summarise(
+        flipper_mean = mean(flipper_length_mm),
+    ) |> 
+    mutate(
+        species_mean = mean(flipper_mean),
+        flipper_species_diff = species_mean - flipper_mean
+    )
+```
+
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 8
+Calculate the difference in flipper length between the different species of penguin, split by the penguins sex.
+
+:::::::::::::::::::::::::::::::::::::::: solution 
+## Solution
+
+```{r}
+penguins |> 
+    drop_na(flipper_length_mm) |> 
+    group_by(species, sex) |> 
+    summarise(
+        flipper_mean = mean(flipper_length_mm),
+    ) |> 
+    mutate(
+        species_mean = mean(flipper_mean),
+        flipper_species_diff = species_mean - flipper_mean
+    )
+```
+
+:::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::: 
+
+
