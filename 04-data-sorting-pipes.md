@@ -569,7 +569,10 @@ This can be quite convenient if you have particularly large data and need to red
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 7
 Create a plot of only data from the Dream island, putting flipper length on the y-axis and species on the x-axis. Make it a box-plot.
-_Hint: Try geom_boxplot_ 
+
+:::::::::::::::::::::::::::::::::::::::: hint
+Try geom_boxplot
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution
 ## Solution 7

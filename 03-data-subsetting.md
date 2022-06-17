@@ -21,6 +21,14 @@ exercises: 12
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- Subsetting rows and columns
+- Using tidyselectors
+- Understanding logical operations
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Motivation
 
 In many cases, we are working with data sets that contain more data than we need, or we want to inspect certain parts of the data set before we continue.
@@ -132,7 +140,7 @@ select(penguins, -bill_length_mm, -bill_depth_mm)
 Select the columns sex, year, and species from the penguins dataset.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 1
+## Solution
 
 
 ```r
@@ -165,7 +173,7 @@ select(penguins, sex, year, species)
 Change your selection so that species comes before sex. What is the difference in the output?
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 2
+## Solution
 
 
 ```r
@@ -286,7 +294,7 @@ select(penguins, island, species, year, starts_with("bill"))
 Select all columns containing an underscore ("_").
 
 :::::::::::::::::::::::::::::::::::::::: solution
-## Solution 3
+## Solution 
 
 
 ```r
@@ -320,7 +328,7 @@ Select the species and sex columns, in addition to all columns ending with "mm"
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 
-## Solution 4
+## Solution 
 
 
 ```r
@@ -353,7 +361,7 @@ De-select all the columns with bill measurements
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 
-## Solution 5
+## Solution 
 
 
 ```r
@@ -484,7 +492,7 @@ select(penguins, where(is.numeric))
 Select only the columns that are factors from the `penguins` data set.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 6
+## Solution 
 
 
 ```r
@@ -517,7 +525,7 @@ select(penguins, where(is.factor))
 Select the columns `island`, `species`, as well as all numeric columns from the `penguins` data set.
 
 :::::::::::::::::::::::::::::::::::::::: solution
-## Solution 7
+## Solution 
 
 
 ```r
@@ -607,7 +615,7 @@ Filter the data so you only have observations from the "Dream" island.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 
-## Solution 8
+## Solution 
 
 
 ```r
@@ -639,7 +647,7 @@ filter(penguins, island == "Dream")
 Filter the data so you only have observations after 2008
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 9
+## Solution 
 
 
 ```r
@@ -727,7 +735,7 @@ filter(penguins,
 Filter the data so you only have observations after 2008, and from "Biscoe" island
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 10
+## Solution 
 
 
 ```r
@@ -761,7 +769,7 @@ filter(penguins,
 Filter the data so you only have observations of male penguins of the Chinstrap species
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 11
+## Solution 
 
 
 ```r
@@ -826,7 +834,7 @@ By combining AND and OR statements this way, we can slowly create the filtering 
 Filter the data so you only have observations of either male penguins or the Chinstrap species
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 12
+## Solution 
 
 
 ```r

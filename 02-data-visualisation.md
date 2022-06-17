@@ -19,6 +19,13 @@ exercises: 8
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- Read data into R
+- Use ggplot2 to create different types of plots
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 
@@ -27,7 +34,7 @@ exercises: 8
 Plotting the data is one of the best ways to quickly explore it and generate hypotheses about various relationships between variables.
 
 There are several plotting systems in R, but today we will focus on `ggplot2` which implements **grammar of graphics** - a coherent system for describing components that constitute visual representation of data.
-For more information regarding principles and thinking behind `ggplot2` graphic system, please refer to [Layered grammar of graphics](http://vita.had.co.nz/papers/layered-grammar.pdf) by Hadley Wickham (@hadleywickham). 
+For more information regarding principles and thinking behind `ggplot2` graphic system, please refer to [Layered grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.pdf) by Hadley Wickham (@hadleywickham). 
 
 The advantage of `ggplot2` is that it allows R users to create publication quality graphics with a few lines of code. `ggplot2` has a large user base and is constantly developed and extended by the community.
 
@@ -49,12 +56,13 @@ The arrow, or assignment, is R's way of creating new objects to work on.
 
 **Note** a key difference from R and programs like SPSS or excel, is that when data is used in R, we do not automatically alter the data in the file we read it from. Everything we do with the penguins data in R from now on, only happens in R, and does not change the originating file. This way we cannot easily accidentally alter our raw data, which is a very good thing.
 
+::::::::::::::::::::::::::::::::::::: keypoints
 ## Tip: We can inspect the data in several ways
 
-1. Click the data name in the Environment, and the data opens as a tab in the scripts pane.
-2. Click the little arrow next to the data name in the Evironment, and you'll see a short preview of the data.
-3. Type `penguins` in the R console, and a preview will be shown of the data.
-{: .callout}
+1. Click the data name in the Environment, and the data opens as a tab in the scripts pane.  
+2. Click the little arrow next to the data name in the Evironment, and you'll see a short preview of the data.  
+3. Type `penguins` in the R console, and a preview will be shown of the data.  
+::::::::::::::::::::::::::::::::::::: 
 
 The dataset contains the following fields:
 
@@ -76,20 +84,11 @@ The dataset contains the following fields:
 ```r
 # install.packages("tidyverse")
 library(tidyverse)
-```
-
-```{.output}
 ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-```
-
-```{.output}
 ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
 ✔ tibble  3.1.7     ✔ dplyr   1.0.9
 ✔ tidyr   1.2.0     ✔ stringr 1.4.0
 ✔ readr   2.1.2     ✔ forcats 0.5.1
-```
-
-```{.output}
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -106,9 +105,6 @@ ggplot(data = penguins) +
     mapping = aes(x = bill_depth_mm,
                   y = bill_length_mm)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -128,11 +124,15 @@ The plus sign indicates that the ggplot is not over yet and that the next line s
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 1a
-1a: How has bill length changed over time? What do you observe? 
-*Hint: the* `penguins` *dataset has a column called `year`, which should appear on the x-axis.*
+How has bill length changed over time? What do you observe? 
+
+:::::::::::::::::::::::::::::::::::::::: hint 
+
+The* `penguins` *dataset has a column called `year`, which should appear on the x-axis.
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 1a
+## Solution 
 
 
 ```r
@@ -141,9 +141,6 @@ ggplot(data = penguins) +
     mapping = aes(x = year, 
                   y = bill_length_mm)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -156,7 +153,7 @@ Warning: Removed 2 rows containing missing values (geom_point).
 Try a different `geom_` function called `geom_jitter`. How is that different from `geom_point`?
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 1b
+## Solution
 
 
 ```r
@@ -165,9 +162,6 @@ ggplot(data = penguins) +
     mapping = aes(x = year, 
                   y = bill_length_mm)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -190,9 +184,6 @@ ggplot(data = penguins) +
                   y = bill_length_mm, 
                   colour = island)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -203,7 +194,7 @@ Warning: Removed 2 rows containing missing values (geom_point).
 What will happen if you switch colour to also be by year? Is the graph still useful? Why or why not? What is the difference in the plot between when you colour by island and when you colour by year?
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 2
+## Solution
 
 
 ```r
@@ -213,9 +204,6 @@ ggplot(data = penguins) +
                   y = bill_length_mm,
                   colour = year)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -237,9 +225,6 @@ ggplot(data = penguins) +
                   colour = species, 
                   size = year)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -256,9 +241,6 @@ ggplot(data = penguins) +
                   colour = species, 
                   shape = species)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -280,9 +262,6 @@ ggplot(data = penguins) +
                   y = bill_length_mm),
     colour = "blue"
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -293,10 +272,13 @@ Once more, observe that the colour is now not mapped to any particular variable 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 3
 Change the transparency (alpha) of the data points by year. 
-_Hint: `alpha` takes a value from 0 (transparent) to 1 (solid)._
+
+:::::::::::::::::::::::::::::::::::::::: hint 
+`alpha` takes a value from 0 (transparent) to 1 (solid).
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 3
+## Solution
 
 
 ```r
@@ -306,9 +288,6 @@ ggplot(data = penguins) +
                   y = bill_length_mm, 
                   alpha = year)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -322,7 +301,7 @@ Warning: Removed 2 rows containing missing values (geom_point).
 Move the transparency outside the `aes()` and set it to `0.5`. What can we benefit of each one of these methods?
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 4
+## Solution
 
 
 ```r
@@ -331,9 +310,6 @@ ggplot(data = penguins) +
     mapping = aes(x = bill_depth_mm, 
                   y = bill_length_mm),
     alpha = 0.5)
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -357,9 +333,6 @@ ggplot(data = penguins) +
     mapping = aes(x = species, 
                   y = bill_length_mm)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_boxplot).
 ```
 
@@ -379,13 +352,7 @@ ggplot(data = penguins) +
     mapping = aes(x = species,
                   y = bill_length_mm)
   )
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_boxplot).
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -401,13 +368,7 @@ ggplot(data = penguins,
 ) + 
   geom_jitter(aes(colour = island)) +
   geom_boxplot(alpha = .6)
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_boxplot).
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -425,17 +386,8 @@ ggplot(data = penguins,
 ) +
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm")
-```
-
-```{.output}
 `geom_smooth()` using formula 'y ~ x'
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_smooth).
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -448,7 +400,7 @@ Modify the plot so the the points are coloured by island, but there is a single 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 
-## Solution 5
+## Solution 
 
 
 ```r
@@ -458,17 +410,8 @@ ggplot(data = penguins,
   geom_point(mapping = aes(colour = species),
              alpha = 0.5) +
   geom_smooth(method = "lm")
-```
-
-```{.output}
 `geom_smooth()` using formula 'y ~ x'
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_smooth).
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -480,11 +423,14 @@ In the graph above, each geom inherited all three mappings: x, y and colour. If 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 6
 Add a regression line to the plot that plots one line for each species, while also plotting one across all species.
-_Hint: Add another geom!_
+
+:::::::::::::::::::::::::::::::::::::::: hint
+Add another geom!
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 
-## Solution 6
+## Solution 
 
 
 ```r
@@ -497,25 +443,10 @@ ggplot(penguins,
               aes(colour = species)) +
   geom_smooth(method = "lm", 
               colour = "black")
-```
-
-```{.output}
 `geom_smooth()` using formula 'y ~ x'
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_smooth).
-```
-
-```{.output}
 `geom_smooth()` using formula 'y ~ x'
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_smooth).
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -544,17 +475,8 @@ ggplot(penguins,
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm") +
   facet_wrap(~ sex)
-```
-
-```{.output}
 `geom_smooth()` using formula 'y ~ x'
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_smooth).
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -575,17 +497,8 @@ ggplot(penguins,
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm") +
   facet_wrap(~ species)
-```
-
-```{.output}
 `geom_smooth()` using formula 'y ~ x'
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_smooth).
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -597,11 +510,14 @@ The NA's still look weird, but its definitely better, I think.
 
 ## Challenge 7
 To the plot we just made before, try adding another variable to facet by. For instance, facet by species and island.
-_Hint: Add another facet variable with the `+`_
+
+:::::::::::::::::::::::::::::::::::::::: hint
+Add another facet variable with the `+`
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution
 
-## Solution 7
+## Solution 
 
 
 ```r
@@ -612,17 +528,8 @@ ggplot(penguins,
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm") +
   facet_wrap(~ species + island)
-```
-
-```{.output}
 `geom_smooth()` using formula 'y ~ x'
-```
-
-```{.warning}
 Warning: Removed 2 rows containing non-finite values (stat_smooth).
-```
-
-```{.warning}
 Warning: Removed 2 rows containing missing values (geom_point).
 ```
 

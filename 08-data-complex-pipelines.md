@@ -132,7 +132,10 @@ Now we have a pretty decent summary table of our data.
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 1
 In our code making the summary table. Add another summary column for the number of records, giving it the name `n`.
-_Hint: try the `n()` function._
+
+:::::::::::::::::::::::::::::::::::::::: hint
+Try the `n()` function.
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 ## Solution
@@ -323,7 +326,11 @@ What position_dodge is doing, is move the dts to each side a little, so they are
 ## Challenge 4
 Create a point plot based om the penguins summary data, where the standard deviations are on the y axis and species are on the x axis. 
 Make sure to dodge the bar for easier comparisons. 
-Create subplots on the different observational types _Hint: use facet_wrap()_.
+Create subplots on the different observational types 
+
+:::::::::::::::::::::::::::::::::::::::: hint
+Use facet_wrap()
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 ## Solution
@@ -723,7 +730,10 @@ Theme dark could theoretically be really nice, but then we'll need other colours
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 10
 Try different themes and find one you like. 
-_Hint: you can type "theme" and press the tab button, to look at all the possibilities_
+
+:::::::::::::::::::::::::::::::::::::::: hint
+You can type "theme" and press the tab button, to look at all the possibilities.
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 ## Solution

@@ -4,14 +4,16 @@ teaching: 45
 exercises: 4
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+
+
+::::::::::::::::::::::::::::::::::::: questions 
 
 - How to find your way around RStudio?
 - How to interact with R?
 - How to organise your project files?
 - How to install packages?
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::: 
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
@@ -20,7 +22,15 @@ exercises: 4
 - Create and use R-projects
 - How to organise and access project files
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::: 
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+- Use RStudio to write and run R programs.
+- Create and start an R-project
+- Use `install.packages()` to install packages (libraries).
+- Use the `here` package to access project files
+::::::::::::::::::::::::::::::::::::: 
+
 
 ## Motivation
 
@@ -65,13 +75,13 @@ When you first open RStudio, you will be greeted by three panels:
   * Environment/History/Connections (tabbed in upper right)  
   * Files/Plots/Packages/Help/Viewer (tabbed in lower right)  
 
-![RStudio layout](../fig/01-rstudio.png)
+<img src="fig/01-rstudio.png" title="RStudio layout with three default panes" alt="RStudio layout with three default panes" style="display: block; margin: auto;" />
+
 
 Once you open files, such as R scripts, an editor panel will also open
 in the top left.
 
-![RStudio layout with .R file open](../fig/01-rstudio-script.png)
-
+<img src="fig/01-rstudio-script.png" title="RStudio 4-pane layout with .R file open" alt="RStudio 4-pane layout with .R file open" style="display: block; margin: auto;" />
 
 ## Work flow within RStudio
 There are two main ways one can work within RStudio:
@@ -92,15 +102,15 @@ interactive R console.
 
 RStudio offers you great flexibility in running code from within the editor window. 
 There are buttons, menu choices, and keyboard shortcuts. 
-To run the current line, you can
-1. click on the `Run` button above the editor panel, or
-2. select "Run Lines" from the "Code" menu, or
-3. hit <kbd>Ctrl</kbd>+<kbd>Return</kbdin Windows or Linux
-or <kbd>&#8984;</kbd>+<kbd>Return</kbdon OS X.
+To run the current line, you can:  
+1. click on the `Run` button above the editor panel, or  
+2. select "Run Lines" from the "Code" menu, or  
+3. hit `ctrl`+`return` in Windows or Linux
+or `cmd`+ `return` on OS X.  
 (This shortcut can also be seen by hovering
 the mouse over the button). To run a block of code, select it and then `Run`.
 
-:::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::: 
 
 ## Introduction to R
 
@@ -116,7 +126,7 @@ returns a result.
 
 ## Using R-projects
 
-The scientific process is naturally incremental, and many projects
+Any data analysis process is naturally incremental, and many projects
 start life as random notes, some code, then a manuscript, and
 eventually everything is a bit mixed together.
 
@@ -125,7 +135,8 @@ eventually everything is a bit mixed together.
 
 Most people tend to organize their projects like this:
 
-![](../fig/bad_layout.png)
+<img src="fig/01_bad_project.png" title="Image of a local folder structure with files. The file names do not easily make it possible to understand which files are similar in content or which is the newest version." alt="Image of a local folder structure with files. The file names do not easily make it possible to understand which files are similar in content or which is the newest version." style="display: block; margin: auto;" />
+
 
 There are many reasons why we should *ALWAYS* avoid this:
 
@@ -158,13 +169,14 @@ project.
 
 ## Challenge 1: Creating a self-contained project
 
-We're going to create a new project in RStudio:
-1. Click the "File" menu button, then "New Project".
-2. Click "New Directory".
-3. Click "New Project".
-4. Type in the name of the directory to store your project, e.g. "my_project".
-5. If available, select the checkbox for "Create a git repository."
-6. Click the "Create Project" button.
+We're going to create a new project in RStudio:  
+
+1. Click the "File" menu button, then "New Project".  
+2. Click "New Directory".  
+3. Click "New Project".  
+4. Type in the name of the directory to store your project, e.g. "my_project".  
+5. If available, select the checkbox for "Create a git repository."  
+6. Click the "Create Project" button.  
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 The simplest way to open an RStudio project once it has been created is to click through your file system to get to the directory where it was saved and double click on the `.Rproj` file. 
@@ -176,9 +188,9 @@ This allows you to keep multiple projects open without them interfering with eac
 
 ## Challenge 2: Opening an RStudio project through the file system
 
-1. Exit RStudio.
-2. Navigate to the directory where you created a project in Challenge 1.
-3. Double click on the `.Rproj` file in that directory.
+1. Exit RStudio.  
+2. Navigate to the directory where you created a project in Challenge 1.   
+3. Double click on the `.Rproj` file in that directory.  
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Best practices for project organization
@@ -211,11 +223,11 @@ Since many analyses are exploratory and don't end up being used in the final pro
 
 [Good Enough Practices for Scientific computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) gives the following recommendations for project organization:
 
-1. Put each project in its own directory, which is named after the project.
-2. Put text documents associated with the project in the `doc` directory.
-3. Put raw data and metadata in the `data` directory, and files generated during cleanup and analysis in a `results` directory.
-4. Put source for the project's scripts and programs in the `src` directory, and programs brought in from elsewhere or compiled locally in the `bin` directory.
-5. Name all files to reflect their content or function.
+1. Put each project in its own directory, which is named after the project.  
+2. Put text documents associated with the project in the `doc` directory.  
+3. Put raw data and metadata in the `data` directory, and files generated during cleanup and analysis in a `results` directory.  
+4. Put source for the project's scripts and programs in the `src` directory, and programs brought in from elsewhere or compiled locally in the `bin` directory.  
+5. Name all files to reflect their content or function.  
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -242,7 +254,7 @@ Set up your project folders. For this workshop we will need folders for data, re
 ## Challenge 4
 Download the palmer penguins data and place it in uyour `data` folder, calling it `penguins.csv`
 
-1. Go to [this link](https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv)
+1. Go to [the raw palmer penguins data](https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv)
 2. Right click in the browser window
 3. Choose "save as..."
 4. Navigate to your project's data folder
