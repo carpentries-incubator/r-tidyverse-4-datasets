@@ -4,10 +4,43 @@
     <loc>https://carpentries.github.io/workbench-template-rmd/01-introduction.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/01-project-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/02-data-visualisation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/03-data-subsetting.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/04-data-sorting-pipes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/05-data-manipulation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/06-data-reshaping.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/07-data-summaries.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/08-data-complex-pipelines.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/09-data-manipulation-across.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-rmd/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-rmd/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/images.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-rmd/index.html</loc>
@@ -16,16 +49,61 @@
     <loc>https://carpentries.github.io/workbench-template-rmd/instructor/01-introduction.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/01-project-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/02-data-visualisation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/03-data-subsetting.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/04-data-sorting-pipes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/05-data-manipulation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/06-data-reshaping.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/07-data-summaries.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/08-data-complex-pipelines.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/09-data-manipulation-across.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-rmd/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-rmd/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-rmd/instructor/index.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/key-points.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-rmd/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-rmd/key-points.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-rmd/profiles.html</loc>
