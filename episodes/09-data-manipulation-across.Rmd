@@ -202,7 +202,10 @@ penguins |>
 ## Challenge 4
 Transform all the colmns with an underscore in their name so they are scaled, and add the _prefix_ `sc_` to the columns names. 
 Add another _standard_ change of the body mass column to kilograms
-_Hint: you can add a standard mutate within the same mutate as across_
+
+:::::::::::::::::::::::::::::::::::::::: hint
+You can add a standard mutate within the same mutate as across
+:::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
 ## Solution 
