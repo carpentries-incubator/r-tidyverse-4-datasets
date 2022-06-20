@@ -19,9 +19,9 @@ library(tidyverse)
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Use `mutate()` to add and alter variables
-- Use if_else where approriate
-- Use `case_when` where approriate
-- Understand basic consepts of different data types
+- Use `if_else()` where appropriate
+- Use `case_when()` where appropriate
+- Understand basic consents of different data types
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -94,7 +94,7 @@ penguins_s |>
 Create a column where bill length is transformed to cm. To transform mm to cm, you must divide the mm value by 10. Name the column bill_length_cm.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 1
+## Solution
 
 ```{r}
 penguins_s |>
@@ -109,7 +109,7 @@ penguins_s |>
 Create a column for body mass in kilos, rather than grams, in the main penguins data set. Name the column body_mass_kg. To transform grams to kilograms, divide the grams by 1000. 
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 2
+## Solution
 
 ```{r}
 penguins |>
@@ -247,7 +247,7 @@ Here, we use the `is.na()`, which is a special function in R to detect `NA` valu
 Create a column named `bill_ld_ratio_log` that is the natural logarithm (using the `log()` function) of `bill_length_mm` divided by `bill_depth_mm`
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 3
+## Solution
 
 ```{r}
 penguins |>
@@ -262,7 +262,7 @@ penguins |>
 Create a new column called `body_type`, where animals below 3 kg are `small`, animals between 3 and 4.5 kg are `normal`, and animals larger than 4.5 kg are `large`. In the same command, create a new column named `biscoe` and its content should be `TRUE` if the island is `Biscoe` and `FALSE` for everything else.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 4
+## Solution
 
 ```{r}
 penguins |>
