@@ -97,7 +97,7 @@ Now our data has two less columns, and many fewer rows. A simpler data set for u
 Create a new data set called "biscoe", where you only have data from "Biscoe" island, and where you only have the first 4 columns of data.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 1
+## Solution
 
 
 ```r
@@ -253,7 +253,7 @@ chinstraps
 Create a new data set called "biscoe", where you only have data from "Biscoe" island, and where you only have the first 4 columns of data. This time use the pipe.
 
 :::::::::::::::::::::::::::::::::::::::: solution
-## Solution 2
+## Solution
 
 
 ```r
@@ -343,7 +343,7 @@ penguins |>
 Arrange the penguins data set by `body_mass_g`.
 
 :::::::::::::::::::::::::::::::::::::::: solution
-## Solution 3
+## Solution
 
 
 ```r
@@ -375,7 +375,7 @@ penguins |>
  Arrange the penguins data set by descending order of `flipper_length_mm`.
  
 :::::::::::::::::::::::::::::::::::::::: solution
-## Solution 4
+## Solution
 
 
 ```r
@@ -407,7 +407,7 @@ penguins |>
 You can arrange on multiple columns! Try arranging the penguins data set by ascending `island` and descending `flipper_length_mm`, using a comma between the two arguments.
 
 :::::::::::::::::::::::::::::::::::::::: solution
-## Solution 5
+## Solution
 
 ```r
 penguins |> 
@@ -498,7 +498,7 @@ The order in which you chain commands together matters. Since the pipe sends the
 Fix the previous code bit by applying one of the two solutions suggested.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 6
+## Solution
 
 
 ```r
@@ -575,7 +575,7 @@ Try geom_boxplot
 :::::::::::::::::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::::::::::::::::: solution
-## Solution 7
+## Solution
 
 
 ```r

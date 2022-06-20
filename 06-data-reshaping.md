@@ -114,7 +114,7 @@ That's pretty neat. By pivoting the data into this longer shape we are able to c
 Pivot longer all columns ending with "mm" .
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 1
+## Solution
 
 
 ```r
@@ -147,7 +147,7 @@ penguins |>
 Pivot the penguins data so that all the bill measurements are in the same column.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 2
+## Solution
 
 
 ```r
@@ -180,7 +180,7 @@ penguins |>
 As mentioned, pivot_longer accepts tidy-selectors. Pivot longer all numerical columns.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 3
+## Solution
 
 
 ```r
@@ -274,7 +274,7 @@ now, the pivot gave us 4 columns in stead of two! We told pivot that the column 
 Pivot longer all the bill measurements, and alter the names in one go, so that there are three columns named "part", "measure" and "unit" after the pivot.
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 4
+## Solution
 
 
 ```r
@@ -309,7 +309,7 @@ penguins |>
 Pivot longer all the bill measurements, and use the `names_prefix` argument. Give it the string "bill_". What did that do?
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 5
+## Solution
 
 
 ```r
@@ -343,7 +343,7 @@ penguins |>
 Pivot longer all the bill measurements, and use the `names_prefix`, `names_to` and `names_sep` arguments. What do you need to change in `names_to` from the previous example to make it work now that we also use `names_prefix`?
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 6
+## Solution
 
 
 ```r
@@ -569,7 +569,7 @@ Notice now that in the sample column, the numbers repeat several rows. Where sam
 Turn the penguins_long_simple dataset back to its original state
 
 :::::::::::::::::::::::::::::::::::::::: solution 
-## Solution 6
+## Solution
 
 
 ```r
