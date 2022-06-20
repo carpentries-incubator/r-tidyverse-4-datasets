@@ -372,22 +372,8 @@ any links that you are not going to use.
  --></tbody></table><p>
       The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
       </p>
-      </section><section id="setup"><p>Setup instructions live in this document. Please specify the tools and the data sets the Learner needs to have installed.</p>
-<section id="data-sets"><h2 class="section-heading">Data Sets</h2>
-<hr class="half-width"><p>Download the <a href="data/data.zip">data zip file</a> and unzip it to your Desktop</p>
-</section><section id="software-setup"><h2 class="section-heading">Software Setup</h2>
-<hr class="half-width"><div id="discussion1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details</h3>
-<div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a <code>solution</code> tag. They will join to this discussion block, so you can give a general overview of the software used in this lesson here and fill out the individual operating systems (and potentially add more, e.g. online setup) in the solutions blocks.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+      </section><section id="setup"><section id="software-setup"><h2 class="section-heading">Software Setup</h2>
+<hr class="half-width"><div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">
@@ -396,8 +382,15 @@ any links that you are not going to use.
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>Use PuTTY</p>
-</div>
+<p>You can watch the <a href="https://www.youtube.com/watch?v=q0PjTAylwoU" class="external-link">YouTube video tutorial</a> for complete instructions.</p>
+<ul class="task-list"><li>
+<input type="checkbox" disabled>
+Install R by downloading and running <a href="http://cran.r-project.org/bin/windows/base/release.htm%22" class="external-link">this .exe file</a> from <a href="http://cran.r-project.org/index.html" class="external-link">CRAN</a>.<br></li>
+<li>
+<input type="checkbox" disabled>
+Please, also <a href="https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html" class="external-link">install Rtools</a><ul><li>Note that if you have separate user and admin accounts, you should run the installers as administrator (right-click on <code>.exe</code> file and select “Run as administrator” instead of double-clicking). Otherwise problems may occur later, for example when installing R packages.</li>
+</ul></li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -410,8 +403,12 @@ any links that you are not going to use.
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>Use Terminal.app</p>
-</div>
+<p>Follow the <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg" class="external-link">video tutorial</a> for detailed instructions.</p>
+<ul class="task-list"><li>
+<input type="checkbox" disabled>
+Install R by downloading and running <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg" class="external-link">this .pkg file</a> from <a href="http://cran.r-project.org/index.html" class="external-link">CRAN</a>
+</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -424,7 +421,54 @@ any links that you are not going to use.
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<p>Use Terminal</p>
+<ul class="task-list"><li>
+<input type="checkbox" disabled>
+You can download the binary files for your distribution from [CRAN](<a href="http://cran.r-project.org/index.html" class="external-link uri">http://cran.r-project.org/index.html</a>
+</li>
+</ul><p><strong>Or</strong></p>
+<ul class="task-list"><li>
+<input type="checkbox" disabled>
+you can use your package manager (e.g. for Debian/Ubuntu</li>
+</ul><pre><code>sudo apt-get install r-base</code></pre>
+<ul class="task-list"><li>
+<input type="checkbox" disabled>
+for Fedora run</li>
+</ul><pre><code>sudo dnf install R</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><strong>There are some extra things to install for all operating systems.</strong> <br><br></p>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
+  RStudio
+  </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<p>Please install the <a href="http://www.rstudio.com/ide/download/desktop" class="external-link">RStudio IDE</a>. It is the user interface towards R, and is required for this workshop.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">
+  R packages
+  </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div class="accordion-body">
+<p>Lastly, you will need to install two packages to join the workshop, namely the {tidyverse} and {palmerpenguins} packages. You can do this by opening RStudio, and in the panel labelled “console” (usually in the bottom left corner), type the following:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"palmerpenguins"</span><span class="op">)</span><span class="op">)</span></code></pre>
+</div>
 </div>
 </div>
 </div>
