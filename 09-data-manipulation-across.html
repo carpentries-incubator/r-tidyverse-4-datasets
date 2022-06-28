@@ -248,12 +248,21 @@
                 </h2>
                 <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
                   <div class="accordion-body">
-                    <ul></ul></div>
+                    <ul><li>
+                        <a href="key-points.html">Key Points</a>
+                      </li>
+                      <li>
+                        <a href="reference.html#glossary">Glossary</a>
+                      </li>
+                      <li>
+                        <a href="profiles.html">Learner Profiles</a>
+                      </li>
+                      
+                    </ul></div>
                 </div>
               </div>
             </div>
-
-            <a href="aio.html">See all in one page</a>
+            <hr class="half-width resources"><a href="aio.html">See all in one page</a>
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
             
@@ -312,13 +321,13 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_s</span> <span class="op">&lt;-</span> <span class="va">penguins</span> |&gt;
-    <span class="fu">select</span><span class="op">(</span><span class="va">species</span>, <span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">penguins_s</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span>
-    bill_sum <span class="op">=</span> <span class="va">bill_depth_mm</span> <span class="op">+</span> <span class="va">bill_length_mm</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_s</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">select</span><span class="op">(</span><span class="va">species</span>, <span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">penguins_s</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    bill_sum <span class="op">=</span> <span class="va">bill_depth_mm</span> <span class="op">+</span> <span class="va">bill_length_mm</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -343,8 +352,8 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_s</span> |&gt;
-    <span class="fu">mutate</span><span class="op">(</span>bill_sum <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_s</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>bill_sum <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -369,9 +378,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_s</span> |&gt;
-    <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> |&gt;
-    <span class="fu">mutate</span><span class="op">(</span>bill_sum <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_s</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>bill_sum <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -397,10 +406,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_s</span> |&gt;
-    <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> |&gt;
-    <span class="fu">mutate</span><span class="op">(</span>bill_sum <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> |&gt;
-    <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_s</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>bill_sum <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -438,17 +447,17 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> |&gt;
-  <span class="fu">mutate</span><span class="op">(</span>
-    mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -492,19 +501,19 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> |&gt;
-  <span class="fu">mutate</span><span class="op">(</span>
-    mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,
-  <span class="op">)</span> |&gt;
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> |&gt;
-  <span class="fu">mutate</span><span class="op">(</span>mm_mean_species <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">mm_mean</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="fu">c_across</span><span class="op">(</span><span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>mm_mean_species <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">mm_mean</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -538,12 +547,12 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span>
-    bill_depth_sc <span class="op">=</span> <span class="fu">scale</span><span class="op">(</span><span class="va">bill_depth_mm</span><span class="op">)</span>,
-    bill_length_sc <span class="op">=</span> <span class="fu">scale</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,
-    flipper_length_sc <span class="op">=</span> <span class="fu">scale</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span>
-<span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    bill_depth_sc <span class="op">=</span> <span class="fu">scale</span><span class="op">(</span><span class="va">bill_depth_mm</span><span class="op">)</span>,</span>
+<span>    bill_length_sc <span class="op">=</span> <span class="fu">scale</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,</span>
+<span>    flipper_length_sc <span class="op">=</span> <span class="fu">scale</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -570,9 +579,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span>, 
-                .fns <span class="op">=</span> <span class="va">scale</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span>, </span>
+<span>                .fns <span class="op">=</span> <span class="va">scale</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -598,20 +607,20 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_mm_sc</span> <span class="op">&lt;-</span> <span class="va">penguins</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span>,
-                .fns <span class="op">=</span> <span class="va">scale</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_mm_sc</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span>,</span>
+<span>                .fns <span class="op">=</span> <span class="va">scale</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>but often, we’d like to keep the original but add the new variants. We can do that to within the across!</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span>,
-                .fns <span class="op">=</span> <span class="va">scale</span>, 
-                .names <span class="op">=</span> <span class="st">"{.col}_sc"</span><span class="op">)</span><span class="op">)</span> |&gt; 
-  <span class="fu">select</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span>,</span>
+<span>                .fns <span class="op">=</span> <span class="va">scale</span>, </span>
+<span>                .names <span class="op">=</span> <span class="st">"{.col}_sc"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -652,16 +661,16 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,
-                .fns <span class="op">=</span> <span class="va">scale</span>, 
-                .names <span class="op">=</span> <span class="st">"sc_{.col}"</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,</span>
+<span>                .fns <span class="op">=</span> <span class="va">scale</span>, </span>
+<span>                .names <span class="op">=</span> <span class="st">"sc_{.col}"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -705,7 +714,7 @@
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>You can add a standard mutate within the same mutate as across</p>
 </div>
@@ -719,19 +728,19 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span>
-    <span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,
-           .fns <span class="op">=</span> <span class="va">scale</span>, 
-           .names <span class="op">=</span> <span class="st">"sc_{.col}"</span><span class="op">)</span>,
-    body_mass_kg <span class="op">=</span> <span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span>
-  <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    <span class="fu">across</span><span class="op">(</span>.cols <span class="op">=</span> <span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,</span>
+<span>           .fns <span class="op">=</span> <span class="va">scale</span>, </span>
+<span>           .names <span class="op">=</span> <span class="st">"sc_{.col}"</span><span class="op">)</span>,</span>
+<span>    body_mass_kg <span class="op">=</span> <span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span></span>
+<span>  <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -793,9 +802,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.0" class="external-link">sandpaper (0.6.0)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.2" class="external-link">sandpaper (0.6.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.0" class="external-link">varnish (0.2.0)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -817,7 +826,7 @@ any links that you are not going to use.
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/09-data-manipulation-across.html",
   "dateCreated": "2022-06-20",
   "dateModified": "2022-06-17",
-  "datePublished": "2022-06-21"
+  "datePublished": "2022-06-28"
 }
 
   </script><script>

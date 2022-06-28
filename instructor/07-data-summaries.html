@@ -73,8 +73,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="profiles.html">Learner Profiles</a></li>
-          </ul></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul></li>
       </ul></div>
     <form class="d-flex col-md-2 search-form">
       <fieldset disabled><input class="form-control me-2 searchbox" type="search" placeholder="Search" aria-label="Search"><button class="btn btn-outline-success tablet-search-button" type="submit">
@@ -240,13 +239,21 @@
                 </h2>
                 <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
                   <div class="accordion-body">
-                    <ul><li><a href="profiles.html">Learner Profiles</a></li>
+                    <ul><li>
+                        <a href="../instructor/key-points.html">Key Points</a>
+                      </li>
+                      <li>
+                        <a href="../instructor/instructor-notes.html">Instructor Notes</a>
+                      </li>
+                      <li>
+                        <a href="../instructor/images.html">Extract All Images</a>
+                      </li>
+                      
                     </ul></div>
                 </div>
               </div>
             </div>
-
-            <a href="../instructor/aio.html">See all in one page</a>
+            <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
             
@@ -312,16 +319,16 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span>
-<span class="va">penguins</span> <span class="op">&lt;-</span> <span class="fu">palmerpenguins</span><span class="fu">::</span><span class="va">penguins</span></code></pre>
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
+<span><span class="va">penguins</span> <span class="op">&lt;-</span> <span class="fu">palmerpenguins</span><span class="fu">::</span><span class="va">penguins</span></span></code></pre>
 </div>
 <p>We should start to feel quite familiar with our penguins by now. Let us start by finding the mean of the bill length</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">summarise</span><span class="op">(</span>bill_length_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>bill_length_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -336,8 +343,8 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">summarise</span><span class="op">(</span>bill_length_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>bill_length_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -352,9 +359,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> |&gt; 
-  <span class="fu">summarise</span><span class="op">(</span>bill_length_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>bill_length_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -368,11 +375,11 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> |&gt; 
-  <span class="fu">summarise</span><span class="op">(</span>bill_length_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,
-            bill_length_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,
-            bill_length_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>bill_length_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,</span>
+<span>            bill_length_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,</span>
+<span>            bill_length_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -395,9 +402,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> |&gt; 
-  <span class="fu">summarise</span><span class="op">(</span>body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -435,12 +442,12 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> |&gt; 
-    <span class="fu">summarise</span><span class="op">(</span>
-        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_sd <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_sd <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -478,14 +485,14 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span>, <span class="va">flipper_length_mm</span><span class="op">)</span> |&gt; 
-    <span class="fu">summarise</span><span class="op">(</span>
-        body_mass_kg_mean      <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_sd        <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        flipper_length_cm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_length_mm</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span>,
-        flipper_length_cm_sd   <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">flipper_length_mm</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span>, <span class="va">flipper_length_mm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        body_mass_kg_mean      <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_sd        <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        flipper_length_cm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_length_mm</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span>,</span>
+<span>        flipper_length_cm_sd   <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">flipper_length_mm</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -509,9 +516,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> |&gt; 
-  <span class="fu">summarise</span><span class="op">(</span>body_mass_g_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>body_mass_g_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -526,10 +533,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> |&gt; 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> |&gt; 
-  <span class="fu">summarise</span><span class="op">(</span>body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -546,14 +553,14 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> |&gt;
-    <span class="fu">summarise</span><span class="op">(</span>
-        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -575,9 +582,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> |&gt; 
-  <span class="fu">summarise</span><span class="op">(</span>n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -594,9 +601,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> |&gt; 
-  <span class="fu">tally</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">tally</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -612,9 +619,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> |&gt; 
-  <span class="fu">count</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -652,13 +659,13 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">island</span><span class="op">)</span> |&gt;
-    <span class="fu">summarise</span><span class="op">(</span>
-        bill_length_mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,
-        bill_length_mm_sd   <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">bill_length_mm</span> <span class="op">)</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        bill_length_mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,</span>
+<span>        bill_length_mm_sd   <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">bill_length_mm</span> <span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -698,13 +705,13 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">island</span>, <span class="va">sex</span><span class="op">)</span> |&gt;
-    <span class="fu">summarise</span><span class="op">(</span>
-        bill_length_mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,
-        bill_length_mm_sd   <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">bill_length_mm</span> <span class="op">)</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">island</span>, <span class="va">sex</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        bill_length_mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,</span>
+<span>        bill_length_mm_sd   <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">bill_length_mm</span> <span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -741,9 +748,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> |&gt; 
-  <span class="fu">count</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -761,9 +768,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> |&gt; 
-  <span class="fu">count</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -783,10 +790,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> |&gt; 
-  <span class="fu">count</span><span class="op">(</span><span class="op">)</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span>total <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>total <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -806,11 +813,11 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> |&gt; 
-  <span class="fu">count</span><span class="op">(</span><span class="op">)</span> |&gt; 
-  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span>total <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>total <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -848,15 +855,15 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">island</span>, <span class="va">sex</span><span class="op">)</span> |&gt;
-    <span class="fu">summarise</span><span class="op">(</span>
-        bill_length_mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,
-        bill_length_mm_sd   <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">bill_length_mm</span> <span class="op">)</span>
-    <span class="op">)</span> |&gt;
-    <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> |&gt;
-    <span class="fu">mutate</span><span class="op">(</span>mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm_mean</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">island</span>, <span class="va">sex</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        bill_length_mm_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,</span>
+<span>        bill_length_mm_sd   <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">bill_length_mm</span> <span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">bill_length_mm_mean</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -893,14 +900,14 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> |&gt;
-    <span class="fu">summarise</span><span class="op">(</span>
-        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -929,17 +936,17 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> |&gt;
-    <span class="fu">summarise</span><span class="op">(</span>
-        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>
-    <span class="op">)</span> |&gt; 
-    <span class="fu">mutate</span><span class="op">(</span>
-        species_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_kg_mean</span><span class="op">)</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">mutate</span><span class="op">(</span></span>
+<span>        species_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_kg_mean</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -968,18 +975,18 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> |&gt;
-    <span class="fu">summarise</span><span class="op">(</span>
-        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,
-        body_mass_kg_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>
-    <span class="op">)</span> |&gt; 
-    <span class="fu">mutate</span><span class="op">(</span>
-        species_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_kg_mean</span><span class="op">)</span>,
-        rel_species <span class="op">=</span> <span class="va">species_mean</span> <span class="op">-</span> <span class="va">body_mass_kg_mean</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        body_mass_kg_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_min <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>        body_mass_kg_max <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">mutate</span><span class="op">(</span></span>
+<span>        species_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">body_mass_kg_mean</span><span class="op">)</span>,</span>
+<span>        rel_species <span class="op">=</span> <span class="va">species_mean</span> <span class="op">-</span> <span class="va">body_mass_kg_mean</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1029,16 +1036,16 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> |&gt; 
-    <span class="fu">summarise</span><span class="op">(</span>
-        flipper_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span>,
-    <span class="op">)</span> |&gt; 
-    <span class="fu">mutate</span><span class="op">(</span>
-        species_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_mean</span><span class="op">)</span>,
-        flipper_species_diff <span class="op">=</span> <span class="va">species_mean</span> <span class="op">-</span> <span class="va">flipper_mean</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        flipper_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span>,</span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">mutate</span><span class="op">(</span></span>
+<span>        species_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_mean</span><span class="op">)</span>,</span>
+<span>        flipper_species_diff <span class="op">=</span> <span class="va">species_mean</span> <span class="op">-</span> <span class="va">flipper_mean</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1078,16 +1085,16 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-    <span class="fu">drop_na</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span> |&gt; 
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> |&gt; 
-    <span class="fu">summarise</span><span class="op">(</span>
-        flipper_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span>,
-    <span class="op">)</span> |&gt; 
-    <span class="fu">mutate</span><span class="op">(</span>
-        species_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_mean</span><span class="op">)</span>,
-        flipper_species_diff <span class="op">=</span> <span class="va">species_mean</span> <span class="op">-</span> <span class="va">flipper_mean</span>
-    <span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">summarise</span><span class="op">(</span></span>
+<span>        flipper_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span>,</span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">mutate</span><span class="op">(</span></span>
+<span>        species_mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">flipper_mean</span><span class="op">)</span>,</span>
+<span>        flipper_species_diff <span class="op">=</span> <span class="va">species_mean</span> <span class="op">-</span> <span class="va">flipper_mean</span></span>
+<span>    <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1148,9 +1155,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.0" class="external-link">sandpaper (0.6.0)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.2" class="external-link">sandpaper (0.6.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.0" class="external-link">varnish (0.2.0)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1172,7 +1179,7 @@ any links that you are not going to use.
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/07-data-summaries.html",
   "dateCreated": "2022-06-20",
   "dateModified": "2022-06-17",
-  "datePublished": "2022-06-21"
+  "datePublished": "2022-06-28"
 }
 
   </script><script>

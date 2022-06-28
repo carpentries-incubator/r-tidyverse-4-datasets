@@ -73,8 +73,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="profiles.html">Learner Profiles</a></li>
-          </ul></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul></li>
       </ul></div>
     <form class="d-flex col-md-2 search-form">
       <fieldset disabled><input class="form-control me-2 searchbox" type="search" placeholder="Search" aria-label="Search"><button class="btn btn-outline-success tablet-search-button" type="submit">
@@ -248,13 +247,21 @@
                 </h2>
                 <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
                   <div class="accordion-body">
-                    <ul><li><a href="profiles.html">Learner Profiles</a></li>
+                    <ul><li>
+                        <a href="../instructor/key-points.html">Key Points</a>
+                      </li>
+                      <li>
+                        <a href="../instructor/instructor-notes.html">Instructor Notes</a>
+                      </li>
+                      <li>
+                        <a href="../instructor/images.html">Extract All Images</a>
+                      </li>
+                      
                     </ul></div>
                 </div>
               </div>
             </div>
-
-            <a href="../instructor/aio.html">See all in one page</a>
+            <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
             
@@ -333,8 +340,8 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span> </code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span> </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -360,13 +367,13 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span> |&gt; 
-  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="va">value</span>, 
-             x <span class="op">=</span> <span class="va">species</span>,
-             fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">name</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="va">value</span>, </span>
+<span>             x <span class="op">=</span> <span class="va">species</span>,</span>
+<span>             fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">name</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -398,8 +405,8 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt;
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">ends_with</span><span class="op">(</span><span class="st">"mm"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -447,8 +454,8 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt;
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -496,8 +503,8 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt;
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">where</span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">where</span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -528,10 +535,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,
-               names_to <span class="op">=</span> <span class="st">"columns"</span>,
-               values_to <span class="op">=</span> <span class="st">"content"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,</span>
+<span>               names_to <span class="op">=</span> <span class="st">"columns"</span>,</span>
+<span>               values_to <span class="op">=</span> <span class="st">"content"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -557,10 +564,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,
-               names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,
-               names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,</span>
+<span>               names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,</span>
+<span>               names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -605,10 +612,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt;
-    <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span>,
-               names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,
-               names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span>,</span>
+<span>               names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,</span>
+<span>               names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -656,9 +663,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt;
-    <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span>,
-               names_prefix <span class="op">=</span> <span class="st">"bill_"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span>,</span>
+<span>               names_prefix <span class="op">=</span> <span class="st">"bill_"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -706,11 +713,11 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt;
-    <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span>,
-              names_prefix <span class="op">=</span> <span class="st">"bill_"</span>,
-              names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"bill_measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,
-              names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span>,</span>
+<span>              names_prefix <span class="op">=</span> <span class="st">"bill_"</span>,</span>
+<span>              names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"bill_measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,</span>
+<span>              names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -742,9 +749,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span>,
-               values_drop_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span>,</span>
+<span>               values_drop_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -770,12 +777,12 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_long</span> <span class="op">&lt;-</span> <span class="va">penguins</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,
-               names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,
-               names_sep <span class="op">=</span> <span class="st">"_"</span>,
-               values_drop_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="va">penguins_long</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_long</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,</span>
+<span>               names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,</span>
+<span>               names_sep <span class="op">=</span> <span class="st">"_"</span>,</span>
+<span>               values_drop_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">penguins_long</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -804,9 +811,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_long_simple</span> <span class="op">&lt;-</span> <span class="va">penguins</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">penguins_long_simple</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_long_simple</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">penguins_long_simple</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -832,9 +839,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_long_simple</span> |&gt; 
-  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">name</span>, 
-              values_from <span class="op">=</span> <span class="va">value</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_long_simple</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">name</span>, </span>
+<span>              values_from <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -872,7 +879,7 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -898,10 +905,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_long_simple</span> <span class="op">&lt;-</span> <span class="va">penguins</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span>sample <span class="op">=</span> <span class="fu">row_number</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">penguins_long_simple</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_long_simple</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>sample <span class="op">=</span> <span class="fu">row_number</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">penguins_long_simple</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -946,9 +953,9 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_long_simple</span> |&gt; 
-  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">name</span>,
-              values_from <span class="op">=</span> <span class="va">value</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_long_simple</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">name</span>,</span>
+<span>              values_from <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -982,13 +989,13 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_long</span> <span class="op">&lt;-</span> <span class="va">penguins</span> |&gt; 
-  <span class="fu">mutate</span><span class="op">(</span>sample <span class="op">=</span> <span class="fu">row_number</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; 
-  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,
-               names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,
-               names_sep <span class="op">=</span> <span class="st">"_"</span>,
-               values_drop_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="va">penguins_long</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_long</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>sample <span class="op">=</span> <span class="fu">row_number</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"_"</span><span class="op">)</span>,</span>
+<span>               names_to <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span> , <span class="st">"unit"</span><span class="op">)</span>,</span>
+<span>               names_sep <span class="op">=</span> <span class="st">"_"</span>,</span>
+<span>               values_drop_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">penguins_long</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1013,10 +1020,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">penguins_long</span> |&gt; 
-  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span>, <span class="st">"unit"</span><span class="op">)</span>,
-              names_sep <span class="op">=</span> <span class="st">"_"</span>,
-              values_from <span class="op">=</span> <span class="va">value</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">penguins_long</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"part"</span>, <span class="st">"measure"</span>, <span class="st">"unit"</span><span class="op">)</span>,</span>
+<span>              names_sep <span class="op">=</span> <span class="st">"_"</span>,</span>
+<span>              values_from <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1075,9 +1082,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.0" class="external-link">sandpaper (0.6.0)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.2" class="external-link">sandpaper (0.6.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.0" class="external-link">varnish (0.2.0)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1099,7 +1106,7 @@ any links that you are not going to use.
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/06-data-reshaping.html",
   "dateCreated": "2022-06-20",
   "dateModified": "2022-06-20",
-  "datePublished": "2022-06-21"
+  "datePublished": "2022-06-28"
 }
 
   </script><script>
