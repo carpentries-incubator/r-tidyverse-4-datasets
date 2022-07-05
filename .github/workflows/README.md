@@ -66,7 +66,7 @@ will take care of supplying this token.
 If you want to use your personal account: you can go to 
 <https://github.com/settings/tokens/new?scopes=repo,workflow&description=Sandpaper%20Token>
 to create a token. Once you have created your token, you should copy it to your
-clipboard and then go to your repository's settings secrets actions and
+clipboard and then go to your repository's settings > secrets > actions and
 create or edit the `SANDPAPER_WORKFLOW` secret, pasting in the generated token.
 
 If you do not specify your token correctly, the runs will not fail and they will
@@ -117,7 +117,7 @@ pull requests that do not pass checks and do not have bots commented on them.**
 This series of workflows all go together and are described in the following 
 diagram and the below sections:
 
-![Graph representation of a pull request](../../vignettes/articles/img/pr-flow.dot.svg)
+![Graph representation of a pull request](https://carpentries.github.io/sandpaper/articles/img/pr-flow.dot.svg)
 
 ### Recieve Pull Request (pr-recieve.yaml)
 
