@@ -477,7 +477,7 @@ penguins |>
 ```{.error}
 Error in `filter()`:
 ! Problem while computing `..1 = sex == "male"`.
-Caused by error:
+Caused by error in `mask$eval_all_filter()`:
 ! object 'sex' not found
 ```
 
