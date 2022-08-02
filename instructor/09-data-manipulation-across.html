@@ -286,7 +286,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data manipulation across columns</h1>
-        <p> Last updated on 2022-07-19 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/09-data-manipulation-across.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-08-02 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/09-data-manipulation-across.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 51 minutes </p>
         
         <div class="text-end">
@@ -347,7 +347,8 @@
  8 Adelie            39.2          19.6     58.8
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
-# … with 334 more rows</code></pre>
+# … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>We’ve seen similar types of operations before. But what if you want to sum 20 columns, you would need to type our all 20 column names! Again, tedious. We have a special type of operations we can do to get that easily. We will use the function <code>sum</code> to calculate the sum of several variables when using this pipeline.</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -373,7 +374,8 @@
  8 Adelie            39.2          19.6       NA
  9 Adelie            34.1          18.1       NA
 10 Adelie            42            20.2       NA
-# … with 334 more rows</code></pre>
+# … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>hm, that is not what we expected. I know why, but the reason is not always easy to understand. By default, <code>c_across</code> will summarise all the rows for all the bill columns, and give a <em>single</em> value for the entire data set. There are some <code>NA</code>s the entire data set, so it returns <code>NA</code>. So how can we force it to work in a row-wise fashion? We can apply a function called <code>rowwise()</code> which is a special type of <code>group_by</code> that groups your data by each row, so each row is its own group. Then, <code>c_across()</code> will calculate the mean of the columns just for that group (i.e. row in this case).</p>
 <div class="codewrapper sourceCode" id="cb5">
@@ -401,7 +403,8 @@
  8 Adelie            39.2          19.6     58.8
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
-# … with 334 more rows</code></pre>
+# … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>Now we can see that we get the row sum of all the bill columns for each row, and the tibble tells us it is “Rowwise”. To stop the data set being rowwise, we can use the <code>ungroup()</code> function we learned before.</p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -429,7 +432,8 @@
  8 Adelie            39.2          19.6     58.8
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
-# … with 334 more rows</code></pre>
+# … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -449,7 +453,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -466,20 +470,21 @@
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 9
 # Rowwise: 
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows, and 3 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
-#   mm_mean &lt;dbl&gt;</code></pre>
+   species island    bill_length_mm bill_d…¹ flipp…² body_…³ sex    year mm_mean
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;    &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt;
+ 1 Adelie  Torgersen           39.1     18.7     181    3750 male   2007    79.6
+ 2 Adelie  Torgersen           39.5     17.4     186    3800 fema…  2007    81.0
+ 3 Adelie  Torgersen           40.3     18       195    3250 fema…  2007    84.4
+ 4 Adelie  Torgersen           NA       NA        NA      NA &lt;NA&gt;   2007    NA  
+ 5 Adelie  Torgersen           36.7     19.3     193    3450 fema…  2007    83  
+ 6 Adelie  Torgersen           39.3     20.6     190    3650 male   2007    83.3
+ 7 Adelie  Torgersen           38.9     17.8     181    3625 fema…  2007    79.2
+ 8 Adelie  Torgersen           39.2     19.6     195    4675 male   2007    84.6
+ 9 Adelie  Torgersen           34.1     18.1     193    3475 &lt;NA&gt;   2007    81.7
+10 Adelie  Torgersen           42       20.2     190    4250 &lt;NA&gt;   2007    84.1
+# … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
+#   ²​flipper_length_mm, ³​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 </div>
@@ -503,7 +508,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -522,20 +527,21 @@
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 10
 # Groups:   species [3]
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows, and 4 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
-#   mm_mean &lt;dbl&gt;, mm_mean_species &lt;dbl&gt;</code></pre>
+   species island    bill_…¹ bill_…² flipp…³ body_…⁴ sex    year mm_mean mm_me…⁵
+   &lt;fct&gt;   &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Adelie  Torgersen    39.1    18.7     181    3750 male   2007    79.6    82.4
+ 2 Adelie  Torgersen    39.5    17.4     186    3800 fema…  2007    81.0    82.4
+ 3 Adelie  Torgersen    40.3    18       195    3250 fema…  2007    84.4    82.4
+ 4 Adelie  Torgersen    NA      NA        NA      NA &lt;NA&gt;   2007    NA      82.4
+ 5 Adelie  Torgersen    36.7    19.3     193    3450 fema…  2007    83      82.4
+ 6 Adelie  Torgersen    39.3    20.6     190    3650 male   2007    83.3    82.4
+ 7 Adelie  Torgersen    38.9    17.8     181    3625 fema…  2007    79.2    82.4
+ 8 Adelie  Torgersen    39.2    19.6     195    4675 male   2007    84.6    82.4
+ 9 Adelie  Torgersen    34.1    18.1     193    3475 &lt;NA&gt;   2007    81.7    82.4
+10 Adelie  Torgersen    42      20.2     190    4250 &lt;NA&gt;   2007    84.1    82.4
+# … with 334 more rows, and abbreviated variable names ¹​bill_length_mm,
+#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​mm_mean_species
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 </div>
@@ -560,21 +566,22 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 11
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows, and 5 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
-#   bill_depth_sc &lt;dbl[,1]&gt;, bill_length_sc &lt;dbl[,1]&gt;,
-#   flipper_length_sc &lt;dbl[,1]&gt;</code></pre>
+   species island    bill_…¹ bill_…² flipp…³ body_…⁴ sex    year bill_…⁵ bill_…⁶
+   &lt;fct&gt;   &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Adelie  Torgersen    39.1    18.7     181    3750 male   2007   0.784  -0.883
+ 2 Adelie  Torgersen    39.5    17.4     186    3800 fema…  2007   0.126  -0.810
+ 3 Adelie  Torgersen    40.3    18       195    3250 fema…  2007   0.430  -0.663
+ 4 Adelie  Torgersen    NA      NA        NA      NA &lt;NA&gt;   2007  NA      NA    
+ 5 Adelie  Torgersen    36.7    19.3     193    3450 fema…  2007   1.09   -1.32 
+ 6 Adelie  Torgersen    39.3    20.6     190    3650 male   2007   1.75   -0.847
+ 7 Adelie  Torgersen    38.9    17.8     181    3625 fema…  2007   0.329  -0.920
+ 8 Adelie  Torgersen    39.2    19.6     195    4675 male   2007   1.24   -0.865
+ 9 Adelie  Torgersen    34.1    18.1     193    3475 &lt;NA&gt;   2007   0.480  -1.80 
+10 Adelie  Torgersen    42      20.2     190    4250 &lt;NA&gt;   2007   1.54   -0.352
+# … with 334 more rows, 1 more variable: flipper_length_sc &lt;dbl[,1]&gt;, and
+#   abbreviated variable names ¹​bill_length_mm, ²​bill_depth_mm,
+#   ³​flipper_length_mm, ⁴​body_mass_g, ⁵​bill_depth_sc[,1], ⁶​bill_length_sc[,1]
+# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
 </div>
 <p>Its just three columns, we can do that. But let us imagine we have 20 of these, typing all that out is tedious and error prone. You might forget to alter the name or keep the same type of naming convention. We are only human, we easily make mistakes. With {dplyr}’s <code>across()</code> we can combine our knowledge of tidy-selectors and mutate to create the entire transformation for these columns at once.</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -589,19 +596,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 8
-   species island bill_length_mm[… bill_depth_mm[,… flipper_length_… body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;       &lt;int&gt;
- 1 Adelie  Torge…           -0.883            0.784           -1.42         3750
- 2 Adelie  Torge…           -0.810            0.126           -1.06         3800
- 3 Adelie  Torge…           -0.663            0.430           -0.421        3250
- 4 Adelie  Torge…           NA               NA               NA              NA
- 5 Adelie  Torge…           -1.32             1.09            -0.563        3450
- 6 Adelie  Torge…           -0.847            1.75            -0.776        3650
- 7 Adelie  Torge…           -0.920            0.329           -1.42         3625
- 8 Adelie  Torge…           -0.865            1.24            -0.421        4675
- 9 Adelie  Torge…           -1.80             0.480           -0.563        3475
-10 Adelie  Torge…           -0.352            1.54            -0.776        4250
-# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species island    bill_length_mm[,1] bill_depth…¹ flipp…² body_…³ sex    year
+   &lt;fct&gt;   &lt;fct&gt;                  &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Torgersen             -0.883        0.784  -1.42     3750 male   2007
+ 2 Adelie  Torgersen             -0.810        0.126  -1.06     3800 fema…  2007
+ 3 Adelie  Torgersen             -0.663        0.430  -0.421    3250 fema…  2007
+ 4 Adelie  Torgersen             NA           NA      NA          NA &lt;NA&gt;   2007
+ 5 Adelie  Torgersen             -1.32         1.09   -0.563    3450 fema…  2007
+ 6 Adelie  Torgersen             -0.847        1.75   -0.776    3650 male   2007
+ 7 Adelie  Torgersen             -0.920        0.329  -1.42     3625 fema…  2007
+ 8 Adelie  Torgersen             -0.865        1.24   -0.421    4675 male   2007
+ 9 Adelie  Torgersen             -1.80         0.480  -0.563    3475 &lt;NA&gt;   2007
+10 Adelie  Torgersen             -0.352        1.54   -0.776    4250 &lt;NA&gt;   2007
+# … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm[,1],
+#   ²​flipper_length_mm[,1], ³​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>Whoa! So fast! Now the three columns are scaled. <code>.col</code> argument takes a tidy-selection of columns, and <code>.fns</code> it where you let it know which function to apply.</p>
 <p>But oh no! The columns have been overwritten. Rather than creating new ones, we replaced the old ones. This might be your intention in some instances, or maybe you will just create a new data set with the scaled variables.</p>
@@ -628,20 +637,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 6
-   bill_length_mm bill_depth_mm flipper_length_mm bill_length_mm_sc[,1]
-            &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;                 &lt;dbl&gt;
- 1           39.1          18.7               181                -0.883
- 2           39.5          17.4               186                -0.810
- 3           40.3          18                 195                -0.663
- 4           NA            NA                  NA                NA    
- 5           36.7          19.3               193                -1.32 
- 6           39.3          20.6               190                -0.847
- 7           38.9          17.8               181                -0.920
- 8           39.2          19.6               195                -0.865
- 9           34.1          18.1               193                -1.80 
-10           42            20.2               190                -0.352
-# … with 334 more rows, and 2 more variables: bill_depth_mm_sc &lt;dbl[,1]&gt;,
-#   flipper_length_mm_sc &lt;dbl[,1]&gt;</code></pre>
+   bill_length_mm bill_depth_mm flipper_length_mm bill_length_…¹ bill_…² flipp…³
+            &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;          &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1           39.1          18.7               181         -0.883   0.784  -1.42 
+ 2           39.5          17.4               186         -0.810   0.126  -1.06 
+ 3           40.3          18                 195         -0.663   0.430  -0.421
+ 4           NA            NA                  NA         NA      NA      NA    
+ 5           36.7          19.3               193         -1.32    1.09   -0.563
+ 6           39.3          20.6               190         -0.847   1.75   -0.776
+ 7           38.9          17.8               181         -0.920   0.329  -1.42 
+ 8           39.2          19.6               195         -0.865   1.24   -0.421
+ 9           34.1          18.1               193         -1.80    0.480  -0.563
+10           42            20.2               190         -0.352   1.54   -0.776
+# … with 334 more rows, and abbreviated variable names ¹​bill_length_mm_sc[,1],
+#   ²​bill_depth_mm_sc[,1], ³​flipper_length_mm_sc[,1]
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>Now they are all there! neat! But that <code>.names</code> argument is a little weird. What does it really mean?</p>
 <p>Internally, <code>across()</code> stores the column names in a vector it calls <code>.col</code>. We can use this knowledge to tell the across function what to name our new columns. In this case, we want to append the column name with <code>_sc</code>.</p>
@@ -663,7 +673,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -678,21 +688,23 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 12
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows, and 6 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
-#   sc_bill_length_mm &lt;dbl[,1]&gt;, sc_bill_depth_mm &lt;dbl[,1]&gt;,
-#   sc_flipper_length_mm &lt;dbl[,1]&gt;, sc_body_mass_g &lt;dbl[,1]&gt;</code></pre>
+   species island    bill_…¹ bill_…² flipp…³ body_…⁴ sex    year sc_bi…⁵ sc_bi…⁶
+   &lt;fct&gt;   &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Adelie  Torgersen    39.1    18.7     181    3750 male   2007  -0.883   0.784
+ 2 Adelie  Torgersen    39.5    17.4     186    3800 fema…  2007  -0.810   0.126
+ 3 Adelie  Torgersen    40.3    18       195    3250 fema…  2007  -0.663   0.430
+ 4 Adelie  Torgersen    NA      NA        NA      NA &lt;NA&gt;   2007  NA      NA    
+ 5 Adelie  Torgersen    36.7    19.3     193    3450 fema…  2007  -1.32    1.09 
+ 6 Adelie  Torgersen    39.3    20.6     190    3650 male   2007  -0.847   1.75 
+ 7 Adelie  Torgersen    38.9    17.8     181    3625 fema…  2007  -0.920   0.329
+ 8 Adelie  Torgersen    39.2    19.6     195    4675 male   2007  -0.865   1.24 
+ 9 Adelie  Torgersen    34.1    18.1     193    3475 &lt;NA&gt;   2007  -1.80    0.480
+10 Adelie  Torgersen    42      20.2     190    4250 &lt;NA&gt;   2007  -0.352   1.54 
+# … with 334 more rows, 2 more variables: sc_flipper_length_mm &lt;dbl[,1]&gt;,
+#   sc_body_mass_g &lt;dbl[,1]&gt;, and abbreviated variable names ¹​bill_length_mm,
+#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​sc_bill_length_mm[,1],
+#   ⁶​sc_bill_depth_mm[,1]
+# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
 </div>
 </div>
 </div>
@@ -716,7 +728,7 @@
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>You can add a standard mutate within the same mutate as across</p>
 </div>
@@ -730,7 +742,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -748,22 +760,23 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 13
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows, and 7 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
-#   sc_bill_length_mm &lt;dbl[,1]&gt;, sc_bill_depth_mm &lt;dbl[,1]&gt;,
-#   sc_flipper_length_mm &lt;dbl[,1]&gt;, sc_body_mass_g &lt;dbl[,1]&gt;,
-#   body_mass_kg &lt;dbl&gt;</code></pre>
+   species island    bill_…¹ bill_…² flipp…³ body_…⁴ sex    year sc_bi…⁵ sc_bi…⁶
+   &lt;fct&gt;   &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Adelie  Torgersen    39.1    18.7     181    3750 male   2007  -0.883   0.784
+ 2 Adelie  Torgersen    39.5    17.4     186    3800 fema…  2007  -0.810   0.126
+ 3 Adelie  Torgersen    40.3    18       195    3250 fema…  2007  -0.663   0.430
+ 4 Adelie  Torgersen    NA      NA        NA      NA &lt;NA&gt;   2007  NA      NA    
+ 5 Adelie  Torgersen    36.7    19.3     193    3450 fema…  2007  -1.32    1.09 
+ 6 Adelie  Torgersen    39.3    20.6     190    3650 male   2007  -0.847   1.75 
+ 7 Adelie  Torgersen    38.9    17.8     181    3625 fema…  2007  -0.920   0.329
+ 8 Adelie  Torgersen    39.2    19.6     195    4675 male   2007  -0.865   1.24 
+ 9 Adelie  Torgersen    34.1    18.1     193    3475 &lt;NA&gt;   2007  -1.80    0.480
+10 Adelie  Torgersen    42      20.2     190    4250 &lt;NA&gt;   2007  -0.352   1.54 
+# … with 334 more rows, 3 more variables: sc_flipper_length_mm &lt;dbl[,1]&gt;,
+#   sc_body_mass_g &lt;dbl[,1]&gt;, body_mass_kg &lt;dbl&gt;, and abbreviated variable
+#   names ¹​bill_length_mm, ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g,
+#   ⁵​sc_bill_length_mm[,1], ⁶​sc_bill_depth_mm[,1]
+# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
 </div>
 </div>
 </div>
@@ -826,8 +839,8 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/09-data-manipulation-across.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/09-data-manipulation-across.html",
-  "dateCreated": "2022-07-21",
-  "dateModified": "2022-07-19",
+  "dateCreated": "2022-08-02",
+  "dateModified": "2022-08-02",
   "datePublished": "2022-08-02"
 }
 

@@ -288,7 +288,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data sorting and pipes dplyr</h1>
-        <p> Last updated on 2022-07-19 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/04-data-sorting-pipes.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-08-02 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/04-data-sorting-pipes.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 67 minutes </p>
         
         <div class="text-end">
@@ -344,19 +344,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 68 × 8
-   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Chinstrap Dream            46.5          17.9               192        3500
- 2 Chinstrap Dream            50            19.5               196        3900
- 3 Chinstrap Dream            51.3          19.2               193        3650
- 4 Chinstrap Dream            45.4          18.7               188        3525
- 5 Chinstrap Dream            52.7          19.8               197        3725
- 6 Chinstrap Dream            45.2          17.8               198        3950
- 7 Chinstrap Dream            46.1          18.2               178        3250
- 8 Chinstrap Dream            51.3          18.2               197        3750
- 9 Chinstrap Dream            46            18.9               195        4150
-10 Chinstrap Dream            51.3          19.9               198        3700
-# … with 58 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species   island bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year
+   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Chinstrap Dream            46.5          17.9         192    3500 fema…  2007
+ 2 Chinstrap Dream            50            19.5         196    3900 male   2007
+ 3 Chinstrap Dream            51.3          19.2         193    3650 male   2007
+ 4 Chinstrap Dream            45.4          18.7         188    3525 fema…  2007
+ 5 Chinstrap Dream            52.7          19.8         197    3725 male   2007
+ 6 Chinstrap Dream            45.2          17.8         198    3950 fema…  2007
+ 7 Chinstrap Dream            46.1          18.2         178    3250 fema…  2007
+ 8 Chinstrap Dream            51.3          18.2         197    3750 male   2007
+ 9 Chinstrap Dream            46            18.9         195    4150 fema…  2007
+10 Chinstrap Dream            51.3          19.9         198    3700 male   2007
+# … with 58 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>Maybe in this chinstrap data we are also not interested in the bill measurements, so we want to remove them.</p>
 <div class="codewrapper sourceCode" id="cb4">
@@ -382,7 +384,8 @@
  8 Chinstrap Dream                197        3750 male    2007
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
-# … with 58 more rows</code></pre>
+# … with 58 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>Now our data has two less columns, and many fewer rows. A simpler data set for us to work with. But assigning the chinstrap data twice like this is a lot of typing, and there is a simpler way, using something we call the “pipe”.</p>
 <div id="challenge1" class="callout challenge">
@@ -403,7 +406,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -454,19 +457,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;      &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
+ 2 Adelie  Torgersen           39.5          17.4        186    3800 fema…  2007
+ 3 Adelie  Torgersen           40.3          18          195    3250 fema…  2007
+ 4 Adelie  Torgersen           NA            NA           NA      NA &lt;NA&gt;   2007
+ 5 Adelie  Torgersen           36.7          19.3        193    3450 fema…  2007
+ 6 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
+ 7 Adelie  Torgersen           38.9          17.8        181    3625 fema…  2007
+ 8 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
+ 9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
+10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -479,19 +484,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 68 × 8
-   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Chinstrap Dream            46.5          17.9               192        3500
- 2 Chinstrap Dream            50            19.5               196        3900
- 3 Chinstrap Dream            51.3          19.2               193        3650
- 4 Chinstrap Dream            45.4          18.7               188        3525
- 5 Chinstrap Dream            52.7          19.8               197        3725
- 6 Chinstrap Dream            45.2          17.8               198        3950
- 7 Chinstrap Dream            46.1          18.2               178        3250
- 8 Chinstrap Dream            51.3          18.2               197        3750
- 9 Chinstrap Dream            46            18.9               195        4150
-10 Chinstrap Dream            51.3          19.9               198        3700
-# … with 58 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species   island bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year
+   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Chinstrap Dream            46.5          17.9         192    3500 fema…  2007
+ 2 Chinstrap Dream            50            19.5         196    3900 male   2007
+ 3 Chinstrap Dream            51.3          19.2         193    3650 male   2007
+ 4 Chinstrap Dream            45.4          18.7         188    3525 fema…  2007
+ 5 Chinstrap Dream            52.7          19.8         197    3725 male   2007
+ 6 Chinstrap Dream            45.2          17.8         198    3950 fema…  2007
+ 7 Chinstrap Dream            46.1          18.2         178    3250 fema…  2007
+ 8 Chinstrap Dream            51.3          18.2         197    3750 male   2007
+ 9 Chinstrap Dream            46            18.9         195    4150 fema…  2007
+10 Chinstrap Dream            51.3          19.9         198    3700 male   2007
+# … with 58 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -517,7 +524,8 @@
  8 Chinstrap Dream                197        3750 male    2007
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
-# … with 58 more rows</code></pre>
+# … with 58 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>So, for each chain step, the output of the previous step is fed into the next step, and that way the commands build on each other until a final end result is made.</p>
 <p>And as before, we still are seeing the output of the command chain in the console, meaning we are not storing it. Let us do that, again using the assignment.</p>
@@ -547,7 +555,8 @@
  8 Chinstrap Dream                197        3750 male    2007
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
-# … with 58 more rows</code></pre>
+# … with 58 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div id="challenge2" class="callout challenge">
 <div class="callout-square">
@@ -567,7 +576,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -593,7 +602,8 @@
  8 Adelie  Biscoe           40.5          17.9
  9 Adelie  Biscoe           37.9          18.6
 10 Adelie  Biscoe           40.5          18.9
-# … with 158 more rows</code></pre>
+# … with 158 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 </div>
@@ -613,19 +623,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Biscoe           37.8          18.3               174        3400
- 2 Adelie  Biscoe           37.7          18.7               180        3600
- 3 Adelie  Biscoe           35.9          19.2               189        3800
- 4 Adelie  Biscoe           38.2          18.1               185        3950
- 5 Adelie  Biscoe           38.8          17.2               180        3800
- 6 Adelie  Biscoe           35.3          18.9               187        3800
- 7 Adelie  Biscoe           40.6          18.6               183        3550
- 8 Adelie  Biscoe           40.5          17.9               187        3200
- 9 Adelie  Biscoe           37.9          18.6               172        3150
-10 Adelie  Biscoe           40.5          18.9               180        3950
-# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Biscoe           37.8          18.3           174    3400 fema…  2007
+ 2 Adelie  Biscoe           37.7          18.7           180    3600 male   2007
+ 3 Adelie  Biscoe           35.9          19.2           189    3800 fema…  2007
+ 4 Adelie  Biscoe           38.2          18.1           185    3950 male   2007
+ 5 Adelie  Biscoe           38.8          17.2           180    3800 male   2007
+ 6 Adelie  Biscoe           35.3          18.9           187    3800 fema…  2007
+ 7 Adelie  Biscoe           40.6          18.6           183    3550 male   2007
+ 8 Adelie  Biscoe           40.5          17.9           187    3200 fema…  2007
+ 9 Adelie  Biscoe           37.9          18.6           172    3150 fema…  2007
+10 Adelie  Biscoe           40.5          18.9           180    3950 male   2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>Here we have sorted the data by the island column. Since island is a factor, it will order by the facor levels, which in this case has Biscoe island as the first category. If we sort a numeric column, it will sort by numeric value.</p>
 <p>By default, arrange sorts in ascending order. If you want it sorted by descending order, wrap the column name in <code>desc()</code></p>
@@ -640,19 +652,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;      &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
+ 2 Adelie  Torgersen           39.5          17.4        186    3800 fema…  2007
+ 3 Adelie  Torgersen           40.3          18          195    3250 fema…  2007
+ 4 Adelie  Torgersen           NA            NA           NA      NA &lt;NA&gt;   2007
+ 5 Adelie  Torgersen           36.7          19.3        193    3450 fema…  2007
+ 6 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
+ 7 Adelie  Torgersen           38.9          17.8        181    3625 fema…  2007
+ 8 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
+ 9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
+10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div id="challenge3" class="callout challenge">
 <div class="callout-square">
@@ -672,7 +686,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -685,19 +699,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 8
-   species   island    bill_length_mm bill_depth_mm flipper_length_… body_mass_g
-   &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
- 1 Chinstrap Dream               46.9          16.6              192        2700
- 2 Adelie    Biscoe              36.5          16.6              181        2850
- 3 Adelie    Biscoe              36.4          17.1              184        2850
- 4 Adelie    Biscoe              34.5          18.1              187        2900
- 5 Adelie    Dream               33.1          16.1              178        2900
- 6 Adelie    Torgersen           38.6          17                188        2900
- 7 Chinstrap Dream               43.2          16.6              187        2900
- 8 Adelie    Biscoe              37.9          18.6              193        2925
- 9 Adelie    Dream               37.5          18.9              179        2975
-10 Adelie    Dream               37            16.9              185        3000
-# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species   island    bill_length_mm bill_depth_mm flippe…¹ body_…² sex    year
+   &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;    &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Chinstrap Dream               46.9          16.6      192    2700 fema…  2008
+ 2 Adelie    Biscoe              36.5          16.6      181    2850 fema…  2008
+ 3 Adelie    Biscoe              36.4          17.1      184    2850 fema…  2008
+ 4 Adelie    Biscoe              34.5          18.1      187    2900 fema…  2008
+ 5 Adelie    Dream               33.1          16.1      178    2900 fema…  2008
+ 6 Adelie    Torgersen           38.6          17        188    2900 fema…  2009
+ 7 Chinstrap Dream               43.2          16.6      187    2900 fema…  2007
+ 8 Adelie    Biscoe              37.9          18.6      193    2925 fema…  2009
+ 9 Adelie    Dream               37.5          18.9      179    2975 &lt;NA&gt;   2007
+10 Adelie    Dream               37            16.9      185    3000 fema…  2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 </div>
@@ -721,7 +737,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -734,19 +750,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Gentoo  Biscoe           54.3          15.7               231        5650
- 2 Gentoo  Biscoe           50            16.3               230        5700
- 3 Gentoo  Biscoe           59.6          17                 230        6050
- 4 Gentoo  Biscoe           49.8          16.8               230        5700
- 5 Gentoo  Biscoe           48.6          16                 230        5800
- 6 Gentoo  Biscoe           52.1          17                 230        5550
- 7 Gentoo  Biscoe           51.5          16.3               230        5500
- 8 Gentoo  Biscoe           55.1          16                 230        5850
- 9 Gentoo  Biscoe           49.5          16.2               229        5800
-10 Gentoo  Biscoe           49.8          15.9               229        5950
-# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Gentoo  Biscoe           54.3          15.7           231    5650 male   2008
+ 2 Gentoo  Biscoe           50            16.3           230    5700 male   2007
+ 3 Gentoo  Biscoe           59.6          17             230    6050 male   2007
+ 4 Gentoo  Biscoe           49.8          16.8           230    5700 male   2008
+ 5 Gentoo  Biscoe           48.6          16             230    5800 male   2008
+ 6 Gentoo  Biscoe           52.1          17             230    5550 male   2009
+ 7 Gentoo  Biscoe           51.5          16.3           230    5500 male   2009
+ 8 Gentoo  Biscoe           55.1          16             230    5850 male   2009
+ 9 Gentoo  Biscoe           49.5          16.2           229    5800 male   2008
+10 Gentoo  Biscoe           49.8          15.9           229    5950 male   2009
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 </div>
@@ -770,7 +788,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -783,19 +801,21 @@
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Gentoo  Biscoe           54.3          15.7               231        5650
- 2 Gentoo  Biscoe           50            16.3               230        5700
- 3 Gentoo  Biscoe           59.6          17                 230        6050
- 4 Gentoo  Biscoe           49.8          16.8               230        5700
- 5 Gentoo  Biscoe           48.6          16                 230        5800
- 6 Gentoo  Biscoe           52.1          17                 230        5550
- 7 Gentoo  Biscoe           51.5          16.3               230        5500
- 8 Gentoo  Biscoe           55.1          16                 230        5850
- 9 Gentoo  Biscoe           49.5          16.2               229        5800
-10 Gentoo  Biscoe           49.8          15.9               229        5950
-# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
+ 1 Gentoo  Biscoe           54.3          15.7           231    5650 male   2008
+ 2 Gentoo  Biscoe           50            16.3           230    5700 male   2007
+ 3 Gentoo  Biscoe           59.6          17             230    6050 male   2007
+ 4 Gentoo  Biscoe           49.8          16.8           230    5700 male   2008
+ 5 Gentoo  Biscoe           48.6          16             230    5800 male   2008
+ 6 Gentoo  Biscoe           52.1          17             230    5550 male   2009
+ 7 Gentoo  Biscoe           51.5          16.3           230    5500 male   2009
+ 8 Gentoo  Biscoe           55.1          16             230    5850 male   2009
+ 9 Gentoo  Biscoe           49.5          16.2           229    5800 male   2008
+10 Gentoo  Biscoe           49.8          15.9           229    5950 male   2009
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 </div>
@@ -828,7 +848,8 @@
  8           40.5          17.9               187        3200  2007
  9           37.9          18.6               172        3150  2007
 10           40.5          18.9               180        3950  2007
-# … with 334 more rows</code></pre>
+# … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <p>And we can continue that by looking at the data for only male penguins</p>
 <div class="codewrapper sourceCode" id="cb31">
@@ -845,7 +866,7 @@
 </h3>
 <pre class="error" tabindex="0"><code>Error in `filter()`:
 ! Problem while computing `..1 = sex == "male"`.
-Caused by error:
+Caused by error in `mask$eval_all_filter()`:
 ! object 'sex' not found</code></pre>
 </div>
 <p>Whoops! What happened there? Try looking at the error message and see if you can understand it.</p>
@@ -871,7 +892,7 @@ Caused by error:
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -898,7 +919,8 @@ Caused by error:
  8 male  Biscoe           41.4          18.6               191        3700  2008
  9 male  Biscoe           40.6          18.8               193        3800  2008
 10 male  Biscoe           37.6          19.1               194        3750  2008
-# … with 158 more rows</code></pre>
+# … with 158 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -925,7 +947,8 @@ Caused by error:
  8 Biscoe           41.4          18.6               191        3700  2008
  9 Biscoe           40.6          18.8               193        3800  2008
 10 Biscoe           37.6          19.1               194        3750  2008
-# … with 158 more rows</code></pre>
+# … with 158 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 </div>
@@ -960,7 +983,7 @@ Caused by error:
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Try geom_boxplot</p>
 </div>
@@ -974,7 +997,7 @@ Caused by error:
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1046,8 +1069,8 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/04-data-sorting-pipes.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/04-data-sorting-pipes.html",
-  "dateCreated": "2022-07-21",
-  "dateModified": "2022-07-19",
+  "dateCreated": "2022-08-02",
+  "dateModified": "2022-08-02",
   "datePublished": "2022-08-02"
 }
 
