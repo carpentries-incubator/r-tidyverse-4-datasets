@@ -84,6 +84,7 @@ select(penguins, island, species, sex)
  9 Torgersen Adelie  <NA>  
 10 Torgersen Adelie  <NA>  
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 When we use `select()` we don't need to use quotations, we write in the names directly. We can also use the numeric indexes for the column, if we are 100% certain of the order of the columns:
@@ -108,6 +109,7 @@ select(penguins, 1:3, 6)
  9 Adelie  Torgersen           34.1        3475
 10 Adelie  Torgersen           42          4250
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 In some cases, we want to remove columns, and not necessarily state all columns we want to keep. 
@@ -133,6 +135,7 @@ select(penguins, -bill_length_mm, -bill_depth_mm)
  9 Adelie  Torgersen               193        3475 <NA>    2007
 10 Adelie  Torgersen               190        4250 <NA>    2007
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -162,6 +165,7 @@ select(penguins, sex, year, species)
  9 <NA>    2007 Adelie 
 10 <NA>    2007 Adelie 
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -195,6 +199,7 @@ select(penguins, species, sex, year)
  9 Adelie  <NA>    2007
 10 Adelie  <NA>    2007
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 select does not only subset columns, but it can also re-arrange them. The columns appear in the order your selection is specified.
 
@@ -231,6 +236,7 @@ select(penguins, ends_with("mm"))
  9           34.1          18.1               193
 10           42            20.2               190
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 So convenient! There are several other tidy-selectors you can choose, [which you can find here](https://dplyr.tidyverse.org/reference/select.html), but often people resort to three specific ones:
@@ -263,6 +269,7 @@ select(penguins, starts_with("bill"))
  9           34.1          18.1
 10           42            20.2
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 The tidy selector can be combined with each other and other selectors. So you can build exactly the data you want!
@@ -287,6 +294,7 @@ select(penguins, island, species, year, starts_with("bill"))
  9 Torgersen Adelie   2007           34.1          18.1
 10 Torgersen Adelie   2007           42            20.2
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -316,6 +324,7 @@ select(penguins, contains("_"))
  9           34.1          18.1               193        3475
 10           42            20.2               190        4250
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -350,6 +359,7 @@ select(penguins, species, sex, ends_with("mm"))
  9 Adelie  <NA>             34.1          18.1               193
 10 Adelie  <NA>             42            20.2               190
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -383,6 +393,7 @@ select(penguins, -starts_with("bill"))
  9 Adelie  Torgersen               193        3475 <NA>    2007
 10 Adelie  Torgersen               190        4250 <NA>    2007
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -414,6 +425,7 @@ select(penguins, where(is.numeric))
  9           34.1          18.1               193        3475  2007
 10           42            20.2               190        4250  2007
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Magic! Let's break that down. 
@@ -444,19 +456,21 @@ penguins
 
 ```{.output}
 # A tibble: 344 × 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# … with 334 more rows, and 2 more variables: sex <fct>, year <int>
+   species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
+   <fct>   <fct>              <dbl>         <dbl>      <int>   <int> <fct> <int>
+ 1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
+ 2 Adelie  Torgersen           39.5          17.4        186    3800 fema…  2007
+ 3 Adelie  Torgersen           40.3          18          195    3250 fema…  2007
+ 4 Adelie  Torgersen           NA            NA           NA      NA <NA>   2007
+ 5 Adelie  Torgersen           36.7          19.3        193    3450 fema…  2007
+ 6 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
+ 7 Adelie  Torgersen           38.9          17.8        181    3625 fema…  2007
+ 8 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
+ 9 Adelie  Torgersen           34.1          18.1        193    3475 <NA>   2007
+10 Adelie  Torgersen           42            20.2        190    4250 <NA>   2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 The penguins data is stored as a `tibble`, which is a special kind of data set in R that gives a nice print out of the data.
@@ -485,6 +499,7 @@ select(penguins, where(is.numeric))
  9           34.1          18.1               193        3475  2007
 10           42            20.2               190        4250  2007
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -514,6 +529,7 @@ select(penguins, where(is.factor))
  9 Adelie  Torgersen <NA>  
 10 Adelie  Torgersen <NA>  
 # … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -534,19 +550,21 @@ select(penguins, island, species, where(is.numeric))
 
 ```{.output}
 # A tibble: 344 × 7
-   island    species bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   <fct>     <fct>            <dbl>         <dbl>             <int>       <int>
- 1 Torgersen Adelie            39.1          18.7               181        3750
- 2 Torgersen Adelie            39.5          17.4               186        3800
- 3 Torgersen Adelie            40.3          18                 195        3250
- 4 Torgersen Adelie            NA            NA                  NA          NA
- 5 Torgersen Adelie            36.7          19.3               193        3450
- 6 Torgersen Adelie            39.3          20.6               190        3650
- 7 Torgersen Adelie            38.9          17.8               181        3625
- 8 Torgersen Adelie            39.2          19.6               195        4675
- 9 Torgersen Adelie            34.1          18.1               193        3475
-10 Torgersen Adelie            42            20.2               190        4250
-# … with 334 more rows, and 1 more variable: year <int>
+   island    species bill_length_mm bill_depth_mm flipper_length…¹ body_…²  year
+   <fct>     <fct>            <dbl>         <dbl>            <int>   <int> <int>
+ 1 Torgersen Adelie            39.1          18.7              181    3750  2007
+ 2 Torgersen Adelie            39.5          17.4              186    3800  2007
+ 3 Torgersen Adelie            40.3          18                195    3250  2007
+ 4 Torgersen Adelie            NA            NA                 NA      NA  2007
+ 5 Torgersen Adelie            36.7          19.3              193    3450  2007
+ 6 Torgersen Adelie            39.3          20.6              190    3650  2007
+ 7 Torgersen Adelie            38.9          17.8              181    3625  2007
+ 8 Torgersen Adelie            39.2          19.6              195    4675  2007
+ 9 Torgersen Adelie            34.1          18.1              193    3475  2007
+10 Torgersen Adelie            42            20.2              190    4250  2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -574,18 +592,18 @@ filter(penguins, body_mass_g < 3000)
 
 ```{.output}
 # A tibble: 9 × 8
-  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-  <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>
-1 Adelie  Dream            37.5          18.9              179        2975 <NA> 
-2 Adelie  Biscoe           34.5          18.1              187        2900 fema…
-3 Adelie  Biscoe           36.5          16.6              181        2850 fema…
-4 Adelie  Biscoe           36.4          17.1              184        2850 fema…
-5 Adelie  Dream            33.1          16.1              178        2900 fema…
-6 Adelie  Biscoe           37.9          18.6              193        2925 fema…
-7 Adelie  Torge…           38.6          17                188        2900 fema…
-8 Chinst… Dream            43.2          16.6              187        2900 fema…
-9 Chinst… Dream            46.9          16.6              192        2700 fema…
-# … with 1 more variable: year <int>
+  species   island    bill_length_mm bill_depth_mm flipper…¹ body_…² sex    year
+  <fct>     <fct>              <dbl>         <dbl>     <int>   <int> <fct> <int>
+1 Adelie    Dream               37.5          18.9       179    2975 <NA>   2007
+2 Adelie    Biscoe              34.5          18.1       187    2900 fema…  2008
+3 Adelie    Biscoe              36.5          16.6       181    2850 fema…  2008
+4 Adelie    Biscoe              36.4          17.1       184    2850 fema…  2008
+5 Adelie    Dream               33.1          16.1       178    2900 fema…  2008
+6 Adelie    Biscoe              37.9          18.6       193    2925 fema…  2009
+7 Adelie    Torgersen           38.6          17         188    2900 fema…  2009
+8 Chinstrap Dream               43.2          16.6       187    2900 fema…  2007
+9 Chinstrap Dream               46.9          16.6       192    2700 fema…  2008
+# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 Here, we've filtered so that we only have observations where the body mass was less than 3 kilos. 
@@ -598,13 +616,13 @@ filter(penguins, body_mass_g == 2900)
 
 ```{.output}
 # A tibble: 4 × 8
-  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-  <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>
-1 Adelie  Biscoe           34.5          18.1              187        2900 fema…
-2 Adelie  Dream            33.1          16.1              178        2900 fema…
-3 Adelie  Torge…           38.6          17                188        2900 fema…
-4 Chinst… Dream            43.2          16.6              187        2900 fema…
-# … with 1 more variable: year <int>
+  species   island    bill_length_mm bill_depth_mm flipper…¹ body_…² sex    year
+  <fct>     <fct>              <dbl>         <dbl>     <int>   <int> <fct> <int>
+1 Adelie    Biscoe              34.5          18.1       187    2900 fema…  2008
+2 Adelie    Dream               33.1          16.1       178    2900 fema…  2008
+3 Adelie    Torgersen           38.6          17         188    2900 fema…  2009
+4 Chinstrap Dream               43.2          16.6       187    2900 fema…  2007
+# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 What is happening, is that R will check if the values in `body_mass_g` are the same as 2900 (`TRUE`) or not (`FALSE`), and will do this for every row in the data set. Then at the end, it will discard all those that are `FALSE`, and keep those that are `TRUE`.
@@ -624,19 +642,21 @@ filter(penguins, island == "Dream")
 
 ```{.output}
 # A tibble: 124 × 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
- 1 Adelie  Dream            39.5          16.7               178        3250
- 2 Adelie  Dream            37.2          18.1               178        3900
- 3 Adelie  Dream            39.5          17.8               188        3300
- 4 Adelie  Dream            40.9          18.9               184        3900
- 5 Adelie  Dream            36.4          17                 195        3325
- 6 Adelie  Dream            39.2          21.1               196        4150
- 7 Adelie  Dream            38.8          20                 190        3950
- 8 Adelie  Dream            42.2          18.5               180        3550
- 9 Adelie  Dream            37.6          19.3               181        3300
-10 Adelie  Dream            39.8          19.1               184        4650
-# … with 114 more rows, and 2 more variables: sex <fct>, year <int>
+   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
+   <fct>   <fct>           <dbl>         <dbl>         <int>   <int> <fct> <int>
+ 1 Adelie  Dream            39.5          16.7           178    3250 fema…  2007
+ 2 Adelie  Dream            37.2          18.1           178    3900 male   2007
+ 3 Adelie  Dream            39.5          17.8           188    3300 fema…  2007
+ 4 Adelie  Dream            40.9          18.9           184    3900 male   2007
+ 5 Adelie  Dream            36.4          17             195    3325 fema…  2007
+ 6 Adelie  Dream            39.2          21.1           196    4150 male   2007
+ 7 Adelie  Dream            38.8          20             190    3950 male   2007
+ 8 Adelie  Dream            42.2          18.5           180    3550 fema…  2007
+ 9 Adelie  Dream            37.6          19.3           181    3300 fema…  2007
+10 Adelie  Dream            39.8          19.1           184    4650 male   2007
+# … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -656,19 +676,21 @@ filter(penguins, year >= 2008)
 
 ```{.output}
 # A tibble: 234 × 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
- 1 Adelie  Biscoe           39.6          17.7               186        3500
- 2 Adelie  Biscoe           40.1          18.9               188        4300
- 3 Adelie  Biscoe           35            17.9               190        3450
- 4 Adelie  Biscoe           42            19.5               200        4050
- 5 Adelie  Biscoe           34.5          18.1               187        2900
- 6 Adelie  Biscoe           41.4          18.6               191        3700
- 7 Adelie  Biscoe           39            17.5               186        3550
- 8 Adelie  Biscoe           40.6          18.8               193        3800
- 9 Adelie  Biscoe           36.5          16.6               181        2850
-10 Adelie  Biscoe           37.6          19.1               194        3750
-# … with 224 more rows, and 2 more variables: sex <fct>, year <int>
+   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
+   <fct>   <fct>           <dbl>         <dbl>         <int>   <int> <fct> <int>
+ 1 Adelie  Biscoe           39.6          17.7           186    3500 fema…  2008
+ 2 Adelie  Biscoe           40.1          18.9           188    4300 male   2008
+ 3 Adelie  Biscoe           35            17.9           190    3450 fema…  2008
+ 4 Adelie  Biscoe           42            19.5           200    4050 male   2008
+ 5 Adelie  Biscoe           34.5          18.1           187    2900 fema…  2008
+ 6 Adelie  Biscoe           41.4          18.6           191    3700 male   2008
+ 7 Adelie  Biscoe           39            17.5           186    3550 fema…  2008
+ 8 Adelie  Biscoe           40.6          18.8           193    3800 male   2008
+ 9 Adelie  Biscoe           36.5          16.6           181    2850 fema…  2008
+10 Adelie  Biscoe           37.6          19.1           194    3750 male   2008
+# … with 224 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -688,11 +710,11 @@ filter(penguins,
 
 ```{.output}
 # A tibble: 2 × 8
-  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-  <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>
-1 Chinst… Dream            43.2          16.6              187        2900 fema…
-2 Chinst… Dream            46.9          16.6              192        2700 fema…
-# … with 1 more variable: year <int>
+  species   island bill_length_mm bill_depth_mm flipper_le…¹ body_…² sex    year
+  <fct>     <fct>           <dbl>         <dbl>        <int>   <int> <fct> <int>
+1 Chinstrap Dream            43.2          16.6          187    2900 fema…  2007
+2 Chinstrap Dream            46.9          16.6          192    2700 fema…  2008
+# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 You can also use the `&` sign, which in R is the comparison character for 'and', like `==` is for 'equals'.
@@ -705,11 +727,11 @@ filter(penguins,
 
 ```{.output}
 # A tibble: 2 × 8
-  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
-  <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>
-1 Chinst… Dream            43.2          16.6              187        2900 fema…
-2 Chinst… Dream            46.9          16.6              192        2700 fema…
-# … with 1 more variable: year <int>
+  species   island bill_length_mm bill_depth_mm flipper_le…¹ body_…² sex    year
+  <fct>     <fct>           <dbl>         <dbl>        <int>   <int> <fct> <int>
+1 Chinstrap Dream            43.2          16.6          187    2900 fema…  2007
+2 Chinstrap Dream            46.9          16.6          192    2700 fema…  2008
+# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
 ```
 
 Here we are filtering the penguins data set keeping only the species "Chinstrap" **and** those below 3.5 kilos.
@@ -728,6 +750,7 @@ filter(penguins,
 # … with 8 variables: species <fct>, island <fct>, bill_length_mm <dbl>,
 #   bill_depth_mm <dbl>, flipper_length_mm <int>, body_mass_g <int>, sex <fct>,
 #   year <int>
+# ℹ Use `colnames()` to see all variable names
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -746,19 +769,21 @@ filter(penguins,
 
 ```{.output}
 # A tibble: 124 × 8
-   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
- 1 Adelie  Biscoe           39.6          17.7               186        3500
- 2 Adelie  Biscoe           40.1          18.9               188        4300
- 3 Adelie  Biscoe           35            17.9               190        3450
- 4 Adelie  Biscoe           42            19.5               200        4050
- 5 Adelie  Biscoe           34.5          18.1               187        2900
- 6 Adelie  Biscoe           41.4          18.6               191        3700
- 7 Adelie  Biscoe           39            17.5               186        3550
- 8 Adelie  Biscoe           40.6          18.8               193        3800
- 9 Adelie  Biscoe           36.5          16.6               181        2850
-10 Adelie  Biscoe           37.6          19.1               194        3750
-# … with 114 more rows, and 2 more variables: sex <fct>, year <int>
+   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
+   <fct>   <fct>           <dbl>         <dbl>         <int>   <int> <fct> <int>
+ 1 Adelie  Biscoe           39.6          17.7           186    3500 fema…  2008
+ 2 Adelie  Biscoe           40.1          18.9           188    4300 male   2008
+ 3 Adelie  Biscoe           35            17.9           190    3450 fema…  2008
+ 4 Adelie  Biscoe           42            19.5           200    4050 male   2008
+ 5 Adelie  Biscoe           34.5          18.1           187    2900 fema…  2008
+ 6 Adelie  Biscoe           41.4          18.6           191    3700 male   2008
+ 7 Adelie  Biscoe           39            17.5           186    3550 fema…  2008
+ 8 Adelie  Biscoe           40.6          18.8           193    3800 male   2008
+ 9 Adelie  Biscoe           36.5          16.6           181    2850 fema…  2008
+10 Adelie  Biscoe           37.6          19.1           194    3750 male   2008
+# … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -780,19 +805,21 @@ filter(penguins,
 
 ```{.output}
 # A tibble: 34 × 8
-   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
- 1 Chinstrap Dream            50            19.5               196        3900
- 2 Chinstrap Dream            51.3          19.2               193        3650
- 3 Chinstrap Dream            52.7          19.8               197        3725
- 4 Chinstrap Dream            51.3          18.2               197        3750
- 5 Chinstrap Dream            51.3          19.9               198        3700
- 6 Chinstrap Dream            51.7          20.3               194        3775
- 7 Chinstrap Dream            52            18.1               201        4050
- 8 Chinstrap Dream            50.5          19.6               201        4050
- 9 Chinstrap Dream            50.3          20                 197        3300
-10 Chinstrap Dream            49.2          18.2               195        4400
-# … with 24 more rows, and 2 more variables: sex <fct>, year <int>
+   species   island bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year
+   <fct>     <fct>           <dbl>         <dbl>       <int>   <int> <fct> <int>
+ 1 Chinstrap Dream            50            19.5         196    3900 male   2007
+ 2 Chinstrap Dream            51.3          19.2         193    3650 male   2007
+ 3 Chinstrap Dream            52.7          19.8         197    3725 male   2007
+ 4 Chinstrap Dream            51.3          18.2         197    3750 male   2007
+ 5 Chinstrap Dream            51.3          19.9         198    3700 male   2007
+ 6 Chinstrap Dream            51.7          20.3         194    3775 male   2007
+ 7 Chinstrap Dream            52            18.1         201    4050 male   2007
+ 8 Chinstrap Dream            50.5          19.6         201    4050 male   2007
+ 9 Chinstrap Dream            50.3          20           197    3300 male   2007
+10 Chinstrap Dream            49.2          18.2         195    4400 male   2007
+# … with 24 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -811,19 +838,21 @@ filter(penguins,
 
 ```{.output}
 # A tibble: 75 × 8
-   species   island    bill_length_mm bill_depth_mm flipper_length_… body_mass_g
-   <fct>     <fct>              <dbl>         <dbl>            <int>       <int>
- 1 Adelie    Dream               37.5          18.9              179        2975
- 2 Adelie    Biscoe              34.5          18.1              187        2900
- 3 Adelie    Biscoe              36.5          16.6              181        2850
- 4 Adelie    Biscoe              36.4          17.1              184        2850
- 5 Adelie    Dream               33.1          16.1              178        2900
- 6 Adelie    Biscoe              37.9          18.6              193        2925
- 7 Adelie    Torgersen           38.6          17                188        2900
- 8 Chinstrap Dream               46.5          17.9              192        3500
- 9 Chinstrap Dream               50            19.5              196        3900
-10 Chinstrap Dream               51.3          19.2              193        3650
-# … with 65 more rows, and 2 more variables: sex <fct>, year <int>
+   species   island    bill_length_mm bill_depth_mm flippe…¹ body_…² sex    year
+   <fct>     <fct>              <dbl>         <dbl>    <int>   <int> <fct> <int>
+ 1 Adelie    Dream               37.5          18.9      179    2975 <NA>   2007
+ 2 Adelie    Biscoe              34.5          18.1      187    2900 fema…  2008
+ 3 Adelie    Biscoe              36.5          16.6      181    2850 fema…  2008
+ 4 Adelie    Biscoe              36.4          17.1      184    2850 fema…  2008
+ 5 Adelie    Dream               33.1          16.1      178    2900 fema…  2008
+ 6 Adelie    Biscoe              37.9          18.6      193    2925 fema…  2009
+ 7 Adelie    Torgersen           38.6          17        188    2900 fema…  2009
+ 8 Chinstrap Dream               46.5          17.9      192    3500 fema…  2007
+ 9 Chinstrap Dream               50            19.5      196    3900 male   2007
+10 Chinstrap Dream               51.3          19.2      193    3650 male   2007
+# … with 65 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 This now gives us both all chinstrap penguins, and the smallest Adelie penguins!
@@ -845,19 +874,21 @@ filter(penguins,
 
 ```{.output}
 # A tibble: 202 × 8
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.3          20.6               190        3650
- 3 Adelie  Torgersen           39.2          19.6               195        4675
- 4 Adelie  Torgersen           38.6          21.2               191        3800
- 5 Adelie  Torgersen           34.6          21.1               198        4400
- 6 Adelie  Torgersen           42.5          20.7               197        4500
- 7 Adelie  Torgersen           46            21.5               194        4200
- 8 Adelie  Biscoe              37.7          18.7               180        3600
- 9 Adelie  Biscoe              38.2          18.1               185        3950
-10 Adelie  Biscoe              38.8          17.2               180        3800
-# … with 192 more rows, and 2 more variables: sex <fct>, year <int>
+   species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
+   <fct>   <fct>              <dbl>         <dbl>      <int>   <int> <fct> <int>
+ 1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
+ 2 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
+ 3 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
+ 4 Adelie  Torgersen           38.6          21.2        191    3800 male   2007
+ 5 Adelie  Torgersen           34.6          21.1        198    4400 male   2007
+ 6 Adelie  Torgersen           42.5          20.7        197    4500 male   2007
+ 7 Adelie  Torgersen           46            21.5        194    4200 male   2007
+ 8 Adelie  Biscoe              37.7          18.7        180    3600 male   2007
+ 9 Adelie  Biscoe              38.2          18.1        185    3950 male   2007
+10 Adelie  Biscoe              38.8          17.2        180    3800 male   2007
+# … with 192 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 

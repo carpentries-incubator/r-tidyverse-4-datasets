@@ -54,6 +54,7 @@ penguins |>
  9 Adelie  Torgersen female  2007 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
 # … with 1,366 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 We've done this before, why is it a clue now? Now that we have learned grouping and summarising, 
@@ -492,6 +493,7 @@ penguins_sum
  9 bill_depth_mm Adelie    Torgersen  2009  18.0 1.20   15.9  20.5    16
 10 bill_depth_mm Chinstrap Dream      2007  18.5 1.00   16.6  20.3    26
 # … with 50 more rows
+# ℹ Use `print(n = ...)` to see more rows
 ```
 
 And then let us re-create our last plot with this new summary table.
