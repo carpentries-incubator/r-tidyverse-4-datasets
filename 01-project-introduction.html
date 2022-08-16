@@ -330,7 +330,8 @@
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Keypoints</h3>
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#NA"></a>
+</h3>
 <div class="callout-content">
 <ul><li>Use RStudio to write and run R programs.</li>
 <li>Create and start an R-project</li>
@@ -339,15 +340,18 @@
 </ul></div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width"><p>Working with data can often be challenging. Data are rarely in the shape and format that is most convenient for your end product. Everyone working with data knows that there is a lot of work that goes into altering the data to make sure you can explore and highlight the interesting aspects of it. In this lesson, we will use the dataset from the <a href="https://allisonhorst.github.io/palmerpenguins/" class="external-link">palmerpenguins</a> R-package, which contains observational data on arctic penguins. Data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php" class="external-link">Dr. Kristen Gorman</a> and the <a href="https://pal.lternet.edu/" class="external-link">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/" class="external-link">Long Term Ecological Research Network</a>. This lesson focuses on using the <a href="https://www.tidyverse.org/" class="external-link">tidyverse</a> packages, a opinionated collection of packages that are tailored to the needs of data scientists. Can you organise your project in an orderly fashion and access all the files? Can you navigate a dataset in R? Can you add columns and change column names? Can you efficiently summarise the data? Can you create visualizations to show key aspects of the data? At the end of this lesson, you should be able to do al these things!</p>
-</section><section id="before-starting-the-workshop"><h2 class="section-heading">Before Starting The Workshop</h2>
+</section><section id="before-starting-the-workshop"><h2 class="section-heading">Before Starting The Workshop<a class="anchor" aria-label="anchor" href="#before-starting-the-workshop"></a>
+</h2>
 <hr class="half-width"><p>Please ensure you have the latest version of R and RStudio installed on your machine. This is important, as some packages used in the workshop may not install correctly (or at all) if R is not up to date.</p>
 <ul><li><a href="https://www.r-project.org/" class="external-link">Download and install the latest version of R here</a></li>
 <li><a href="https://www.rstudio.com/" class="external-link">Download and install RStudio here</a></li>
 <li>If you are on a windows computer, also download and install <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link">RTools</a>
 </li>
-</ul></section><section id="introduction-to-rstudio"><h2 class="section-heading">Introduction to RStudio</h2>
+</ul></section><section id="introduction-to-rstudio"><h2 class="section-heading">Introduction to RStudio<a class="anchor" aria-label="anchor" href="#introduction-to-rstudio"></a>
+</h2>
 <hr class="half-width"><p>Welcome to the R portion of the Software Carpentry workshop.</p>
 <p>Throughout this lesson, we’re going to teach you some of the best-practice ways of working with data and projects using the tidyverse framework for R.</p>
 <p>We’ll be using RStudio: a free, open source R Integrated Development Environment (IDE). It provides a built in editor, works on all platforms (including on servers) and provides many advantages such as integration with version control and project management.</p>
@@ -357,7 +361,8 @@
 <li>Environment/History/Connections (tabbed in upper right)<br></li>
 <li>Files/Plots/Packages/Help/Viewer (tabbed in lower right)</li>
 </ul><figure><img src="fig/01-rstudio.png" title="RStudio layout with three default panes" alt="RStudio layout with three default panes" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Once you open files, such as R scripts, an editor panel will also open in the top left.</p>
-<figure><img src="fig/01-rstudio-script.png" title="RStudio 4-pane layout with .R file open" alt="RStudio 4-pane layout with .R file open" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="work-flow-within-rstudio"><h2 class="section-heading">Work flow within RStudio</h2>
+<figure><img src="fig/01-rstudio-script.png" title="RStudio 4-pane layout with .R file open" alt="RStudio 4-pane layout with .R file open" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="work-flow-within-rstudio"><h2 class="section-heading">Work flow within RStudio<a class="anchor" aria-label="anchor" href="#work-flow-within-rstudio"></a>
+</h2>
 <hr class="half-width"><p>There are two main ways one can work within RStudio:</p>
 <ol style="list-style-type: decimal"><li>Test and play within the interactive R console then copy code into a .R file to run later.
 <ul><li>This works well when doing small tests and initially starting off.</li>
@@ -372,7 +377,8 @@
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="tip-running-segments-of-your-code" class="callout-inner">
-<h3 class="callout-title">Tip: Running segments of your code</h3>
+<h3 class="callout-title">Tip: Running segments of your code<a class="anchor" aria-label="anchor" href="#tip-running-segments-of-your-code"></a>
+</h3>
 <div class="callout-content">
 <p>RStudio offers you great flexibility in running code from within the editor window. There are buttons, menu choices, and keyboard shortcuts. To run the current line, you can:<br>
 1. click on the <code>Run</code> button above the editor panel, or<br>
@@ -382,10 +388,12 @@
 </div>
 </div>
 </div>
-</section><section id="introduction-to-r"><h2 class="section-heading">Introduction to R</h2>
+</section><section id="introduction-to-r"><h2 class="section-heading">Introduction to R<a class="anchor" aria-label="anchor" href="#introduction-to-r"></a>
+</h2>
 <hr class="half-width"><p>Much of your time in R will be spent in the R interactive console. This is where you will run all of your code, and can be a useful environment to try out ideas before adding them to an R script file. This console in RStudio is the same as the one you would get if you typed in <code>R</code> in your command-line environment.</p>
 <p>The first thing you will see in the R interactive session is a bunch of information, followed by a “&gt;” and a blinking cursor. In many ways this is similar to the shell environment you learned about during the shell lessons: it operates on the same idea of a “Read, evaluate, print loop”: you type in commands, R tries to execute them, and then returns a result.</p>
-</section><section id="using-r-projects"><h2 class="section-heading">Using R-projects</h2>
+</section><section id="using-r-projects"><h2 class="section-heading">Using R-projects<a class="anchor" aria-label="anchor" href="#using-r-projects"></a>
+</h2>
 <hr class="half-width"><p>Any data analysis process is naturally incremental, and many projects start life as random notes, some code, then a manuscript, and eventually everything is a bit mixed together.</p>
 <blockquote class="twitter-tweet">
 <p>
@@ -403,7 +411,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <li>It makes it simpler to share your code with someone else (a lab-mate, collaborator, or supervisor);</li>
 <li>It allows you to easily upload your code with your manuscript submission;</li>
 <li>It makes it easier to pick the project back up after a break.</li>
-</ul></section><section id="a-possible-solution"><h2 class="section-heading">A possible solution</h2>
+</ul></section><section id="a-possible-solution"><h2 class="section-heading">A possible solution<a class="anchor" aria-label="anchor" href="#a-possible-solution"></a>
+</h2>
 <hr class="half-width"><p>Fortunately, there are tools and packages which can help you manage your work effectively.</p>
 <p>One of the most powerful and useful aspects of RStudio is its project management functionality. We’ll be using this today to create a self-contained, reproducible project.</p>
 <div id="discussion1" class="callout discussion">
@@ -411,7 +420,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-1-creating-a-self-contained-project" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Creating a self-contained project</h3>
+<h3 class="callout-title">Challenge 1: Creating a self-contained project<a class="anchor" aria-label="anchor" href="#challenge-1-creating-a-self-contained-project"></a>
+</h3>
 <div class="callout-content">
 <p>We’re going to create a new project in RStudio:</p>
 <ol style="list-style-type: decimal"><li>Click the “File” menu button, then “New Project”.<br></li>
@@ -429,7 +439,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-2-opening-an-rstudio-project-through-the-file-system" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Opening an RStudio project through the file system</h3>
+<h3 class="callout-title">Challenge 2: Opening an RStudio project through the file system<a class="anchor" aria-label="anchor" href="#challenge-2-opening-an-rstudio-project-through-the-file-system"></a>
+</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>Exit RStudio.<br></li>
 <li>Navigate to the directory where you created a project in Challenge 1.<br></li>
@@ -437,7 +448,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 </ol></div>
 </div>
 </div>
-</section><section id="best-practices-for-project-organization"><h2 class="section-heading">Best practices for project organization</h2>
+</section><section id="best-practices-for-project-organization"><h2 class="section-heading">Best practices for project organization<a class="anchor" aria-label="anchor" href="#best-practices-for-project-organization"></a>
+</h2>
 <hr class="half-width"><p>Although there is no “best” way to lay out a project, there are some general principles to adhere to that will make project management easier:</p>
 <div class="section level3">
 <h3 id="treat-data-as-read-only">Treat data as read only<a class="anchor" aria-label="anchor" href="#treat-data-as-read-only"></a></h3>
@@ -456,7 +468,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="tip-good-enough-practices-for-scientific-computing" class="callout-inner">
-<h3 class="callout-title">Tip: Good Enough Practices for Scientific Computing</h3>
+<h3 class="callout-title">Tip: Good Enough Practices for Scientific Computing<a class="anchor" aria-label="anchor" href="#tip-good-enough-practices-for-scientific-computing"></a>
+</h3>
 <div class="callout-content">
 <p><a href="https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf" class="external-link">Good Enough Practices for Scientific computing</a> gives the following recommendations for project organization:</p>
 <ol style="list-style-type: decimal"><li>Put each project in its own directory, which is named after the project.<br></li>
@@ -477,7 +490,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Set up your project folders. For this workshop we will need folders for data, results and scripts.</p>
 <ol style="list-style-type: decimal"><li>In the bottom right pane of RStudio, click on “Files”.</li>
@@ -493,7 +507,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Download the palmer penguins data and place it in uyour <code>data</code> folder, calling it <code>penguins.csv</code></p>
 <ol style="list-style-type: decimal"><li>Go to <a href="https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv" class="external-link">the raw palmer penguins data</a>
@@ -510,7 +525,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="tip-command-line-in-rstudio" class="callout-inner">
-<h3 class="callout-title">Tip: command line in RStudio</h3>
+<h3 class="callout-title">Tip: command line in RStudio<a class="anchor" aria-label="anchor" href="#tip-command-line-in-rstudio"></a>
+</h3>
 <div class="callout-content">
 <p>The Terminal tab in the console pane provides a convenient place directly within RStudio to interact directly with the command line.</p>
 </div>
@@ -550,9 +566,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.9.0)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish" class="external-link">varnish (0.2.3)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.9.3" class="external-link">sandpaper (0.9.3)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.3.1)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -574,7 +590,7 @@ any links that you are not going to use.
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/01-project-introduction.html",
   "dateCreated": "2022-08-02",
   "dateModified": "2022-08-02",
-  "datePublished": "2022-08-09"
+  "datePublished": "2022-08-16"
 }
 
   </script><script>

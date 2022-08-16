@@ -378,7 +378,8 @@
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Keypoints</h3>
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#NA"></a>
+</h3>
 <div class="callout-content">
 <ul>
 <li>Use RStudio to write and run R programs.</li>
@@ -389,10 +390,12 @@
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width">
 <p>Working with data can often be challenging. Data are rarely in the shape and format that is most convenient for your end product. Everyone working with data knows that there is a lot of work that goes into altering the data to make sure you can explore and highlight the interesting aspects of it. In this lesson, we will use the dataset from the <a href="https://allisonhorst.github.io/palmerpenguins/" class="external-link">palmerpenguins</a> R-package, which contains observational data on arctic penguins. Data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php" class="external-link">Dr. Kristen Gorman</a> and the <a href="https://pal.lternet.edu/" class="external-link">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/" class="external-link">Long Term Ecological Research Network</a>. This lesson focuses on using the <a href="https://www.tidyverse.org/" class="external-link">tidyverse</a> packages, a opinionated collection of packages that are tailored to the needs of data scientists. Can you organise your project in an orderly fashion and access all the files? Can you navigate a dataset in R? Can you add columns and change column names? Can you efficiently summarise the data? Can you create visualizations to show key aspects of the data? At the end of this lesson, you should be able to do al these things!</p>
-</section><section id="before-starting-the-workshop"><h2 class="section-heading">Before Starting The Workshop</h2>
+</section><section id="before-starting-the-workshop"><h2 class="section-heading">Before Starting The Workshop<a class="anchor" aria-label="anchor" href="#before-starting-the-workshop"></a>
+</h2>
 <hr class="half-width">
 <p>Please ensure you have the latest version of R and RStudio installed on your machine. This is important, as some packages used in the workshop may not install correctly (or at all) if R is not up to date.</p>
 <ul>
@@ -400,7 +403,8 @@
 <li><a href="https://www.rstudio.com/" class="external-link">Download and install RStudio here</a></li>
 <li>If you are on a windows computer, also download and install <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link">RTools</a>
 </li>
-</ul></section><section id="introduction-to-rstudio"><h2 class="section-heading">Introduction to RStudio</h2>
+</ul></section><section id="introduction-to-rstudio"><h2 class="section-heading">Introduction to RStudio<a class="anchor" aria-label="anchor" href="#introduction-to-rstudio"></a>
+</h2>
 <hr class="half-width">
 <p>Welcome to the R portion of the Software Carpentry workshop.</p>
 <p>Throughout this lesson, we’re going to teach you some of the best-practice ways of working with data and projects using the tidyverse framework for R.</p>
@@ -415,7 +419,8 @@
 <li>Files/Plots/Packages/Help/Viewer (tabbed in lower right)</li>
 </ul>
 <figure><img src="../fig/01-rstudio.png" title="RStudio layout with three default panes" alt="RStudio layout with three default panes" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Once you open files, such as R scripts, an editor panel will also open in the top left.</p>
-<figure><img src="../fig/01-rstudio-script.png" title="RStudio 4-pane layout with .R file open" alt="RStudio 4-pane layout with .R file open" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="work-flow-within-rstudio"><h2 class="section-heading">Work flow within RStudio</h2>
+<figure><img src="../fig/01-rstudio-script.png" title="RStudio 4-pane layout with .R file open" alt="RStudio 4-pane layout with .R file open" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="work-flow-within-rstudio"><h2 class="section-heading">Work flow within RStudio<a class="anchor" aria-label="anchor" href="#work-flow-within-rstudio"></a>
+</h2>
 <hr class="half-width">
 <p>There are two main ways one can work within RStudio:</p>
 <ol style="list-style-type: decimal">
@@ -437,7 +442,8 @@
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="tip-running-segments-of-your-code" class="callout-inner">
-<h3 class="callout-title">Tip: Running segments of your code</h3>
+<h3 class="callout-title">Tip: Running segments of your code<a class="anchor" aria-label="anchor" href="#tip-running-segments-of-your-code"></a>
+</h3>
 <div class="callout-content">
 <p>RStudio offers you great flexibility in running code from within the editor window. There are buttons, menu choices, and keyboard shortcuts. To run the current line, you can:<br>
 1. click on the <code>Run</code> button above the editor panel, or<br>
@@ -447,11 +453,13 @@
 </div>
 </div>
 </div>
-</section><section id="introduction-to-r"><h2 class="section-heading">Introduction to R</h2>
+</section><section id="introduction-to-r"><h2 class="section-heading">Introduction to R<a class="anchor" aria-label="anchor" href="#introduction-to-r"></a>
+</h2>
 <hr class="half-width">
 <p>Much of your time in R will be spent in the R interactive console. This is where you will run all of your code, and can be a useful environment to try out ideas before adding them to an R script file. This console in RStudio is the same as the one you would get if you typed in <code>R</code> in your command-line environment.</p>
 <p>The first thing you will see in the R interactive session is a bunch of information, followed by a “&gt;” and a blinking cursor. In many ways this is similar to the shell environment you learned about during the shell lessons: it operates on the same idea of a “Read, evaluate, print loop”: you type in commands, R tries to execute them, and then returns a result.</p>
-</section><section id="using-r-projects"><h2 class="section-heading">Using R-projects</h2>
+</section><section id="using-r-projects"><h2 class="section-heading">Using R-projects<a class="anchor" aria-label="anchor" href="#using-r-projects"></a>
+</h2>
 <hr class="half-width">
 <p>Any data analysis process is naturally incremental, and many projects start life as random notes, some code, then a manuscript, and eventually everything is a bit mixed together.</p>
 <blockquote class="twitter-tweet">
@@ -473,7 +481,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <li>It makes it simpler to share your code with someone else (a lab-mate, collaborator, or supervisor);</li>
 <li>It allows you to easily upload your code with your manuscript submission;</li>
 <li>It makes it easier to pick the project back up after a break.</li>
-</ul></section><section id="a-possible-solution"><h2 class="section-heading">A possible solution</h2>
+</ul></section><section id="a-possible-solution"><h2 class="section-heading">A possible solution<a class="anchor" aria-label="anchor" href="#a-possible-solution"></a>
+</h2>
 <hr class="half-width">
 <p>Fortunately, there are tools and packages which can help you manage your work effectively.</p>
 <p>One of the most powerful and useful aspects of RStudio is its project management functionality. We’ll be using this today to create a self-contained, reproducible project.</p>
@@ -482,7 +491,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-1-creating-a-self-contained-project" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Creating a self-contained project</h3>
+<h3 class="callout-title">Challenge 1: Creating a self-contained project<a class="anchor" aria-label="anchor" href="#challenge-1-creating-a-self-contained-project"></a>
+</h3>
 <div class="callout-content">
 <p>We’re going to create a new project in RStudio:</p>
 <ol style="list-style-type: decimal">
@@ -508,7 +518,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-2-opening-an-rstudio-project-through-the-file-system" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Opening an RStudio project through the file system</h3>
+<h3 class="callout-title">Challenge 2: Opening an RStudio project through the file system<a class="anchor" aria-label="anchor" href="#challenge-2-opening-an-rstudio-project-through-the-file-system"></a>
+</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
 <li>Exit RStudio.<br>
@@ -521,7 +532,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 </div>
 </div>
 </div>
-</section><section id="best-practices-for-project-organization"><h2 class="section-heading">Best practices for project organization</h2>
+</section><section id="best-practices-for-project-organization"><h2 class="section-heading">Best practices for project organization<a class="anchor" aria-label="anchor" href="#best-practices-for-project-organization"></a>
+</h2>
 <hr class="half-width">
 <p>Although there is no “best” way to lay out a project, there are some general principles to adhere to that will make project management easier:</p>
 <div class="section level3">
@@ -544,7 +556,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="tip-good-enough-practices-for-scientific-computing" class="callout-inner">
-<h3 class="callout-title">Tip: Good Enough Practices for Scientific Computing</h3>
+<h3 class="callout-title">Tip: Good Enough Practices for Scientific Computing<a class="anchor" aria-label="anchor" href="#tip-good-enough-practices-for-scientific-computing"></a>
+</h3>
 <div class="callout-content">
 <p><a href="https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf" class="external-link">Good Enough Practices for Scientific computing</a> gives the following recommendations for project organization:</p>
 <ol style="list-style-type: decimal">
@@ -572,7 +585,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Set up your project folders. For this workshop we will need folders for data, results and scripts.</p>
 <ol style="list-style-type: decimal">
@@ -590,7 +604,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Download the palmer penguins data and place it in uyour <code>data</code> folder, calling it <code>penguins.csv</code></p>
 <ol style="list-style-type: decimal">
@@ -609,7 +624,8 @@ Managing your projects in a reproducible fashion doesn’t just make your scienc
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="tip-command-line-in-rstudio" class="callout-inner">
-<h3 class="callout-title">Tip: command line in RStudio</h3>
+<h3 class="callout-title">Tip: command line in RStudio<a class="anchor" aria-label="anchor" href="#tip-command-line-in-rstudio"></a>
+</h3>
 <div class="callout-content">
 <p>The Terminal tab in the console pane provides a convenient place directly within RStudio to interact directly with the command line.</p>
 </div>
@@ -666,7 +682,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Keypoints</h3>
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#NA"></a>
+</h3>
 <div class="callout-content">
 <ul>
 <li>Read data into R</li>
@@ -675,12 +692,14 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width">
 <p>Plotting the data is one of the best ways to quickly explore it and generate hypotheses about various relationships between variables.</p>
 <p>There are several plotting systems in R, but today we will focus on <code>ggplot2</code> which implements <strong>grammar of graphics</strong> - a coherent system for describing components that constitute visual representation of data. For more information regarding principles and thinking behind <code>ggplot2</code> graphic system, please refer to <a href="https://vita.had.co.nz/papers/layered-grammar.pdf" class="external-link">Layered grammar of graphics</a> by Hadley Wickham (<span class="citation">@hadleywickham</span>).</p>
 <p>The advantage of <code>ggplot2</code> is that it allows R users to create publication quality graphics with a few lines of code. <code>ggplot2</code> has a large user base and is constantly developed and extended by the community.</p>
-</section><section id="getting-data-into-r"><h2 class="section-heading">Getting data into R</h2>
+</section><section id="getting-data-into-r"><h2 class="section-heading">Getting data into R<a class="anchor" aria-label="anchor" href="#getting-data-into-r"></a>
+</h2>
 <hr class="half-width">
 <p>We will start by reading the data into R, from the <code>data</code> folder you placed them in the last part of the introduction.</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -696,7 +715,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div id="tip-we-can-inspect-the-data-in-several-ways" class="callout-inner">
-<h3 class="callout-title">Tip: We can inspect the data in several ways</h3>
+<h3 class="callout-title">Tip: We can inspect the data in several ways<a class="anchor" aria-label="anchor" href="#tip-we-can-inspect-the-data-in-several-ways"></a>
+</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
 <li>Click the data name in the Environment, and the data opens as a tab in the scripts pane.<br>
@@ -727,7 +747,8 @@ any links that you are not going to use.
 <strong>sex</strong>: penguin sex</li>
 <li>
 <strong>year</strong>: year of observation</li>
-</ul></section><section id="introduction-to-ggplot2"><h2 class="section-heading">Introduction to ggplot2</h2>
+</ul></section><section id="introduction-to-ggplot2"><h2 class="section-heading">Introduction to ggplot2<a class="anchor" aria-label="anchor" href="#introduction-to-ggplot2"></a>
+</h2>
 <hr class="half-width">
 <p><code>ggplot2</code> is a core member of <code>tidyverse</code> family of packages. Installing and loading the package under the same name will load all of the packages we will need for this workshop. Lets get started!</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -764,7 +785,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1a" class="callout-inner">
-<h3 class="callout-title">Challenge 1a</h3>
+<h3 class="callout-title">Challenge 1a<a class="anchor" aria-label="anchor" href="#challenge-1a"></a>
+</h3>
 <div class="callout-content">
 <p>How has bill length changed over time? What do you observe?</p>
 </div>
@@ -777,7 +799,7 @@ any links that you are not going to use.
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>The* <code>penguins</code> *dataset has a column called <code>year</code>, which should appear on the x-axis.</p>
 </div>
@@ -791,7 +813,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -813,7 +835,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1b" class="callout-inner">
-<h3 class="callout-title">Challenge 1b</h3>
+<h3 class="callout-title">Challenge 1b<a class="anchor" aria-label="anchor" href="#challenge-1b"></a>
+</h3>
 <div class="callout-content">
 <p>Try a different <code>geom_</code> function called <code>geom_jitter</code>. How is that different from <code>geom_point</code>?</p>
 </div>
@@ -826,7 +849,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -843,7 +866,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="mapping-data"><h2 class="section-heading">Mapping data</h2>
+</section><section id="mapping-data"><h2 class="section-heading">Mapping data<a class="anchor" aria-label="anchor" href="#mapping-data"></a>
+</h2>
 <hr class="half-width">
 <p>What if we want to combine graphs from the previous two challenges and show the relationship between three variables in the same graph? Turns out, we don’t necessarily need to use third geometrical dimension, we can employ colour.</p>
 <p>The following graph maps <code>island</code> variable from <code>penguins</code> dataset to the <code>colour</code> aesthetic of the plot. Let’s take a look:</p>
@@ -863,7 +887,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>What will happen if you switch colour to also be by year? Is the graph still useful? Why or why not? What is the difference in the plot between when you colour by island and when you colour by year?</p>
 </div>
@@ -876,7 +901,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -942,7 +967,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Change the transparency (alpha) of the data points by year.</p>
 </div>
@@ -955,7 +981,7 @@ any links that you are not going to use.
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
 <p><code>alpha</code> takes a value from 0 (transparent) to 1 (solid).</p>
 </div>
@@ -969,7 +995,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -992,7 +1018,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Move the transparency outside the <code>aes()</code> and set it to <code>0.5</code>. What can we benefit of each one of these methods?</p>
 </div>
@@ -1005,7 +1032,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1088,7 +1115,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5</h3>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+</h3>
 <div class="callout-content">
 <p>Modify the plot so the the points are coloured by island, but there is a single regression line.</p>
 </div>
@@ -1101,7 +1129,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1126,7 +1154,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
+</h3>
 <div class="callout-content">
 <p>Add a regression line to the plot that plots one line for each species, while also plotting one across all species.</p>
 </div>
@@ -1139,7 +1168,7 @@ any links that you are not going to use.
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
 <div class="accordion-body">
 <p>Add another geom!</p>
 </div>
@@ -1153,7 +1182,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1219,7 +1248,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7</h3>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
+</h3>
 <div class="callout-content">
 <p>To the plot we just made before, try adding another variable to facet by. For instance, facet by species and island.</p>
 </div>
@@ -1232,7 +1262,7 @@ any links that you are not going to use.
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint4" class="accordion-collapse collapse" data-bs-parent="#accordionHint4" aria-labelledby="headingHint4">
+<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
 <div class="accordion-body">
 <p>Add another facet variable with the <code>+</code></p>
 </div>
@@ -1246,7 +1276,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1319,7 +1349,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Keypoints</h3>
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#NA"></a>
+</h3>
 <div class="callout-content">
 <ul>
 <li>Subsetting rows and columns</li>
@@ -1329,10 +1360,12 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width">
 <p>In many cases, we are working with data sets that contain more data than we need, or we want to inspect certain parts of the data set before we continue. Subsetting data sets can be challenging in base R, because there is a fair bit of repetition. This can make code difficult to readn and understand.</p>
-</section><section id="the-dplyr-package"><h2 class="section-heading">The {dplyr} package</h2>
+</section><section id="the-dplyr-package"><h2 class="section-heading">The {dplyr} package<a class="anchor" aria-label="anchor" href="#the-dplyr-package"></a>
+</h2>
 <hr class="half-width">
 <p>The <a href="https://cran.r-project.org/web/packages/dplyr/index.html" class="external-link">{dplyr}</a> package provides a number of very useful functions for manipulating data sets in a way that will reduce the probability of making errors, and even save you some typing time. As an added bonus, you might even find the {dplyr} grammar easier to read.</p>
 <p>We’re going to cover 6 of the most commonly used functions as well as using pipes (<code>|&gt;</code>) to combine them.</p>
@@ -1349,7 +1382,8 @@ any links that you are not going to use.
 <code>group_by()</code> (covered in Day 2 session)</li>
 <li>
 <code>summarize()</code> (covered in Day 2 session)</li>
-</ol></section><section id="selecting-columns"><h2 class="section-heading">Selecting columns</h2>
+</ol></section><section id="selecting-columns"><h2 class="section-heading">Selecting columns<a class="anchor" aria-label="anchor" href="#selecting-columns"></a>
+</h2>
 <hr class="half-width">
 <p>Let us first talk about selecting columns. In {dplyr}, the function name for selecting columns is <code>select()</code>! Most {tidyverse} function names for functions are inspired by English grammar, which will help us when we are writing our code.</p>
 <figure><img src="../fig/03-selecting.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>We first need to make sure we have the tidyverse loaded and the penguins data set at hand.</p>
@@ -1443,7 +1477,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Select the columns sex, year, and species from the penguins dataset.</p>
 </div>
@@ -1492,7 +1527,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Change your selection so that species comes before sex. What is the difference in the output?</p>
 </div>
@@ -1638,7 +1674,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Select all columns containing an underscore ("_").</p>
 </div>
@@ -1687,7 +1724,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Select the species and sex columns, in addition to all columns ending with “mm”</p>
 </div>
@@ -1736,7 +1774,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5</h3>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+</h3>
 <div class="callout-content">
 <p>De-select all the columns with bill measurements</p>
 </div>
@@ -1894,7 +1933,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
+</h3>
 <div class="callout-content">
 <p>Select only the columns that are factors from the <code>penguins</code> data set.</p>
 </div>
@@ -1943,7 +1983,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7</h3>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
+</h3>
 <div class="callout-content">
 <p>Select the columns <code>island</code>, <code>species</code>, as well as all numeric columns from the <code>penguins</code> data set.</p>
 </div>
@@ -1989,7 +2030,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="filtering-rows"><h2 class="section-heading">Filtering rows</h2>
+</section><section id="filtering-rows"><h2 class="section-heading">Filtering rows<a class="anchor" aria-label="anchor" href="#filtering-rows"></a>
+</h2>
 <hr class="half-width">
 <p>Now that we know how to select the columns we want, we should take a look at how we filter the rows. Row filtering is done with the function <code>filter()</code>, which takes statements that can be evaluated to <code>TRUE</code> or <code>FALSE</code>.</p>
 <figure><img src="../fig/03-filtering.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>What do we mean with statements that can be evaluated to <code>TRUE</code> or <code>FALSE</code>? In the example with <code>where()</code> we used the <code>is.numeric</code> function to evaluate if the columns where numeric or not. We will be doing the same for rows!</p>
@@ -2043,7 +2085,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-8" class="callout-inner">
-<h3 class="callout-title">Challenge 8</h3>
+<h3 class="callout-title">Challenge 8<a class="anchor" aria-label="anchor" href="#challenge-8"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations from the “Dream” island.</p>
 </div>
@@ -2093,7 +2136,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-9" class="callout-inner">
-<h3 class="callout-title">Challenge 9</h3>
+<h3 class="callout-title">Challenge 9<a class="anchor" aria-label="anchor" href="#challenge-9"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations after 2008</p>
 </div>
@@ -2203,7 +2247,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-10" class="callout-inner">
-<h3 class="callout-title">Challenge 10</h3>
+<h3 class="callout-title">Challenge 10<a class="anchor" aria-label="anchor" href="#challenge-10"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations after 2008, and from “Biscoe” island</p>
 </div>
@@ -2255,7 +2300,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-11" class="callout-inner">
-<h3 class="callout-title">Challenge 11</h3>
+<h3 class="callout-title">Challenge 11<a class="anchor" aria-label="anchor" href="#challenge-11"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations of male penguins of the Chinstrap species</p>
 </div>
@@ -2341,7 +2387,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-12" class="callout-inner">
-<h3 class="callout-title">Challenge 12</h3>
+<h3 class="callout-title">Challenge 12<a class="anchor" aria-label="anchor" href="#challenge-12"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations of either male penguins or the Chinstrap species</p>
 </div>
@@ -2431,10 +2478,12 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width">
 <p>Getting an overview of our data can be challenging. Breaking it up in smaller pieces can help us get a better understanding of its content. Being able to subset data is one part of that, another is to be able to re-arrange rows to get a clearer idea of their content.</p>
-</section><section id="creating-subsetted-objects"><h2 class="section-heading">Creating subsetted objects</h2>
+</section><section id="creating-subsetted-objects"><h2 class="section-heading">Creating subsetted objects<a class="anchor" aria-label="anchor" href="#creating-subsetted-objects"></a>
+</h2>
 <hr class="half-width">
 <p>So far, we have kept working on the penguins data set, without actually altering it. So far, all our actions have been executed, then forgotten by R. Like it never happened. This is actually quite smart, since it makes it harder to do mistakes you can have difficulties changing.</p>
 <p>To store the changes, we have to “assign” the data to a new object in the R environment. Like the penguins data set, which already is an object in our environment we have called “penguins”.</p>
@@ -2506,7 +2555,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Create a new data set called “biscoe”, where you only have data from “Biscoe” island, and where you only have the first 4 columns of data.</p>
 </div>
@@ -2519,7 +2569,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2532,7 +2582,7 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="the-pipe"><h2 class="section-heading">The pipe <code>|&gt;</code>
+</section><section id="the-pipe"><h2 class="section-heading">The pipe <code>|&gt;</code><a class="anchor" aria-label="anchor" href="#the-pipe"></a>
 </h2>
 <hr class="half-width">
 <p>We often want to string together series of functions. This is achieved using pipe operator <code>|&gt;</code>. This takes the value on the left, and passes it as the first argument to the function call on the right.</p>
@@ -2677,7 +2727,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Create a new data set called “biscoe”, where you only have data from “Biscoe” island, and where you only have the first 4 columns of data. This time use the pipe.</p>
 </div>
@@ -2690,7 +2741,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2723,7 +2774,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="sorting-rows"><h2 class="section-heading">Sorting rows</h2>
+</section><section id="sorting-rows"><h2 class="section-heading">Sorting rows<a class="anchor" aria-label="anchor" href="#sorting-rows"></a>
+</h2>
 <hr class="half-width">
 <p>So far, we have looked at subsetting the data. But some times, we want to reorganize the data without altering it. In tables, we are used to be able to sort columns in ascending or descending order.</p>
 <p>This can also be done with {dplyr}’s <code>arrange()</code> function. arrange does not alter the data <em>per se</em>, just the order in which the rows are stored.</p>
@@ -2788,7 +2840,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Arrange the penguins data set by <code>body_mass_g</code>.</p>
 </div>
@@ -2801,7 +2854,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2839,7 +2892,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Arrange the penguins data set by descending order of <code>flipper_length_mm</code>.</p>
 </div>
@@ -2852,7 +2906,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2890,7 +2944,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5</h3>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+</h3>
 <div class="callout-content">
 <p>You can arrange on multiple columns! Try arranging the penguins data set by ascending <code>island</code> and descending <code>flipper_length_mm</code>, using a comma between the two arguments.</p>
 </div>
@@ -2903,7 +2958,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2936,7 +2991,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="putting-it-all-together"><h2 class="section-heading">Putting it all together</h2>
+</section><section id="putting-it-all-together"><h2 class="section-heading">Putting it all together<a class="anchor" aria-label="anchor" href="#putting-it-all-together"></a>
+</h2>
 <hr class="half-width">
 <p>Now that you have learned about ggplot, filter, select and arrange, we can have a look at how we can combine all these to get a better understanding and control over the data. By piping commands together, we can slowly build a better understanding of the data in our minds.</p>
 <p>We can for instance explore the numeric columns arranged by Island</p>
@@ -2997,7 +3053,8 @@ Caused by error in `mask$eval_all_filter()`:
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
+</h3>
 <div class="callout-content">
 <p>Fix the previous code bit by applying one of the two solutions suggested.</p>
 </div>
@@ -3010,7 +3067,7 @@ Caused by error in `mask$eval_all_filter()`:
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3088,7 +3145,8 @@ Caused by error in `mask$eval_all_filter()`:
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7</h3>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
+</h3>
 <div class="callout-content">
 <p>Create a plot of only data from the Dream island, putting flipper length on the y-axis and species on the x-axis. Make it a box-plot.</p>
 </div>
@@ -3101,7 +3159,7 @@ Caused by error in `mask$eval_all_filter()`:
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Try geom_boxplot</p>
 </div>
@@ -3115,7 +3173,7 @@ Caused by error in `mask$eval_all_filter()`:
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3175,7 +3233,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width">
 <p>Often, the data we have do not contain exactly what we need. We might need to change the order of factors, create new variables based on other columns in the data, or even variables conditional on specific values in other columns.</p>
 </section><div class="section level1">
@@ -3349,7 +3408,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Create a column where bill length is transformed to cm. To transform mm to cm, you must divide the mm value by 10. Name the column bill_length_cm.</p>
 </div>
@@ -3362,7 +3422,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3399,7 +3459,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Create a column for body mass in kilos, rather than grams, in the main penguins data set. Name the column body_mass_kg. To transform grams to kilograms, divide the grams by 1000.</p>
 </div>
@@ -3412,7 +3473,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3655,7 +3716,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Create a column named <code>bill_ld_ratio_log</code> that is the natural logarithm (using the <code>log()</code> function) of <code>bill_length_mm</code> divided by <code>bill_depth_mm</code></p>
 </div>
@@ -3668,7 +3730,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3706,7 +3768,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Create a new column called <code>body_type</code>, where animals below 3 kg are <code>small</code>, animals between 3 and 4.5 kg are <code>normal</code>, and animals larger than 4.5 kg are <code>large</code>. In the same command, create a new column named <code>biscoe</code> and its content should be <code>TRUE</code> if the island is <code>Biscoe</code> and <code>FALSE</code> for everything else.</p>
 </div>
@@ -3719,7 +3782,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3804,7 +3867,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width">
 <p>Data come in a myriad of different shapes, and talking about data set can often become confusing as people are used to data being in different formats, and they call these formats different things. In the tidyverse, “tidy” data is a very opinionated term so that we can all talk about data with more common ground.</p>
 <p>The goal of the tidyr package is to help you create tidy data.</p>
@@ -3817,7 +3881,8 @@ any links that you are not going to use.
 <li>Every cell is a single value.</li>
 </ul>
 <p>Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse. If you ensure that your data is tidy, you’ll spend less time fighting with the tools and more time working on your analysis. Learn more about tidy data in <code><a href="https://tidyr.tidyverse.org/articles/tidy-data.html" class="external-link">vignette("tidy-data")</a></code>.</p>
-</section><section id="talllong-vs.-wide-data"><h2 class="section-heading">Tall/long vs. wide data</h2>
+</section><section id="talllong-vs.-wide-data"><h2 class="section-heading">Tall/long vs. wide data<a class="anchor" aria-label="anchor" href="#talllong-vs.-wide-data"></a>
+</h2>
 <hr class="half-width">
 <ul>
 <li><p>Tall (or long) data are considered “tidy”, in that they adhere to the three tidy-data principles</p></li>
@@ -3886,7 +3951,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Pivot longer all columns ending with “mm” .</p>
 </div>
@@ -3899,7 +3965,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3936,7 +4002,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Pivot the penguins data so that all the bill measurements are in the same column.</p>
 </div>
@@ -3949,7 +4016,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3986,7 +4053,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>As mentioned, pivot_longer accepts tidy-selectors. Pivot longer all numerical columns.</p>
 </div>
@@ -3999,7 +4067,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4099,7 +4167,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Pivot longer all the bill measurements, and alter the names in one go, so that there are three columns named “part”, “measure” and “unit” after the pivot.</p>
 </div>
@@ -4112,7 +4181,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4152,7 +4221,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5</h3>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+</h3>
 <div class="callout-content">
 <p>Pivot longer all the bill measurements, and use the <code>names_prefix</code> argument. Give it the string “bill_”. What did that do?</p>
 </div>
@@ -4165,7 +4235,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4203,7 +4273,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
+</h3>
 <div class="callout-content">
 <p>Pivot longer all the bill measurements, and use the <code>names_prefix</code>, <code>names_to</code> and <code>names_sep</code> arguments. What do you need to change in <code>names_to</code> from the previous example to make it work now that we also use <code>names_prefix</code>?</p>
 </div>
@@ -4216,7 +4287,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4455,7 +4526,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6-1" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6-1"></a>
+</h3>
 <div class="callout-content">
 <p>Turn the penguins_long_simple dataset back to its original state</p>
 </div>
@@ -4468,7 +4540,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4700,7 +4772,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>First start by trying to summarise a single column, <code>body_mass_g</code>, by calculating its mean in <em>kilograms</em>.</p>
 <p>:::::::::::::::::::::::::::::::::::::::: solution ## Solution</p>
@@ -4729,7 +4802,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Add a column with the standard deviation of <code>body_mass_g</code> on <em>kilogram</em> scale.</p>
 </div>
@@ -4742,7 +4816,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4772,7 +4846,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Now add the same two metrics for <code>flipper_length_mm</code> on <em>centimeter</em> scale and give the columns clear names. Why could the <code>drop_na()</code> step give us wrong results?</p>
 </div>
@@ -4785,7 +4860,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4948,7 +5023,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Create a table that gives the mean and standard deviation of bill length, grouped by island</p>
 </div>
@@ -4961,7 +5037,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4994,7 +5070,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5</h3>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+</h3>
 <div class="callout-content">
 <p>Create a table that gives the mean and standard deviation of bill length, grouped by island and sex.</p>
 </div>
@@ -5007,7 +5084,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5145,7 +5222,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
+</h3>
 <div class="callout-content">
 <p>Create a table that gives the mean and standard deviation of bill length, grouped by island and sex, then add another column that has the mean for all the data</p>
 </div>
@@ -5158,7 +5236,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5329,7 +5407,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7</h3>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
+</h3>
 <div class="callout-content">
 <p>Calculate the difference in flipper length between the different species of penguin</p>
 </div>
@@ -5342,7 +5421,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5378,7 +5457,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-8" class="callout-inner">
-<h3 class="callout-title">Challenge 8</h3>
+<h3 class="callout-title">Challenge 8<a class="anchor" aria-label="anchor" href="#challenge-8"></a>
+</h3>
 <div class="callout-content">
 <p>Calculate the difference in flipper length between the different species of penguin, split by the penguins sex.</p>
 </div>
@@ -5391,7 +5471,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5586,7 +5666,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>In our code making the summary table. Add another summary column for the number of records, giving it the name <code>n</code>.</p>
 </div>
@@ -5599,7 +5680,7 @@ any links that you are not going to use.
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Try the <code>n()</code> function.</p>
 </div>
@@ -5613,7 +5694,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5651,7 +5732,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Try grouping by more variables, like species and island, is the output what you would expect it to be?</p>
 </div>
@@ -5664,7 +5746,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5725,7 +5807,8 @@ the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Create another summary table, with the same descriptive statistics (mean, sd ,min,max and n), but for all numerical variables. Grouped only by the variable names.</p>
 </div>
@@ -5738,7 +5821,7 @@ the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5829,7 +5912,8 @@ the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Create a point plot based om the penguins summary data, where the standard deviations are on the y axis and species are on the x axis. Make sure to dodge the bar for easier comparisons. Create subplots on the different observational types</p>
 </div>
@@ -5842,7 +5926,7 @@ the `.groups` argument.</code></pre>
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
 <p>Use facet_wrap()</p>
 </div>
@@ -5856,7 +5940,7 @@ the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5879,7 +5963,8 @@ the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5</h3>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+</h3>
 <div class="callout-content">
 <p>Change it so that species is both on the x-axis and the colour for the bar chart, and remove the dodge. What argument do you need to add to <code>facet_wrap()</code> to make the y-axis scale vary freely between the subplots? Why is this plot misleading?</p>
 </div>
@@ -5892,7 +5977,7 @@ the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5949,7 +6034,8 @@ the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
+</h3>
 <div class="callout-content">
 <p>The width of the top horizontal lines in the error bars are are little too wide. Try adjusting them by setting the width argument to 0.3</p>
 </div>
@@ -5962,7 +6048,7 @@ the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6063,7 +6149,8 @@ override using the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7</h3>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
+</h3>
 <div class="callout-content">
 <p>The width of the top horizontal lines in the error bars are are little too wide. Try adjusting them by setting the width argument to 0.3</p>
 </div>
@@ -6076,7 +6163,7 @@ override using the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6141,7 +6228,8 @@ override using the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-8" class="callout-inner">
-<h3 class="callout-title">Challenge 8</h3>
+<h3 class="callout-title">Challenge 8<a class="anchor" aria-label="anchor" href="#challenge-8"></a>
+</h3>
 <div class="callout-content">
 <p>It is hard to see the different metrics in the subplots, because they are all on such different scales. Try setting the y-axis to be set freely to allow differences betweem the subplots. Was this the effect you expected?</p>
 </div>
@@ -6154,7 +6242,7 @@ override using the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6183,7 +6271,8 @@ override using the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-9" class="callout-inner">
-<h3 class="callout-title">Challenge 9</h3>
+<h3 class="callout-title">Challenge 9<a class="anchor" aria-label="anchor" href="#challenge-9"></a>
+</h3>
 <div class="callout-content">
 <p>Try switching up what is plotted as rows and columns in the facet. Does this help the plot?</p>
 </div>
@@ -6196,7 +6285,7 @@ override using the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6279,7 +6368,8 @@ override using the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-10" class="callout-inner">
-<h3 class="callout-title">Challenge 10</h3>
+<h3 class="callout-title">Challenge 10<a class="anchor" aria-label="anchor" href="#challenge-10"></a>
+</h3>
 <div class="callout-content">
 <p>Try different themes and find one you like.</p>
 </div>
@@ -6292,7 +6382,7 @@ override using the `.groups` argument.</code></pre>
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
 <div class="accordion-body">
 <p>You can type “theme” and press the tab button, to look at all the possibilities.</p>
 </div>
@@ -6306,7 +6396,7 @@ override using the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <p>What themes did you find that you liked?</p>
 </div>
@@ -6342,7 +6432,8 @@ override using the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-11" class="callout-inner">
-<h3 class="callout-title">Challenge 11</h3>
+<h3 class="callout-title">Challenge 11<a class="anchor" aria-label="anchor" href="#challenge-11"></a>
+</h3>
 <div class="callout-content">
 <p>Try another brewer palette by replacing the palette name with another in the brewer list of palettes.</p>
 </div>
@@ -6355,7 +6446,7 @@ override using the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
+<div id="collapseSolution11" class="accordion-collapse collapse" data-bs-parent="#accordionSolution11" aria-labelledby="headingSolution11">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6375,7 +6466,8 @@ override using the `.groups` argument.</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-12" class="callout-inner">
-<h3 class="callout-title">Challenge 12</h3>
+<h3 class="callout-title">Challenge 12<a class="anchor" aria-label="anchor" href="#challenge-12"></a>
+</h3>
 <div class="callout-content">
 <p>Apply the dark theme in stead, and a pastel colour palette.</p>
 </div>
@@ -6388,7 +6480,7 @@ override using the `.groups` argument.</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution12" class="accordion-collapse collapse" aria-labelledby="headingSolution12" data-bs-parent="#accordionSolution12">
+<div id="collapseSolution12" class="accordion-collapse collapse" data-bs-parent="#accordionSolution12" aria-labelledby="headingSolution12">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6444,7 +6536,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width">
 <p>We have covered many topics so far, and changing (or mutating) variables has been a key concept. The need to create new columns of data, often based on information in other columns of data, is a type of operation that we need very often. But some times, you also need to calculate something <em>per row</em> for several solumns. For instance, you want the sum of all columns in a certain collection, or the mean of them, how can we do that?</p>
 <p>One way, is to write it our entirely. Let just pretend there is a good reason to get the sum of bill length and bill depth. Let us also make a subsetted sample with just the bill measurements so we cab easily see what we are doing. We can do that in the following way.</p>
@@ -6569,7 +6662,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Calculate the mean of all the columns with millimeter measurements, an call it <code>mm_mean</code>, for each row of data.</p>
 </div>
@@ -6582,7 +6676,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6624,7 +6718,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Calculate the mean of all the columns with millimeter measurements, an call it <code>mm_mean</code>, for each row of data. Then, group the data by species, and calculate the mean of the <code>mm_mean</code> within each species and add it as a column named <code>mm_mean_species</code>. Ignore <code>NA</code>s in the last calculation</p>
 </div>
@@ -6637,7 +6732,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6676,7 +6771,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="mutating-several-columns-in-one-go"><h2 class="section-heading">Mutating several columns in one go</h2>
+</section><section id="mutating-several-columns-in-one-go"><h2 class="section-heading">Mutating several columns in one go<a class="anchor" aria-label="anchor" href="#mutating-several-columns-in-one-go"></a>
+</h2>
 <hr class="half-width">
 <p>So far, we’ve been looking at adding or summarising variables one by one, or in a pivoted fashion. This is of course something we do all the time, but some times we need to do the same change to multiple columns at once. Imagine you have a data set with 20 column and you want to scale them all to the same scale. Writing the same command with different columns 20 times is very tedious.</p>
 <p>In our case, let us say we want to scale the three columns with millimeter measurements so that they have a mean of 0 and standard deviation of 1. We’ve already used the <code>scale()</code> function once before, so we will do it again.</p>
@@ -6790,7 +6886,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Transform all the colmns with an underscore in their name so they are scaled, and add the <em>prefix</em> <code>sc_</code> to the columns names.</p>
 </div>
@@ -6803,7 +6900,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6845,7 +6942,8 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Transform all the colmns with an underscore in their name so they are scaled, and add the <em>prefix</em> <code>sc_</code> to the columns names. Add another <em>standard</em> change of the body mass column to kilograms</p>
 </div>
@@ -6858,7 +6956,7 @@ any links that you are not going to use.
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>You can add a standard mutate within the same mutate as across</p>
 </div>
@@ -6872,7 +6970,7 @@ any links that you are not going to use.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6912,7 +7010,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="wrap-up"><h2 class="section-heading">Wrap-up</h2>
+</section><section id="wrap-up"><h2 class="section-heading">Wrap-up<a class="anchor" aria-label="anchor" href="#wrap-up"></a>
+</h2>
 <hr class="half-width">
 <p>We hope these sessions have given your a leg-up in starting you R and tidyverse journey. Remember that learning to code is like learning a new language, the best way to learn is to keep trying. We promise, your efforts will not be in vain as you uncover the power of R and the tidyverse.</p>
 <div class="section level3">
@@ -6944,9 +7043,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.9.0)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish" class="external-link">varnish (0.2.3)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.9.3" class="external-link">sandpaper (0.9.3)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.3.1)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -6968,8 +7067,8 @@ any links that you are not going to use.
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/aio.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/aio.html",
   "dateCreated": "2022-08-02",
-  "dateModified": "2022-08-09",
-  "datePublished": "2022-08-09"
+  "dateModified": "2022-08-16",
+  "datePublished": "2022-08-16"
 }
 
   </script><script>

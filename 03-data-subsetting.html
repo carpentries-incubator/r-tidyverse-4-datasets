@@ -325,7 +325,8 @@
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Keypoints</h3>
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#NA"></a>
+</h3>
 <div class="callout-content">
 <ul><li>Subsetting rows and columns</li>
 <li>Using tidyselectors</li>
@@ -333,9 +334,11 @@
 </ul></div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width"><p>In many cases, we are working with data sets that contain more data than we need, or we want to inspect certain parts of the data set before we continue. Subsetting data sets can be challenging in base R, because there is a fair bit of repetition. This can make code difficult to readn and understand.</p>
-</section><section id="the-dplyr-package"><h2 class="section-heading">The {dplyr} package</h2>
+</section><section id="the-dplyr-package"><h2 class="section-heading">The {dplyr} package<a class="anchor" aria-label="anchor" href="#the-dplyr-package"></a>
+</h2>
 <hr class="half-width"><p>The <a href="https://cran.r-project.org/web/packages/dplyr/index.html" class="external-link">{dplyr}</a> package provides a number of very useful functions for manipulating data sets in a way that will reduce the probability of making errors, and even save you some typing time. As an added bonus, you might even find the {dplyr} grammar easier to read.</p>
 <p>We’re going to cover 6 of the most commonly used functions as well as using pipes (<code>|&gt;</code>) to combine them.</p>
 <ol style="list-style-type: decimal"><li>
@@ -350,7 +353,8 @@
 <code>group_by()</code> (covered in Day 2 session)</li>
 <li>
 <code>summarize()</code> (covered in Day 2 session)</li>
-</ol></section><section id="selecting-columns"><h2 class="section-heading">Selecting columns</h2>
+</ol></section><section id="selecting-columns"><h2 class="section-heading">Selecting columns<a class="anchor" aria-label="anchor" href="#selecting-columns"></a>
+</h2>
 <hr class="half-width"><p>Let us first talk about selecting columns. In {dplyr}, the function name for selecting columns is <code>select()</code>! Most {tidyverse} function names for functions are inspired by English grammar, which will help us when we are writing our code.</p>
 <figure><img src="fig/03-selecting.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>We first need to make sure we have the tidyverse loaded and the penguins data set at hand.</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -443,7 +447,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Select the columns sex, year, and species from the penguins dataset.</p>
 </div>
@@ -492,7 +497,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Change your selection so that species comes before sex. What is the difference in the output?</p>
 </div>
@@ -633,7 +639,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Select all columns containing an underscore ("_").</p>
 </div>
@@ -682,7 +689,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Select the species and sex columns, in addition to all columns ending with “mm”</p>
 </div>
@@ -731,7 +739,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5</h3>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+</h3>
 <div class="callout-content">
 <p>De-select all the columns with bill measurements</p>
 </div>
@@ -888,7 +897,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
+</h3>
 <div class="callout-content">
 <p>Select only the columns that are factors from the <code>penguins</code> data set.</p>
 </div>
@@ -937,7 +947,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7</h3>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
+</h3>
 <div class="callout-content">
 <p>Select the columns <code>island</code>, <code>species</code>, as well as all numeric columns from the <code>penguins</code> data set.</p>
 </div>
@@ -983,7 +994,8 @@
 </div>
 </div>
 </div>
-</section><section id="filtering-rows"><h2 class="section-heading">Filtering rows</h2>
+</section><section id="filtering-rows"><h2 class="section-heading">Filtering rows<a class="anchor" aria-label="anchor" href="#filtering-rows"></a>
+</h2>
 <hr class="half-width"><p>Now that we know how to select the columns we want, we should take a look at how we filter the rows. Row filtering is done with the function <code>filter()</code>, which takes statements that can be evaluated to <code>TRUE</code> or <code>FALSE</code>.</p>
 <figure><img src="fig/03-filtering.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>What do we mean with statements that can be evaluated to <code>TRUE</code> or <code>FALSE</code>? In the example with <code>where()</code> we used the <code>is.numeric</code> function to evaluate if the columns where numeric or not. We will be doing the same for rows!</p>
 <p>Now, using <code>is.numeric</code> on a row won’t help, because every row-value in a column will be of the same type, that is how the data set works. All values in a column must be of the same type.</p>
@@ -1036,7 +1048,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-8" class="callout-inner">
-<h3 class="callout-title">Challenge 8</h3>
+<h3 class="callout-title">Challenge 8<a class="anchor" aria-label="anchor" href="#challenge-8"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations from the “Dream” island.</p>
 </div>
@@ -1086,7 +1099,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-9" class="callout-inner">
-<h3 class="callout-title">Challenge 9</h3>
+<h3 class="callout-title">Challenge 9<a class="anchor" aria-label="anchor" href="#challenge-9"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations after 2008</p>
 </div>
@@ -1195,7 +1209,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-10" class="callout-inner">
-<h3 class="callout-title">Challenge 10</h3>
+<h3 class="callout-title">Challenge 10<a class="anchor" aria-label="anchor" href="#challenge-10"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations after 2008, and from “Biscoe” island</p>
 </div>
@@ -1247,7 +1262,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-11" class="callout-inner">
-<h3 class="callout-title">Challenge 11</h3>
+<h3 class="callout-title">Challenge 11<a class="anchor" aria-label="anchor" href="#challenge-11"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations of male penguins of the Chinstrap species</p>
 </div>
@@ -1332,7 +1348,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-12" class="callout-inner">
-<h3 class="callout-title">Challenge 12</h3>
+<h3 class="callout-title">Challenge 12<a class="anchor" aria-label="anchor" href="#challenge-12"></a>
+</h3>
 <div class="callout-content">
 <p>Filter the data so you only have observations of either male penguins or the Chinstrap species</p>
 </div>
@@ -1415,9 +1432,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.9.0)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish" class="external-link">varnish (0.2.3)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.9.3" class="external-link">sandpaper (0.9.3)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.3.1)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1439,7 +1456,7 @@ any links that you are not going to use.
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/03-data-subsetting.html",
   "dateCreated": "2022-08-02",
   "dateModified": "2022-08-02",
-  "datePublished": "2022-08-09"
+  "datePublished": "2022-08-16"
 }
 
   </script><script>

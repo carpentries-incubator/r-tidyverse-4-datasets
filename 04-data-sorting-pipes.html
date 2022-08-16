@@ -318,9 +318,11 @@
 </div>
 </div>
 </div>
-<section id="motivation"><h2 class="section-heading">Motivation</h2>
+<section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
 <hr class="half-width"><p>Getting an overview of our data can be challenging. Breaking it up in smaller pieces can help us get a better understanding of its content. Being able to subset data is one part of that, another is to be able to re-arrange rows to get a clearer idea of their content.</p>
-</section><section id="creating-subsetted-objects"><h2 class="section-heading">Creating subsetted objects</h2>
+</section><section id="creating-subsetted-objects"><h2 class="section-heading">Creating subsetted objects<a class="anchor" aria-label="anchor" href="#creating-subsetted-objects"></a>
+</h2>
 <hr class="half-width"><p>So far, we have kept working on the penguins data set, without actually altering it. So far, all our actions have been executed, then forgotten by R. Like it never happened. This is actually quite smart, since it makes it harder to do mistakes you can have difficulties changing.</p>
 <p>To store the changes, we have to “assign” the data to a new object in the R environment. Like the penguins data set, which already is an object in our environment we have called “penguins”.</p>
 <p>We will now store a filtered version including only the chinstrap penguins, in an object we call <code>chinstraps</code>.</p>
@@ -391,7 +393,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1</h3>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Create a new data set called “biscoe”, where you only have data from “Biscoe” island, and where you only have the first 4 columns of data.</p>
 </div>
@@ -404,7 +407,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -417,7 +420,7 @@
 </div>
 </div>
 </div>
-</section><section id="the-pipe"><h2 class="section-heading">The pipe <code>|&gt;</code>
+</section><section id="the-pipe"><h2 class="section-heading">The pipe <code>|&gt;</code><a class="anchor" aria-label="anchor" href="#the-pipe"></a>
 </h2>
 <hr class="half-width"><p>We often want to string together series of functions. This is achieved using pipe operator <code>|&gt;</code>. This takes the value on the left, and passes it as the first argument to the function call on the right.</p>
 <p><code>|&gt;</code> is not limited to {dplyr} functions. It’s an alternative way of writing any R code.</p>
@@ -561,7 +564,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2</h3>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Create a new data set called “biscoe”, where you only have data from “Biscoe” island, and where you only have the first 4 columns of data. This time use the pipe.</p>
 </div>
@@ -574,7 +578,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -607,7 +611,8 @@
 </div>
 </div>
 </div>
-</section><section id="sorting-rows"><h2 class="section-heading">Sorting rows</h2>
+</section><section id="sorting-rows"><h2 class="section-heading">Sorting rows<a class="anchor" aria-label="anchor" href="#sorting-rows"></a>
+</h2>
 <hr class="half-width"><p>So far, we have looked at subsetting the data. But some times, we want to reorganize the data without altering it. In tables, we are used to be able to sort columns in ascending or descending order.</p>
 <p>This can also be done with {dplyr}’s <code>arrange()</code> function. arrange does not alter the data <em>per se</em>, just the order in which the rows are stored.</p>
 <div class="codewrapper sourceCode" id="cb19">
@@ -671,7 +676,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3</h3>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <p>Arrange the penguins data set by <code>body_mass_g</code>.</p>
 </div>
@@ -684,7 +690,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -722,7 +728,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4</h3>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <p>Arrange the penguins data set by descending order of <code>flipper_length_mm</code>.</p>
 </div>
@@ -735,7 +742,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -773,7 +780,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5</h3>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+</h3>
 <div class="callout-content">
 <p>You can arrange on multiple columns! Try arranging the penguins data set by ascending <code>island</code> and descending <code>flipper_length_mm</code>, using a comma between the two arguments.</p>
 </div>
@@ -786,7 +794,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -819,7 +827,8 @@
 </div>
 </div>
 </div>
-</section><section id="putting-it-all-together"><h2 class="section-heading">Putting it all together</h2>
+</section><section id="putting-it-all-together"><h2 class="section-heading">Putting it all together<a class="anchor" aria-label="anchor" href="#putting-it-all-together"></a>
+</h2>
 <hr class="half-width"><p>Now that you have learned about ggplot, filter, select and arrange, we can have a look at how we can combine all these to get a better understanding and control over the data. By piping commands together, we can slowly build a better understanding of the data in our minds.</p>
 <p>We can for instance explore the numeric columns arranged by Island</p>
 <div class="codewrapper sourceCode" id="cb29">
@@ -877,7 +886,8 @@ Caused by error in `mask$eval_all_filter()`:
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6</h3>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
+</h3>
 <div class="callout-content">
 <p>Fix the previous code bit by applying one of the two solutions suggested.</p>
 </div>
@@ -890,7 +900,7 @@ Caused by error in `mask$eval_all_filter()`:
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -968,7 +978,8 @@ Caused by error in `mask$eval_all_filter()`:
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7</h3>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
+</h3>
 <div class="callout-content">
 <p>Create a plot of only data from the Dream island, putting flipper length on the y-axis and species on the x-axis. Make it a box-plot.</p>
 </div>
@@ -981,7 +992,7 @@ Caused by error in `mask$eval_all_filter()`:
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Try geom_boxplot</p>
 </div>
@@ -995,7 +1006,7 @@ Caused by error in `mask$eval_all_filter()`:
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1045,9 +1056,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.9.0)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish" class="external-link">varnish (0.2.3)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.9.3" class="external-link">sandpaper (0.9.3)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.3.1)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1069,7 +1080,7 @@ any links that you are not going to use.
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/04-data-sorting-pipes.html",
   "dateCreated": "2022-08-02",
   "dateModified": "2022-08-02",
-  "datePublished": "2022-08-09"
+  "datePublished": "2022-08-16"
 }
 
   </script><script>
