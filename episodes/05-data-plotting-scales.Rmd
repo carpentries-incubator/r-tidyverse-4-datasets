@@ -1,5 +1,5 @@
 ---
-title: "Data manipulation with dplyr"
+title: "Data visualisation and scales"
 teaching: 60
 exercises: 5
 ---
