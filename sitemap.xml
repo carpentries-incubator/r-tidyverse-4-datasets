@@ -19,7 +19,16 @@
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/05-data-manipulation.html</loc>
   </url>
   <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/05-data-plotting-scales.html</loc>
+  </url>
+  <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/06-data-manipulation.html</loc>
+  </url>
+  <url>
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/06-data-reshaping.html</loc>
+  </url>
+  <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/07-data-reshaping.html</loc>
   </url>
   <url>
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/07-data-summaries.html</loc>
@@ -28,7 +37,16 @@
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/08-data-complex-pipelines.html</loc>
   </url>
   <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/08-data-summaries.html</loc>
+  </url>
+  <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/09-data-complex-pipelines.html</loc>
+  </url>
+  <url>
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/09-data-manipulation-across.html</loc>
+  </url>
+  <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/10-data-manipulation-across.html</loc>
   </url>
   <url>
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/CODE_OF_CONDUCT.html</loc>
@@ -64,7 +82,16 @@
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/05-data-manipulation.html</loc>
   </url>
   <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/05-data-plotting-scales.html</loc>
+  </url>
+  <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/06-data-manipulation.html</loc>
+  </url>
+  <url>
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/06-data-reshaping.html</loc>
+  </url>
+  <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/07-data-reshaping.html</loc>
   </url>
   <url>
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/07-data-summaries.html</loc>
@@ -73,7 +100,16 @@
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/08-data-complex-pipelines.html</loc>
   </url>
   <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/08-data-summaries.html</loc>
+  </url>
+  <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/09-data-complex-pipelines.html</loc>
+  </url>
+  <url>
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/09-data-manipulation-across.html</loc>
+  </url>
+  <url>
+    <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/10-data-manipulation-across.html</loc>
   </url>
   <url>
     <loc>https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/CODE_OF_CONDUCT.html</loc>
