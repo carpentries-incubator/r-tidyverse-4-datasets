@@ -303,7 +303,7 @@ penguins_sum |>
   facet_wrap(~ name, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
 oh, but the points are stacking on top of each other and are hard to see. T
 
@@ -318,7 +318,7 @@ penguins_sum |>
   facet_wrap(~ name, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
 
 That is starting to look like something nice.
 What position_dodge is doing, is move the dts to each side a little, so they are not directly on top of each other, but you can still see them and which island they belong to clearly.
@@ -346,7 +346,7 @@ penguins_sum |>
   facet_wrap(~ name)
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -370,7 +370,7 @@ penguins_sum |>
   facet_wrap(~ name, scales = "free")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
 The last plot is misleading because the data we have summary data by species and island. 
 Ignoring the island in the plot, means that the values for the different measurements cannot be distinguished from eachother.
 
@@ -397,7 +397,7 @@ penguins_sum |>
   facet_wrap(~ name, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
 
 Right, so now we have error bars, but they dont connect to the dots!
 Perhaps we can dodge those too?
@@ -417,7 +417,7 @@ penguins_sum |>
   facet_wrap(~ name, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 6
@@ -443,7 +443,7 @@ penguins_sum |>
   facet_wrap(~ name, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -514,7 +514,7 @@ penguins_sum |>
   facet_wrap(~ name, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
 
 What is happening here?
 Because we've now added year to the groups in the summary, we have multiple means per species and island, for each of the measurement years.
@@ -546,7 +546,7 @@ penguins_sum |>
   facet_wrap(~ name + year, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -572,7 +572,7 @@ penguins_sum |>
   facet_wrap(~ name + island, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 ok, so we got what we asked, the year part makes more sense, but its a very "busy" plot.
 Its really quite hard to compare everything from Bisoe, or all the Adelie's, to each other.
 How can we make it easier?
@@ -598,7 +598,7 @@ penguins_sum |>
   facet_grid(island ~ name)
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 8
@@ -625,7 +625,7 @@ penguins_sum |>
   facet_grid(island ~ name, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -652,7 +652,7 @@ penguins_sum |>
   facet_grid(name ~ island, scales = "free_y")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
 `facet_grid` is more complex than `facet_wrap` as it will always force the y-axis for rows, and x-axis for columns remain the same.
 So wile setting scales to free will help a little, it will only do so within each row and column, not each subplot. 
 When the results do not look as you like, swapping what are rows and columns in the grid can often create better results. 
@@ -696,7 +696,7 @@ To re-initiate the plot in the plot pane, write its name in the console and pres
 penguins_plot
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
 
 From there, we can keep adding more ggplot geoms or facets etc.
 In this first version, we will add a "theme". A theme is a change of the overall "look" of the plot.
@@ -707,7 +707,7 @@ penguins_plot +
   theme_classic()
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 the classic theme is preferred by many journals, but for facet grid, its not super nice, since we loose grid information.
 
 
@@ -716,7 +716,7 @@ penguins_plot +
   theme_light()
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
 Theme light could be a nice option, but the white text of light grey makes the panel text hard to read.
 
 
@@ -725,7 +725,7 @@ penguins_plot +
   theme_dark()
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
 
 Theme dark could theoretically be really nice, but then we'll need other colours for the points and error bars!
 
@@ -752,7 +752,7 @@ penguins_plot +
   theme_linedraw()
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-29-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-29-1.png" style="display: block; margin: auto;" />
 
 Now that we have a theme, we can have a look at changing the colours of the points and error bars. 
 We do this through something called "scales".
@@ -764,7 +764,7 @@ penguins_plot +
   scale_colour_brewer(palette = "Dark2")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-30-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-30-1.png" style="display: block; margin: auto;" />
 
 So here, we are changing the colour aesthetic, using a "brewer" palette "Dark2".
 What is a brewer palette?
@@ -776,7 +776,7 @@ You can have a peak at all possible brewer palettes by typing
 RColorBrewer::display.brewer.all()
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-31-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-31-1.png" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 11
@@ -792,7 +792,7 @@ penguins_plot +
   scale_colour_brewer(palette = "Accent")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-32-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-32-1.png" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
@@ -809,7 +809,7 @@ penguins_plot +
   scale_colour_brewer(palette = "Pastel2")
 ```
 
-<img src="fig/08-data-complex-pipelines-rendered-unnamed-chunk-33-1.png" style="display: block; margin: auto;" />
+<img src="fig/09-data-complex-pipelines-rendered-unnamed-chunk-33-1.png" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 

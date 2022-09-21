@@ -131,12 +131,23 @@ chinstraps <- select(chinstraps, -starts_with("bill"))
 Here we first create the chinstraps data from the filtered penguins data set. Then use that chinstraps data to reduce the columns and write it again back to the same chinstraps object.
 It's a little messy. With the pipe, we can make it more streamlined.
 
+::::::::::::::::::: instructor
+When reading this part, read it as follows when typing:
+
+> assign to the "chinstraps" object, 
+> taking the penguins dataset, and then
+> filtering the species column so we only have Chinstraps, and then
+> selecting away all columns that start with the string "bill"
+
+::::::::::::::::::::::::::::::
+
 
 ```r
 chinstraps <- penguins |> 
   filter(species == "Chinstrap") |> 
   select(-starts_with("bill"))
 ```
+
 
 The end result is the same, but there is less typing and we can "read" the pipeline of data subsetting more like language, if we know how. You can read the pipe operator as **"and then"**. 
 
@@ -175,6 +186,13 @@ penguins
 # ℹ Use `print(n = ...)` to see more rows
 ```
 
+::::::::::::::::::: instructor
+When reading this part, read it as follows when typing:
+
+> taking the penguins dataset
+
+::::::::::::::::::::::::::::::
+
 
 ```r
 penguins |> 
@@ -200,6 +218,14 @@ penguins |>
 # ℹ Use `print(n = ...)` to see more rows
 ```
 
+::::::::::::::::::: instructor
+When reading this part, read it as follows when typing:
+
+> taking the penguins dataset, and then
+> filtering the species column so we only have Chinstraps
+
+::::::::::::::::::::::::::::::
+
 
 ```r
 penguins |> 
@@ -224,6 +250,15 @@ penguins |>
 # … with 58 more rows
 # ℹ Use `print(n = ...)` to see more rows
 ```
+
+::::::::::::::::::: instructor
+When reading this part, read it as follows when typing:
+
+> taking the penguins dataset, and then
+> filtering the species column so we only have Chinstraps, and then
+> selecting away all columns that start with the string "bill"
+
+::::::::::::::::::::::::::::::
 
 So, for each chain step, the output of the previous step is fed into the next step, and that way the commands build on each other until a final end result is made.
 
@@ -296,6 +331,14 @@ So far, we have looked at subsetting the data. But some times, we want to reorga
  
 This can also be done with {dplyr}'s `arrange()` function. arrange does not alter the data *per se*, just the order in which the rows are stored.
 
+::::::::::::::::::: instructor
+When reading this part, read it as follows when typing:
+
+> taking the penguins dataset, and then
+> arrainging the rows by the island column
+
+::::::::::::::::::::::::::::::
+
 
 ```r
 penguins |> 
@@ -325,6 +368,14 @@ Here we have sorted the data by the island column. Since island is a factor, it 
 If we sort a numeric column, it will sort by numeric value.
 
 By default, arrange sorts in ascending order. If you want it sorted by descending order, wrap the column name in `desc()`
+
+::::::::::::::::::: instructor
+When reading this part, read it as follows when typing:
+
+> taking the penguins dataset, and then
+> arrainging the rows by the island column in descending order
+
+::::::::::::::::::::::::::::::
 
 
 ```r
@@ -460,6 +511,15 @@ By piping commands together, we can slowly build a better understanding of the d
 
 We can for instance explore the numeric columns arranged by Island
 
+::::::::::::::::::: instructor
+When reading this part, read it as follows when typing:
+
+> taking the penguins dataset, and then
+> arrainging the rows by the islan column, and then 
+> selecing all columns that are numeric
+
+::::::::::::::::::::::::::::::
+
 
 ```r
 penguins |> 
@@ -487,6 +547,16 @@ penguins |>
 
 And we can continue that by looking at the data for only male penguins
 
+::::::::::::::::::: instructor
+When reading this part, read it as follows when typing:
+
+> taking the penguins dataset, and then
+> arrainging the rows by the islan column, and then
+> selecing the island column and all columns that are numeric, and then
+> filtering toe rows so that sex is equals to male
+
+::::::::::::::::::::::::::::::
+
 
 ```r
 penguins |> 
@@ -506,7 +576,7 @@ Whoops! What happened there?
 Try looking at the error message and see if you can understand it.
 
 Its telling us that there is no `sex` column. How can that be?
-Well, we tok it away in our select! 
+Well, we took it away in our select! 
 Since we've only kept numeric data and the island column, the sex column is missing!
 
 The order in which you chain commands together matters. Since the pipe sends the output of the previous command into the next, we have two ways of being able to filter by sex: 
@@ -574,43 +644,6 @@ penguins |>
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
-We can even combine such pipes with ggplot. Perhaps, in our case so far, the most convenient can be applying a `filter` before plotting data, which would reduce the data plotted to just the data we are interested in.
-
-
-```r
-penguins |> 
-  filter(sex == "male") |>
-  ggplot(aes(bill_length_mm)) +
-  geom_bar()
-```
-
-<img src="fig/04-data-sorting-pipes-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
-
-Now we only plot data from the male penguins, if we are particularly interested in those.
-This can be quite convenient if you have particularly large data and need to reduce it to get a proper idea of what the variables really look like.
-
-::::::::::::::::::::::::::::::::::::: challenge 
-## Challenge 7
-Create a plot of only data from the Dream island, putting flipper length on the y-axis and species on the x-axis. Make it a box-plot.
-
-:::::::::::::::::::::::::::::::::::::::: hint
-Try geom_boxplot
-:::::::::::::::::::::::::::::::::::::::: 
-
-:::::::::::::::::::::::::::::::::::::::: solution
-## Solution
-
-
-```r
-penguins |> 
-  filter(island == "Dream") |> 
-  ggplot(aes(x = species, y = flipper_length_mm)) + 
-  geom_boxplot()
-```
-
-<img src="fig/04-data-sorting-pipes-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
-:::::::::::::::::::::::::::::::::::::::: 
-::::::::::::::::::::::::::::::::::::: 
 
 # Wrap-up
 

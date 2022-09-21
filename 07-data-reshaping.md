@@ -106,7 +106,7 @@ penguins |>
 Warning: Removed 8 rows containing non-finite values (stat_boxplot).
 ```
 
-<img src="fig/06-data-reshaping-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="fig/07-data-reshaping-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 That's pretty neat. By pivoting the data into this longer shape we are able to create sub-plots for all measurements easily with the same ggplot call and have them consistent, and nicely aligned. This longer format is also great for summaries, which we will be covering tomorrow.
 
