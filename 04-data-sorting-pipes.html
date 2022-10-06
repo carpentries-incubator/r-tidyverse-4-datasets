@@ -297,7 +297,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data sorting and pipes dplyr</h1>
-        <p> Last updated on 2022-09-21 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/04-data-sorting-pipes.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-10-06 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/04-data-sorting-pipes.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -366,8 +366,7 @@
  9 Chinstrap Dream            46            18.9         195    4150 fema…  2007
 10 Chinstrap Dream            51.3          19.9         198    3700 male   2007
 # … with 58 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 <p>Maybe in this chinstrap data we are also not interested in the bill measurements, so we want to remove them.</p>
 <div class="codewrapper sourceCode" id="cb4">
@@ -393,8 +392,7 @@
  8 Chinstrap Dream                197        3750 male    2007
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
-# … with 58 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 58 more rows</code></pre>
 </div>
 <p>Now our data has two less columns, and many fewer rows. A simpler data set for us to work with. But assigning the chinstrap data twice like this is a lot of typing, and there is a simpler way, using something we call the “pipe”.</p>
 <div id="challenge1" class="callout challenge">
@@ -416,7 +414,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -481,8 +479,7 @@
  9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
 10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 
 <div class="codewrapper sourceCode" id="cb11">
@@ -509,8 +506,7 @@
  9 Chinstrap Dream            46            18.9         195    4150 fema…  2007
 10 Chinstrap Dream            51.3          19.9         198    3700 male   2007
 # … with 58 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 
 <div class="codewrapper sourceCode" id="cb13">
@@ -537,8 +533,7 @@
  8 Chinstrap Dream                197        3750 male    2007
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
-# … with 58 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 58 more rows</code></pre>
 </div>
 
 <p>So, for each chain step, the output of the previous step is fed into the next step, and that way the commands build on each other until a final end result is made.</p>
@@ -569,8 +564,7 @@
  8 Chinstrap Dream                197        3750 male    2007
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
-# … with 58 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 58 more rows</code></pre>
 </div>
 <div id="challenge2" class="callout challenge">
 <div class="callout-square">
@@ -591,7 +585,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -617,8 +611,7 @@
  8 Adelie  Biscoe           40.5          17.9
  9 Adelie  Biscoe           37.9          18.6
 10 Adelie  Biscoe           40.5          18.9
-# … with 158 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 158 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -653,8 +646,7 @@
  9 Adelie  Biscoe           37.9          18.6           172    3150 fema…  2007
 10 Adelie  Biscoe           40.5          18.9           180    3950 male   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 <p>Here we have sorted the data by the island column. Since island is a factor, it will order by the facor levels, which in this case has Biscoe island as the first category. If we sort a numeric column, it will sort by numeric value.</p>
 <p>By default, arrange sorts in ascending order. If you want it sorted by descending order, wrap the column name in <code>desc()</code></p>
@@ -683,8 +675,7 @@
  9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
 10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 <div id="challenge3" class="callout challenge">
 <div class="callout-square">
@@ -705,7 +696,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -731,8 +722,7 @@
  9 Adelie    Dream               37.5          18.9      179    2975 &lt;NA&gt;   2007
 10 Adelie    Dream               37            16.9      185    3000 fema…  2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -757,7 +747,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -783,8 +773,7 @@
  9 Gentoo  Biscoe           49.5          16.2           229    5800 male   2008
 10 Gentoo  Biscoe           49.8          15.9           229    5950 male   2009
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -809,7 +798,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -835,8 +824,7 @@
  9 Gentoo  Biscoe           49.5          16.2           229    5800 male   2008
 10 Gentoo  Biscoe           49.8          15.9           229    5950 male   2009
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -871,8 +859,7 @@
  8           40.5          17.9               187        3200  2007
  9           37.9          18.6               172        3150  2007
 10           40.5          18.9               180        3950  2007
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>And we can continue that by looking at the data for only male penguins</p>
 
@@ -917,7 +904,7 @@ Caused by error in `mask$eval_all_filter()`:
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -944,8 +931,7 @@ Caused by error in `mask$eval_all_filter()`:
  8 male  Biscoe           41.4          18.6               191        3700  2008
  9 male  Biscoe           40.6          18.8               193        3800  2008
 10 male  Biscoe           37.6          19.1               194        3750  2008
-# … with 158 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 158 more rows</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -972,8 +958,7 @@ Caused by error in `mask$eval_all_filter()`:
  8 Biscoe           41.4          18.6               191        3700  2008
  9 Biscoe           40.6          18.8               193        3800  2008
 10 Biscoe           37.6          19.1               194        3750  2008
-# … with 158 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 158 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -1014,7 +999,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.1" class="external-link">sandpaper (0.10.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.3" class="external-link">sandpaper (0.10.3)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.2" class="external-link">pegboard (0.3.2)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
@@ -1036,9 +1021,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/04-data-sorting-pipes.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/04-data-sorting-pipes.html",
-  "dateCreated": "2022-09-21",
-  "dateModified": "2022-09-21",
-  "datePublished": "2022-10-04"
+  "dateCreated": "2022-10-06",
+  "dateModified": "2022-10-06",
+  "datePublished": "2022-10-06"
 }
 
   </script><script>

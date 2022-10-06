@@ -296,7 +296,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Subsetting data with dplyr</h1>
-        <p> Last updated on 2022-08-02 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/03-data-subsetting.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-10-06 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/03-data-subsetting.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 72 minutes </p>
         
         <div class="text-end">
@@ -398,8 +398,7 @@
  8 Torgersen Adelie  male  
  9 Torgersen Adelie  &lt;NA&gt;  
 10 Torgersen Adelie  &lt;NA&gt;  
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>When we use <code>select()</code> we don’t need to use quotations, we write in the names directly. We can also use the numeric indexes for the column, if we are 100% certain of the order of the columns:</p>
 <div class="codewrapper sourceCode" id="cb4">
@@ -424,8 +423,7 @@
  8 Adelie  Torgersen           39.2        4675
  9 Adelie  Torgersen           34.1        3475
 10 Adelie  Torgersen           42          4250
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>In some cases, we want to remove columns, and not necessarily state all columns we want to keep. Select also allows for this by adding a minus (<code>-</code>) sign in front of the column name you don’t want.</p>
 <div class="codewrapper sourceCode" id="cb6">
@@ -450,8 +448,7 @@
  8 Adelie  Torgersen               195        4675 male    2007
  9 Adelie  Torgersen               193        3475 &lt;NA&gt;    2007
 10 Adelie  Torgersen               190        4250 &lt;NA&gt;    2007
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -496,8 +493,7 @@
  8 male    2007 Adelie 
  9 &lt;NA&gt;    2007 Adelie 
 10 &lt;NA&gt;    2007 Adelie 
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -546,8 +542,7 @@
  8 Adelie  male    2007
  9 Adelie  &lt;NA&gt;    2007
 10 Adelie  &lt;NA&gt;    2007
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>select does not only subset columns, but it can also re-arrange them. The columns appear in the order your selection is specified.</p>
 </div>
@@ -582,8 +577,7 @@
  8           39.2          19.6               195
  9           34.1          18.1               193
 10           42            20.2               190
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>So convenient! There are several other tidy-selectors you can choose, <a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">which you can find here</a>, but often people resort to three specific ones:</p>
 <ul><li>
@@ -616,8 +610,7 @@
  8           39.2          19.6
  9           34.1          18.1
 10           42            20.2
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>The tidy selector can be combined with each other and other selectors. So you can build exactly the data you want!</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -642,8 +635,7 @@
  8 Torgersen Adelie   2007           39.2          19.6
  9 Torgersen Adelie   2007           34.1          18.1
 10 Torgersen Adelie   2007           42            20.2
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <div id="challenge3" class="callout challenge">
 <div class="callout-square">
@@ -688,8 +680,7 @@
  8           39.2          19.6               195        4675
  9           34.1          18.1               193        3475
 10           42            20.2               190        4250
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -738,8 +729,7 @@
  8 Adelie  male             39.2          19.6               195
  9 Adelie  &lt;NA&gt;             34.1          18.1               193
 10 Adelie  &lt;NA&gt;             42            20.2               190
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -788,8 +778,7 @@
  8 Adelie  Torgersen               195        4675 male    2007
  9 Adelie  Torgersen               193        3475 &lt;NA&gt;    2007
 10 Adelie  Torgersen               190        4250 &lt;NA&gt;    2007
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -823,8 +812,7 @@
  8           39.2          19.6               195        4675  2007
  9           34.1          18.1               193        3475  2007
 10           42            20.2               190        4250  2007
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>Magic! Let’s break that down. <code>is.numeric()</code> is a function in R that checks if a vector is numeric. If the vector is numeric, it returns <code>TRUE</code> if not it returns <code>FALSE</code>.</p>
 <div class="codewrapper sourceCode" id="cb26">
@@ -873,8 +861,7 @@
  9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
 10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 <p>The penguins data is stored as a <code>tibble</code>, which is a special kind of data set in R that gives a nice print out of the data. Notice, right below the column name, there is some information in <code>&lt;&gt;</code> marks. This tells us the class of the columns. Species and island are factors, while bill columns are “double” which is a decimal numeric class.</p>
 <p><code>where()</code> goes through all the columns and checks if they are numeric, and returns the ones that are.</p>
@@ -900,8 +887,7 @@
  8           39.2          19.6               195        4675  2007
  9           34.1          18.1               193        3475  2007
 10           42            20.2               190        4250  2007
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <div id="challenge6" class="callout challenge">
 <div class="callout-square">
@@ -946,8 +932,7 @@
  8 Adelie  Torgersen male  
  9 Adelie  Torgersen &lt;NA&gt;  
 10 Adelie  Torgersen &lt;NA&gt;  
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -997,8 +982,7 @@
  9 Torgersen Adelie            34.1          18.1              193    3475  2007
 10 Torgersen Adelie            42            20.2              190    4250  2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -1098,8 +1082,7 @@
  9 Adelie  Dream            37.6          19.3           181    3300 fema…  2007
 10 Adelie  Dream            39.8          19.1           184    4650 male   2007
 # … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -1149,8 +1132,7 @@
  9 Adelie  Biscoe           36.5          16.6           181    2850 fema…  2008
 10 Adelie  Biscoe           37.6          19.1           194    3750 male   2008
 # … with 224 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -1212,8 +1194,7 @@
 <pre class="output" tabindex="0"><code><span><span class="co"># A tibble: 0 × 8</span></span>
 <span><span class="co"># … with 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,</span></span>
 <span><span class="co">#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,</span></span>
-<span><span class="co">#   year &lt;int&gt;</span></span>
-<span><span class="co"># ℹ Use `colnames()` to see all variable names</span></span></code></pre>
+<span><span class="co">#   year &lt;int&gt;</span></span></code></pre>
 </div>
 <div id="challenge10" class="callout challenge">
 <div class="callout-square">
@@ -1261,8 +1242,7 @@
  9 Adelie  Biscoe           36.5          16.6           181    2850 fema…  2008
 10 Adelie  Biscoe           37.6          19.1           194    3750 male   2008
 # … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -1314,8 +1294,7 @@
  9 Chinstrap Dream            50.3          20           197    3300 male   2007
 10 Chinstrap Dream            49.2          18.2         195    4400 male   2007
 # … with 24 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -1350,8 +1329,7 @@
  9 Chinstrap Dream               50            19.5      196    3900 male   2007
 10 Chinstrap Dream               51.3          19.2      193    3650 male   2007
 # … with 65 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 <p>This now gives us both all chinstrap penguins, and the smallest Adelie penguins! By combining AND and OR statements this way, we can slowly create the filtering we are after.</p>
 <div id="challenge12" class="callout challenge">
@@ -1400,8 +1378,7 @@
  9 Adelie  Biscoe              38.2          18.1        185    3950 male   2007
 10 Adelie  Biscoe              38.8          17.2        180    3800 male   2007
 # … with 192 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -1443,7 +1420,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.1" class="external-link">sandpaper (0.10.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.3" class="external-link">sandpaper (0.10.3)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.2" class="external-link">pegboard (0.3.2)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
@@ -1465,9 +1442,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/03-data-subsetting.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/03-data-subsetting.html",
-  "dateCreated": "2022-09-21",
-  "dateModified": "2022-08-02",
-  "datePublished": "2022-10-04"
+  "dateCreated": "2022-10-06",
+  "dateModified": "2022-10-06",
+  "datePublished": "2022-10-06"
 }
 
   </script><script>

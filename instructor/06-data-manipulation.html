@@ -293,7 +293,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data manipulation with dplyr</h1>
-        <p> Last updated on 2022-09-21 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/06-data-manipulation.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-10-06 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/06-data-manipulation.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 65 minutes </p>
         
         <div class="text-end">
@@ -357,8 +357,7 @@
  9 Adelie  Torgersen           34.1     18.1     193    3475 &lt;NA&gt;   2007       1
 10 Adelie  Torgersen           42       20.2     190    4250 &lt;NA&gt;   2007       1
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​flipper_length_mm, ³​body_mass_g</code></pre>
 </div>
 <p>The output of this can be hard to spot, depending on the size of the screen. Let us for convenience create a subsetted data set to work on so we can easily see what we are doing.</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -392,8 +391,7 @@
  8 Adelie  Torgersen           39.2          19.6       1
  9 Adelie  Torgersen           34.1          18.1       1
 10 Adelie  Torgersen           42            20.2       1
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>There is now a new column in the data set called “new_var”, and it has the value 1 for all rows! This is what we told <code>mutate()</code> to do! We specified a new column by name, and gave it a specific value, <code>1</code>.</p>
 <p>This works because its easy to assigning a single value to all rows. What if we try to give it three values? What would we expect?</p>
@@ -436,8 +434,7 @@
  8 Adelie  Torgersen           39.2          19.6     8
  9 Adelie  Torgersen           34.1          18.1     9
 10 Adelie  Torgersen           42            20.2    10
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>But generally, we create new columns based on other data in the data set. So let’s do a more useful example. For instance, perhaps we want to use the ratio between the bill length and depth as a measurement for a model.</p>
 <div class="codewrapper sourceCode" id="cb10">
@@ -463,8 +460,7 @@
  8 Adelie  Torgersen           39.2          19.6       2   
  9 Adelie  Torgersen           34.1          18.1       1.88
 10 Adelie  Torgersen           42            20.2       2.08
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>So, here we have asked for the ratio between bill length and depth to be calculated and stored in a column named <code>bill_ratio</code>. Then we selected just the <code>bill</code> columns to have a peak at the output more directly.</p>
 <p>We can do almost anything within a <code>mutate()</code> to get the values as we want them, also use functions that exist in R to transform the data. For instance, perhaps we want to scale the variables of interest to have a mean of 0 and standard deviation of 1, which is quite common to improve statistical modelling. We can do that with the <code>scale()</code> function.</p>
@@ -492,8 +488,7 @@
  8 Adelie  Torgersen           39.2          19.6       2                 -0.865
  9 Adelie  Torgersen           34.1          18.1       1.88              -1.80 
 10 Adelie  Torgersen           42            20.2       2.08              -0.352
-# … with 334 more rows, and abbreviated variable name ¹​bill_length_mm_z[,1]
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows, and abbreviated variable name ¹​bill_length_mm_z[,1]</code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -514,7 +509,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -539,8 +534,7 @@
  8 Adelie  Torgersen           39.2          19.6           3.92
  9 Adelie  Torgersen           34.1          18.1           3.41
 10 Adelie  Torgersen           42            20.2           4.2 
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -565,7 +559,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -591,8 +585,7 @@
  9 Adelie  Torgersen           34.1     18.1     193    3475 &lt;NA&gt;   2007    3.48
 10 Adelie  Torgersen           42       20.2     190    4250 &lt;NA&gt;   2007    4.25
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g, ⁴​body_mass_kg
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​flipper_length_mm, ³​body_mass_g, ⁴​body_mass_kg</code></pre>
 </div>
 </div>
 </div>
@@ -630,8 +623,7 @@
  8  2007        4675 large 
  9  2007        3475 normal
 10  2007        4250 normal
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>Now we have a column with two values, <code>large</code> and <code>normal</code> based on whether the penguins are above or below 4.5 kilos.</p>
 <p>We can for instance use that in a plot.</p>
@@ -684,8 +676,7 @@
  8 Adelie  Torgersen           39.2          19.6      0.5   stumped  
  9 Adelie  Torgersen           34.1          18.1      0.531 stumped  
 10 Adelie  Torgersen           42            20.2      0.481 elongated
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>Now you’ve created two variables. One for <code>bill_ratio</code>, and then another one conditional on the values of the <code>bill_ratio</code>.</p>
 <p>If you switched the order of these two, R would produce an error, because there would be no bill ratio to create the other column.</p>
@@ -718,8 +709,7 @@
  8 Adelie  Torgersen           39.2          19.6      0.5   stumped  
  9 Adelie  Torgersen           34.1          18.1      0.531 stumped  
 10 Adelie  Torgersen           42            20.2      0.481 elongated
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>But what if we want to categorize based on more than one condition? Nested <code>if_else()</code>?</p>
 <div class="codewrapper sourceCode" id="cb26">
@@ -751,8 +741,7 @@
  8 Adelie  Torgersen           39.2          19.6      0.5   stumped  
  9 Adelie  Torgersen           34.1          18.1      0.531 stumped  
 10 Adelie  Torgersen           42            20.2      0.481 stumped  
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>what if you have even more conditionals? It can get pretty messy pretty fast. Thankfully, {dplyr} has a smarter way of doing this, called <code>case_when()</code>. This function is similar to <code>if_else()</code>, but where you specify what each condition should be assigned. On the left you have the logical expression, and the on the right of the tilde (<code>~</code>) is the value to be assigned if that expression is <code>TRUE</code></p>
 <div class="codewrapper sourceCode" id="cb28">
@@ -821,7 +810,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -847,8 +836,7 @@
  9 Adelie  Torgersen           34.1     18.1     193    3475 &lt;NA&gt;   2007   0.633
 10 Adelie  Torgersen           42       20.2     190    4250 &lt;NA&gt;   2007   0.732
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g, ⁴​bill_ld_ratio_log
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​flipper_length_mm, ³​body_mass_g, ⁴​bill_ld_ratio_log</code></pre>
 </div>
 </div>
 </div>
@@ -873,7 +861,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -907,8 +895,7 @@
  9 Adelie  Torgersen     34.1    18.1     193    3475 &lt;NA&gt;   2007 normal  FALSE 
 10 Adelie  Torgersen     42      20.2     190    4250 &lt;NA&gt;   2007 normal  FALSE 
 # … with 334 more rows, and abbreviated variable names ¹​bill_length_mm,
-#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​body_type
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​body_type</code></pre>
 </div>
 </div>
 </div>
@@ -951,7 +938,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.1" class="external-link">sandpaper (0.10.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.3" class="external-link">sandpaper (0.10.3)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.2" class="external-link">pegboard (0.3.2)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
@@ -973,9 +960,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/06-data-manipulation.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/06-data-manipulation.html",
-  "dateCreated": "2022-09-21",
-  "dateModified": "2022-09-21",
-  "datePublished": "2022-10-04"
+  "dateCreated": "2022-10-06",
+  "dateModified": "2022-10-06",
+  "datePublished": "2022-10-06"
 }
 
   </script><script>

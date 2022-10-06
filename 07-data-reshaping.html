@@ -294,7 +294,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reshaping data with tidyr</h1>
-        <p> Last updated on 2022-09-21 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/07-data-reshaping.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-10-06 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/07-data-reshaping.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -368,8 +368,7 @@
  8 Adelie  Torgersen female  2007 body_mass_g       3800  
  9 Adelie  Torgersen female  2007 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
-# … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,366 more rows</code></pre>
 </div>
 <p>pivot_longer takes tidy-select column arguments, so it is easy to grab all the columns you are after. Here, we are pivoting longer all columns that contain an underscore. And what happens? We now have less columns, but also two new columns we did not have before! In the <code>name</code> column, all our previous columns names are, one after the other. And in the <code>value</code> column, all the cell values for the observations! So before, the data was wider, in that each of the columns with <code>_</code> had their own column, while now, they are all collected into two columns instead of 4.</p>
 <p>Why would we want to do that? Well, perhaps we want to plot all the variables in a single ggplot call? Now that the measurement types are collected in these two ways, we can facet over the <code>name</code> column to create a sub-plot per measurement type!</p>
@@ -410,7 +409,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -435,8 +434,7 @@
  8 Adelie  Torgersen        3250 female  2007 bill_depth_mm      18  
  9 Adelie  Torgersen        3250 female  2007 flipper_length_mm 195  
 10 Adelie  Torgersen          NA &lt;NA&gt;    2007 bill_length_mm     NA  
-# … with 1,022 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,022 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -461,7 +459,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -486,8 +484,7 @@
  8 Adelie  Torgersen                NA          NA &lt;NA&gt;    2007 bill_dept…  NA  
  9 Adelie  Torgersen               193        3450 female  2007 bill_leng…  36.7
 10 Adelie  Torgersen               193        3450 female  2007 bill_dept…  19.3
-# … with 678 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 678 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -512,7 +509,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -537,8 +534,7 @@
  8 Adelie  Torgersen female flipper_length_mm  186  
  9 Adelie  Torgersen female body_mass_g       3800  
 10 Adelie  Torgersen female year              2007  
-# … with 1,710 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,710 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -572,8 +568,7 @@
  8 Adelie  Torgersen female  2007 body_mass_g        3800  
  9 Adelie  Torgersen female  2007 bill_length_mm       40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm        18  
-# … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,366 more rows</code></pre>
 </div>
 <p>Here, we change the “names” to “columns” and “values” to “content”. The pivot defaults are usually quite sensible, making it clear what is the column names and what are the cell values. But English might not be your working language or you might find something more obvious for your self.</p>
 <p>But we have even more power in the renaming of columns. Pivots actually have quite a lot of options, making it possible for us to create outputs looking just like we want. Notice how the names of the columns we pivoted follow a specific structure. First is the name of the body part, then the type of measurement, then the unit of the measurement. This clear logic we can use to our advantage.</p>
@@ -602,8 +597,7 @@
  8 Adelie  Torgersen female  2007 body    mass    g     3800  
  9 Adelie  Torgersen female  2007 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007 bill    depth   mm      18  
-# … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,366 more rows</code></pre>
 </div>
 <p>now, the pivot gave us 4 columns in stead of two! We told pivot that the column name could be split into the columns “part”, “measure” and “unit”, and that these were separated by underscore. Again we see how great consistent and logical naming of columns can be such a great help when working with data!</p>
 <div id="challenge4" class="callout challenge">
@@ -625,7 +619,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -653,8 +647,7 @@
  9 Adelie  Torgersen           193    3450 fema…  2007 bill  length  mm     36.7
 10 Adelie  Torgersen           193    3450 fema…  2007 bill  depth   mm     19.3
 # … with 678 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -679,7 +672,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -705,8 +698,7 @@
  8 Adelie  Torgersen                NA          NA &lt;NA&gt;    2007 depth_mm   NA  
  9 Adelie  Torgersen               193        3450 female  2007 length_mm  36.7
 10 Adelie  Torgersen               193        3450 female  2007 depth_mm   19.3
-# … with 678 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 678 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -731,7 +723,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -760,8 +752,7 @@
  9 Adelie  Torgersen               193      3450 fema…  2007 length  mm     36.7
 10 Adelie  Torgersen               193      3450 fema…  2007 depth   mm     19.3
 # … with 678 more rows, and abbreviated variable names ¹​body_mass_g,
-#   ²​bill_measure
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​bill_measure</code></pre>
 </div>
 </div>
 </div>
@@ -795,8 +786,7 @@
  8 Adelie  Torgersen               193        3450 female  2007 bill_dept…  19.3
  9 Adelie  Torgersen               190        3650 male    2007 bill_leng…  39.3
 10 Adelie  Torgersen               190        3650 male    2007 bill_dept…  20.6
-# … with 674 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 674 more rows</code></pre>
 </div>
 <p>This extra argument will ensure that all <code>NA</code> values in the <code>value</code> column are removed. This is some times convenient as we might move on to analyses etc of the data, which often are made more complicated (or impossible) when there is missing data.</p>
 <p>We should put everything together and create a new object that is our long formatted penguin data set.</p>
@@ -827,8 +817,7 @@
  8 Adelie  Torgersen female  2007 body    mass    g     3800  
  9 Adelie  Torgersen female  2007 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007 bill    depth   mm      18  
-# … with 1,358 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,358 more rows</code></pre>
 </div>
 </div>
 <div class="section level2">
@@ -859,8 +848,7 @@
  8 Adelie  Torgersen female  2007 body_mass_g       3800  
  9 Adelie  Torgersen female  2007 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
-# … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,366 more rows</code></pre>
 </div>
 <p><code>penguins_long_simple</code> now contains the lover penguins dataset, with column names in the “name” column, and values in the “value” column.</p>
 <p>If we want to make this wider again we can try the following:</p>
@@ -901,8 +889,7 @@
  9 Adelie  Biscoe    female  2008 &lt;dbl [9]&gt;      &lt;dbl [9]&gt;     &lt;dbl [9]&gt; &lt;dbl&gt;  
 10 Adelie  Biscoe    male    2008 &lt;dbl [9]&gt;      &lt;dbl [9]&gt;     &lt;dbl [9]&gt; &lt;dbl&gt;  
 # … with 25 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 <p>ok what is happening here? It does not at all look as we expected! Our columns have something very weird in them, with this strange <code>&lt;dbl [7]&gt;</code> thing, what does that mean? Lets look at the warning message our code gave us and see if we can figure it out. <strong>Values are not uniquely identified; output will contain list-cols</strong>. We are being told the pivot wider cannot uniquely identify the observations, and so cannot place a single value into the columns. Is returning lists of values.</p>
 <p>yikes! That’s super annoying. Let’s go back to our penguins data set and see if we can do something to help.</p>
@@ -929,8 +916,7 @@
  9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
 10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​body_mass_g</code></pre>
 </div>
 <p>Have you noticed that there is no column that uniquely identifies an observation? Other than each observation being on its own row, we have nothing to make sure that we can identify which observations belong together once we make the data long. As long as they are in the original format, this is ok, but once we pivoted the data longer, we lost the ability to identify which rows of observations belong together.</p>
 <p>We can remedy that by adding row numbers to the original data before we pivot. The <code>row_number()</code> function is great for this. By doing a mutate adding the row number to the data set, we should then have a clear variable identifying each observation.</p>
@@ -959,8 +945,7 @@
  8 Adelie  Torgersen female  2007      2 body_mass_g       3800  
  9 Adelie  Torgersen female  2007      3 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007      3 bill_depth_mm       18  
-# … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,366 more rows</code></pre>
 </div>
 <p>Notice now that in the sample column, the numbers repeat several rows. Where sample equals 1, all those are observations from the first row of data in the original penguins data set! Let us try to pivot that wider again.</p>
 <div id="challenge7" class="callout challenge">
@@ -982,7 +967,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1009,8 +994,7 @@
  9 Adelie  Torgersen &lt;NA&gt;    2007      9           34.1     18.1     193    3475
 10 Adelie  Torgersen &lt;NA&gt;    2007     10           42       20.2     190    4250
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​flipper_length_mm, ³​body_mass_g</code></pre>
 </div>
 <p>And now it worked! Now, the remaining columns were able to uniquely identify which observations belonged together. And the data looks just like the original penguins data set now, with the addition of the sample column, and the columns being slightly rearranged.</p>
 </div>
@@ -1049,8 +1033,7 @@
  8 Adelie  Torgersen female  2007      2 body    mass    g     3800  
  9 Adelie  Torgersen female  2007      3 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007      3 bill    depth   mm      18  
-# … with 1,358 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 1,358 more rows</code></pre>
 </div>
 <p>Much as the first example of pivot_longer, pivot_wider in its simplest form is relatively straight forward. But your penguins long data set is much more complex. The column names are split into several columns, how do we fix that? Like pivot_longer, pivot_wider has arguments that will let us get back to the original state, with much of the same syntax as with pivot_longer!</p>
 <div class="codewrapper sourceCode" id="cb38">
@@ -1079,8 +1062,7 @@
  9 Adelie  Torgersen &lt;NA&gt;    2007     10           42       20.2     190    4250
 10 Adelie  Torgersen &lt;NA&gt;    2007     11           37.8     17.1     186    3300
 # … with 332 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​flipper_length_mm, ³​body_mass_g</code></pre>
 </div>
 <p>Those arguments and inputs should be familiar to the call from pivot_longer. So we are lucky that if you understand one of them, it is easier to understand the other.</p>
 </div>
@@ -1120,7 +1102,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.1" class="external-link">sandpaper (0.10.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.3" class="external-link">sandpaper (0.10.3)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.2" class="external-link">pegboard (0.3.2)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
@@ -1142,9 +1124,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/07-data-reshaping.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/07-data-reshaping.html",
-  "dateCreated": "2022-09-21",
-  "dateModified": "2022-09-21",
-  "datePublished": "2022-10-04"
+  "dateCreated": "2022-10-06",
+  "dateModified": "2022-10-06",
+  "datePublished": "2022-10-06"
 }
 
   </script><script>

@@ -295,7 +295,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data manipulation across columns</h1>
-        <p> Last updated on 2022-09-21 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/10-data-manipulation-across.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-10-06 | <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/10-data-manipulation-across.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 51 minutes </p>
         
         <div class="text-end">
@@ -357,8 +357,7 @@
  8 Adelie            39.2          19.6     58.8
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>We’ve seen similar types of operations before. But what if you want to sum 20 columns, you would need to type our all 20 column names! Again, tedious. We have a special type of operations we can do to get that easily. We will use the function <code>sum</code> to calculate the sum of several variables when using this pipeline.</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -384,8 +383,7 @@
  8 Adelie            39.2          19.6       NA
  9 Adelie            34.1          18.1       NA
 10 Adelie            42            20.2       NA
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>hm, that is not what we expected. I know why, but the reason is not always easy to understand. By default, <code>c_across</code> will summarise all the rows for all the bill columns, and give a <em>single</em> value for the entire data set. There are some <code>NA</code>s the entire data set, so it returns <code>NA</code>. So how can we force it to work in a row-wise fashion? We can apply a function called <code>rowwise()</code> which is a special type of <code>group_by</code> that groups your data by each row, so each row is its own group. Then, <code>c_across()</code> will calculate the mean of the columns just for that group (i.e. row in this case).</p>
 <div class="codewrapper sourceCode" id="cb5">
@@ -413,8 +411,7 @@
  8 Adelie            39.2          19.6     58.8
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <p>Now we can see that we get the row sum of all the bill columns for each row, and the tibble tells us it is “Rowwise”. To stop the data set being rowwise, we can use the <code>ungroup()</code> function we learned before.</p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -442,8 +439,7 @@
  8 Adelie            39.2          19.6     58.8
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
-# … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# … with 334 more rows</code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -464,7 +460,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -494,8 +490,7 @@
  9 Adelie  Torgersen           34.1     18.1     193    3475 &lt;NA&gt;   2007    81.7
 10 Adelie  Torgersen           42       20.2     190    4250 &lt;NA&gt;   2007    84.1
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​flipper_length_mm, ³​body_mass_g</code></pre>
 </div>
 </div>
 </div>
@@ -520,7 +515,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -552,8 +547,7 @@
  9 Adelie  Torgersen    34.1    18.1     193    3475 &lt;NA&gt;   2007    81.7    82.4
 10 Adelie  Torgersen    42      20.2     190    4250 &lt;NA&gt;   2007    84.1    82.4
 # … with 334 more rows, and abbreviated variable names ¹​bill_length_mm,
-#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​mm_mean_species
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​mm_mean_species</code></pre>
 </div>
 </div>
 </div>
@@ -593,8 +587,7 @@
 10 Adelie  Torgersen    42      20.2     190    4250 &lt;NA&gt;   2007   1.54   -0.352
 # … with 334 more rows, 1 more variable: flipper_length_sc &lt;dbl[,1]&gt;, and
 #   abbreviated variable names ¹​bill_length_mm, ²​bill_depth_mm,
-#   ³​flipper_length_mm, ⁴​body_mass_g, ⁵​bill_depth_sc[,1], ⁶​bill_length_sc[,1]
-# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
+#   ³​flipper_length_mm, ⁴​body_mass_g, ⁵​bill_depth_sc[,1], ⁶​bill_length_sc[,1]</code></pre>
 </div>
 <p>Its just three columns, we can do that. But let us imagine we have 20 of these, typing all that out is tedious and error prone. You might forget to alter the name or keep the same type of naming convention. We are only human, we easily make mistakes. With {dplyr}’s <code>across()</code> we can combine our knowledge of tidy-selectors and mutate to create the entire transformation for these columns at once.</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -622,8 +615,7 @@
  9 Adelie  Torgersen             -1.80         0.480  -0.563    3475 &lt;NA&gt;   2007
 10 Adelie  Torgersen             -0.352        1.54   -0.776    4250 &lt;NA&gt;   2007
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm[,1],
-#   ²​flipper_length_mm[,1], ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​flipper_length_mm[,1], ³​body_mass_g</code></pre>
 </div>
 <p>Whoa! So fast! Now the three columns are scaled. <code>.col</code> argument takes a tidy-selection of columns, and <code>.fns</code> it where you let it know which function to apply.</p>
 <p>But oh no! The columns have been overwritten. Rather than creating new ones, we replaced the old ones. This might be your intention in some instances, or maybe you will just create a new data set with the scaled variables.</p>
@@ -663,8 +655,7 @@
  9           34.1          18.1               193         -1.80    0.480  -0.563
 10           42            20.2               190         -0.352   1.54   -0.776
 # … with 334 more rows, and abbreviated variable names ¹​bill_length_mm_sc[,1],
-#   ²​bill_depth_mm_sc[,1], ³​flipper_length_mm_sc[,1]
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+#   ²​bill_depth_mm_sc[,1], ³​flipper_length_mm_sc[,1]</code></pre>
 </div>
 <p>Now they are all there! neat! But that <code>.names</code> argument is a little weird. What does it really mean?</p>
 <p>Internally, <code>across()</code> stores the column names in a vector it calls <code>.col</code>. We can use this knowledge to tell the across function what to name our new columns. In this case, we want to append the column name with <code>_sc</code>.</p>
@@ -687,7 +678,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -717,8 +708,7 @@
 # … with 334 more rows, 2 more variables: sc_flipper_length_mm &lt;dbl[,1]&gt;,
 #   sc_body_mass_g &lt;dbl[,1]&gt;, and abbreviated variable names ¹​bill_length_mm,
 #   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​sc_bill_length_mm[,1],
-#   ⁶​sc_bill_depth_mm[,1]
-# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
+#   ⁶​sc_bill_depth_mm[,1]</code></pre>
 </div>
 </div>
 </div>
@@ -743,7 +733,7 @@
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>You can add a standard mutate within the same mutate as across</p>
 </div>
@@ -757,7 +747,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -790,8 +780,7 @@
 # … with 334 more rows, 3 more variables: sc_flipper_length_mm &lt;dbl[,1]&gt;,
 #   sc_body_mass_g &lt;dbl[,1]&gt;, body_mass_kg &lt;dbl&gt;, and abbreviated variable
 #   names ¹​bill_length_mm, ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g,
-#   ⁵​sc_bill_length_mm[,1], ⁶​sc_bill_depth_mm[,1]
-# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
+#   ⁵​sc_bill_length_mm[,1], ⁶​sc_bill_depth_mm[,1]</code></pre>
 </div>
 </div>
 </div>
@@ -833,7 +822,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.1" class="external-link">sandpaper (0.10.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.10.3" class="external-link">sandpaper (0.10.3)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.2" class="external-link">pegboard (0.3.2)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.4" class="external-link">varnish (0.2.4)</a>.</p>
 			</div>
@@ -855,9 +844,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/10-data-manipulation-across.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/10-data-manipulation-across.html",
-  "dateCreated": "2022-09-21",
-  "dateModified": "2022-09-21",
-  "datePublished": "2022-10-04"
+  "dateCreated": "2022-10-06",
+  "dateModified": "2022-10-06",
+  "datePublished": "2022-10-06"
 }
 
   </script><script>
