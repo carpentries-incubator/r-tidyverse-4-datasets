@@ -83,7 +83,6 @@ penguins |>
  9 Adelie  Torgersen female  2007 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
 # … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 pivot_longer takes tidy-select column arguments, so it is easy to grab all the columns you are after. Here, we are pivoting longer all columns that contain an underscore. And what happens? We now have less columns, but also two new columns we did not have before! In the `name` column, all our previous columns names are, one after the other. And in the `value` column, all the cell values for the observations! 
@@ -138,7 +137,6 @@ penguins |>
  9 Adelie  Torgersen        3250 female  2007 flipper_length_mm 195  
 10 Adelie  Torgersen          NA <NA>    2007 bill_length_mm     NA  
 # … with 1,022 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -172,7 +170,6 @@ penguins |>
  9 Adelie  Torgersen               193        3450 female  2007 bill_leng…  36.7
 10 Adelie  Torgersen               193        3450 female  2007 bill_dept…  19.3
 # … with 678 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -206,7 +203,6 @@ penguins |>
  9 Adelie  Torgersen female body_mass_g       3800  
 10 Adelie  Torgersen female year              2007  
 # … with 1,710 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -240,7 +236,6 @@ penguins |>
  9 Adelie  Torgersen female  2007 bill_length_mm       40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm        18  
 # … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Here, we change the "names" to "columns" and "values" to "content". The pivot defaults are usually quite sensible, making it clear what is the column names and what are the cell values. But English might not be your working language or you might find something more obvious for your self. 
@@ -270,7 +265,6 @@ penguins |>
  9 Adelie  Torgersen female  2007 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007 bill    depth   mm      18  
 # … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 now, the pivot gave us 4 columns in stead of two! We told pivot that the column name could be split into the columns "part", "measure" and "unit", and that these were separated by underscore. Again we see how great consistent and logical naming of columns can be such a great help when working with data!
@@ -306,7 +300,6 @@ penguins |>
 10 Adelie  Torgersen           193    3450 fema…  2007 bill  depth   mm     19.3
 # … with 678 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -341,7 +334,6 @@ penguins |>
  9 Adelie  Torgersen               193        3450 female  2007 length_mm  36.7
 10 Adelie  Torgersen               193        3450 female  2007 depth_mm   19.3
 # … with 678 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -379,7 +371,6 @@ penguins |>
 10 Adelie  Torgersen               193      3450 fema…  2007 depth   mm     19.3
 # … with 678 more rows, and abbreviated variable names ¹​body_mass_g,
 #   ²​bill_measure
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -413,7 +404,6 @@ penguins |>
  9 Adelie  Torgersen               190        3650 male    2007 bill_leng…  39.3
 10 Adelie  Torgersen               190        3650 male    2007 bill_dept…  20.6
 # … with 674 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 This extra argument will ensure that all `NA` values in the `value` column are removed. This is some times convenient as we might move on to analyses etc of the data, which often are made more complicated (or impossible) when there is missing data. 
@@ -445,7 +435,6 @@ penguins_long
  9 Adelie  Torgersen female  2007 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007 bill    depth   mm      18  
 # … with 1,358 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ## Pivoting data wider
@@ -477,7 +466,6 @@ penguins_long_simple
  9 Adelie  Torgersen female  2007 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
 # … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 `penguins_long_simple` now contains the lover penguins dataset, with column names in the "name" column, and values in the "value" column. 
@@ -518,7 +506,6 @@ Warning: Values from `value` are not uniquely identified; output will contain li
 10 Adelie  Biscoe    male    2008 <dbl [9]>      <dbl [9]>     <dbl [9]> <dbl>  
 # … with 25 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ok what is happening here? It does not at all look as we expected! Our columns have something very weird in them, with this strange `<dbl [7]>` thing, what does that mean?
@@ -548,7 +535,6 @@ penguins
 10 Adelie  Torgersen           42            20.2        190    4250 <NA>   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 Have you noticed that there is no column that uniquely identifies an observation? Other than each observation being on its own row, we have nothing to make sure that we can identify which observations belong together once we make the data long. As long as they are in the original format, this is ok, but once we pivoted the data longer, we lost the ability to identify which rows of observations belong together. 
 
@@ -578,7 +564,6 @@ penguins_long_simple
  9 Adelie  Torgersen female  2007      3 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007      3 bill_depth_mm       18  
 # … with 1,366 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Notice now that in the sample column, the numbers repeat several rows. Where sample equals 1, all those are observations from the first row of data in the original penguins data set! Let us try to pivot that wider again.
@@ -613,7 +598,6 @@ penguins_long_simple |>
 10 Adelie  Torgersen <NA>    2007     10           42       20.2     190    4250
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
 #   ²​flipper_length_mm, ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 And now it worked! Now, the remaining columns were able to uniquely identify which observations belonged together. And the data looks just like the original penguins data set now, with the addition of the sample column, and the columns being slightly rearranged.
 
@@ -651,7 +635,6 @@ penguins_long
  9 Adelie  Torgersen female  2007      3 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007      3 bill    depth   mm      18  
 # … with 1,358 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Much as the first example of pivot_longer, pivot_wider in its simplest form is relatively straight forward. But your penguins long data set is much more complex. The column names are split into several columns, how do we fix that?
@@ -681,7 +664,6 @@ penguins_long |>
 10 Adelie  Torgersen <NA>    2007     11           37.8     17.1     186    3300
 # … with 332 more rows, and abbreviated variable names ¹​bill_depth_mm,
 #   ²​flipper_length_mm, ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Those arguments and inputs should be familiar to the call from pivot_longer. So we are lucky that if you understand one of them, it is easier to understand the other.

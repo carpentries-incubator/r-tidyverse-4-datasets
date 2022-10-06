@@ -64,7 +64,6 @@ chinstraps
 10 Chinstrap Dream            51.3          19.9         198    3700 male   2007
 # … with 58 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Maybe in this chinstrap data we are also not interested in the bill measurements, so we want to remove them.
@@ -90,7 +89,6 @@ chinstraps
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
 # … with 58 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 Now our data has two less columns, and many fewer rows. A simpler data set for us to work with. But assigning the chinstrap data twice like this is a lot of typing, and there is a simpler way, using something we call the "pipe".
 
@@ -183,7 +181,6 @@ penguins
 10 Adelie  Torgersen           42            20.2        190    4250 <NA>   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::: instructor
@@ -215,7 +212,6 @@ penguins |>
 10 Chinstrap Dream            51.3          19.9         198    3700 male   2007
 # … with 58 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::: instructor
@@ -248,7 +244,6 @@ penguins |>
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
 # … with 58 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::: instructor
@@ -289,7 +284,6 @@ chinstraps
  9 Chinstrap Dream                195        4150 female  2007
 10 Chinstrap Dream                198        3700 male    2007
 # … with 58 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -321,7 +315,6 @@ penguins |>
  9 Adelie  Biscoe           37.9          18.6
 10 Adelie  Biscoe           40.5          18.9
 # … with 158 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -361,7 +354,6 @@ penguins |>
 10 Adelie  Biscoe           40.5          18.9           180    3950 male   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Here we have sorted the data by the island column. Since island is a factor, it will order by the facor levels, which in this case has Biscoe island as the first category. 
@@ -399,7 +391,6 @@ penguins |>
 10 Adelie  Torgersen           42            20.2        190    4250 <NA>   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 
@@ -432,7 +423,6 @@ penguins |>
 10 Adelie    Dream               37            16.9      185    3000 fema…  2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 ::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::
@@ -466,7 +456,6 @@ penguins |>
 10 Gentoo  Biscoe           49.8          15.9           229    5950 male   2009
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 ::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::
@@ -499,7 +488,6 @@ penguins |>
 10 Gentoo  Biscoe           49.8          15.9           229    5950 male   2009
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 ::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::
@@ -542,7 +530,6 @@ penguins |>
  9           37.9          18.6               172        3150  2007
 10           40.5          18.9               180        3950  2007
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 And we can continue that by looking at the data for only male penguins
@@ -614,7 +601,6 @@ penguins |>
  9 male  Biscoe           40.6          18.8               193        3800  2008
 10 male  Biscoe           37.6          19.1               194        3750  2008
 # … with 158 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ```r
@@ -639,7 +625,6 @@ penguins |>
  9 Biscoe           40.6          18.8               193        3800  2008
 10 Biscoe           37.6          19.1               194        3750  2008
 # … with 158 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 

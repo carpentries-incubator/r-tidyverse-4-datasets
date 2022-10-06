@@ -53,7 +53,6 @@ penguins |>
 10 Adelie  Torgersen           42       20.2     190    4250 <NA>   2007       1
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
 #   ²​flipper_length_mm, ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 The output of this can be hard to spot, depending on the size of the screen.
@@ -88,7 +87,6 @@ penguins_s |>
  9 Adelie  Torgersen           34.1          18.1       1
 10 Adelie  Torgersen           42            20.2       1
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 There is now a new column in the data set called "new_var", and it has the value 1 for all rows!
@@ -132,7 +130,6 @@ penguins_s |>
  9 Adelie  Torgersen           34.1          18.1     9
 10 Adelie  Torgersen           42            20.2    10
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 But generally, we create new columns based on other data in the data set. So let's do a more useful example. For instance, perhaps we want to use the ratio between the bill length and depth as a measurement for a model.
@@ -158,7 +155,6 @@ penguins_s |>
  9 Adelie  Torgersen           34.1          18.1       1.88
 10 Adelie  Torgersen           42            20.2       2.08
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 So, here we have asked for the ratio between bill length and depth to be calculated and stored in a column named `bill_ratio`. Then we selected just the `bill` columns to have a peak at the output more directly. 
@@ -187,7 +183,6 @@ penguins_s |>
  9 Adelie  Torgersen           34.1          18.1       1.88              -1.80 
 10 Adelie  Torgersen           42            20.2       2.08              -0.352
 # … with 334 more rows, and abbreviated variable name ¹​bill_length_mm_z[,1]
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -218,7 +213,6 @@ penguins_s |>
  9 Adelie  Torgersen           34.1          18.1           3.41
 10 Adelie  Torgersen           42            20.2           4.2 
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -253,7 +247,6 @@ penguins |>
 10 Adelie  Torgersen           42       20.2     190    4250 <NA>   2007    4.25
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
 #   ²​flipper_length_mm, ³​body_mass_g, ⁴​body_mass_kg
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -295,7 +288,6 @@ penguin_weight |>
  9  2007        3475 normal
 10  2007        4250 normal
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Now we have a column with two values, `large` and `normal` based on whether the penguins are above or below 4.5 kilos.
@@ -355,7 +347,6 @@ penguins_s |>
  9 Adelie  Torgersen           34.1          18.1      0.531 stumped  
 10 Adelie  Torgersen           42            20.2      0.481 elongated
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Now you've created two variables. One for `bill_ratio`, and then another one conditional on the values of the `bill_ratio`.
@@ -389,7 +380,6 @@ penguins_s |>
  9 Adelie  Torgersen           34.1          18.1      0.531 stumped  
 10 Adelie  Torgersen           42            20.2      0.481 elongated
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 But what if we want to categorize based on more than one condition? Nested `if_else()`?
@@ -421,7 +411,6 @@ penguins_s |>
  9 Adelie  Torgersen           34.1          18.1      0.531 stumped  
 10 Adelie  Torgersen           42            20.2      0.481 stumped  
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 what if you have even more conditionals? It can get pretty messy pretty fast.
@@ -508,7 +497,6 @@ penguins |>
 10 Adelie  Torgersen           42       20.2     190    4250 <NA>   2007   0.732
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
 #   ²​flipper_length_mm, ³​body_mass_g, ⁴​bill_ld_ratio_log
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -551,7 +539,6 @@ penguins |>
 10 Adelie  Torgersen     42      20.2     190    4250 <NA>   2007 normal  FALSE 
 # … with 334 more rows, and abbreviated variable names ¹​bill_length_mm,
 #   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​body_type
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 

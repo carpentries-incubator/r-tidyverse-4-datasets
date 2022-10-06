@@ -56,7 +56,6 @@ penguins_s |>
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 We've seen similar types of operations before.
@@ -86,7 +85,6 @@ penguins_s |>
  9 Adelie            34.1          18.1       NA
 10 Adelie            42            20.2       NA
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 hm, that is not what we expected.
@@ -120,7 +118,6 @@ penguins_s |>
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Now we can see that we get the row sum of all the bill columns for each row, and the tibble tells us it is "Rowwise".
@@ -149,7 +146,6 @@ penguins_s |>
  9 Adelie            34.1          18.1     52.2
 10 Adelie            42            20.2     62.2
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -185,7 +181,6 @@ penguins |>
 10 Adelie  Torgersen           42       20.2     190    4250 <NA>   2007    84.1
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
 #   ²​flipper_length_mm, ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -228,7 +223,6 @@ penguins |>
 10 Adelie  Torgersen    42      20.2     190    4250 <NA>   2007    84.1    82.4
 # … with 334 more rows, and abbreviated variable names ¹​bill_length_mm,
 #   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​mm_mean_species
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -274,7 +268,6 @@ penguins |>
 # … with 334 more rows, 1 more variable: flipper_length_sc <dbl[,1]>, and
 #   abbreviated variable names ¹​bill_length_mm, ²​bill_depth_mm,
 #   ³​flipper_length_mm, ⁴​body_mass_g, ⁵​bill_depth_sc[,1], ⁶​bill_length_sc[,1]
-# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 Its just three columns, we can do that. 
@@ -306,7 +299,6 @@ penguins |>
 10 Adelie  Torgersen             -0.352        1.54   -0.776    4250 <NA>   2007
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm[,1],
 #   ²​flipper_length_mm[,1], ³​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Whoa! So fast!
@@ -350,7 +342,6 @@ penguins |>
 10           42            20.2               190         -0.352   1.54   -0.776
 # … with 334 more rows, and abbreviated variable names ¹​bill_length_mm_sc[,1],
 #   ²​bill_depth_mm_sc[,1], ³​flipper_length_mm_sc[,1]
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Now they are all there! neat! But that `.names` argument is a little weird. What does it really mean?
@@ -392,7 +383,6 @@ penguins |>
 #   sc_body_mass_g <dbl[,1]>, and abbreviated variable names ¹​bill_length_mm,
 #   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​sc_bill_length_mm[,1],
 #   ⁶​sc_bill_depth_mm[,1]
-# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -439,7 +429,6 @@ penguins |>
 #   sc_body_mass_g <dbl[,1]>, body_mass_kg <dbl>, and abbreviated variable
 #   names ¹​bill_length_mm, ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g,
 #   ⁵​sc_bill_length_mm[,1], ⁶​sc_bill_depth_mm[,1]
-# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 

@@ -84,7 +84,6 @@ select(penguins, island, species, sex)
  9 Torgersen Adelie  <NA>  
 10 Torgersen Adelie  <NA>  
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 When we use `select()` we don't need to use quotations, we write in the names directly. We can also use the numeric indexes for the column, if we are 100% certain of the order of the columns:
@@ -109,7 +108,6 @@ select(penguins, 1:3, 6)
  9 Adelie  Torgersen           34.1        3475
 10 Adelie  Torgersen           42          4250
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 In some cases, we want to remove columns, and not necessarily state all columns we want to keep. 
@@ -135,7 +133,6 @@ select(penguins, -bill_length_mm, -bill_depth_mm)
  9 Adelie  Torgersen               193        3475 <NA>    2007
 10 Adelie  Torgersen               190        4250 <NA>    2007
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -165,7 +162,6 @@ select(penguins, sex, year, species)
  9 <NA>    2007 Adelie 
 10 <NA>    2007 Adelie 
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -199,7 +195,6 @@ select(penguins, species, sex, year)
  9 Adelie  <NA>    2007
 10 Adelie  <NA>    2007
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 select does not only subset columns, but it can also re-arrange them. The columns appear in the order your selection is specified.
 
@@ -236,7 +231,6 @@ select(penguins, ends_with("mm"))
  9           34.1          18.1               193
 10           42            20.2               190
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 So convenient! There are several other tidy-selectors you can choose, [which you can find here](https://dplyr.tidyverse.org/reference/select.html), but often people resort to three specific ones:
@@ -269,7 +263,6 @@ select(penguins, starts_with("bill"))
  9           34.1          18.1
 10           42            20.2
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 The tidy selector can be combined with each other and other selectors. So you can build exactly the data you want!
@@ -294,7 +287,6 @@ select(penguins, island, species, year, starts_with("bill"))
  9 Torgersen Adelie   2007           34.1          18.1
 10 Torgersen Adelie   2007           42            20.2
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -324,7 +316,6 @@ select(penguins, contains("_"))
  9           34.1          18.1               193        3475
 10           42            20.2               190        4250
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -359,7 +350,6 @@ select(penguins, species, sex, ends_with("mm"))
  9 Adelie  <NA>             34.1          18.1               193
 10 Adelie  <NA>             42            20.2               190
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -393,7 +383,6 @@ select(penguins, -starts_with("bill"))
  9 Adelie  Torgersen               193        3475 <NA>    2007
 10 Adelie  Torgersen               190        4250 <NA>    2007
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -425,7 +414,6 @@ select(penguins, where(is.numeric))
  9           34.1          18.1               193        3475  2007
 10           42            20.2               190        4250  2007
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 Magic! Let's break that down. 
@@ -470,7 +458,6 @@ penguins
 10 Adelie  Torgersen           42            20.2        190    4250 <NA>   2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 The penguins data is stored as a `tibble`, which is a special kind of data set in R that gives a nice print out of the data.
@@ -499,7 +486,6 @@ select(penguins, where(is.numeric))
  9           34.1          18.1               193        3475  2007
 10           42            20.2               190        4250  2007
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -529,7 +515,6 @@ select(penguins, where(is.factor))
  9 Adelie  Torgersen <NA>  
 10 Adelie  Torgersen <NA>  
 # … with 334 more rows
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -564,7 +549,6 @@ select(penguins, island, species, where(is.numeric))
 10 Torgersen Adelie            42            20.2              190    4250  2007
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -656,7 +640,6 @@ filter(penguins, island == "Dream")
 10 Adelie  Dream            39.8          19.1           184    4650 male   2007
 # … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -690,7 +673,6 @@ filter(penguins, year >= 2008)
 10 Adelie  Biscoe           37.6          19.1           194    3750 male   2008
 # … with 224 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -750,7 +732,6 @@ filter(penguins,
 # … with 8 variables: species <fct>, island <fct>, bill_length_mm <dbl>,
 #   bill_depth_mm <dbl>, flipper_length_mm <int>, body_mass_g <int>, sex <fct>,
 #   year <int>
-# ℹ Use `colnames()` to see all variable names
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -783,7 +764,6 @@ filter(penguins,
 10 Adelie  Biscoe           37.6          19.1           194    3750 male   2008
 # … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -819,7 +799,6 @@ filter(penguins,
 10 Chinstrap Dream            49.2          18.2         195    4400 male   2007
 # … with 24 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -852,7 +831,6 @@ filter(penguins,
 10 Chinstrap Dream               51.3          19.2      193    3650 male   2007
 # … with 65 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 This now gives us both all chinstrap penguins, and the smallest Adelie penguins!
@@ -888,7 +866,6 @@ filter(penguins,
 10 Adelie  Biscoe              38.8          17.2        180    3800 male   2007
 # … with 192 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g
-# ℹ Use `print(n = ...)` to see more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
