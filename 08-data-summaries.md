@@ -603,17 +603,16 @@ penguins |>
 ```{.output}
 # A tibble: 8 × 6
 # Groups:   species [3]
-  species   sex    body_mass_kg_mean body_mass_kg_min body_mass_kg_max species…¹
-  <fct>     <fct>              <dbl>            <dbl>            <dbl>     <dbl>
-1 Adelie    female              3.37             2.85             3.9       3.65
-2 Adelie    male                4.04             3.32             4.78      3.65
-3 Adelie    <NA>                3.54             2.98             4.25      3.65
-4 Chinstrap female              3.53             2.7              4.15      3.73
-5 Chinstrap male                3.94             3.25             4.8       3.73
-6 Gentoo    female              4.68             3.95             5.2       4.92
-7 Gentoo    male                5.48             4.75             6.3       4.92
-8 Gentoo    <NA>                4.59             4.1              4.88      4.92
-# … with abbreviated variable name ¹​species_mean
+  species  sex   body_mass_kg_me… body_mass_kg_min body_mass_kg_max species_mean
+  <fct>    <fct>            <dbl>            <dbl>            <dbl>        <dbl>
+1 Adelie   fema…             3.37             2.85             3.9          3.65
+2 Adelie   male              4.04             3.32             4.78         3.65
+3 Adelie   <NA>              3.54             2.98             4.25         3.65
+4 Chinstr… fema…             3.53             2.7              4.15         3.73
+5 Chinstr… male              3.94             3.25             4.8          3.73
+6 Gentoo   fema…             4.68             3.95             5.2          4.92
+7 Gentoo   male              5.48             4.75             6.3          4.92
+8 Gentoo   <NA>              4.59             4.1              4.88         4.92
 ```
 
 Notice that now, the same value is in the species_mean column for all the rows of each species.
@@ -645,18 +644,17 @@ penguins |>
 ```{.output}
 # A tibble: 8 × 7
 # Groups:   species [3]
-  species   sex    body_mass_kg_mean body_mass_kg_min body_mas…¹ speci…² rel_s…³
-  <fct>     <fct>              <dbl>            <dbl>      <dbl>   <dbl>   <dbl>
-1 Adelie    female              3.37             2.85       3.9     3.65   0.282
-2 Adelie    male                4.04             3.32       4.78    3.65  -0.393
-3 Adelie    <NA>                3.54             2.98       4.25    3.65   0.111
-4 Chinstrap female              3.53             2.7        4.15    3.73   0.206
-5 Chinstrap male                3.94             3.25       4.8     3.73  -0.206
-6 Gentoo    female              4.68             3.95       5.2     4.92   0.238
-7 Gentoo    male                5.48             4.75       6.3     4.92  -0.567
-8 Gentoo    <NA>                4.59             4.1        4.88    4.92   0.330
-# … with abbreviated variable names ¹​body_mass_kg_max, ²​species_mean,
-#   ³​rel_species
+  species  sex   body_mass_kg_me… body_mass_kg_min body_mass_kg_max species_mean
+  <fct>    <fct>            <dbl>            <dbl>            <dbl>        <dbl>
+1 Adelie   fema…             3.37             2.85             3.9          3.65
+2 Adelie   male              4.04             3.32             4.78         3.65
+3 Adelie   <NA>              3.54             2.98             4.25         3.65
+4 Chinstr… fema…             3.53             2.7              4.15         3.73
+5 Chinstr… male              3.94             3.25             4.8          3.73
+6 Gentoo   fema…             4.68             3.95             5.2          4.92
+7 Gentoo   male              5.48             4.75             6.3          4.92
+8 Gentoo   <NA>              4.59             4.1              4.88         4.92
+# … with 1 more variable: rel_species <dbl>
 ```
 
 Now we can see, with how much the male penguins usually weight compared to the female ones.

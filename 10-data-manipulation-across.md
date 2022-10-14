@@ -167,20 +167,20 @@ penguins |>
 ```{.output}
 # A tibble: 344 × 9
 # Rowwise: 
-   species island    bill_length_mm bill_d…¹ flipp…² body_…³ sex    year mm_mean
-   <fct>   <fct>              <dbl>    <dbl>   <int>   <int> <fct> <int>   <dbl>
- 1 Adelie  Torgersen           39.1     18.7     181    3750 male   2007    79.6
- 2 Adelie  Torgersen           39.5     17.4     186    3800 fema…  2007    81.0
- 3 Adelie  Torgersen           40.3     18       195    3250 fema…  2007    84.4
- 4 Adelie  Torgersen           NA       NA        NA      NA <NA>   2007    NA  
- 5 Adelie  Torgersen           36.7     19.3     193    3450 fema…  2007    83  
- 6 Adelie  Torgersen           39.3     20.6     190    3650 male   2007    83.3
- 7 Adelie  Torgersen           38.9     17.8     181    3625 fema…  2007    79.2
- 8 Adelie  Torgersen           39.2     19.6     195    4675 male   2007    84.6
- 9 Adelie  Torgersen           34.1     18.1     193    3475 <NA>   2007    81.7
-10 Adelie  Torgersen           42       20.2     190    4250 <NA>   2007    84.1
-# … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# … with 334 more rows, and 3 more variables: sex <fct>, year <int>,
+#   mm_mean <dbl>
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -209,20 +209,20 @@ penguins |>
 ```{.output}
 # A tibble: 344 × 10
 # Groups:   species [3]
-   species island    bill_…¹ bill_…² flipp…³ body_…⁴ sex    year mm_mean mm_me…⁵
-   <fct>   <fct>       <dbl>   <dbl>   <int>   <int> <fct> <int>   <dbl>   <dbl>
- 1 Adelie  Torgersen    39.1    18.7     181    3750 male   2007    79.6    82.4
- 2 Adelie  Torgersen    39.5    17.4     186    3800 fema…  2007    81.0    82.4
- 3 Adelie  Torgersen    40.3    18       195    3250 fema…  2007    84.4    82.4
- 4 Adelie  Torgersen    NA      NA        NA      NA <NA>   2007    NA      82.4
- 5 Adelie  Torgersen    36.7    19.3     193    3450 fema…  2007    83      82.4
- 6 Adelie  Torgersen    39.3    20.6     190    3650 male   2007    83.3    82.4
- 7 Adelie  Torgersen    38.9    17.8     181    3625 fema…  2007    79.2    82.4
- 8 Adelie  Torgersen    39.2    19.6     195    4675 male   2007    84.6    82.4
- 9 Adelie  Torgersen    34.1    18.1     193    3475 <NA>   2007    81.7    82.4
-10 Adelie  Torgersen    42      20.2     190    4250 <NA>   2007    84.1    82.4
-# … with 334 more rows, and abbreviated variable names ¹​bill_length_mm,
-#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​mm_mean_species
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# … with 334 more rows, and 4 more variables: sex <fct>, year <int>,
+#   mm_mean <dbl>, mm_mean_species <dbl>
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -253,21 +253,21 @@ penguins |>
 
 ```{.output}
 # A tibble: 344 × 11
-   species island    bill_…¹ bill_…² flipp…³ body_…⁴ sex    year bill_…⁵ bill_…⁶
-   <fct>   <fct>       <dbl>   <dbl>   <int>   <int> <fct> <int>   <dbl>   <dbl>
- 1 Adelie  Torgersen    39.1    18.7     181    3750 male   2007   0.784  -0.883
- 2 Adelie  Torgersen    39.5    17.4     186    3800 fema…  2007   0.126  -0.810
- 3 Adelie  Torgersen    40.3    18       195    3250 fema…  2007   0.430  -0.663
- 4 Adelie  Torgersen    NA      NA        NA      NA <NA>   2007  NA      NA    
- 5 Adelie  Torgersen    36.7    19.3     193    3450 fema…  2007   1.09   -1.32 
- 6 Adelie  Torgersen    39.3    20.6     190    3650 male   2007   1.75   -0.847
- 7 Adelie  Torgersen    38.9    17.8     181    3625 fema…  2007   0.329  -0.920
- 8 Adelie  Torgersen    39.2    19.6     195    4675 male   2007   1.24   -0.865
- 9 Adelie  Torgersen    34.1    18.1     193    3475 <NA>   2007   0.480  -1.80 
-10 Adelie  Torgersen    42      20.2     190    4250 <NA>   2007   1.54   -0.352
-# … with 334 more rows, 1 more variable: flipper_length_sc <dbl[,1]>, and
-#   abbreviated variable names ¹​bill_length_mm, ²​bill_depth_mm,
-#   ³​flipper_length_mm, ⁴​body_mass_g, ⁵​bill_depth_sc[,1], ⁶​bill_length_sc[,1]
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# … with 334 more rows, and 5 more variables: sex <fct>, year <int>,
+#   bill_depth_sc <dbl[,1]>, bill_length_sc <dbl[,1]>,
+#   flipper_length_sc <dbl[,1]>
 ```
 
 Its just three columns, we can do that. 
@@ -285,20 +285,19 @@ penguins |>
 
 ```{.output}
 # A tibble: 344 × 8
-   species island    bill_length_mm[,1] bill_depth…¹ flipp…² body_…³ sex    year
-   <fct>   <fct>                  <dbl>        <dbl>   <dbl>   <int> <fct> <int>
- 1 Adelie  Torgersen             -0.883        0.784  -1.42     3750 male   2007
- 2 Adelie  Torgersen             -0.810        0.126  -1.06     3800 fema…  2007
- 3 Adelie  Torgersen             -0.663        0.430  -0.421    3250 fema…  2007
- 4 Adelie  Torgersen             NA           NA      NA          NA <NA>   2007
- 5 Adelie  Torgersen             -1.32         1.09   -0.563    3450 fema…  2007
- 6 Adelie  Torgersen             -0.847        1.75   -0.776    3650 male   2007
- 7 Adelie  Torgersen             -0.920        0.329  -1.42     3625 fema…  2007
- 8 Adelie  Torgersen             -0.865        1.24   -0.421    4675 male   2007
- 9 Adelie  Torgersen             -1.80         0.480  -0.563    3475 <NA>   2007
-10 Adelie  Torgersen             -0.352        1.54   -0.776    4250 <NA>   2007
-# … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm[,1],
-#   ²​flipper_length_mm[,1], ³​body_mass_g
+   species island bill_length_mm[… bill_depth_mm[,… flipper_length_… body_mass_g
+   <fct>   <fct>             <dbl>            <dbl>            <dbl>       <int>
+ 1 Adelie  Torge…           -0.883            0.784           -1.42         3750
+ 2 Adelie  Torge…           -0.810            0.126           -1.06         3800
+ 3 Adelie  Torge…           -0.663            0.430           -0.421        3250
+ 4 Adelie  Torge…           NA               NA               NA              NA
+ 5 Adelie  Torge…           -1.32             1.09            -0.563        3450
+ 6 Adelie  Torge…           -0.847            1.75            -0.776        3650
+ 7 Adelie  Torge…           -0.920            0.329           -1.42         3625
+ 8 Adelie  Torge…           -0.865            1.24            -0.421        4675
+ 9 Adelie  Torge…           -1.80             0.480           -0.563        3475
+10 Adelie  Torge…           -0.352            1.54            -0.776        4250
+# … with 334 more rows, and 2 more variables: sex <fct>, year <int>
 ```
 
 Whoa! So fast!
@@ -328,20 +327,20 @@ penguins |>
 
 ```{.output}
 # A tibble: 344 × 6
-   bill_length_mm bill_depth_mm flipper_length_mm bill_length_…¹ bill_…² flipp…³
-            <dbl>         <dbl>             <int>          <dbl>   <dbl>   <dbl>
- 1           39.1          18.7               181         -0.883   0.784  -1.42 
- 2           39.5          17.4               186         -0.810   0.126  -1.06 
- 3           40.3          18                 195         -0.663   0.430  -0.421
- 4           NA            NA                  NA         NA      NA      NA    
- 5           36.7          19.3               193         -1.32    1.09   -0.563
- 6           39.3          20.6               190         -0.847   1.75   -0.776
- 7           38.9          17.8               181         -0.920   0.329  -1.42 
- 8           39.2          19.6               195         -0.865   1.24   -0.421
- 9           34.1          18.1               193         -1.80    0.480  -0.563
-10           42            20.2               190         -0.352   1.54   -0.776
-# … with 334 more rows, and abbreviated variable names ¹​bill_length_mm_sc[,1],
-#   ²​bill_depth_mm_sc[,1], ³​flipper_length_mm_sc[,1]
+   bill_length_mm bill_depth_mm flipper_length_mm bill_length_mm_sc[,1]
+            <dbl>         <dbl>             <int>                 <dbl>
+ 1           39.1          18.7               181                -0.883
+ 2           39.5          17.4               186                -0.810
+ 3           40.3          18                 195                -0.663
+ 4           NA            NA                  NA                NA    
+ 5           36.7          19.3               193                -1.32 
+ 6           39.3          20.6               190                -0.847
+ 7           38.9          17.8               181                -0.920
+ 8           39.2          19.6               195                -0.865
+ 9           34.1          18.1               193                -1.80 
+10           42            20.2               190                -0.352
+# … with 334 more rows, and 2 more variables: bill_depth_mm_sc <dbl[,1]>,
+#   flipper_length_mm_sc <dbl[,1]>
 ```
 
 Now they are all there! neat! But that `.names` argument is a little weird. What does it really mean?
@@ -367,22 +366,21 @@ penguins |>
 
 ```{.output}
 # A tibble: 344 × 12
-   species island    bill_…¹ bill_…² flipp…³ body_…⁴ sex    year sc_bi…⁵ sc_bi…⁶
-   <fct>   <fct>       <dbl>   <dbl>   <int>   <int> <fct> <int>   <dbl>   <dbl>
- 1 Adelie  Torgersen    39.1    18.7     181    3750 male   2007  -0.883   0.784
- 2 Adelie  Torgersen    39.5    17.4     186    3800 fema…  2007  -0.810   0.126
- 3 Adelie  Torgersen    40.3    18       195    3250 fema…  2007  -0.663   0.430
- 4 Adelie  Torgersen    NA      NA        NA      NA <NA>   2007  NA      NA    
- 5 Adelie  Torgersen    36.7    19.3     193    3450 fema…  2007  -1.32    1.09 
- 6 Adelie  Torgersen    39.3    20.6     190    3650 male   2007  -0.847   1.75 
- 7 Adelie  Torgersen    38.9    17.8     181    3625 fema…  2007  -0.920   0.329
- 8 Adelie  Torgersen    39.2    19.6     195    4675 male   2007  -0.865   1.24 
- 9 Adelie  Torgersen    34.1    18.1     193    3475 <NA>   2007  -1.80    0.480
-10 Adelie  Torgersen    42      20.2     190    4250 <NA>   2007  -0.352   1.54 
-# … with 334 more rows, 2 more variables: sc_flipper_length_mm <dbl[,1]>,
-#   sc_body_mass_g <dbl[,1]>, and abbreviated variable names ¹​bill_length_mm,
-#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​sc_bill_length_mm[,1],
-#   ⁶​sc_bill_depth_mm[,1]
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# … with 334 more rows, and 6 more variables: sex <fct>, year <int>,
+#   sc_bill_length_mm <dbl[,1]>, sc_bill_depth_mm <dbl[,1]>,
+#   sc_flipper_length_mm <dbl[,1]>, sc_body_mass_g <dbl[,1]>
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -413,22 +411,22 @@ penguins |>
 
 ```{.output}
 # A tibble: 344 × 13
-   species island    bill_…¹ bill_…² flipp…³ body_…⁴ sex    year sc_bi…⁵ sc_bi…⁶
-   <fct>   <fct>       <dbl>   <dbl>   <int>   <int> <fct> <int>   <dbl>   <dbl>
- 1 Adelie  Torgersen    39.1    18.7     181    3750 male   2007  -0.883   0.784
- 2 Adelie  Torgersen    39.5    17.4     186    3800 fema…  2007  -0.810   0.126
- 3 Adelie  Torgersen    40.3    18       195    3250 fema…  2007  -0.663   0.430
- 4 Adelie  Torgersen    NA      NA        NA      NA <NA>   2007  NA      NA    
- 5 Adelie  Torgersen    36.7    19.3     193    3450 fema…  2007  -1.32    1.09 
- 6 Adelie  Torgersen    39.3    20.6     190    3650 male   2007  -0.847   1.75 
- 7 Adelie  Torgersen    38.9    17.8     181    3625 fema…  2007  -0.920   0.329
- 8 Adelie  Torgersen    39.2    19.6     195    4675 male   2007  -0.865   1.24 
- 9 Adelie  Torgersen    34.1    18.1     193    3475 <NA>   2007  -1.80    0.480
-10 Adelie  Torgersen    42      20.2     190    4250 <NA>   2007  -0.352   1.54 
-# … with 334 more rows, 3 more variables: sc_flipper_length_mm <dbl[,1]>,
-#   sc_body_mass_g <dbl[,1]>, body_mass_kg <dbl>, and abbreviated variable
-#   names ¹​bill_length_mm, ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g,
-#   ⁵​sc_bill_length_mm[,1], ⁶​sc_bill_depth_mm[,1]
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# … with 334 more rows, and 7 more variables: sex <fct>, year <int>,
+#   sc_bill_length_mm <dbl[,1]>, sc_bill_depth_mm <dbl[,1]>,
+#   sc_flipper_length_mm <dbl[,1]>, sc_body_mass_g <dbl[,1]>,
+#   body_mass_kg <dbl>
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
