@@ -62,11 +62,12 @@ episodes:
   - 02-data-visualisation.Rmd
   - 03-data-subsetting.Rmd
   - 04-data-sorting-pipes.Rmd
-  - 05-data-manipulation.Rmd
-  - 06-data-reshaping.Rmd
-  - 07-data-summaries.Rmd
-  - 08-data-complex-pipelines.Rmd
-  - 09-data-manipulation-across.Rmd
+  - 05-data-plotting-scales.Rmd
+  - 06-data-manipulation.Rmd
+  - 07-data-reshaping.Rmd
+  - 08-data-summaries.Rmd
+  - 09-data-complex-pipelines.Rmd
+  - 10-data-manipulation-across.Rmd
 
 # Information for Learners
 learners:
