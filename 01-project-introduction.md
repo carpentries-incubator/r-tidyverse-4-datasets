@@ -75,13 +75,13 @@ When you first open RStudio, you will be greeted by three panels:
   * Environment/History/Connections (tabbed in upper right)  
   * Files/Plots/Packages/Help/Viewer (tabbed in lower right)  
 
-<img src="fig/01-rstudio.png" title="RStudio layout with three default panes" alt="RStudio layout with three default panes" style="display: block; margin: auto;" />
+<img src="fig/01-rstudio.png" alt="RStudio layout with three default panes" style="display: block; margin: auto;" />
 
 
 Once you open files, such as R scripts, an editor panel will also open
 in the top left.
 
-<img src="fig/01-rstudio-script.png" title="RStudio 4-pane layout with .R file open" alt="RStudio 4-pane layout with .R file open" style="display: block; margin: auto;" />
+<img src="fig/01-rstudio-script.png" alt="RStudio 4-pane layout with .R file open" style="display: block; margin: auto;" />
 
 ## Work flow within RStudio
 There are two main ways one can work within RStudio:
@@ -135,7 +135,7 @@ eventually everything is a bit mixed together.
 
 Most people tend to organize their projects like this:
 
-<img src="fig/01_bad_project.png" title="Image of a local folder structure with files. The file names do not easily make it possible to understand which files are similar in content or which is the newest version." alt="Image of a local folder structure with files. The file names do not easily make it possible to understand which files are similar in content or which is the newest version." style="display: block; margin: auto;" />
+<img src="fig/01_bad_project.png" alt="Image of a local folder structure with files. The file names do not easily make it possible to understand which files are similar in content or which is the newest version." style="display: block; margin: auto;" />
 
 
 There are many reasons why we should *ALWAYS* avoid this:
