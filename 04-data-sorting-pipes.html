@@ -334,20 +334,35 @@
 </div>
 <section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
 </h2>
-<hr class="half-width"><p>Getting an overview of our data can be challenging. Breaking it up in smaller pieces can help us get a better understanding of its content. Being able to subset data is one part of that, another is to be able to re-arrange rows to get a clearer idea of their content.</p>
+<hr class="half-width"><p>Getting an overview of our data can be challenging. Breaking it up in
+smaller pieces can help us get a better understanding of its content.
+Being able to subset data is one part of that, another is to be able to
+re-arrange rows to get a clearer idea of their content.</p>
 </section><section id="creating-subsetted-objects"><h2 class="section-heading">Creating subsetted objects<a class="anchor" aria-label="anchor" href="#creating-subsetted-objects"></a>
 </h2>
-<hr class="half-width"><p>So far, we have kept working on the penguins data set, without actually altering it. So far, all our actions have been executed, then forgotten by R. Like it never happened. This is actually quite smart, since it makes it harder to do mistakes you can have difficulties changing.</p>
-<p>To store the changes, we have to “assign” the data to a new object in the R environment. Like the penguins data set, which already is an object in our environment we have called “penguins”.</p>
-<p>We will now store a filtered version including only the chinstrap penguins, in an object we call <code>chinstraps</code>.</p>
+<hr class="half-width"><p>So far, we have kept working on the penguins data set, without
+actually altering it. So far, all our actions have been executed, then
+forgotten by R. Like it never happened. This is actually quite smart,
+since it makes it harder to do mistakes you can have difficulties
+changing.</p>
+<p>To store the changes, we have to “assign” the data to a new object in
+the R environment. Like the penguins data set, which already is an
+object in our environment we have called “penguins”.</p>
+<p>We will now store a filtered version including only the chinstrap
+penguins, in an object we call <code>chinstraps</code>.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">chinstraps</span> <span class="op">&lt;-</span> <span class="fu">filter</span><span class="op">(</span><span class="va">penguins</span>, <span class="va">species</span> <span class="op">==</span> <span class="st">"Chinstrap"</span><span class="op">)</span></span></code></pre>
 </div>
-<p>You will likely notice that when we execute this command, nothing is output to the console. That is expected. When we assign the output of a function somewhere, and everything works (<em>i.e.</em>, no errors or warnings), nothing happens in the console.</p>
-<p>But you should be able to see the new chinstraps object in your environment, and when we type <code>chinstraps</code> in the R console, it prints our chinstraps data.</p>
+<p>You will likely notice that when we execute this command, nothing is
+output to the console. That is expected. When we assign the output of a
+function somewhere, and everything works (<em>i.e.</em>, no errors or
+warnings), nothing happens in the console.</p>
+<p>But you should be able to see the new chinstraps object in your
+environment, and when we type <code>chinstraps</code> in the R console,
+it prints our chinstraps data.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -373,7 +388,8 @@
 # … with 58 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g</code></pre>
 </div>
-<p>Maybe in this chinstrap data we are also not interested in the bill measurements, so we want to remove them.</p>
+<p>Maybe in this chinstrap data we are also not interested in the bill
+measurements, so we want to remove them.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -399,7 +415,10 @@
 10 Chinstrap Dream                198        3700 male    2007
 # … with 58 more rows</code></pre>
 </div>
-<p>Now our data has two less columns, and many fewer rows. A simpler data set for us to work with. But assigning the chinstrap data twice like this is a lot of typing, and there is a simpler way, using something we call the “pipe”.</p>
+<p>Now our data has two less columns, and many fewer rows. A simpler
+data set for us to work with. But assigning the chinstrap data twice
+like this is a lot of typing, and there is a simpler way, using
+something we call the “pipe”.</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -408,7 +427,9 @@
 <h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
-<p>Create a new data set called “biscoe”, where you only have data from “Biscoe” island, and where you only have the first 4 columns of data.</p>
+<p>Create a new data set called “biscoe”, where you only have data from
+“Biscoe” island, and where you only have the first 4 columns of
+data.</p>
 </div>
 </div>
 </div>
@@ -434,11 +455,19 @@
 </div>
 </section><section id="the-pipe"><h2 class="section-heading">The pipe <code>|&gt;</code><a class="anchor" aria-label="anchor" href="#the-pipe"></a>
 </h2>
-<hr class="half-width"><p>We often want to string together series of functions. This is achieved using pipe operator <code>|&gt;</code>. This takes the value on the left, and passes it as the first argument to the function call on the right.</p>
-<p><code>|&gt;</code> is not limited to {dplyr} functions. It’s an alternative way of writing any R code.</p>
-<p>You can enable the pipe in RStudio by going to Tools -&gt; Global options -&gt; Code -&gt; Use native pipe operator.</p>
-<p>The shortcut to insert the pipe operator is <code>Ctrl</code>+<code>Shift</code>+<code>M</code> for Windows/Linux, and <code>Cmd</code>+<code>Shift</code>+<code>M</code> for Mac.</p>
-<p>In the <code>chinstraps</code> example, we had the following code to filter the rows and then select our columns.</p>
+<hr class="half-width"><p>We often want to string together series of functions. This is
+achieved using pipe operator <code>|&gt;</code>. This takes the value on
+the left, and passes it as the first argument to the function call on
+the right.</p>
+<p><code>|&gt;</code> is not limited to {dplyr} functions. It’s an
+alternative way of writing any R code.</p>
+<p>You can enable the pipe in RStudio by going to Tools -&gt; Global
+options -&gt; Code -&gt; Use native pipe operator.</p>
+<p>The shortcut to insert the pipe operator is
+<code>Ctrl</code>+<code>Shift</code>+<code>M</code> for Windows/Linux,
+and <code>Cmd</code>+<code>Shift</code>+<code>M</code> for Mac.</p>
+<p>In the <code>chinstraps</code> example, we had the following code to
+filter the rows and then select our columns.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -446,7 +475,10 @@
 <code class="sourceCode R"><span><span class="va">chinstraps</span> <span class="op">&lt;-</span> <span class="fu">filter</span><span class="op">(</span><span class="va">penguins</span>, <span class="va">species</span> <span class="op">==</span> <span class="st">"Chinstrap"</span><span class="op">)</span></span>
 <span><span class="va">chinstraps</span> <span class="op">&lt;-</span> <span class="fu">select</span><span class="op">(</span><span class="va">chinstraps</span>, <span class="op">-</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<p>Here we first create the chinstraps data from the filtered penguins data set. Then use that chinstraps data to reduce the columns and write it again back to the same chinstraps object. It’s a little messy. With the pipe, we can make it more streamlined.</p>
+<p>Here we first create the chinstraps data from the filtered penguins
+data set. Then use that chinstraps data to reduce the columns and write
+it again back to the same chinstraps object. It’s a little messy. With
+the pipe, we can make it more streamlined.</p>
 
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -456,11 +488,19 @@
 <span>  <span class="fu">filter</span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Chinstrap"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="op">-</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"bill"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<p>The end result is the same, but there is less typing and we can “read” the pipeline of data subsetting more like language, if we know how. You can read the pipe operator as <strong>“and then”</strong>.</p>
-<p>So if we translate the code above to human language we could read it as:</p>
-<p>take the penguins data set, and then keep only rows for the chinstrap penguins, and then remove the columns starting with bill and assign the end result to chinstraps.</p>
-<p>Learning to read pipes is a great skill, R is not the only programming language that can do this (though the operator is different between languages, the functionality exists in many).</p>
-<p>We can do the entire pipe chain step by step to see what is happening.</p>
+<p>The end result is the same, but there is less typing and we can
+“read” the pipeline of data subsetting more like language, if we know
+how. You can read the pipe operator as <strong>“and then”</strong>.</p>
+<p>So if we translate the code above to human language we could read it
+as:</p>
+<p>take the penguins data set, and then keep only rows for the chinstrap
+penguins, and then remove the columns starting with bill and assign the
+end result to chinstraps.</p>
+<p>Learning to read pipes is a great skill, R is not the only
+programming language that can do this (though the operator is different
+between languages, the functionality exists in many).</p>
+<p>We can do the entire pipe chain step by step to see what is
+happening.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -541,8 +581,12 @@
 # … with 58 more rows</code></pre>
 </div>
 
-<p>So, for each chain step, the output of the previous step is fed into the next step, and that way the commands build on each other until a final end result is made.</p>
-<p>And as before, we still are seeing the output of the command chain in the console, meaning we are not storing it. Let us do that, again using the assignment.</p>
+<p>So, for each chain step, the output of the previous step is fed into
+the next step, and that way the commands build on each other until a
+final end result is made.</p>
+<p>And as before, we still are seeing the output of the command chain in
+the console, meaning we are not storing it. Let us do that, again using
+the assignment.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -579,7 +623,9 @@
 <h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge2"></a>
 </h3>
 <div class="callout-content">
-<p>Create a new data set called “biscoe”, where you only have data from “Biscoe” island, and where you only have the first 4 columns of data. This time use the pipe.</p>
+<p>Create a new data set called “biscoe”, where you only have data from
+“Biscoe” island, and where you only have the first 4 columns of data.
+This time use the pipe.</p>
 </div>
 </div>
 </div>
@@ -624,8 +670,12 @@
 </div>
 </section><section id="sorting-rows"><h2 class="section-heading">Sorting rows<a class="anchor" aria-label="anchor" href="#sorting-rows"></a>
 </h2>
-<hr class="half-width"><p>So far, we have looked at subsetting the data. But some times, we want to reorganize the data without altering it. In tables, we are used to be able to sort columns in ascending or descending order.</p>
-<p>This can also be done with {dplyr}’s <code>arrange()</code> function. arrange does not alter the data <em>per se</em>, just the order in which the rows are stored.</p>
+<hr class="half-width"><p>So far, we have looked at subsetting the data. But some times, we
+want to reorganize the data without altering it. In tables, we are used
+to be able to sort columns in ascending or descending order.</p>
+<p>This can also be done with {dplyr}’s <code>arrange()</code> function.
+arrange does not alter the data <em>per se</em>, just the order in which
+the rows are stored.</p>
 
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -653,8 +703,12 @@
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g</code></pre>
 </div>
-<p>Here we have sorted the data by the island column. Since island is a factor, it will order by the facor levels, which in this case has Biscoe island as the first category. If we sort a numeric column, it will sort by numeric value.</p>
-<p>By default, arrange sorts in ascending order. If you want it sorted by descending order, wrap the column name in <code>desc()</code></p>
+<p>Here we have sorted the data by the island column. Since island is a
+factor, it will order by the facor levels, which in this case has Biscoe
+island as the first category. If we sort a numeric column, it will sort
+by numeric value.</p>
+<p>By default, arrange sorts in ascending order. If you want it sorted
+by descending order, wrap the column name in <code>desc()</code></p>
 
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -741,7 +795,8 @@
 <h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge4"></a>
 </h3>
 <div class="callout-content">
-<p>Arrange the penguins data set by descending order of <code>flipper_length_mm</code>.</p>
+<p>Arrange the penguins data set by descending order of
+<code>flipper_length_mm</code>.</p>
 </div>
 </div>
 </div>
@@ -792,7 +847,10 @@
 <h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge5"></a>
 </h3>
 <div class="callout-content">
-<p>You can arrange on multiple columns! Try arranging the penguins data set by ascending <code>island</code> and descending <code>flipper_length_mm</code>, using a comma between the two arguments.</p>
+<p>You can arrange on multiple columns! Try arranging the penguins data
+set by ascending <code>island</code> and descending
+<code>flipper_length_mm</code>, using a comma between the two
+arguments.</p>
 </div>
 </div>
 </div>
@@ -837,8 +895,12 @@
 </div>
 </section><section id="putting-it-all-together"><h2 class="section-heading">Putting it all together<a class="anchor" aria-label="anchor" href="#putting-it-all-together"></a>
 </h2>
-<hr class="half-width"><p>Now that you have learned about ggplot, filter, select and arrange, we can have a look at how we can combine all these to get a better understanding and control over the data. By piping commands together, we can slowly build a better understanding of the data in our minds.</p>
-<p>We can for instance explore the numeric columns arranged by Island</p>
+<hr class="half-width"><p>Now that you have learned about ggplot, filter, select and arrange,
+we can have a look at how we can combine all these to get a better
+understanding and control over the data. By piping commands together, we
+can slowly build a better understanding of the data in our minds.</p>
+<p>We can for instance explore the numeric columns arranged by
+Island</p>
 
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -866,7 +928,8 @@
 10           40.5          18.9               180        3950  2007
 # … with 334 more rows</code></pre>
 </div>
-<p>And we can continue that by looking at the data for only male penguins</p>
+<p>And we can continue that by looking at the data for only male
+penguins</p>
 
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -885,9 +948,14 @@
 Caused by error in `mask$eval_all_filter()`:
 ! object 'sex' not found</code></pre>
 </div>
-<p>Whoops! What happened there? Try looking at the error message and see if you can understand it.</p>
-<p>Its telling us that there is no <code>sex</code> column. How can that be? Well, we took it away in our select! Since we’ve only kept numeric data and the island column, the sex column is missing!</p>
-<p>The order in which you chain commands together matters. Since the pipe sends the output of the previous command into the next, we have two ways of being able to filter by sex:</p>
+<p>Whoops! What happened there? Try looking at the error message and see
+if you can understand it.</p>
+<p>Its telling us that there is no <code>sex</code> column. How can that
+be? Well, we took it away in our select! Since we’ve only kept numeric
+data and the island column, the sex column is missing!</p>
+<p>The order in which you chain commands together matters. Since the
+pipe sends the output of the previous command into the next, we have two
+ways of being able to filter by sex:</p>
 <ol style="list-style-type: decimal"><li>by adding sex to our selection</li>
 <li>by filtering the data before our selection.</li>
 </ol><div id="challenge6" class="callout challenge">
@@ -898,7 +966,8 @@ Caused by error in `mask$eval_all_filter()`:
 <h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge6"></a>
 </h3>
 <div class="callout-content">
-<p>Fix the previous code bit by applying one of the two solutions suggested.</p>
+<p>Fix the previous code bit by applying one of the two solutions
+suggested.</p>
 </div>
 </div>
 </div>
@@ -971,7 +1040,10 @@ Caused by error in `mask$eval_all_filter()`:
 </div>
 </section><div class="section level1">
 <h1 id="wrap-up">Wrap-up<a class="anchor" aria-label="anchor" href="#wrap-up"></a></h1>
-<p>Now we’ve learned about subsetting and sorting our data, so we can create data sets that are suited to our needs. We also learned about chaining commands, the use of the pipe to create a series of commands that build on each other to create a final wanted output.</p>
+<p>Now we’ve learned about subsetting and sorting our data, so we can
+create data sets that are suited to our needs. We also learned about
+chaining commands, the use of the pipe to create a series of commands
+that build on each other to create a final wanted output.</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
@@ -1033,7 +1105,7 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/04-data-sorting-pipes.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/04-data-sorting-pipes.html",
-  "dateCreated": "2022-10-14",
+  "dateCreated": "2022-11-08",
   "dateModified": "2022-10-14",
   "datePublished": "2022-11-08"
 }

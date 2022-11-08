@@ -325,9 +325,11 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Use <code>select()</code> to reduce columns</li>
-<li>Use tidyselectors like <code>starts_with()</code> within <code>select()</code> to reduce columns</li>
+<li>Use tidyselectors like <code>starts_with()</code> within
+<code>select()</code> to reduce columns</li>
 <li>Use <code>filter()</code> to reduce rows</li>
-<li>Understand common logical operations using <code>filter()</code>
+<li>Understand common logical operations using
+<code>filter()</code>
 </li>
 </ul></div>
 </div>
@@ -350,11 +352,20 @@
 </div>
 <section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
 </h2>
-<hr class="half-width"><p>In many cases, we are working with data sets that contain more data than we need, or we want to inspect certain parts of the data set before we continue. Subsetting data sets can be challenging in base R, because there is a fair bit of repetition. This can make code difficult to readn and understand.</p>
+<hr class="half-width"><p>In many cases, we are working with data sets that contain more data
+than we need, or we want to inspect certain parts of the data set before
+we continue. Subsetting data sets can be challenging in base R, because
+there is a fair bit of repetition. This can make code difficult to readn
+and understand.</p>
 </section><section id="the-dplyr-package"><h2 class="section-heading">The {dplyr} package<a class="anchor" aria-label="anchor" href="#the-dplyr-package"></a>
 </h2>
-<hr class="half-width"><p>The <a href="https://cran.r-project.org/web/packages/dplyr/index.html" class="external-link">{dplyr}</a> package provides a number of very useful functions for manipulating data sets in a way that will reduce the probability of making errors, and even save you some typing time. As an added bonus, you might even find the {dplyr} grammar easier to read.</p>
-<p>We’re going to cover 6 of the most commonly used functions as well as using pipes (<code>|&gt;</code>) to combine them.</p>
+<hr class="half-width"><p>The <a href="https://cran.r-project.org/web/packages/dplyr/index.html" class="external-link">{dplyr}</a>
+package provides a number of very useful functions for manipulating data
+sets in a way that will reduce the probability of making errors, and
+even save you some typing time. As an added bonus, you might even find
+the {dplyr} grammar easier to read.</p>
+<p>We’re going to cover 6 of the most commonly used functions as well as
+using pipes (<code>|&gt;</code>) to combine them.</p>
 <ol style="list-style-type: decimal"><li>
 <code>select()</code> (covered in this session)</li>
 <li>
@@ -369,8 +380,12 @@
 <code>summarize()</code> (covered in Day 2 session)</li>
 </ol></section><section id="selecting-columns"><h2 class="section-heading">Selecting columns<a class="anchor" aria-label="anchor" href="#selecting-columns"></a>
 </h2>
-<hr class="half-width"><p>Let us first talk about selecting columns. In {dplyr}, the function name for selecting columns is <code>select()</code>! Most {tidyverse} function names for functions are inspired by English grammar, which will help us when we are writing our code.</p>
-<figure><img src="fig/03-selecting.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>We first need to make sure we have the tidyverse loaded and the penguins data set at hand.</p>
+<hr class="half-width"><p>Let us first talk about selecting columns. In {dplyr}, the function
+name for selecting columns is <code>select()</code>! Most {tidyverse}
+function names for functions are inspired by English grammar, which will
+help us when we are writing our code.</p>
+<figure><img src="fig/03-selecting.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>We first need to make sure we have the tidyverse loaded and the
+penguins data set at hand.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -378,7 +393,11 @@
 <code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
 <span><span class="va">penguins</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/penguins.csv"</span><span class="op">)</span></span></code></pre>
 </div>
-<p>To select data, we must first tell select which data set we are selecting from, and then give it our selection. Here, we are asking R to <code>select()</code> from the <code>penguins</code> data set the <code>island</code>, <code>species</code> and <code>sex</code> columns</p>
+<p>To select data, we must first tell select which data set we are
+selecting from, and then give it our selection. Here, we are asking R to
+<code>select()</code> from the <code>penguins</code> data set the
+<code>island</code>, <code>species</code> and <code>sex</code>
+columns</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -403,7 +422,9 @@
 10 Torgersen Adelie  &lt;NA&gt;  
 # … with 334 more rows</code></pre>
 </div>
-<p>When we use <code>select()</code> we don’t need to use quotations, we write in the names directly. We can also use the numeric indexes for the column, if we are 100% certain of the order of the columns:</p>
+<p>When we use <code>select()</code> we don’t need to use quotations, we
+write in the names directly. We can also use the numeric indexes for the
+column, if we are 100% certain of the order of the columns:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -428,7 +449,10 @@
 10 Adelie  Torgersen           42          4250
 # … with 334 more rows</code></pre>
 </div>
-<p>In some cases, we want to remove columns, and not necessarily state all columns we want to keep. Select also allows for this by adding a minus (<code>-</code>) sign in front of the column name you don’t want.</p>
+<p>In some cases, we want to remove columns, and not necessarily state
+all columns we want to keep. Select also allows for this by adding a
+minus (<code>-</code>) sign in front of the column name you don’t
+want.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -461,7 +485,8 @@
 <h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
-<p>Select the columns sex, year, and species from the penguins dataset.</p>
+<p>Select the columns sex, year, and species from the penguins
+dataset.</p>
 </div>
 </div>
 </div>
@@ -472,7 +497,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -510,7 +535,8 @@
 <h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge2"></a>
 </h3>
 <div class="callout-content">
-<p>Change your selection so that species comes before sex. What is the difference in the output?</p>
+<p>Change your selection so that species comes before sex. What is the
+difference in the output?</p>
 </div>
 </div>
 </div>
@@ -521,7 +547,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -547,17 +573,25 @@
 10 Adelie  &lt;NA&gt;    2007
 # … with 334 more rows</code></pre>
 </div>
-<p>select does not only subset columns, but it can also re-arrange them. The columns appear in the order your selection is specified.</p>
+<p>select does not only subset columns, but it can also re-arrange them.
+The columns appear in the order your selection is specified.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="section level3">
 <h3 id="tidy-selections">Tidy selections<a class="anchor" aria-label="anchor" href="#tidy-selections"></a></h3>
-<p>These selections are quite convenient and fast! But they can be even better.</p>
-<p>For instance, what if we want to choose all the columns with millimeter measurements? That could be quite convenient, making sure the variables we are working with have the same measurement scale.</p>
-<p>We could of course type them all out, but the penguins data set has names that make it even easier for us, using something called tidy-selectors.</p>
-<p>Here, we use a tidy-selector <code>ends_with()</code>, can you guess what it does? yes, it looks for columns that end with the string you provide it, here <code>"mm"</code>.</p>
+<p>These selections are quite convenient and fast! But they can be even
+better.</p>
+<p>For instance, what if we want to choose all the columns with
+millimeter measurements? That could be quite convenient, making sure the
+variables we are working with have the same measurement scale.</p>
+<p>We could of course type them all out, but the penguins data set has
+names that make it even easier for us, using something called
+tidy-selectors.</p>
+<p>Here, we use a tidy-selector <code>ends_with()</code>, can you guess
+what it does? yes, it looks for columns that end with the string you
+provide it, here <code>"mm"</code>.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -582,15 +616,25 @@
 10           42            20.2               190
 # … with 334 more rows</code></pre>
 </div>
-<p>So convenient! There are several other tidy-selectors you can choose, <a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">which you can find here</a>, but often people resort to three specific ones:</p>
+<p>So convenient! There are several other tidy-selectors you can choose,
+<a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">which you
+can find here</a>, but often people resort to three specific ones:</p>
 <ul><li>
-<code>ends_with()</code> - column names ending with a character string<br></li>
+<code>ends_with()</code> - column names ending with a character
+string<br></li>
 <li>
-<code>starts_with()</code> - column names starting with a character string<br></li>
+<code>starts_with()</code> - column names starting with a character
+string<br></li>
 <li>
-<code>contains()</code> - column names containing a character string</li>
-</ul><p>If you are working with a well named data set, these functions should make your data selecting much simpler. And if you are making your own data, you can think of such convenient naming for your data, so your work can be easier for you and others.</p>
-<p>Lets only pick the measurements of the bill, we are not so interested in the flipper. Then we might want to change to <code>starts_with()</code> in stead.</p>
+<code>contains()</code> - column names containing a character
+string</li>
+</ul><p>If you are working with a well named data set, these functions should
+make your data selecting much simpler. And if you are making your own
+data, you can think of such convenient naming for your data, so your
+work can be easier for you and others.</p>
+<p>Lets only pick the measurements of the bill, we are not so interested
+in the flipper. Then we might want to change to
+<code>starts_with()</code> in stead.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -615,7 +659,8 @@
 10           42            20.2
 # … with 334 more rows</code></pre>
 </div>
-<p>The tidy selector can be combined with each other and other selectors. So you can build exactly the data you want!</p>
+<p>The tidy selector can be combined with each other and other
+selectors. So you can build exactly the data you want!</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -648,7 +693,7 @@
 <h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
-<p>Select all columns containing an underscore ("_").</p>
+<p>Select all columns containing an underscore (“_“).</p>
 </div>
 </div>
 </div>
@@ -659,7 +704,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -697,7 +742,8 @@
 <h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge4"></a>
 </h3>
 <div class="callout-content">
-<p>Select the species and sex columns, in addition to all columns ending with “mm”</p>
+<p>Select the species and sex columns, in addition to all columns ending
+with “mm”</p>
 </div>
 </div>
 </div>
@@ -708,7 +754,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -757,7 +803,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -791,8 +837,15 @@
 <div class="section level3">
 <h3 id="tidy-selections-with-where">Tidy selections with <code>where</code>
 <a class="anchor" aria-label="anchor" href="#tidy-selections-with-where"></a></h3>
-<p>The last tidy-selector we’ll mention is <code>where()</code>. <code>where()</code> is a very special tidy selector, that uses logical evaluations to select the data. Let’s have a look at it in action, and see if we can explain it better that way.</p>
-<p>Say you are running a correlation analysis. For correlations, you need all the columns in your data to be numeric, as you cannot correlate strings or categories. Going through each individual column and seeing if it is numeric is a bit of a chore. That is where <code>where()</code> comes in!</p>
+<p>The last tidy-selector we’ll mention is <code>where()</code>.
+<code>where()</code> is a very special tidy selector, that uses logical
+evaluations to select the data. Let’s have a look at it in action, and
+see if we can explain it better that way.</p>
+<p>Say you are running a correlation analysis. For correlations, you
+need all the columns in your data to be numeric, as you cannot correlate
+strings or categories. Going through each individual column and seeing
+if it is numeric is a bit of a chore. That is where <code>where()</code>
+comes in!</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -817,7 +870,9 @@
 10           42            20.2               190        4250  2007
 # … with 334 more rows</code></pre>
 </div>
-<p>Magic! Let’s break that down. <code>is.numeric()</code> is a function in R that checks if a vector is numeric. If the vector is numeric, it returns <code>TRUE</code> if not it returns <code>FALSE</code>.</p>
+<p>Magic! Let’s break that down. <code>is.numeric()</code> is a function
+in R that checks if a vector is numeric. If the vector is numeric, it
+returns <code>TRUE</code> if not it returns <code>FALSE</code>.</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -866,8 +921,14 @@
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g</code></pre>
 </div>
-<p>The penguins data is stored as a <code>tibble</code>, which is a special kind of data set in R that gives a nice print out of the data. Notice, right below the column name, there is some information in <code>&lt;&gt;</code> marks. This tells us the class of the columns. Species and island are factors, while bill columns are “double” which is a decimal numeric class.</p>
-<p><code>where()</code> goes through all the columns and checks if they are numeric, and returns the ones that are.</p>
+<p>The penguins data is stored as a <code>tibble</code>, which is a
+special kind of data set in R that gives a nice print out of the data.
+Notice, right below the column name, there is some information in
+<code>&lt;&gt;</code> marks. This tells us the class of the columns.
+Species and island are factors, while bill columns are “double” which is
+a decimal numeric class.</p>
+<p><code>where()</code> goes through all the columns and checks if they
+are numeric, and returns the ones that are.</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -900,7 +961,8 @@
 <h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge6"></a>
 </h3>
 <div class="callout-content">
-<p>Select only the columns that are factors from the <code>penguins</code> data set.</p>
+<p>Select only the columns that are factors from the
+<code>penguins</code> data set.</p>
 </div>
 </div>
 </div>
@@ -911,7 +973,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -949,7 +1011,8 @@
 <h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge7"></a>
 </h3>
 <div class="callout-content">
-<p>Select the columns <code>island</code>, <code>species</code>, as well as all numeric columns from the <code>penguins</code> data set.</p>
+<p>Select the columns <code>island</code>, <code>species</code>, as well
+as all numeric columns from the <code>penguins</code> data set.</p>
 </div>
 </div>
 </div>
@@ -960,7 +1023,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -994,10 +1057,21 @@
 </div>
 </section><section id="filtering-rows"><h2 class="section-heading">Filtering rows<a class="anchor" aria-label="anchor" href="#filtering-rows"></a>
 </h2>
-<hr class="half-width"><p>Now that we know how to select the columns we want, we should take a look at how we filter the rows. Row filtering is done with the function <code>filter()</code>, which takes statements that can be evaluated to <code>TRUE</code> or <code>FALSE</code>.</p>
-<figure><img src="fig/03-filtering.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>What do we mean with statements that can be evaluated to <code>TRUE</code> or <code>FALSE</code>? In the example with <code>where()</code> we used the <code>is.numeric</code> function to evaluate if the columns where numeric or not. We will be doing the same for rows!</p>
-<p>Now, using <code>is.numeric</code> on a row won’t help, because every row-value in a column will be of the same type, that is how the data set works. All values in a column must be of the same type.</p>
-<p>So what can we do? Well, we can check if the values meet certain criteria or not. Like values being above 20, or factors being a specific factor.</p>
+<hr class="half-width"><p>Now that we know how to select the columns we want, we should take a
+look at how we filter the rows. Row filtering is done with the function
+<code>filter()</code>, which takes statements that can be evaluated to
+<code>TRUE</code> or <code>FALSE</code>.</p>
+<figure><img src="fig/03-filtering.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>What do we mean with statements that can be evaluated to
+<code>TRUE</code> or <code>FALSE</code>? In the example with
+<code>where()</code> we used the <code>is.numeric</code> function to
+evaluate if the columns where numeric or not. We will be doing the same
+for rows!</p>
+<p>Now, using <code>is.numeric</code> on a row won’t help, because every
+row-value in a column will be of the same type, that is how the data set
+works. All values in a column must be of the same type.</p>
+<p>So what can we do? Well, we can check if the values meet certain
+criteria or not. Like values being above 20, or factors being a specific
+factor.</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1021,7 +1095,10 @@
 9 Chinstrap Dream               46.9          16.6       192    2700 fema…  2008
 # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
 </div>
-<p>Here, we’ve filtered so that we only have observations where the body mass was less than 3 kilos. We can also filter for specific values, but beware! you must use double equals (<code>==</code>) for comparisons, as single equals (<code>=</code>) are for argument names in functions.</p>
+<p>Here, we’ve filtered so that we only have observations where the body
+mass was less than 3 kilos. We can also filter for specific values, but
+beware! you must use double equals (<code>==</code>) for comparisons, as
+single equals (<code>=</code>) are for argument names in functions.</p>
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1040,7 +1117,11 @@
 4 Chinstrap Dream               43.2          16.6       187    2900 fema…  2007
 # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
 </div>
-<p>What is happening, is that R will check if the values in <code>body_mass_g</code> are the same as 2900 (<code>TRUE</code>) or not (<code>FALSE</code>), and will do this for every row in the data set. Then at the end, it will discard all those that are <code>FALSE</code>, and keep those that are <code>TRUE</code>.</p>
+<p>What is happening, is that R will check if the values in
+<code>body_mass_g</code> are the same as 2900 (<code>TRUE</code>) or not
+(<code>FALSE</code>), and will do this for every row in the data set.
+Then at the end, it will discard all those that are <code>FALSE</code>,
+and keep those that are <code>TRUE</code>.</p>
 <div id="challenge8" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1049,7 +1130,8 @@
 <h3 class="callout-title">Challenge 8<a class="anchor" aria-label="anchor" href="#challenge8"></a>
 </h3>
 <div class="callout-content">
-<p>Filter the data so you only have observations from the “Dream” island.</p>
+<p>Filter the data so you only have observations from the “Dream”
+island.</p>
 </div>
 </div>
 </div>
@@ -1060,7 +1142,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1110,7 +1192,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1143,7 +1225,11 @@
 </div>
 <div class="section level3">
 <h3 id="multiple-filters">Multiple filters<a class="anchor" aria-label="anchor" href="#multiple-filters"></a></h3>
-<p>Many times, we will want to have several filters applied at once. What if you only want Adelie penguins that are below 3 kilos? <code>filter()</code> can take as many statements as you want! Combine them by adding commas (,) between each statement, and that will work as ‘and’.</p>
+<p>Many times, we will want to have several filters applied at once.
+What if you only want Adelie penguins that are below 3 kilos?
+<code>filter()</code> can take as many statements as you want! Combine
+them by adding commas (,) between each statement, and that will work as
+‘and’.</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1162,7 +1248,9 @@
 2 Chinstrap Dream            46.9          16.6          192    2700 fema…  2008
 # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
 </div>
-<p>You can also use the <code>&amp;</code> sign, which in R is the comparison character for ‘and’, like <code>==</code> is for ‘equals’.</p>
+<p>You can also use the <code>&amp;</code> sign, which in R is the
+comparison character for ‘and’, like <code>==</code> is for
+‘equals’.</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1181,7 +1269,9 @@
 2 Chinstrap Dream            46.9          16.6          192    2700 fema…  2008
 # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
 </div>
-<p>Here we are filtering the penguins data set keeping only the species “Chinstrap” <strong>and</strong> those below 3.5 kilos. And we can keep going!</p>
+<p>Here we are filtering the penguins data set keeping only the species
+“Chinstrap” <strong>and</strong> those below 3.5 kilos. And we can keep
+going!</p>
 <div class="codewrapper sourceCode" id="cb50">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1207,7 +1297,8 @@
 <h3 class="callout-title">Challenge 10<a class="anchor" aria-label="anchor" href="#challenge10"></a>
 </h3>
 <div class="callout-content">
-<p>Filter the data so you only have observations after 2008, and from “Biscoe” island</p>
+<p>Filter the data so you only have observations after 2008, and from
+“Biscoe” island</p>
 </div>
 </div>
 </div>
@@ -1218,7 +1309,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1259,7 +1350,8 @@
 <h3 class="callout-title">Challenge 11<a class="anchor" aria-label="anchor" href="#challenge11"></a>
 </h3>
 <div class="callout-content">
-<p>Filter the data so you only have observations of male penguins of the Chinstrap species</p>
+<p>Filter the data so you only have observations of male penguins of the
+Chinstrap species</p>
 </div>
 </div>
 </div>
@@ -1270,7 +1362,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
+<div id="collapseSolution11" class="accordion-collapse collapse" data-bs-parent="#accordionSolution11" aria-labelledby="headingSolution11">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1305,8 +1397,13 @@
 </div>
 </div>
 <div class="section level3">
-<h3 id="the-difference-between-and-and-or">The difference between <code>&amp;</code> (and) and <code>|</code>(or)<a class="anchor" aria-label="anchor" href="#the-difference-between-and-and-or"></a></h3>
-<p>But what if we want all the Chinstrap penguins <strong>or</strong> if body mass is below 3 kilos? When we use the comma (or the &amp;), we make sure that all statements are <code>TRUE</code>. But what if we want it so that <em>either</em> statement is true? Then we can use the <strong>or</strong> character <code>|</code> .</p>
+<h3 id="the-difference-between-and-and-or">The difference between <code>&amp;</code> (and) and
+<code>|</code>(or)<a class="anchor" aria-label="anchor" href="#the-difference-between-and-and-or"></a></h3>
+<p>But what if we want all the Chinstrap penguins <strong>or</strong> if
+body mass is below 3 kilos? When we use the comma (or the &amp;), we
+make sure that all statements are <code>TRUE</code>. But what if we want
+it so that <em>either</em> statement is true? Then we can use the
+<strong>or</strong> character <code>|</code> .</p>
 <div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1334,7 +1431,9 @@
 # … with 65 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g</code></pre>
 </div>
-<p>This now gives us both all chinstrap penguins, and the smallest Adelie penguins! By combining AND and OR statements this way, we can slowly create the filtering we are after.</p>
+<p>This now gives us both all chinstrap penguins, and the smallest
+Adelie penguins! By combining AND and OR statements this way, we can
+slowly create the filtering we are after.</p>
 <div id="challenge12" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1343,7 +1442,8 @@
 <h3 class="callout-title">Challenge 12<a class="anchor" aria-label="anchor" href="#challenge12"></a>
 </h3>
 <div class="callout-content">
-<p>Filter the data so you only have observations of either male penguins or the Chinstrap species</p>
+<p>Filter the data so you only have observations of either male penguins
+or the Chinstrap species</p>
 </div>
 </div>
 </div>
@@ -1354,7 +1454,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution12" class="accordion-collapse collapse" aria-labelledby="headingSolution12" data-bs-parent="#accordionSolution12">
+<div id="collapseSolution12" class="accordion-collapse collapse" data-bs-parent="#accordionSolution12" aria-labelledby="headingSolution12">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb58">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1390,7 +1490,8 @@
 </div>
 </section><div class="section level1">
 <h1 id="wrap-up">Wrap-up<a class="anchor" aria-label="anchor" href="#wrap-up"></a></h1>
-<p>Now we’ve learned about subsetting our data, so we can create data sets that are suited to our needs.</p>
+<p>Now we’ve learned about subsetting our data, so we can create data
+sets that are suited to our needs.</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
@@ -1452,7 +1553,7 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/03-data-subsetting.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/03-data-subsetting.html",
-  "dateCreated": "2022-10-14",
+  "dateCreated": "2022-11-08",
   "dateModified": "2022-10-14",
   "datePublished": "2022-11-08"
 }

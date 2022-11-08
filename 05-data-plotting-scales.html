@@ -321,8 +321,10 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Use <code>scale_fill_xxx()</code> and <code>scale_colour_xxx()</code> to change colours in your plot.</li>
-<li>Use the <code>theme()</code> functions to change the general look of your plot.</li>
+<ul><li>Use <code>scale_fill_xxx()</code> and
+<code>scale_colour_xxx()</code> to change colours in your plot.</li>
+<li>Use the <code>theme()</code> functions to change the general look of
+your plot.</li>
 </ul></div>
 </div>
 </div>
@@ -330,11 +332,18 @@
 </div>
 <section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
 </h2>
-<hr class="half-width"><p>Now that we know how to subset and re-arrange our data a little, its time to explore the data again in plots.</p>
-<p>Knowing how to apply what we know so far, with plotting, can help us create more exciting and informative plots. Additionally, changing the colour and general look of the plot might be necessary to adapt to journal expectation or company branding.</p>
+<hr class="half-width"><p>Now that we know how to subset and re-arrange our data a little, its
+time to explore the data again in plots.</p>
+<p>Knowing how to apply what we know so far, with plotting, can help us
+create more exciting and informative plots. Additionally, changing the
+colour and general look of the plot might be necessary to adapt to
+journal expectation or company branding.</p>
 </section><div class="section level1">
 <h1 id="piping-into-ggplot">Piping into ggplot<a class="anchor" aria-label="anchor" href="#piping-into-ggplot"></a></h1>
-<p>Since we know about pipes, we should also explore how we can combine the pipes with ggplot, to reduce the data solely for the purpose of a plot, without changing the actual data. Perhaps you only want to plot the bill length of the males, to explore that data more directly.</p>
+<p>Since we know about pipes, we should also explore how we can combine
+the pipes with ggplot, to reduce the data solely for the purpose of a
+plot, without changing the actual data. Perhaps you only want to plot
+the bill length of the males, to explore that data more directly.</p>
 
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -345,7 +354,10 @@
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Now we only plot data from the male penguins, if we are particularly interested in those. This can be quite convenient if you have particularly large data and need to reduce it to get a proper idea of what the variables really look like.</p>
+<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Now we only plot data from the male penguins, if we are particularly
+interested in those. This can be quite convenient if you have
+particularly large data and need to reduce it to get a proper idea of
+what the variables really look like.</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -354,7 +366,8 @@
 <h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
-<p>Create a plot of only data from the Dream island, putting flipper length on the y-axis and species on the x-axis. Make it a box-plot.</p>
+<p>Create a plot of only data from the Dream island, putting flipper
+length on the y-axis and species on the x-axis. Make it a box-plot.</p>
 </div>
 </div>
 </div>
@@ -365,7 +378,7 @@
   Give me a hint
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Try geom_boxplot</p>
 </div>
@@ -379,7 +392,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -397,7 +410,9 @@
 </div>
 <div class="section level1">
 <h1 id="adding-colour">Adding colour<a class="anchor" aria-label="anchor" href="#adding-colour"></a></h1>
-<p>This plot is a little boring, so let us spruce it up! How about adding colour to the boxplot? We do this by using the <code>colour</code>/<code>color</code> argument in ggplot2.</p>
+<p>This plot is a little boring, so let us spruce it up! How about
+adding colour to the boxplot? We do this by using the
+<code>colour</code>/<code>color</code> argument in ggplot2.</p>
 
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -408,7 +423,8 @@
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">flipper_length_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>colour <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Did that look as you expected? Maybe you expected the rectangles of the boxes to be coloured, rather than the edges?</p>
+<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Did that look as you expected? Maybe you expected the rectangles of
+the boxes to be coloured, rather than the edges?</p>
 <div id="challenge2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -417,7 +433,8 @@
 <h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge2"></a>
 </h3>
 <div class="callout-content">
-<p>Change the previous boxplot argument <code>colour</code> to <code>fill</code></p>
+<p>Change the previous boxplot argument <code>colour</code> to
+<code>fill</code></p>
 </div>
 </div>
 </div>
@@ -428,9 +445,11 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>Learning the difference between using <code>fill</code> and <code>colour</code>/<code>color</code> can take a little time, but in general colour gives colour to edges, while fill floods elements.</p>
+<p>Learning the difference between using <code>fill</code> and
+<code>colour</code>/<code>color</code> can take a little time, but in
+general colour gives colour to edges, while fill floods elements.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -447,10 +466,26 @@
 </div>
 <div class="section level1">
 <h1 id="changing-colour">Changing colour<a class="anchor" aria-label="anchor" href="#changing-colour"></a></h1>
-<p>Now, default colours are well and fine for quick plots and exploring data, but we usually all end up changing the colours when we start preparing for publication or reports. In ggplot, we change the colours using the <code>scale_</code>functions. The scale functions actually cover much more than just colour/fill. They can change the types of points in point plots, different types of scales for the axes (logarithmic, percent, currency), and lots more! We will focus on colour/fill here, but once you start exploring these options, there are almost no limits to what you can do!</p>
-<p>Let’s say you are publishing in a journal with strict policy on black and white only. Its better to prepare you plot in back and white your self, rather than relying on conversion of colour to black and white, you might be surprised at how little distinction there are between colours when the actually colour is stripped.</p>
-<p>Let us start with the plot we just made, and test what types of options we get when starting to add <code>scale_fill_</code> in the script. We get lots of preview options, “brewer”, “continuous”, “gradient”, too many options?</p>
-<p>There’s one called <code>scale_fill_grey()</code> let us try that one for convenience!</p>
+<p>Now, default colours are well and fine for quick plots and exploring
+data, but we usually all end up changing the colours when we start
+preparing for publication or reports. In ggplot, we change the colours
+using the <code>scale_</code>functions. The scale functions actually
+cover much more than just colour/fill. They can change the types of
+points in point plots, different types of scales for the axes
+(logarithmic, percent, currency), and lots more! We will focus on
+colour/fill here, but once you start exploring these options, there are
+almost no limits to what you can do!</p>
+<p>Let’s say you are publishing in a journal with strict policy on black
+and white only. Its better to prepare you plot in back and white your
+self, rather than relying on conversion of colour to black and white,
+you might be surprised at how little distinction there are between
+colours when the actually colour is stripped.</p>
+<p>Let us start with the plot we just made, and test what types of
+options we get when starting to add <code>scale_fill_</code> in the
+script. We get lots of preview options, “brewer”, “continuous”,
+“gradient”, too many options?</p>
+<p>There’s one called <code>scale_fill_grey()</code> let us try that one
+for convenience!</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -461,7 +496,10 @@
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_fill_grey</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Ok! The colours are now changed, and the legend with it, quite convenient. But, the grey used is the same as for the lines, masking the median line for the Adelie box. That won’t do. Let us try something else.</p>
+<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Ok! The colours are now changed, and the legend with it, quite
+convenient. But, the grey used is the same as for the lines, masking the
+median line for the Adelie box. That won’t do. Let us try something
+else.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -472,7 +510,11 @@
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"white"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>This is maybe a little stark, but the difference is clear between the two, and that’s what we are after right now. Using the <code>manual</code> version of scales means you manually add the colours you want to use. You can specify colours by name and hexidecimal code, whichever you find better to work with.</p>
+<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>This is maybe a little stark, but the difference is clear between the
+two, and that’s what we are after right now. Using the
+<code>manual</code> version of scales means you manually add the colours
+you want to use. You can specify colours by name and hexidecimal code,
+whichever you find better to work with.</p>
 <div id="challenge3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -481,7 +523,8 @@
 <h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
-<p>Base you plot on the same as we have used so far. Change the colours to coral and cyan</p>
+<p>Base you plot on the same as we have used so far. Change the colours
+to coral and cyan</p>
 </div>
 </div>
 </div>
@@ -492,9 +535,11 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<p>“coral” and “cyan” are built in colour names, that you can call directly. There are lots of these names, <a href="https://www.datanovia.com/en/blog/awesome-list-of-657-r-color-names/" class="external-link">datanovia</a> has a great list of them</p>
+<p>“coral” and “cyan” are built in colour names, that you can call
+directly. There are lots of these names, <a href="https://www.datanovia.com/en/blog/awesome-list-of-657-r-color-names/" class="external-link">datanovia</a>
+has a great list of them</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -517,7 +562,8 @@
 <h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge4"></a>
 </h3>
 <div class="callout-content">
-<p>Base you plot on the same as we have used so far. Change the colours to the hexidecmial colours “#6597aa” and “#cc6882”</p>
+<p>Base you plot on the same as we have used so far. Change the colours
+to the hexidecmial colours “#6597aa” and “#cc6882”</p>
 </div>
 </div>
 </div>
@@ -528,9 +574,11 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<p>hexidecimal colour codes are often use in webdesign, and are a way of coding red, blue and green. To explore colours in hexidecmial, there are lots of we resources like <a href="https://www.color-hex.com/" class="external-link">color-hex.com</a></p>
+<p>hexidecimal colour codes are often use in webdesign, and are a way of
+coding red, blue and green. To explore colours in hexidecmial, there are
+lots of we resources like <a href="https://www.color-hex.com/" class="external-link">color-hex.com</a></p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -553,7 +601,8 @@
 <h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge5"></a>
 </h3>
 <div class="callout-content">
-<p>Base you plot on the same as we have used so far. Change the order for the hexidecimal colours in the previous plot. what did that do?</p>
+<p>Base you plot on the same as we have used so far. Change the order
+for the hexidecimal colours in the previous plot. what did that do?</p>
 </div>
 </div>
 </div>
@@ -564,9 +613,10 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
-<p>The order you provide the manual colours dictate which category gets which colour.</p>
+<p>The order you provide the manual colours dictate which category gets
+which colour.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -589,7 +639,10 @@
 <h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge6"></a>
 </h3>
 <div class="callout-content">
-<p>Now, make an entirely different plot. Take the entire penguins dataset, and plot bill depth on the x-axis and bill length on the y. Create a point plot, with the points coloured by bill length. Try changing the colour of the points. What types of scales can you use?</p>
+<p>Now, make an entirely different plot. Take the entire penguins
+dataset, and plot bill depth on the x-axis and bill length on the y.
+Create a point plot, with the points coloured by bill length. Try
+changing the colour of the points. What types of scales can you use?</p>
 </div>
 </div>
 </div>
@@ -600,9 +653,12 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
-<p>There is not single answer here, there are many different options. The key difference between what we did before and this, is that the colouring scale is continuous, rather than categorical, so we need <em>slightly</em> different versions.</p>
+<p>There is not single answer here, there are many different options.
+The key difference between what we did before and this, is that the
+colouring scale is continuous, rather than categorical, so we need
+<em>slightly</em> different versions.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -638,8 +694,13 @@
 </div>
 <div class="section level1">
 <h1 id="changing-the-overall-look">Changing the overall look<a class="anchor" aria-label="anchor" href="#changing-the-overall-look"></a></h1>
-<p>Now that we know more about changing the colours, we might want something else than the default look with the grey background etc. Just like with the default colours, it serves its generally quick look purpose, but we likely want to change it.</p>
-<p>The <code>theme()</code> functions are there to help you get control over how a plot looks. There are lots of different themes to choose from, that form a great basis for all you need.</p>
+<p>Now that we know more about changing the colours, we might want
+something else than the default look with the grey background etc. Just
+like with the default colours, it serves its generally quick look
+purpose, but we likely want to change it.</p>
+<p>The <code>theme()</code> functions are there to help you get control
+over how a plot looks. There are lots of different themes to choose
+from, that form a great basis for all you need.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -655,7 +716,10 @@
 </h3>
 <pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
 </div>
-<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Here we have chosen <code>theme_minimal()</code> which strips axis lines and the grey background, its more minimal. Explore some different options by typing <code>theme_</code> and pressing the <code>tab</code> key to see what options there are.</p>
+<figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Here we have chosen <code>theme_minimal()</code> which strips axis
+lines and the grey background, its more minimal. Explore some different
+options by typing <code>theme_</code> and pressing the <code>tab</code>
+key to see what options there are.</p>
 <div id="challenge7" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -664,7 +728,8 @@
 <h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge7"></a>
 </h3>
 <div class="callout-content">
-<p>Use the same plot we have been working on, and change the theme to the "classic theme</p>
+<p>Use the same plot we have been working on, and change the theme to
+the “classic theme</p>
 </div>
 </div>
 </div>
@@ -675,9 +740,10 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
-<p>The classic theme is one often wanted by strict and old-school journals. Its very handy to have a short-cut to it.</p>
+<p>The classic theme is one often wanted by strict and old-school
+journals. Its very handy to have a short-cut to it.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -705,7 +771,8 @@
 <h3 class="callout-title">Challenge 8<a class="anchor" aria-label="anchor" href="#challenge8"></a>
 </h3>
 <div class="callout-content">
-<p>Now try the void theme. Is this a meaningful theme to use for data plots=</p>
+<p>Now try the void theme. Is this a meaningful theme to use for data
+plots=</p>
 </div>
 </div>
 </div>
@@ -716,9 +783,12 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
-<p>The void theme strips all axis and background, leaving the plot alone. This is generally not a meaningful theme to use for publication, but could be good to use if you ever dwelve into the world of <a href="https://blog.djnavarro.net/posts/2021-10-19_rtistry-posts/" class="external-link">generative art</a>.</p>
+<p>The void theme strips all axis and background, leaving the plot
+alone. This is generally not a meaningful theme to use for publication,
+but could be good to use if you ever dwelve into the world of <a href="https://blog.djnavarro.net/posts/2021-10-19_rtistry-posts/" class="external-link">generative
+art</a>.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -741,7 +811,13 @@
 </div>
 <div class="section level1">
 <h1 id="wrap-up">Wrap up<a class="anchor" aria-label="anchor" href="#wrap-up"></a></h1>
-<p>There is a lot more we could teach you about customising your plots to look how you want. There are many web resources you can look at to help you along they way, like on <a href="https://themockup.blog/posts/2020-12-26-creating-and-using-custom-ggplot2-themes/" class="external-link">The MockUp</a>. But if you dont want to deal with too many details, you can always isntall and use tne <a href="https://jrnold.github.io/ggthemes/reference/index.html" class="external-link">ggthemes</a> package, which can create plots that look like your old favourite tools made them (like SPSS, Stata, excel. etc.).</p>
+<p>There is a lot more we could teach you about customising your plots
+to look how you want. There are many web resources you can look at to
+help you along they way, like on <a href="https://themockup.blog/posts/2020-12-26-creating-and-using-custom-ggplot2-themes/" class="external-link">The
+MockUp</a>. But if you dont want to deal with too many details, you can
+always isntall and use tne <a href="https://jrnold.github.io/ggthemes/reference/index.html" class="external-link">ggthemes</a>
+package, which can create plots that look like your old favourite tools
+made them (like SPSS, Stata, excel. etc.).</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
@@ -803,7 +879,7 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/05-data-plotting-scales.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/05-data-plotting-scales.html",
-  "dateCreated": "2022-10-14",
+  "dateCreated": "2022-11-08",
   "dateModified": "2022-10-14",
   "datePublished": "2022-11-08"
 }

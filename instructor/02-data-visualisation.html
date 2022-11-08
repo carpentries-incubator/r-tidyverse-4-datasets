@@ -327,8 +327,11 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Read data into R</li>
-<li>To be able to use <code>ggplot2</code> to generate publication quality graphics.</li>
-<li>To understand the basic grammar of graphics, including the aesthetics and geometry layers, adding statistics, transforming scales, and colouring or panelling by groups.</li>
+<li>To be able to use <code>ggplot2</code> to generate publication
+quality graphics.</li>
+<li>To understand the basic grammar of graphics, including the
+aesthetics and geometry layers, adding statistics, transforming scales,
+and colouring or panelling by groups.</li>
 </ul></div>
 </div>
 </div>
@@ -349,31 +352,59 @@
 </div>
 <section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
 </h2>
-<hr class="half-width"><p>Plotting the data is one of the best ways to quickly explore it and generate hypotheses about various relationships between variables.</p>
-<p>There are several plotting systems in R, but today we will focus on <code>ggplot2</code> which implements <strong>grammar of graphics</strong> - a coherent system for describing components that constitute visual representation of data. For more information regarding principles and thinking behind <code>ggplot2</code> graphic system, please refer to <a href="https://vita.had.co.nz/papers/layered-grammar.pdf" class="external-link">Layered grammar of graphics</a> by Hadley Wickham (<span class="citation">@hadleywickham</span>).</p>
-<p>The advantage of <code>ggplot2</code> is that it allows R users to create publication quality graphics with a few lines of code. <code>ggplot2</code> has a large user base and is constantly developed and extended by the community.</p>
+<hr class="half-width"><p>Plotting the data is one of the best ways to quickly explore it and
+generate hypotheses about various relationships between variables.</p>
+<p>There are several plotting systems in R, but today we will focus on
+<code>ggplot2</code> which implements <strong>grammar of
+graphics</strong> - a coherent system for describing components that
+constitute visual representation of data. For more information regarding
+principles and thinking behind <code>ggplot2</code> graphic system,
+please refer to <a href="https://vita.had.co.nz/papers/layered-grammar.pdf" class="external-link">Layered grammar
+of graphics</a> by Hadley Wickham (<span class="citation">@hadleywickham</span>).</p>
+<p>The advantage of <code>ggplot2</code> is that it allows R users to
+create publication quality graphics with a few lines of code.
+<code>ggplot2</code> has a large user base and is constantly developed
+and extended by the community.</p>
 </section><section id="getting-data-into-r"><h2 class="section-heading">Getting data into R<a class="anchor" aria-label="anchor" href="#getting-data-into-r"></a>
 </h2>
-<hr class="half-width"><p>We will start by reading the data into R, from the <code>data</code> folder you placed them in the last part of the introduction.</p>
+<hr class="half-width"><p>We will start by reading the data into R, from the <code>data</code>
+folder you placed them in the last part of the introduction.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">&lt;-</span> <span class="fu">read.csv</span><span class="op">(</span><span class="st">"data/penguins.csv"</span><span class="op">)</span></span></code></pre>
 </div>
-<p>This is our first bit of R code to “assign” data to an object in our “R environment”. The R environment can be seen in the upper right hand corner, and it lists everything R has access to at the moment. You should see an object called “penguins”, which is a Dataset with 344 observations and 8 variables. We created this object with the line of code we just ran. You can “read” the line, right to left as: “read the penguins.csv into R, and assign (&lt;-) it to an object called penguins”. The arrow, or assignment, is R’s way of creating new objects to work on.</p>
-<p><strong>Note</strong> a key difference from R and programs like SPSS or excel, is that when data is used in R, we do not automatically alter the data in the file we read it from. Everything we do with the penguins data in R from now on, only happens in R, and does not change the originating file. This way we cannot easily accidentally alter our raw data, which is a very good thing.</p>
+<p>This is our first bit of R code to “assign” data to an object in our
+“R environment”. The R environment can be seen in the upper right hand
+corner, and it lists everything R has access to at the moment. You
+should see an object called “penguins”, which is a Dataset with 344
+observations and 8 variables. We created this object with the line of
+code we just ran. You can “read” the line, right to left as: “read the
+penguins.csv into R, and assign (&lt;-) it to an object called
+penguins”. The arrow, or assignment, is R’s way of creating new objects
+to work on.</p>
+<p><strong>Note</strong> a key difference from R and programs like SPSS
+or excel, is that when data is used in R, we do not automatically alter
+the data in the file we read it from. Everything we do with the penguins
+data in R from now on, only happens in R, and does not change the
+originating file. This way we cannot easily accidentally alter our raw
+data, which is a very good thing.</p>
 <div id="keypoints2" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div id="tip-we-can-inspect-the-data-in-several-ways" class="callout-inner">
-<h3 class="callout-title">Tip: We can inspect the data in several ways<a class="anchor" aria-label="anchor" href="#keypoints2"></a>
+<h3 class="callout-title">Tip: We can inspect the data in several
+ways<a class="anchor" aria-label="anchor" href="#keypoints2"></a>
 </h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li>Click the data name in the Environment, and the data opens as a tab in the scripts pane.<br></li>
-<li>Click the little arrow next to the data name in the Evironment, and you’ll see a short preview of the data.<br></li>
-<li>Type <code>penguins</code> in the R console, and a preview will be shown of the data.<br></li>
+<ol style="list-style-type: decimal"><li>Click the data name in the Environment, and the data opens as a tab
+in the scripts pane.<br></li>
+<li>Click the little arrow next to the data name in the Evironment, and
+you’ll see a short preview of the data.<br></li>
+<li>Type <code>penguins</code> in the R console, and a preview will be
+shown of the data.<br></li>
 </ol></div>
 </div>
 </div>
@@ -387,7 +418,8 @@
 <li>
 <strong>bill_depth_mm</strong>: bill depth in millimetres</li>
 <li>
-<strong>flipper_length_mm</strong>: flipper length in millimetres</li>
+<strong>flipper_length_mm</strong>: flipper length in
+millimetres</li>
 <li>
 <strong>body_mass_g</strong>: body mass in grams</li>
 <li>
@@ -396,7 +428,10 @@
 <strong>year</strong>: year of observation</li>
 </ul></section><section id="introduction-to-ggplot2"><h2 class="section-heading">Introduction to ggplot2<a class="anchor" aria-label="anchor" href="#introduction-to-ggplot2"></a>
 </h2>
-<hr class="half-width"><p><code>ggplot2</code> is a core member of <code>tidyverse</code> family of packages. Installing and loading the package under the same name will load all of the packages we will need for this workshop. Lets get started!</p>
+<hr class="half-width"><p><code>ggplot2</code> is a core member of <code>tidyverse</code>
+family of packages. Installing and loading the package under the same
+name will load all of the packages we will need for this workshop. Lets
+get started!</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -411,8 +446,13 @@
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span></code></pre>
 </div>
-<p>Here’s a question that we would like to answer using <code>penguins</code> data: <em>Do penguins with deep beaks also have long beaks?</em> This might seem like a silly question, but it gets us exploring our data.</p>
-<p>To plot <code>penguins</code>, run the following code in the R-chunk or in console. The following code will put <code>bill_depth_mm</code> on the x-axis and <code>bill_length_mm</code> on the y-axis:</p>
+<p>Here’s a question that we would like to answer using
+<code>penguins</code> data: <em>Do penguins with deep beaks also have
+long beaks?</em> This might seem like a silly question, but it gets us
+exploring our data.</p>
+<p>To plot <code>penguins</code>, run the following code in the R-chunk
+or in console. The following code will put <code>bill_depth_mm</code> on
+the x-axis and <code>bill_length_mm</code> on the y-axis:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -423,9 +463,40 @@
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that we split the function into several lines. In R, any function has a name and is followed by parentheses. Inside the parentheses we place any information the function needs to run. Here, we are using two main functions, <code>ggplot()</code> and <code>geom_point()</code>. To save screen space, we have placed each function on its own line, and also split up arguments into several lines. How this is done depends on you, there are no real rules for this. We will use the tidyverse coding style throughout this course, to be consistent and also save space on the screen. The plus sign indicates that the ggplot is not over yet and that the next line should be interpreted as additional layer to the preceding <code>ggplot()</code> function. In other words, when writing a <code>ggplot()</code> function spanning several lines, the <code>+</code> sign goes at the end of the line, not in the beginning.</p>
-<p><strong>Note</strong> that in order to create a plot using <code>ggplot2</code> system, you should start your command with <code>ggplot()</code> function. It creates an empty coordinate system and initializes the dataset to be used in the graph (which is supplied as a first argument into the <code>ggplot()</code> function). In order to create graphical representation of the data, we can add one or more layers to our otherwise empty graph. Functions starting with the prefix <code>geom_</code> create a visual representation of data. In this case we added scattered points, using <code>geom_point()</code> function. There are many <code>geoms</code> in <code>ggplot2</code>, some of which we will learn in this lesson.</p>
-<p><code>geom_</code> functions create <em>mapping</em> of variables from the earlier defined dataset to certain aesthetic elements of the graph, such as axis, shapes or colours. The first argument of any <code>geom_</code> function expects the user to specify these mappings, wrapped in the <code>aes()</code> (short for <em>aesthetics</em>) function. In this case, we mapped <code>bill_depth_mm</code> and <code>bill_length_mm</code> variables from <code>penguins</code> dataset to x and y-axis, respectively (using <code>x</code> and <code>y</code> arguments of <code>aes()</code> function).</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that we split the function into several lines. In R, any
+function has a name and is followed by parentheses. Inside the
+parentheses we place any information the function needs to run. Here, we
+are using two main functions, <code>ggplot()</code> and
+<code>geom_point()</code>. To save screen space, we have placed each
+function on its own line, and also split up arguments into several
+lines. How this is done depends on you, there are no real rules for
+this. We will use the tidyverse coding style throughout this course, to
+be consistent and also save space on the screen. The plus sign indicates
+that the ggplot is not over yet and that the next line should be
+interpreted as additional layer to the preceding <code>ggplot()</code>
+function. In other words, when writing a <code>ggplot()</code> function
+spanning several lines, the <code>+</code> sign goes at the end of the
+line, not in the beginning.</p>
+<p><strong>Note</strong> that in order to create a plot using
+<code>ggplot2</code> system, you should start your command with
+<code>ggplot()</code> function. It creates an empty coordinate system
+and initializes the dataset to be used in the graph (which is supplied
+as a first argument into the <code>ggplot()</code> function). In order
+to create graphical representation of the data, we can add one or more
+layers to our otherwise empty graph. Functions starting with the prefix
+<code>geom_</code> create a visual representation of data. In this case
+we added scattered points, using <code>geom_point()</code> function.
+There are many <code>geoms</code> in <code>ggplot2</code>, some of which
+we will learn in this lesson.</p>
+<p><code>geom_</code> functions create <em>mapping</em> of variables
+from the earlier defined dataset to certain aesthetic elements of the
+graph, such as axis, shapes or colours. The first argument of any
+<code>geom_</code> function expects the user to specify these mappings,
+wrapped in the <code>aes()</code> (short for <em>aesthetics</em>)
+function. In this case, we mapped <code>bill_depth_mm</code> and
+<code>bill_length_mm</code> variables from <code>penguins</code> dataset
+to x and y-axis, respectively (using <code>x</code> and <code>y</code>
+arguments of <code>aes()</code> function).</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -447,7 +518,8 @@
 </button>
 <div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
-<p>The* <code>penguins</code> *dataset has a column called <code>year</code>, which should appear on the x-axis.</p>
+<p>The* <code>penguins</code> *dataset has a column called
+<code>year</code>, which should appear on the x-axis.</p>
 </div>
 </div>
 </div>
@@ -483,7 +555,9 @@
 <h3 class="callout-title">Challenge 1b<a class="anchor" aria-label="anchor" href="#challenge2"></a>
 </h3>
 <div class="callout-content">
-<p>Try a different <code>geom_</code> function called <code>geom_jitter</code>. How is that different from <code>geom_point</code>?</p>
+<p>Try a different <code>geom_</code> function called
+<code>geom_jitter</code>. How is that different from
+<code>geom_point</code>?</p>
 </div>
 </div>
 </div>
@@ -512,8 +586,13 @@
 </div>
 </section><section id="mapping-data"><h2 class="section-heading">Mapping data<a class="anchor" aria-label="anchor" href="#mapping-data"></a>
 </h2>
-<hr class="half-width"><p>What if we want to combine graphs from the previous two challenges and show the relationship between three variables in the same graph? Turns out, we don’t necessarily need to use third geometrical dimension, we can employ colour.</p>
-<p>The following graph maps <code>island</code> variable from <code>penguins</code> dataset to the <code>colour</code> aesthetic of the plot. Let’s take a look:</p>
+<hr class="half-width"><p>What if we want to combine graphs from the previous two challenges
+and show the relationship between three variables in the same graph?
+Turns out, we don’t necessarily need to use third geometrical dimension,
+we can employ colour.</p>
+<p>The following graph maps <code>island</code> variable from
+<code>penguins</code> dataset to the <code>colour</code> aesthetic of
+the plot. Let’s take a look:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -533,7 +612,9 @@
 <h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
-<p>What will happen if you switch colour to also be by year? Is the graph still useful? Why or why not? What is the difference in the plot between when you colour by island and when you colour by year?</p>
+<p>What will happen if you switch colour to also be by year? Is the
+graph still useful? Why or why not? What is the difference in the plot
+between when you colour by island and when you colour by year?</p>
 </div>
 </div>
 </div>
@@ -557,12 +638,20 @@
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Island is a categorical variable, in R we call it a factor. The colours get tagged with their factor in the legend, so we can interpret which colour belongs to which factor. <code>year</code> is a numerical variable, so the colour becomes a gradient colour bar, rather than showing fewer distinctly different colours. ggplot treats numerical and factors different in this way precisely.</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Island is a categorical variable, in R we call it a factor. The
+colours get tagged with their factor in the legend, so we can interpret
+which colour belongs to which factor. <code>year</code> is a numerical
+variable, so the colour becomes a gradient colour bar, rather than
+showing fewer distinctly different colours. ggplot treats numerical and
+factors different in this way precisely.</p>
 </div>
 </div>
 </div>
 </div>
-<p>There are other aesthetics that can come handy. One of them is <code>size</code>. The idea is that we can vary the size of data points to illustrate another continuous variable, such as species bill depth. Lets look at four dimensions at once!</p>
+<p>There are other aesthetics that can come handy. One of them is
+<code>size</code>. The idea is that we can vary the size of data points
+to illustrate another continuous variable, such as species bill depth.
+Lets look at four dimensions at once!</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -575,7 +664,8 @@
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>It might be even better to try another type of aesthetic, like shape, for categorical data like species.</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>It might be even better to try another type of aesthetic, like shape,
+for categorical data like species.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -588,10 +678,21 @@
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Playing around with different aesthetic mappings until you find something that really makes the data “pop” is a good idea. A plot is rarely made nice on the first try, we all try different configurations until we find the one we like.</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Playing around with different aesthetic mappings until you find
+something that really makes the data “pop” is a good idea. A plot is
+rarely made nice on the first try, we all try different configurations
+until we find the one we like.</p>
 </section><div class="section level1">
 <h1 id="setting-values">Setting values<a class="anchor" aria-label="anchor" href="#setting-values"></a></h1>
-<p>Until now, we explored different aesthetic properties of a graph mapped to certain variables. What if you want to recolour or use a certain shape to plot all data points? Well, that means that such colour or shape will no longer be <em>mapped</em> to any data, so you need to supply it to <code>geom_</code> function as a separate argument (outside of the <code>mapping</code>). This is called “setting” in the ggplot2-world. We “map” aesthetics to data columns, or we “set” single values outside aesthetics to apply to the entire geom or plot. Here’s our initial graph with all colours coloured in blue.</p>
+<p>Until now, we explored different aesthetic properties of a graph
+mapped to certain variables. What if you want to recolour or use a
+certain shape to plot all data points? Well, that means that such colour
+or shape will no longer be <em>mapped</em> to any data, so you need to
+supply it to <code>geom_</code> function as a separate argument (outside
+of the <code>mapping</code>). This is called “setting” in the
+ggplot2-world. We “map” aesthetics to data columns, or we “set” single
+values outside aesthetics to apply to the entire geom or plot. Here’s
+our initial graph with all colours coloured in blue.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -603,7 +704,12 @@
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Once more, observe that the colour is now not mapped to any particular variable from the <code>penguins</code> dataset and applies equally to all data points, therefore it is outside the <code>mapping</code> argument and is not wrapped into <code>aes()</code> function. Note that set colours are supplied as characters (in quotes).</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Once more, observe that the colour is now not mapped to any
+particular variable from the <code>penguins</code> dataset and applies
+equally to all data points, therefore it is outside the
+<code>mapping</code> argument and is not wrapped into <code>aes()</code>
+function. Note that set colours are supplied as characters (in
+quotes).</p>
 <div id="challenge4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -625,7 +731,8 @@
 </button>
 <div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
-<p><code>alpha</code> takes a value from 0 (transparent) to 1 (solid).</p>
+<p><code>alpha</code> takes a value from 0 (transparent) to 1
+(solid).</p>
 </div>
 </div>
 </div>
@@ -662,7 +769,8 @@
 <h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge5"></a>
 </h3>
 <div class="callout-content">
-<p>Move the transparency outside the <code>aes()</code> and set it to <code>0.5</code>. What can we benefit of each one of these methods?</p>
+<p>Move the transparency outside the <code>aes()</code> and set it to
+<code>0.5</code>. What can we benefit of each one of these methods?</p>
 </div>
 </div>
 </div>
@@ -685,15 +793,27 @@
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"> Controlling the transparency can be a great way to “mute” the visual effect of certain data, while still keeping it visible. Its a great tool when you have many data points or if you have several geoms together, like we will see soon.</figure></div>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+Controlling the transparency can be a great way to “mute” the visual
+effect of certain data, while still keeping it visible. Its a great tool
+when you have many data points or if you have several geoms together,
+like we will see soon.</figure></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section level1">
 <h1 id="geometrical-objects">Geometrical objects<a class="anchor" aria-label="anchor" href="#geometrical-objects"></a></h1>
-<p>Next, we will consider different options for <code>geoms</code>. Using different <code>geom_</code> functions user can highlight different aspects of data.</p>
-<p>A useful geom function is <code>geom_boxplot()</code>. It adds a layer with the “box and whiskers” plot illustrating the distribution of values within categories. The following chart breaks down bill length by island, where the box represents first and third quartile (the 25th and 75th percentiles), the middle bar signifies the median value and the whiskers extent to cover 95% confidence interval. Outliers (outside of the 95% confidence interval range) are shown separately.</p>
+<p>Next, we will consider different options for <code>geoms</code>.
+Using different <code>geom_</code> functions user can highlight
+different aspects of data.</p>
+<p>A useful geom function is <code>geom_boxplot()</code>. It adds a
+layer with the “box and whiskers” plot illustrating the distribution of
+values within categories. The following chart breaks down bill length by
+island, where the box represents first and third quartile (the 25th and
+75th percentiles), the middle bar signifies the median value and the
+whiskers extent to cover 95% confidence interval. Outliers (outside of
+the 95% confidence interval range) are shown separately.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -704,7 +824,11 @@
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (stat_boxplot).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Layers can be added on top of each other. In the following graph we will place the boxplots <strong>over</strong> jittered points to see the distribution of outliers more clearly. We can map two aesthetic properties to the same variable. Here we will also use different colour for each island.</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Layers can be added on top of each other. In the following graph we
+will place the boxplots <strong>over</strong> jittered points to see the
+distribution of outliers more clearly. We can map two aesthetic
+properties to the same variable. Here we will also use different colour
+for each island.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -721,7 +845,11 @@
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (stat_boxplot).</span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Now, this was slightly inefficient due to duplication of code - we had to specify the same mappings for two layers. To avoid it, you can move common arguments of <code>geom_</code> functions to the main <code>ggplot()</code> function. In this case every layer will “inherit” the same arguments, specified in the “parent” function.</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Now, this was slightly inefficient due to duplication of code - we
+had to specify the same mappings for two layers. To avoid it, you can
+move common arguments of <code>geom_</code> functions to the main
+<code>ggplot()</code> function. In this case every layer will “inherit”
+the same arguments, specified in the “parent” function.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -734,8 +862,20 @@
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (stat_boxplot).</span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>You can still add layer-specific mappings or other arguments by specifying them within individual geoms. Here, we’ve set the transparency of the boxplot to .6, so we can see the points behind it, and also mapped colour to island in the points. We would recommend building each layer separately and then moving common arguments up to the “parent” function.</p>
-<p>We can use linear models to highlight differences in dependency between bill length and body mass by island. Notice that we added a separate argument to the <code>geom_smooth()</code> function to specify the type of model we want <code>ggplot2</code> to built using the data (linear model). The <code>geom_smooth()</code> function has also helpfully provided confidence intervals, indicating “goodness of fit” for each model (shaded gray area). For more information on statistical models, please refer to help (by typing <code>?geom_smooth</code>)</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>You can still add layer-specific mappings or other arguments by
+specifying them within individual geoms. Here, we’ve set the
+transparency of the boxplot to .6, so we can see the points behind it,
+and also mapped colour to island in the points. We would recommend
+building each layer separately and then moving common arguments up to
+the “parent” function.</p>
+<p>We can use linear models to highlight differences in dependency
+between bill length and body mass by island. Notice that we added a
+separate argument to the <code>geom_smooth()</code> function to specify
+the type of model we want <code>ggplot2</code> to built using the data
+(linear model). The <code>geom_smooth()</code> function has also
+helpfully provided confidence intervals, indicating “goodness of fit”
+for each model (shaded gray area). For more information on statistical
+models, please refer to help (by typing <code>?geom_smooth</code>)</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -757,7 +897,8 @@
 <h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge6"></a>
 </h3>
 <div class="callout-content">
-<p>Modify the plot so the the points are coloured by island, but there is a single regression line.</p>
+<p>Modify the plot so the the points are coloured by island, but there
+is a single regression line.</p>
 </div>
 </div>
 </div>
@@ -783,7 +924,16 @@
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (stat_smooth).</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"> In the graph above, each geom inherited all three mappings: x, y and colour. If we want only single linear model to be built, we would need to limit the effect of <code>colour</code> aesthetic to only <code>geom_point()</code> function, by moving it from the “parent” function to the layer where we want it to apply. Note, though, that because we want the <code>colour</code> to be still mapped to the <code>island</code> variable, it needs to be wrapped into <code>aes()</code> function and supplied to <code>mapping</code> argument.</figure></div>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+In the graph above, each geom inherited all three mappings: x, y and
+colour. If we want only single linear model to be built, we would need
+to limit the effect of <code>colour</code> aesthetic to only
+<code>geom_point()</code> function, by moving it from the “parent”
+function to the layer where we want it to apply. Note, though, that
+because we want the <code>colour</code> to be still mapped to the
+<code>island</code> variable, it needs to be wrapped into
+<code>aes()</code> function and supplied to <code>mapping</code>
+argument.</figure></div>
 </div>
 </div>
 </div>
@@ -795,7 +945,8 @@
 <h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge7"></a>
 </h3>
 <div class="callout-content">
-<p>Add a regression line to the plot that plots one line for each species, while also plotting one across all species.</p>
+<p>Add a regression line to the plot that plots one line for each
+species, while also plotting one across all species.</p>
 </div>
 </div>
 </div>
@@ -840,14 +991,26 @@
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (stat_smooth).</span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"> Look at that! The data actually reveals something called the “simpsons paradox”. It’s when a relationship looks to go in a specific direction, but when looking into groups within the data the relationship is the opposite. Here, the overall relationship between bill length and depths looks negative, but when we take into account that there are different species, the relationship is actually positive.</figure></div>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+Look at that! The data actually reveals something called the “simpsons
+paradox”. It’s when a relationship looks to go in a specific direction,
+but when looking into groups within the data the relationship is the
+opposite. Here, the overall relationship between bill length and depths
+looks negative, but when we take into account that there are different
+species, the relationship is actually positive.</figure></div>
 </div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="sub-plots-plot-panels">Sub-plots (plot panels)<a class="anchor" aria-label="anchor" href="#sub-plots-plot-panels"></a></h2>
-<p>The last thing we will cover for plots is creating sub-plots. Often, we’d like to create the same set of plots, but as distinctly different subplots. This way, we dont need to map soo many aesthetics (it can end up being really messy).</p>
-<p>Lets say, the last plot we made, we want to understand if there are also differences between male and female penguins. In ggplot2, this is called a “facet”, and the function we use is called either <code>facet_wrap</code> or <code>facet_grid</code>.</p>
+<p>The last thing we will cover for plots is creating sub-plots. Often,
+we’d like to create the same set of plots, but as distinctly different
+subplots. This way, we dont need to map soo many aesthetics (it can end
+up being really messy).</p>
+<p>Lets say, the last plot we made, we want to understand if there are
+also differences between male and female penguins. In ggplot2, this is
+called a “facet”, and the function we use is called either
+<code>facet_wrap</code> or <code>facet_grid</code>.</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -862,8 +1025,13 @@
 <span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (stat_smooth).</span>
 <span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The facet’s take formula arguments, meaning they contain the <code>tilde</code> (~). The way often we think about it, trying to “read” the code, is that we facet “over” sex (in this case).</p>
-<p>This plot looks a little crazy though, as we have penguins with missing sex information getting their own panel, and really, it makes more sense to compare the sexes within each species rather than the other way around. Let us swap the places of species and sex.</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The facet’s take formula arguments, meaning they contain the
+<code>tilde</code> (~). The way often we think about it, trying to
+“read” the code, is that we facet “over” sex (in this case).</p>
+<p>This plot looks a little crazy though, as we have penguins with
+missing sex information getting their own panel, and really, it makes
+more sense to compare the sexes within each species rather than the
+other way around. Let us swap the places of species and sex.</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -887,7 +1055,8 @@
 <h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge8"></a>
 </h3>
 <div class="callout-content">
-<p>To the plot we just made before, try adding another variable to facet by. For instance, facet by species and island.</p>
+<p>To the plot we just made before, try adding another variable to facet
+by. For instance, facet by species and island.</p>
 </div>
 </div>
 </div>
@@ -935,7 +1104,8 @@
 </div>
 <div class="section level2">
 <h2 id="wrap-up">Wrap-up<a class="anchor" aria-label="anchor" href="#wrap-up"></a></h2>
-<p>We learned about different parameters of ggplot functions, and how to combine different geoms into more complex charts.</p>
+<p>We learned about different parameters of ggplot functions, and how to
+combine different geoms into more complex charts.</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
@@ -998,7 +1168,7 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/02-data-visualisation.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/02-data-visualisation.html",
-  "dateCreated": "2022-10-14",
+  "dateCreated": "2022-11-08",
   "dateModified": "2022-10-14",
   "datePublished": "2022-11-08"
 }

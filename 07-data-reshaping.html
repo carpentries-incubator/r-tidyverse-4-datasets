@@ -322,8 +322,10 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Use <code>pivot_longer()</code> to reshape data into a longer format</li>
-<li>Use <code>pivot_wider()</code> to reshape data into a wider format</li>
+<ul><li>Use <code>pivot_longer()</code> to reshape data into a longer
+format</li>
+<li>Use <code>pivot_wider()</code> to reshape data into a wider
+format</li>
 </ul></div>
 </div>
 </div>
@@ -331,25 +333,48 @@
 </div>
 <section id="motivation"><h2 class="section-heading">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
 </h2>
-<hr class="half-width"><p>Data come in a myriad of different shapes, and talking about data set can often become confusing as people are used to data being in different formats, and they call these formats different things. In the tidyverse, “tidy” data is a very opinionated term so that we can all talk about data with more common ground.</p>
+<hr class="half-width"><p>Data come in a myriad of different shapes, and talking about data set
+can often become confusing as people are used to data being in different
+formats, and they call these formats different things. In the tidyverse,
+“tidy” data is a very opinionated term so that we can all talk about
+data with more common ground.</p>
 <p>The goal of the tidyr package is to help you create tidy data.</p>
 <p>Tidy data is data where:</p>
 <ul><li>Every column is variable.<br></li>
 <li>Every row is an observation.<br></li>
 <li>Every cell is a single value.</li>
-</ul><p>Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse. If you ensure that your data is tidy, you’ll spend less time fighting with the tools and more time working on your analysis. Learn more about tidy data in <code><a href="https://tidyr.tidyverse.org/articles/tidy-data.html" class="external-link">vignette("tidy-data")</a></code>.</p>
+</ul><p>Tidy data describes a standard way of storing data that is used
+wherever possible throughout the tidyverse. If you ensure that your data
+is tidy, you’ll spend less time fighting with the tools and more time
+working on your analysis. Learn more about tidy data in
+<code><a href="https://tidyr.tidyverse.org/articles/tidy-data.html" class="external-link">vignette("tidy-data")</a></code>.</p>
 </section><section id="talllong-vs.-wide-data"><h2 class="section-heading">Tall/long vs. wide data<a class="anchor" aria-label="anchor" href="#talllong-vs.-wide-data"></a>
 </h2>
-<hr class="half-width"><ul><li><p>Tall (or long) data are considered “tidy”, in that they adhere to the three tidy-data principles</p></li>
-<li><p>Wide data are not necessarily “messy”, but have a shape less ideal for easy handling in the tidyverse</p></li>
+<hr class="half-width"><ul><li><p>Tall (or long) data are considered “tidy”, in that they adhere to
+the three tidy-data principles</p></li>
+<li><p>Wide data are not necessarily “messy”, but have a shape less
+ideal for easy handling in the tidyverse</p></li>
 </ul><p>Example in longitudinal data design:</p>
-<ul><li>wide data: each participant has a single row of data, with all longitudinal observations in separate columns<br></li>
-<li>tall data: a participant has as many rows as longitudinal time points, with measures in separate columns</li>
+<ul><li>wide data: each participant has a single row of data, with all
+longitudinal observations in separate columns<br></li>
+<li>tall data: a participant has as many rows as longitudinal time
+points, with measures in separate columns</li>
 </ul><figure><img src="fig/06-tall_wide.gif" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><div class="section level1">
 <h1 id="creating-longer-data">Creating longer data<a class="anchor" aria-label="anchor" href="#creating-longer-data"></a></h1>
-<p>Let us first talk about creating longer data. In most cases, you will encounter data that is in wide format, this is what is often taught in many disciplines and also necessary to run certain analyses in statistical programs like SPSS. In R, and specifically the tidyverse, working on long data has clear advantages, which we wil be exploring here while we also do the transformations.</p>
-<p>As before, we need to start off by making sure we have the tidyverse package loaded, and the penguins dataset ready at hand.</p>
-<p>In tidyverse, there is a single function to create longer data sets, called <code>pivot_longer</code>. Those of you who might have some prior experience with tidyverse, or you might encounter it when googling for help, might have seen the <code>gather</code> function. This is an older function of similar capabilities which we will not cover here, as the <code>pivot_longer</code> function supersedes it.</p>
+<p>Let us first talk about creating longer data. In most cases, you will
+encounter data that is in wide format, this is what is often taught in
+many disciplines and also necessary to run certain analyses in
+statistical programs like SPSS. In R, and specifically the tidyverse,
+working on long data has clear advantages, which we wil be exploring
+here while we also do the transformations.</p>
+<p>As before, we need to start off by making sure we have the tidyverse
+package loaded, and the penguins dataset ready at hand.</p>
+<p>In tidyverse, there is a single function to create longer data sets,
+called <code>pivot_longer</code>. Those of you who might have some prior
+experience with tidyverse, or you might encounter it when googling for
+help, might have seen the <code>gather</code> function. This is an older
+function of similar capabilities which we will not cover here, as the
+<code>pivot_longer</code> function supersedes it.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -375,8 +400,19 @@
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
 # … with 1,366 more rows</code></pre>
 </div>
-<p>pivot_longer takes tidy-select column arguments, so it is easy to grab all the columns you are after. Here, we are pivoting longer all columns that contain an underscore. And what happens? We now have less columns, but also two new columns we did not have before! In the <code>name</code> column, all our previous columns names are, one after the other. And in the <code>value</code> column, all the cell values for the observations! So before, the data was wider, in that each of the columns with <code>_</code> had their own column, while now, they are all collected into two columns instead of 4.</p>
-<p>Why would we want to do that? Well, perhaps we want to plot all the variables in a single ggplot call? Now that the measurement types are collected in these two ways, we can facet over the <code>name</code> column to create a sub-plot per measurement type!</p>
+<p>pivot_longer takes tidy-select column arguments, so it is easy to
+grab all the columns you are after. Here, we are pivoting longer all
+columns that contain an underscore. And what happens? We now have less
+columns, but also two new columns we did not have before! In the
+<code>name</code> column, all our previous columns names are, one after
+the other. And in the <code>value</code> column, all the cell values for
+the observations! So before, the data was wider, in that each of the
+columns with <code>_</code> had their own column, while now, they are
+all collected into two columns instead of 4.</p>
+<p>Why would we want to do that? Well, perhaps we want to plot all the
+variables in a single ggplot call? Now that the measurement types are
+collected in these two ways, we can facet over the <code>name</code>
+column to create a sub-plot per measurement type!</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -394,7 +430,11 @@
 </h3>
 <pre class="warning" tabindex="0"><code>Warning: Removed 8 rows containing non-finite values (stat_boxplot).</code></pre>
 </div>
-<figure><img src="fig/07-data-reshaping-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>That’s pretty neat. By pivoting the data into this longer shape we are able to create sub-plots for all measurements easily with the same ggplot call and have them consistent, and nicely aligned. This longer format is also great for summaries, which we will be covering tomorrow.</p>
+<figure><img src="fig/07-data-reshaping-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>That’s pretty neat. By pivoting the data into this longer shape we
+are able to create sub-plots for all measurements easily with the same
+ggplot call and have them consistent, and nicely aligned. This longer
+format is also great for summaries, which we will be covering
+tomorrow.</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -453,7 +493,8 @@
 <h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge2"></a>
 </h3>
 <div class="callout-content">
-<p>Pivot the penguins data so that all the bill measurements are in the same column.</p>
+<p>Pivot the penguins data so that all the bill measurements are in the
+same column.</p>
 </div>
 </div>
 </div>
@@ -503,7 +544,8 @@
 <h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
-<p>As mentioned, pivot_longer accepts tidy-selectors. Pivot longer all numerical columns.</p>
+<p>As mentioned, pivot_longer accepts tidy-selectors. Pivot longer all
+numerical columns.</p>
 </div>
 </div>
 </div>
@@ -547,7 +589,10 @@
 </div>
 <div class="section level2">
 <h2 id="altering-names-during-pivots">Altering names during pivots<a class="anchor" aria-label="anchor" href="#altering-names-during-pivots"></a></h2>
-<p>While often you can get away with leaving the default naming of the two columns as is, especially if you are just doing something quick like making a plot, most times you will likely want to control the names of your two new columns.</p>
+<p>While often you can get away with leaving the default naming of the
+two columns as is, especially if you are just doing something quick like
+making a plot, most times you will likely want to control the names of
+your two new columns.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -575,8 +620,17 @@
 10 Adelie  Torgersen female  2007 bill_depth_mm        18  
 # … with 1,366 more rows</code></pre>
 </div>
-<p>Here, we change the “names” to “columns” and “values” to “content”. The pivot defaults are usually quite sensible, making it clear what is the column names and what are the cell values. But English might not be your working language or you might find something more obvious for your self.</p>
-<p>But we have even more power in the renaming of columns. Pivots actually have quite a lot of options, making it possible for us to create outputs looking just like we want. Notice how the names of the columns we pivoted follow a specific structure. First is the name of the body part, then the type of measurement, then the unit of the measurement. This clear logic we can use to our advantage.</p>
+<p>Here, we change the “names” to “columns” and “values” to “content”.
+The pivot defaults are usually quite sensible, making it clear what is
+the column names and what are the cell values. But English might not be
+your working language or you might find something more obvious for your
+self.</p>
+<p>But we have even more power in the renaming of columns. Pivots
+actually have quite a lot of options, making it possible for us to
+create outputs looking just like we want. Notice how the names of the
+columns we pivoted follow a specific structure. First is the name of the
+body part, then the type of measurement, then the unit of the
+measurement. This clear logic we can use to our advantage.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -604,7 +658,11 @@
 10 Adelie  Torgersen female  2007 bill    depth   mm      18  
 # … with 1,366 more rows</code></pre>
 </div>
-<p>now, the pivot gave us 4 columns in stead of two! We told pivot that the column name could be split into the columns “part”, “measure” and “unit”, and that these were separated by underscore. Again we see how great consistent and logical naming of columns can be such a great help when working with data!</p>
+<p>now, the pivot gave us 4 columns in stead of two! We told pivot that
+the column name could be split into the columns “part”, “measure” and
+“unit”, and that these were separated by underscore. Again we see how
+great consistent and logical naming of columns can be such a great help
+when working with data!</p>
 <div id="challenge4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -613,7 +671,9 @@
 <h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge4"></a>
 </h3>
 <div class="callout-content">
-<p>Pivot longer all the bill measurements, and alter the names in one go, so that there are three columns named “part”, “measure” and “unit” after the pivot.</p>
+<p>Pivot longer all the bill measurements, and alter the names in one
+go, so that there are three columns named “part”, “measure” and “unit”
+after the pivot.</p>
 </div>
 </div>
 </div>
@@ -666,7 +726,9 @@
 <h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge5"></a>
 </h3>
 <div class="callout-content">
-<p>Pivot longer all the bill measurements, and use the <code>names_prefix</code> argument. Give it the string “bill_”. What did that do?</p>
+<p>Pivot longer all the bill measurements, and use the
+<code>names_prefix</code> argument. Give it the string “bill_”. What did
+that do?</p>
 </div>
 </div>
 </div>
@@ -717,7 +779,11 @@
 <h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge6"></a>
 </h3>
 <div class="callout-content">
-<p>Pivot longer all the bill measurements, and use the <code>names_prefix</code>, <code>names_to</code> and <code>names_sep</code> arguments. What do you need to change in <code>names_to</code> from the previous example to make it work now that we also use <code>names_prefix</code>?</p>
+<p>Pivot longer all the bill measurements, and use the
+<code>names_prefix</code>, <code>names_to</code> and
+<code>names_sep</code> arguments. What do you need to change in
+<code>names_to</code> from the previous example to make it work now that
+we also use <code>names_prefix</code>?</p>
 </div>
 </div>
 </div>
@@ -766,7 +832,9 @@
 </div>
 <div class="section level2">
 <h2 id="cleaning-up-values-during-pivots-">Cleaning up values during pivots.<a class="anchor" aria-label="anchor" href="#cleaning-up-values-during-pivots-"></a></h2>
-<p>When pivoting, it is common that quite some <code>NA</code> values appear in the values column. We can remove these immediately by making the argument <code>values_drop_na</code> be <code>TRUE</code></p>
+<p>When pivoting, it is common that quite some <code>NA</code> values
+appear in the values column. We can remove these immediately by making
+the argument <code>values_drop_na</code> be <code>TRUE</code></p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -793,8 +861,12 @@
 10 Adelie  Torgersen               190        3650 male    2007 bill_dept…  20.6
 # … with 674 more rows</code></pre>
 </div>
-<p>This extra argument will ensure that all <code>NA</code> values in the <code>value</code> column are removed. This is some times convenient as we might move on to analyses etc of the data, which often are made more complicated (or impossible) when there is missing data.</p>
-<p>We should put everything together and create a new object that is our long formatted penguin data set.</p>
+<p>This extra argument will ensure that all <code>NA</code> values in
+the <code>value</code> column are removed. This is some times convenient
+as we might move on to analyses etc of the data, which often are made
+more complicated (or impossible) when there is missing data.</p>
+<p>We should put everything together and create a new object that is our
+long formatted penguin data set.</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -827,8 +899,15 @@
 </div>
 <div class="section level2">
 <h2 id="pivoting-data-wider">Pivoting data wider<a class="anchor" aria-label="anchor" href="#pivoting-data-wider"></a></h2>
-<p>While long data formats are ideal when you are working in the tidyverse, you might encounter packages or pipelines in R that require wide-format data. Knowing how to transform a long data set into wide is just as important a knowing how to go from wide to long. You will also experience that this skill can be convenient when creating data summaries tomorrow.</p>
-<p>Before we start using the penguins_longer dataset we made, let us make another simpler longer data set, for the first look a the pivor wider function.</p>
+<p>While long data formats are ideal when you are working in the
+tidyverse, you might encounter packages or pipelines in R that require
+wide-format data. Knowing how to transform a long data set into wide is
+just as important a knowing how to go from wide to long. You will also
+experience that this skill can be convenient when creating data
+summaries tomorrow.</p>
+<p>Before we start using the penguins_longer dataset we made, let us
+make another simpler longer data set, for the first look a the pivor
+wider function.</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -855,7 +934,9 @@
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
 # … with 1,366 more rows</code></pre>
 </div>
-<p><code>penguins_long_simple</code> now contains the lover penguins dataset, with column names in the “name” column, and values in the “value” column.</p>
+<p><code>penguins_long_simple</code> now contains the lover penguins
+dataset, with column names in the “name” column, and values in the
+“value” column.</p>
 <p>If we want to make this wider again we can try the following:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -896,8 +977,16 @@
 # … with 25 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g</code></pre>
 </div>
-<p>ok what is happening here? It does not at all look as we expected! Our columns have something very weird in them, with this strange <code>&lt;dbl [7]&gt;</code> thing, what does that mean? Lets look at the warning message our code gave us and see if we can figure it out. <strong>Values are not uniquely identified; output will contain list-cols</strong>. We are being told the pivot wider cannot uniquely identify the observations, and so cannot place a single value into the columns. Is returning lists of values.</p>
-<p>yikes! That’s super annoying. Let’s go back to our penguins data set and see if we can do something to help.</p>
+<p>ok what is happening here? It does not at all look as we expected!
+Our columns have something very weird in them, with this strange
+<code>&lt;dbl [7]&gt;</code> thing, what does that mean? Lets look at
+the warning message our code gave us and see if we can figure it out.
+<strong>Values are not uniquely identified; output will contain
+list-cols</strong>. We are being told the pivot wider cannot uniquely
+identify the observations, and so cannot place a single value into the
+columns. Is returning lists of values.</p>
+<p>yikes! That’s super annoying. Let’s go back to our penguins data set
+and see if we can do something to help.</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -923,8 +1012,16 @@
 # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
 #   ²​body_mass_g</code></pre>
 </div>
-<p>Have you noticed that there is no column that uniquely identifies an observation? Other than each observation being on its own row, we have nothing to make sure that we can identify which observations belong together once we make the data long. As long as they are in the original format, this is ok, but once we pivoted the data longer, we lost the ability to identify which rows of observations belong together.</p>
-<p>We can remedy that by adding row numbers to the original data before we pivot. The <code>row_number()</code> function is great for this. By doing a mutate adding the row number to the data set, we should then have a clear variable identifying each observation.</p>
+<p>Have you noticed that there is no column that uniquely identifies an
+observation? Other than each observation being on its own row, we have
+nothing to make sure that we can identify which observations belong
+together once we make the data long. As long as they are in the original
+format, this is ok, but once we pivoted the data longer, we lost the
+ability to identify which rows of observations belong together.</p>
+<p>We can remedy that by adding row numbers to the original data before
+we pivot. The <code>row_number()</code> function is great for this. By
+doing a mutate adding the row number to the data set, we should then
+have a clear variable identifying each observation.</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -952,7 +1049,10 @@
 10 Adelie  Torgersen female  2007      3 bill_depth_mm       18  
 # … with 1,366 more rows</code></pre>
 </div>
-<p>Notice now that in the sample column, the numbers repeat several rows. Where sample equals 1, all those are observations from the first row of data in the original penguins data set! Let us try to pivot that wider again.</p>
+<p>Notice now that in the sample column, the numbers repeat several
+rows. Where sample equals 1, all those are observations from the first
+row of data in the original penguins data set! Let us try to pivot that
+wider again.</p>
 <div id="challenge7" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1001,7 +1101,10 @@
 # … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
 #   ²​flipper_length_mm, ³​body_mass_g</code></pre>
 </div>
-<p>And now it worked! Now, the remaining columns were able to uniquely identify which observations belonged together. And the data looks just like the original penguins data set now, with the addition of the sample column, and the columns being slightly rearranged.</p>
+<p>And now it worked! Now, the remaining columns were able to uniquely
+identify which observations belonged together. And the data looks just
+like the original penguins data set now, with the addition of the sample
+column, and the columns being slightly rearranged.</p>
 </div>
 </div>
 </div>
@@ -1009,7 +1112,8 @@
 </div>
 <div class="section level2">
 <h2 id="pivoting-wider-with-more-arguments">Pivoting wider with more arguments<a class="anchor" aria-label="anchor" href="#pivoting-wider-with-more-arguments"></a></h2>
-<p>We should re-create our penguins long data set, to make sure we don’t have this problem again.</p>
+<p>We should re-create our penguins long data set, to make sure we don’t
+have this problem again.</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1040,7 +1144,12 @@
 10 Adelie  Torgersen female  2007      3 bill    depth   mm      18  
 # … with 1,358 more rows</code></pre>
 </div>
-<p>Much as the first example of pivot_longer, pivot_wider in its simplest form is relatively straight forward. But your penguins long data set is much more complex. The column names are split into several columns, how do we fix that? Like pivot_longer, pivot_wider has arguments that will let us get back to the original state, with much of the same syntax as with pivot_longer!</p>
+<p>Much as the first example of pivot_longer, pivot_wider in its
+simplest form is relatively straight forward. But your penguins long
+data set is much more complex. The column names are split into several
+columns, how do we fix that? Like pivot_longer, pivot_wider has
+arguments that will let us get back to the original state, with much of
+the same syntax as with pivot_longer!</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1069,12 +1178,18 @@
 # … with 332 more rows, and abbreviated variable names ¹​bill_depth_mm,
 #   ²​flipper_length_mm, ³​body_mass_g</code></pre>
 </div>
-<p>Those arguments and inputs should be familiar to the call from pivot_longer. So we are lucky that if you understand one of them, it is easier to understand the other.</p>
+<p>Those arguments and inputs should be familiar to the call from
+pivot_longer. So we are lucky that if you understand one of them, it is
+easier to understand the other.</p>
 </div>
 </div>
 <div class="section level1">
 <h1 id="wrap-up">Wrap up<a class="anchor" aria-label="anchor" href="#wrap-up"></a></h1>
-<p>We have been exploring how to pivot data into longer and wider shapes. Pivoting is a vital part of the “tidyverse”-way, and very powerful tool once you get used to it. We will see pivots in action more tomorrow as we create summaries and play around with combining all the things we have been exploring.</p>
+<p>We have been exploring how to pivot data into longer and wider
+shapes. Pivoting is a vital part of the “tidyverse”-way, and very
+powerful tool once you get used to it. We will see pivots in action more
+tomorrow as we create summaries and play around with combining all the
+things we have been exploring.</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
@@ -1136,7 +1251,7 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/07-data-reshaping.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/07-data-reshaping.html",
-  "dateCreated": "2022-10-14",
+  "dateCreated": "2022-11-08",
   "dateModified": "2022-10-14",
   "datePublished": "2022-11-08"
 }
