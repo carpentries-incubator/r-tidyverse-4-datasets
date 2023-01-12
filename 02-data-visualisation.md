@@ -209,7 +209,7 @@ Warning: Removed 2 rows containing missing values (geom_point).
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
 
-Island is a categorical variable, in R we call it a factor. The colours get tagged with their factor in the legend, so we can interpret which colour belongs to which factor. `year` is a numerical variable, so the colour becomes a gradient colour bar, rather than showing fewer distinctly different colours. ggplot treats numerical and factors different in this way precisely.
+Island is categorical character variable with a discrete range of possible values. This, like the data type of factor, is represented with colours by assigning a specific colour to each member of the discrete set. `year` is a continuous numeric variable in which any number of potential values can exist between known values. To represent this, R uses a colour bar with a continuous gradient.
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
