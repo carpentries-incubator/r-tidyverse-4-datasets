@@ -296,7 +296,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Visualisation with ggplot2</h1>
-        <p> Last updated on 2022-12-06 | 
+        <p> Last updated on 2023-01-12 | 
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/02-data-visualisation.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -638,12 +638,12 @@ between when you colour by island and when you colour by year?</p>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (geom_point).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Island is a categorical variable, in R we call it a factor. The
-colours get tagged with their factor in the legend, so we can interpret
-which colour belongs to which factor. <code>year</code> is a numerical
-variable, so the colour becomes a gradient colour bar, rather than
-showing fewer distinctly different colours. ggplot treats numerical and
-factors different in this way precisely.</p>
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Island is categorical character variable with a discrete range of
+possible values. This, like the data type of factor, is represented with
+colours by assigning a specific colour to each member of the discrete
+set. <code>year</code> is a continuous numeric variable in which any
+number of potential values can exist between known values. To represent
+this, R uses a colour bar with a continuous gradient.</p>
 </div>
 </div>
 </div>
@@ -1147,7 +1147,7 @@ any links that you are not going to use.
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.3" class="external-link">sandpaper (0.11.3)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.4.1" class="external-link">pegboard (0.4.1)</a>,
+        <a href="https://github.com/carpentries/pegboard/tree/0.4.2" class="external-link">pegboard (0.4.2)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.13" class="external-link">varnish (0.2.13)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
@@ -1168,9 +1168,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/02-data-visualisation.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/02-data-visualisation.html",
-  "dateCreated": "2022-12-20",
-  "dateModified": "2022-12-06",
-  "datePublished": "2023-01-10"
+  "dateCreated": "2023-01-12",
+  "dateModified": "2023-01-12",
+  "datePublished": "2023-01-12"
 }
 
   </script><script>
