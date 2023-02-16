@@ -276,7 +276,7 @@ penguins |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (geom_point).
+Warning: Removed 2 rows containing missing values (`geom_point()`).
 ```
 
 <img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
@@ -290,7 +290,7 @@ penguins |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (geom_point).
+Warning: Removed 2 rows containing missing values (`geom_point()`).
 ```
 
 <img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
@@ -316,7 +316,7 @@ penguins |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (geom_point).
+Warning: Removed 2 rows containing missing values (`geom_point()`).
 ```
 
 <img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
@@ -346,7 +346,7 @@ penguins |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (geom_point).
+Warning: Removed 2 rows containing missing values (`geom_point()`).
 ```
 
 <img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
@@ -376,7 +376,7 @@ penguins |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (geom_point).
+Warning: Removed 2 rows containing missing values (`geom_point()`).
 ```
 
 <img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />

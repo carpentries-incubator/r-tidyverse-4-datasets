@@ -102,8 +102,9 @@ penguins_s |>
 
 ```{.error}
 Error in `mutate()`:
-! Problem while computing `var = 1:3`.
-✖ `var` must be size 344 or 1, not 3.
+ℹ In argument: `var = 1:3`.
+Caused by error:
+! `var` must be size 344 or 1, not 3.
 ```
 
 Here, it's failing with a mysterious message. The error is telling us that input must be of size 344 or 1. 344 are the number of rows in the data set, so its telling us the input we gave it is not suitable because its neither of length 344 nor of length 1. 
@@ -305,7 +306,7 @@ penguin_weight |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (geom_point).
+Warning: Removed 2 rows containing missing values (`geom_point()`).
 ```
 
 <img src="fig/06-data-manipulation-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
@@ -434,7 +435,7 @@ penguins_s |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (geom_point).
+Warning: Removed 2 rows containing missing values (`geom_point()`).
 ```
 
 <img src="fig/06-data-manipulation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
@@ -461,7 +462,7 @@ penguins |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (geom_point).
+Warning: Removed 2 rows containing missing values (`geom_point()`).
 ```
 
 <img src="fig/06-data-manipulation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
