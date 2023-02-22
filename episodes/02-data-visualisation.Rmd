@@ -6,7 +6,7 @@ exercises: 8
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do I access my data in R?
+- How do I access my data in R? Echelle test
 - How do I visualise my data with ggplot2?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
