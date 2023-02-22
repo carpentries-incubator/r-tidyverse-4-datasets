@@ -260,7 +260,7 @@ Set up your project folders. For this workshop we will need folders for data, re
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 ## Challenge 4
-Download the palmer penguins data and place it in uyour `data` folder, calling it `penguins.csv`
+Download the palmer penguins data and place it in your `data` folder, calling it `penguins.csv`
 
 1. Go to [the raw palmer penguins data](https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv)
 2. Right click in the browser window
