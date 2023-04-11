@@ -82,7 +82,7 @@ penguins |>
  8 Adelie  Torgersen female  2007 body_mass_g       3800  
  9 Adelie  Torgersen female  2007 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
-# … with 1,366 more rows
+# ℹ 1,366 more rows
 ```
 
 pivot_longer takes tidy-select column arguments, so it is easy to grab all the columns you are after. Here, we are pivoting longer all columns that contain an underscore. And what happens? We now have less columns, but also two new columns we did not have before! In the `name` column, all our previous columns names are, one after the other. And in the `value` column, all the cell values for the observations! 
@@ -136,7 +136,7 @@ penguins |>
  8 Adelie  Torgersen        3250 female  2007 bill_depth_mm      18  
  9 Adelie  Torgersen        3250 female  2007 flipper_length_mm 195  
 10 Adelie  Torgersen          NA <NA>    2007 bill_length_mm     NA  
-# … with 1,022 more rows
+# ℹ 1,022 more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -169,7 +169,7 @@ penguins |>
  8 Adelie  Torgersen                NA          NA <NA>    2007 bill_dept…  NA  
  9 Adelie  Torgersen               193        3450 female  2007 bill_leng…  36.7
 10 Adelie  Torgersen               193        3450 female  2007 bill_dept…  19.3
-# … with 678 more rows
+# ℹ 678 more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -202,7 +202,7 @@ penguins |>
  8 Adelie  Torgersen female flipper_length_mm  186  
  9 Adelie  Torgersen female body_mass_g       3800  
 10 Adelie  Torgersen female year              2007  
-# … with 1,710 more rows
+# ℹ 1,710 more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -235,7 +235,7 @@ penguins |>
  8 Adelie  Torgersen female  2007 body_mass_g        3800  
  9 Adelie  Torgersen female  2007 bill_length_mm       40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm        18  
-# … with 1,366 more rows
+# ℹ 1,366 more rows
 ```
 
 Here, we change the "names" to "columns" and "values" to "content". The pivot defaults are usually quite sensible, making it clear what is the column names and what are the cell values. But English might not be your working language or you might find something more obvious for your self. 
@@ -264,7 +264,7 @@ penguins |>
  8 Adelie  Torgersen female  2007 body    mass    g     3800  
  9 Adelie  Torgersen female  2007 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007 bill    depth   mm      18  
-# … with 1,366 more rows
+# ℹ 1,366 more rows
 ```
 
 now, the pivot gave us 4 columns in stead of two! We told pivot that the column name could be split into the columns "part", "measure" and "unit", and that these were separated by underscore. Again we see how great consistent and logical naming of columns can be such a great help when working with data!
@@ -286,20 +286,20 @@ penguins |>
 
 ```{.output}
 # A tibble: 688 × 10
-   species island    flipper_len…¹ body_…² sex    year part  measure unit  value
-   <fct>   <fct>             <int>   <int> <fct> <int> <chr> <chr>   <chr> <dbl>
- 1 Adelie  Torgersen           181    3750 male   2007 bill  length  mm     39.1
- 2 Adelie  Torgersen           181    3750 male   2007 bill  depth   mm     18.7
- 3 Adelie  Torgersen           186    3800 fema…  2007 bill  length  mm     39.5
- 4 Adelie  Torgersen           186    3800 fema…  2007 bill  depth   mm     17.4
- 5 Adelie  Torgersen           195    3250 fema…  2007 bill  length  mm     40.3
- 6 Adelie  Torgersen           195    3250 fema…  2007 bill  depth   mm     18  
- 7 Adelie  Torgersen            NA      NA <NA>   2007 bill  length  mm     NA  
- 8 Adelie  Torgersen            NA      NA <NA>   2007 bill  depth   mm     NA  
- 9 Adelie  Torgersen           193    3450 fema…  2007 bill  length  mm     36.7
-10 Adelie  Torgersen           193    3450 fema…  2007 bill  depth   mm     19.3
-# … with 678 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
+   species island  flipper_length_mm body_mass_g sex    year part  measure unit 
+   <fct>   <fct>               <int>       <int> <fct> <int> <chr> <chr>   <chr>
+ 1 Adelie  Torger…               181        3750 male   2007 bill  length  mm   
+ 2 Adelie  Torger…               181        3750 male   2007 bill  depth   mm   
+ 3 Adelie  Torger…               186        3800 fema…  2007 bill  length  mm   
+ 4 Adelie  Torger…               186        3800 fema…  2007 bill  depth   mm   
+ 5 Adelie  Torger…               195        3250 fema…  2007 bill  length  mm   
+ 6 Adelie  Torger…               195        3250 fema…  2007 bill  depth   mm   
+ 7 Adelie  Torger…                NA          NA <NA>   2007 bill  length  mm   
+ 8 Adelie  Torger…                NA          NA <NA>   2007 bill  depth   mm   
+ 9 Adelie  Torger…               193        3450 fema…  2007 bill  length  mm   
+10 Adelie  Torger…               193        3450 fema…  2007 bill  depth   mm   
+# ℹ 678 more rows
+# ℹ 1 more variable: value <dbl>
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -333,7 +333,7 @@ penguins |>
  8 Adelie  Torgersen                NA          NA <NA>    2007 depth_mm   NA  
  9 Adelie  Torgersen               193        3450 female  2007 length_mm  36.7
 10 Adelie  Torgersen               193        3450 female  2007 depth_mm   19.3
-# … with 678 more rows
+# ℹ 678 more rows
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -357,20 +357,20 @@ penguins |>
 
 ```{.output}
 # A tibble: 688 × 9
-   species island    flipper_length_mm body_ma…¹ sex    year bill_…² unit  value
-   <fct>   <fct>                 <int>     <int> <fct> <int> <chr>   <chr> <dbl>
- 1 Adelie  Torgersen               181      3750 male   2007 length  mm     39.1
- 2 Adelie  Torgersen               181      3750 male   2007 depth   mm     18.7
- 3 Adelie  Torgersen               186      3800 fema…  2007 length  mm     39.5
- 4 Adelie  Torgersen               186      3800 fema…  2007 depth   mm     17.4
- 5 Adelie  Torgersen               195      3250 fema…  2007 length  mm     40.3
- 6 Adelie  Torgersen               195      3250 fema…  2007 depth   mm     18  
- 7 Adelie  Torgersen                NA        NA <NA>   2007 length  mm     NA  
- 8 Adelie  Torgersen                NA        NA <NA>   2007 depth   mm     NA  
- 9 Adelie  Torgersen               193      3450 fema…  2007 length  mm     36.7
-10 Adelie  Torgersen               193      3450 fema…  2007 depth   mm     19.3
-# … with 678 more rows, and abbreviated variable names ¹​body_mass_g,
-#   ²​bill_measure
+   species island   flipper_length_mm body_mass_g sex    year bill_measure unit 
+   <fct>   <fct>                <int>       <int> <fct> <int> <chr>        <chr>
+ 1 Adelie  Torgers…               181        3750 male   2007 length       mm   
+ 2 Adelie  Torgers…               181        3750 male   2007 depth        mm   
+ 3 Adelie  Torgers…               186        3800 fema…  2007 length       mm   
+ 4 Adelie  Torgers…               186        3800 fema…  2007 depth        mm   
+ 5 Adelie  Torgers…               195        3250 fema…  2007 length       mm   
+ 6 Adelie  Torgers…               195        3250 fema…  2007 depth        mm   
+ 7 Adelie  Torgers…                NA          NA <NA>   2007 length       mm   
+ 8 Adelie  Torgers…                NA          NA <NA>   2007 depth        mm   
+ 9 Adelie  Torgers…               193        3450 fema…  2007 length       mm   
+10 Adelie  Torgers…               193        3450 fema…  2007 depth        mm   
+# ℹ 678 more rows
+# ℹ 1 more variable: value <dbl>
 ```
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -403,7 +403,7 @@ penguins |>
  8 Adelie  Torgersen               193        3450 female  2007 bill_dept…  19.3
  9 Adelie  Torgersen               190        3650 male    2007 bill_leng…  39.3
 10 Adelie  Torgersen               190        3650 male    2007 bill_dept…  20.6
-# … with 674 more rows
+# ℹ 674 more rows
 ```
 
 This extra argument will ensure that all `NA` values in the `value` column are removed. This is some times convenient as we might move on to analyses etc of the data, which often are made more complicated (or impossible) when there is missing data. 
@@ -434,7 +434,7 @@ penguins_long
  8 Adelie  Torgersen female  2007 body    mass    g     3800  
  9 Adelie  Torgersen female  2007 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007 bill    depth   mm      18  
-# … with 1,358 more rows
+# ℹ 1,358 more rows
 ```
 
 ## Pivoting data wider
@@ -465,7 +465,7 @@ penguins_long_simple
  8 Adelie  Torgersen female  2007 body_mass_g       3800  
  9 Adelie  Torgersen female  2007 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
-# … with 1,366 more rows
+# ℹ 1,366 more rows
 ```
 
 `penguins_long_simple` now contains the lover penguins dataset, with column names in the "name" column, and values in the "value" column. 
@@ -492,20 +492,20 @@ Warning: Values from `value` are not uniquely identified; output will contain li
 
 ```{.output}
 # A tibble: 35 × 8
-   species island    sex     year bill_length_mm bill_depth_mm flipper…¹ body_…²
-   <fct>   <fct>     <fct>  <int> <list>         <list>        <list>    <list> 
- 1 Adelie  Torgersen male    2007 <dbl [7]>      <dbl [7]>     <dbl [7]> <dbl>  
- 2 Adelie  Torgersen female  2007 <dbl [8]>      <dbl [8]>     <dbl [8]> <dbl>  
- 3 Adelie  Torgersen <NA>    2007 <dbl [5]>      <dbl [5]>     <dbl [5]> <dbl>  
- 4 Adelie  Biscoe    female  2007 <dbl [5]>      <dbl [5]>     <dbl [5]> <dbl>  
- 5 Adelie  Biscoe    male    2007 <dbl [5]>      <dbl [5]>     <dbl [5]> <dbl>  
- 6 Adelie  Dream     female  2007 <dbl [9]>      <dbl [9]>     <dbl [9]> <dbl>  
- 7 Adelie  Dream     male    2007 <dbl [10]>     <dbl [10]>    <dbl>     <dbl>  
- 8 Adelie  Dream     <NA>    2007 <dbl [1]>      <dbl [1]>     <dbl [1]> <dbl>  
- 9 Adelie  Biscoe    female  2008 <dbl [9]>      <dbl [9]>     <dbl [9]> <dbl>  
-10 Adelie  Biscoe    male    2008 <dbl [9]>      <dbl [9]>     <dbl [9]> <dbl>  
-# … with 25 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
+   species island    sex     year bill_length_mm bill_depth_mm flipper_length_mm
+   <fct>   <fct>     <fct>  <int> <list>         <list>        <list>           
+ 1 Adelie  Torgersen male    2007 <dbl [7]>      <dbl [7]>     <dbl [7]>        
+ 2 Adelie  Torgersen female  2007 <dbl [8]>      <dbl [8]>     <dbl [8]>        
+ 3 Adelie  Torgersen <NA>    2007 <dbl [5]>      <dbl [5]>     <dbl [5]>        
+ 4 Adelie  Biscoe    female  2007 <dbl [5]>      <dbl [5]>     <dbl [5]>        
+ 5 Adelie  Biscoe    male    2007 <dbl [5]>      <dbl [5]>     <dbl [5]>        
+ 6 Adelie  Dream     female  2007 <dbl [9]>      <dbl [9]>     <dbl [9]>        
+ 7 Adelie  Dream     male    2007 <dbl [10]>     <dbl [10]>    <dbl [10]>       
+ 8 Adelie  Dream     <NA>    2007 <dbl [1]>      <dbl [1]>     <dbl [1]>        
+ 9 Adelie  Biscoe    female  2008 <dbl [9]>      <dbl [9]>     <dbl [9]>        
+10 Adelie  Biscoe    male    2008 <dbl [9]>      <dbl [9]>     <dbl [9]>        
+# ℹ 25 more rows
+# ℹ 1 more variable: body_mass_g <list>
 ```
 
 ok what is happening here? It does not at all look as we expected! Our columns have something very weird in them, with this strange `<dbl [7]>` thing, what does that mean?
@@ -521,20 +521,20 @@ penguins
 
 ```{.output}
 # A tibble: 344 × 8
-   species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
-   <fct>   <fct>              <dbl>         <dbl>      <int>   <int> <fct> <int>
- 1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
- 2 Adelie  Torgersen           39.5          17.4        186    3800 fema…  2007
- 3 Adelie  Torgersen           40.3          18          195    3250 fema…  2007
- 4 Adelie  Torgersen           NA            NA           NA      NA <NA>   2007
- 5 Adelie  Torgersen           36.7          19.3        193    3450 fema…  2007
- 6 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
- 7 Adelie  Torgersen           38.9          17.8        181    3625 fema…  2007
- 8 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
- 9 Adelie  Torgersen           34.1          18.1        193    3475 <NA>   2007
-10 Adelie  Torgersen           42            20.2        190    4250 <NA>   2007
-# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# ℹ 334 more rows
+# ℹ 2 more variables: sex <fct>, year <int>
 ```
 Have you noticed that there is no column that uniquely identifies an observation? Other than each observation being on its own row, we have nothing to make sure that we can identify which observations belong together once we make the data long. As long as they are in the original format, this is ok, but once we pivoted the data longer, we lost the ability to identify which rows of observations belong together. 
 
@@ -563,7 +563,7 @@ penguins_long_simple
  8 Adelie  Torgersen female  2007      2 body_mass_g       3800  
  9 Adelie  Torgersen female  2007      3 bill_length_mm      40.3
 10 Adelie  Torgersen female  2007      3 bill_depth_mm       18  
-# … with 1,366 more rows
+# ℹ 1,366 more rows
 ```
 
 Notice now that in the sample column, the numbers repeat several rows. Where sample equals 1, all those are observations from the first row of data in the original penguins data set! Let us try to pivot that wider again.
@@ -584,20 +584,20 @@ penguins_long_simple |>
 
 ```{.output}
 # A tibble: 344 × 9
-   species island    sex     year sample bill_length_mm bill_d…¹ flipp…² body_…³
-   <fct>   <fct>     <fct>  <int>  <int>          <dbl>    <dbl>   <dbl>   <dbl>
- 1 Adelie  Torgersen male    2007      1           39.1     18.7     181    3750
- 2 Adelie  Torgersen female  2007      2           39.5     17.4     186    3800
- 3 Adelie  Torgersen female  2007      3           40.3     18       195    3250
- 4 Adelie  Torgersen <NA>    2007      4           NA       NA        NA      NA
- 5 Adelie  Torgersen female  2007      5           36.7     19.3     193    3450
- 6 Adelie  Torgersen male    2007      6           39.3     20.6     190    3650
- 7 Adelie  Torgersen female  2007      7           38.9     17.8     181    3625
- 8 Adelie  Torgersen male    2007      8           39.2     19.6     195    4675
- 9 Adelie  Torgersen <NA>    2007      9           34.1     18.1     193    3475
-10 Adelie  Torgersen <NA>    2007     10           42       20.2     190    4250
-# … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g
+   species island    sex     year sample bill_length_mm bill_depth_mm
+   <fct>   <fct>     <fct>  <int>  <int>          <dbl>         <dbl>
+ 1 Adelie  Torgersen male    2007      1           39.1          18.7
+ 2 Adelie  Torgersen female  2007      2           39.5          17.4
+ 3 Adelie  Torgersen female  2007      3           40.3          18  
+ 4 Adelie  Torgersen <NA>    2007      4           NA            NA  
+ 5 Adelie  Torgersen female  2007      5           36.7          19.3
+ 6 Adelie  Torgersen male    2007      6           39.3          20.6
+ 7 Adelie  Torgersen female  2007      7           38.9          17.8
+ 8 Adelie  Torgersen male    2007      8           39.2          19.6
+ 9 Adelie  Torgersen <NA>    2007      9           34.1          18.1
+10 Adelie  Torgersen <NA>    2007     10           42            20.2
+# ℹ 334 more rows
+# ℹ 2 more variables: flipper_length_mm <dbl>, body_mass_g <dbl>
 ```
 And now it worked! Now, the remaining columns were able to uniquely identify which observations belonged together. And the data looks just like the original penguins data set now, with the addition of the sample column, and the columns being slightly rearranged.
 
@@ -634,7 +634,7 @@ penguins_long
  8 Adelie  Torgersen female  2007      2 body    mass    g     3800  
  9 Adelie  Torgersen female  2007      3 bill    length  mm      40.3
 10 Adelie  Torgersen female  2007      3 bill    depth   mm      18  
-# … with 1,358 more rows
+# ℹ 1,358 more rows
 ```
 
 Much as the first example of pivot_longer, pivot_wider in its simplest form is relatively straight forward. But your penguins long data set is much more complex. The column names are split into several columns, how do we fix that?
@@ -650,20 +650,20 @@ penguins_long |>
 
 ```{.output}
 # A tibble: 342 × 9
-   species island    sex     year sample bill_length_mm bill_d…¹ flipp…² body_…³
-   <fct>   <fct>     <fct>  <int>  <int>          <dbl>    <dbl>   <dbl>   <dbl>
- 1 Adelie  Torgersen male    2007      1           39.1     18.7     181    3750
- 2 Adelie  Torgersen female  2007      2           39.5     17.4     186    3800
- 3 Adelie  Torgersen female  2007      3           40.3     18       195    3250
- 4 Adelie  Torgersen female  2007      5           36.7     19.3     193    3450
- 5 Adelie  Torgersen male    2007      6           39.3     20.6     190    3650
- 6 Adelie  Torgersen female  2007      7           38.9     17.8     181    3625
- 7 Adelie  Torgersen male    2007      8           39.2     19.6     195    4675
- 8 Adelie  Torgersen <NA>    2007      9           34.1     18.1     193    3475
- 9 Adelie  Torgersen <NA>    2007     10           42       20.2     190    4250
-10 Adelie  Torgersen <NA>    2007     11           37.8     17.1     186    3300
-# … with 332 more rows, and abbreviated variable names ¹​bill_depth_mm,
-#   ²​flipper_length_mm, ³​body_mass_g
+   species island    sex     year sample bill_length_mm bill_depth_mm
+   <fct>   <fct>     <fct>  <int>  <int>          <dbl>         <dbl>
+ 1 Adelie  Torgersen male    2007      1           39.1          18.7
+ 2 Adelie  Torgersen female  2007      2           39.5          17.4
+ 3 Adelie  Torgersen female  2007      3           40.3          18  
+ 4 Adelie  Torgersen female  2007      5           36.7          19.3
+ 5 Adelie  Torgersen male    2007      6           39.3          20.6
+ 6 Adelie  Torgersen female  2007      7           38.9          17.8
+ 7 Adelie  Torgersen male    2007      8           39.2          19.6
+ 8 Adelie  Torgersen <NA>    2007      9           34.1          18.1
+ 9 Adelie  Torgersen <NA>    2007     10           42            20.2
+10 Adelie  Torgersen <NA>    2007     11           37.8          17.1
+# ℹ 332 more rows
+# ℹ 2 more variables: flipper_length_mm <dbl>, body_mass_g <dbl>
 ```
 
 Those arguments and inputs should be familiar to the call from pivot_longer. So we are lucky that if you understand one of them, it is easier to understand the other.
