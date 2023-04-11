@@ -286,7 +286,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data summaries with dplyr</h1>
-        <p> Last updated on 2023-03-14 | 
+        <p> Last updated on 2023-04-11 | 
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/08-data-summaries.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -473,7 +473,7 @@ on <em>kilogram</em> scale.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -519,7 +519,7 @@ the <code>drop_na()</code> step give us wrong results?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -718,7 +718,7 @@ length, grouped by island</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -766,7 +766,7 @@ length, grouped by island and sex.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -933,7 +933,7 @@ mean for all the data</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1052,17 +1052,16 @@ by sex, with a mutate.</p>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 8 × 6
 # Groups:   species [3]
-  species   sex    body_mass_kg_mean body_mass_kg_min body_mass_kg_max species…¹
-  &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;     &lt;dbl&gt;
-1 Adelie    female              3.37             2.85             3.9       3.65
-2 Adelie    male                4.04             3.32             4.78      3.65
-3 Adelie    &lt;NA&gt;                3.54             2.98             4.25      3.65
-4 Chinstrap female              3.53             2.7              4.15      3.73
-5 Chinstrap male                3.94             3.25             4.8       3.73
-6 Gentoo    female              4.68             3.95             5.2       4.92
-7 Gentoo    male                5.48             4.75             6.3       4.92
-8 Gentoo    &lt;NA&gt;                4.59             4.1              4.88      4.92
-# … with abbreviated variable name ¹​species_mean</code></pre>
+  species sex   body_mass_kg_mean body_mass_kg_min body_mass_kg_max species_mean
+  &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;
+1 Adelie  fema…              3.37             2.85             3.9          3.65
+2 Adelie  male               4.04             3.32             4.78         3.65
+3 Adelie  &lt;NA&gt;               3.54             2.98             4.25         3.65
+4 Chinst… fema…              3.53             2.7              4.15         3.73
+5 Chinst… male               3.94             3.25             4.8          3.73
+6 Gentoo  fema…              4.68             3.95             5.2          4.92
+7 Gentoo  male               5.48             4.75             6.3          4.92
+8 Gentoo  &lt;NA&gt;               4.59             4.1              4.88         4.92</code></pre>
 </div>
 <p>Notice that now, the same value is in the species_mean column for all
 the rows of each species. This means our calculation worked! So, in the
@@ -1097,18 +1096,17 @@ sexes.</p>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 8 × 7
 # Groups:   species [3]
-  species   sex    body_mass_kg_mean body_mass_kg_min body_mas…¹ speci…² rel_s…³
-  &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-1 Adelie    female              3.37             2.85       3.9     3.65   0.282
-2 Adelie    male                4.04             3.32       4.78    3.65  -0.393
-3 Adelie    &lt;NA&gt;                3.54             2.98       4.25    3.65   0.111
-4 Chinstrap female              3.53             2.7        4.15    3.73   0.206
-5 Chinstrap male                3.94             3.25       4.8     3.73  -0.206
-6 Gentoo    female              4.68             3.95       5.2     4.92   0.238
-7 Gentoo    male                5.48             4.75       6.3     4.92  -0.567
-8 Gentoo    &lt;NA&gt;                4.59             4.1        4.88    4.92   0.330
-# … with abbreviated variable names ¹​body_mass_kg_max, ²​species_mean,
-#   ³​rel_species</code></pre>
+  species sex   body_mass_kg_mean body_mass_kg_min body_mass_kg_max species_mean
+  &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;
+1 Adelie  fema…              3.37             2.85             3.9          3.65
+2 Adelie  male               4.04             3.32             4.78         3.65
+3 Adelie  &lt;NA&gt;               3.54             2.98             4.25         3.65
+4 Chinst… fema…              3.53             2.7              4.15         3.73
+5 Chinst… male               3.94             3.25             4.8          3.73
+6 Gentoo  fema…              4.68             3.95             5.2          4.92
+7 Gentoo  male               5.48             4.75             6.3          4.92
+8 Gentoo  &lt;NA&gt;               4.59             4.1              4.88         4.92
+# ℹ 1 more variable: rel_species &lt;dbl&gt;</code></pre>
 </div>
 <p>Now we can see, with how much the male penguins usually weight
 compared to the female ones.</p>
@@ -1132,7 +1130,7 @@ species of penguin</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1183,7 +1181,7 @@ species of penguin, split by the penguins sex.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1265,9 +1263,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.13" class="external-link">sandpaper (0.11.13)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.4.3" class="external-link">pegboard (0.4.3)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.15" class="external-link">varnish (0.2.15)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.15" class="external-link">sandpaper (0.11.15)</a>,
+        <a href="https://github.com/carpentries/pegboard/tree/0.5.2" class="external-link">pegboard (0.5.2)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1287,9 +1285,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/08-data-summaries.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/08-data-summaries.html",
-  "dateCreated": "2023-02-24",
-  "dateModified": "2023-03-14",
-  "datePublished": "2023-03-28"
+  "dateCreated": "2023-04-11",
+  "dateModified": "2023-04-11",
+  "datePublished": "2023-04-11"
 }
 
   </script><script>

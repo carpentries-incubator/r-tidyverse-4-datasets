@@ -296,7 +296,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Subsetting data with dplyr</h1>
-        <p> Last updated on 2023-03-14 | 
+        <p> Last updated on 2023-04-11 | 
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/03-data-subsetting.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -420,7 +420,7 @@ columns</p>
  8 Torgersen Adelie  male  
  9 Torgersen Adelie  &lt;NA&gt;  
 10 Torgersen Adelie  &lt;NA&gt;  
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <p>When we use <code>select()</code> we don’t need to use quotations, we
 write in the names directly. We can also use the numeric indexes for the
@@ -447,7 +447,7 @@ column, if we are 100% certain of the order of the columns:</p>
  8 Adelie  Torgersen           39.2        4675
  9 Adelie  Torgersen           34.1        3475
 10 Adelie  Torgersen           42          4250
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <p>In some cases, we want to remove columns, and not necessarily state
 all columns we want to keep. Select also allows for this by adding a
@@ -475,7 +475,7 @@ want.</p>
  8 Adelie  Torgersen               195        4675 male    2007
  9 Adelie  Torgersen               193        3475 &lt;NA&gt;    2007
 10 Adelie  Torgersen               190        4250 &lt;NA&gt;    2007
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -521,7 +521,7 @@ dataset.</p>
  8 male    2007 Adelie 
  9 &lt;NA&gt;    2007 Adelie 
 10 &lt;NA&gt;    2007 Adelie 
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -571,7 +571,7 @@ difference in the output?</p>
  8 Adelie  male    2007
  9 Adelie  &lt;NA&gt;    2007
 10 Adelie  &lt;NA&gt;    2007
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <p>select does not only subset columns, but it can also re-arrange them.
 The columns appear in the order your selection is specified.</p>
@@ -614,7 +614,7 @@ provide it, here <code>"mm"</code>.</p>
  8           39.2          19.6               195
  9           34.1          18.1               193
 10           42            20.2               190
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <p>So convenient! There are several other tidy-selectors you can choose,
 <a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">which you
@@ -657,7 +657,7 @@ in the flipper. Then we might want to change to
  8           39.2          19.6
  9           34.1          18.1
 10           42            20.2
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <p>The tidy selector can be combined with each other and other
 selectors. So you can build exactly the data you want!</p>
@@ -683,7 +683,7 @@ selectors. So you can build exactly the data you want!</p>
  8 Torgersen Adelie   2007           39.2          19.6
  9 Torgersen Adelie   2007           34.1          18.1
 10 Torgersen Adelie   2007           42            20.2
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <div id="challenge3" class="callout challenge">
 <div class="callout-square">
@@ -728,7 +728,7 @@ selectors. So you can build exactly the data you want!</p>
  8           39.2          19.6               195        4675
  9           34.1          18.1               193        3475
 10           42            20.2               190        4250
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -778,7 +778,7 @@ with “mm”</p>
  8 Adelie  male             39.2          19.6               195
  9 Adelie  &lt;NA&gt;             34.1          18.1               193
 10 Adelie  &lt;NA&gt;             42            20.2               190
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -827,7 +827,7 @@ with “mm”</p>
  8 Adelie  Torgersen               195        4675 male    2007
  9 Adelie  Torgersen               193        3475 &lt;NA&gt;    2007
 10 Adelie  Torgersen               190        4250 &lt;NA&gt;    2007
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -868,7 +868,7 @@ comes in!</p>
  8           39.2          19.6               195        4675  2007
  9           34.1          18.1               193        3475  2007
 10           42            20.2               190        4250  2007
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <p>Magic! Let’s break that down. <code>is.numeric()</code> is a function
 in R that checks if a vector is numeric. If the vector is numeric, it
@@ -906,20 +906,20 @@ returns <code>TRUE</code> if not it returns <code>FALSE</code>.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 8
-   species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;      &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
- 2 Adelie  Torgersen           39.5          17.4        186    3800 fema…  2007
- 3 Adelie  Torgersen           40.3          18          195    3250 fema…  2007
- 4 Adelie  Torgersen           NA            NA           NA      NA &lt;NA&gt;   2007
- 5 Adelie  Torgersen           36.7          19.3        193    3450 fema…  2007
- 6 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
- 7 Adelie  Torgersen           38.9          17.8        181    3625 fema…  2007
- 8 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
- 9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
-10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
-# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g</code></pre>
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# ℹ 334 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 <p>The penguins data is stored as a <code>tibble</code>, which is a
 special kind of data set in R that gives a nice print out of the data.
@@ -951,7 +951,7 @@ are numeric, and returns the ones that are.</p>
  8           39.2          19.6               195        4675  2007
  9           34.1          18.1               193        3475  2007
 10           42            20.2               190        4250  2007
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 <div id="challenge6" class="callout challenge">
 <div class="callout-square">
@@ -997,7 +997,7 @@ are numeric, and returns the ones that are.</p>
  8 Adelie  Torgersen male  
  9 Adelie  Torgersen &lt;NA&gt;  
 10 Adelie  Torgersen &lt;NA&gt;  
-# … with 334 more rows</code></pre>
+# ℹ 334 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -1035,20 +1035,20 @@ as all numeric columns from the <code>penguins</code> data set.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 344 × 7
-   island    species bill_length_mm bill_depth_mm flipper_length…¹ body_…²  year
-   &lt;fct&gt;     &lt;fct&gt;            &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;   &lt;int&gt; &lt;int&gt;
- 1 Torgersen Adelie            39.1          18.7              181    3750  2007
- 2 Torgersen Adelie            39.5          17.4              186    3800  2007
- 3 Torgersen Adelie            40.3          18                195    3250  2007
- 4 Torgersen Adelie            NA            NA                 NA      NA  2007
- 5 Torgersen Adelie            36.7          19.3              193    3450  2007
- 6 Torgersen Adelie            39.3          20.6              190    3650  2007
- 7 Torgersen Adelie            38.9          17.8              181    3625  2007
- 8 Torgersen Adelie            39.2          19.6              195    4675  2007
- 9 Torgersen Adelie            34.1          18.1              193    3475  2007
-10 Torgersen Adelie            42            20.2              190    4250  2007
-# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g</code></pre>
+   island    species bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;     &lt;fct&gt;            &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Torgersen Adelie            39.1          18.7               181        3750
+ 2 Torgersen Adelie            39.5          17.4               186        3800
+ 3 Torgersen Adelie            40.3          18                 195        3250
+ 4 Torgersen Adelie            NA            NA                  NA          NA
+ 5 Torgersen Adelie            36.7          19.3               193        3450
+ 6 Torgersen Adelie            39.3          20.6               190        3650
+ 7 Torgersen Adelie            38.9          17.8               181        3625
+ 8 Torgersen Adelie            39.2          19.6               195        4675
+ 9 Torgersen Adelie            34.1          18.1               193        3475
+10 Torgersen Adelie            42            20.2               190        4250
+# ℹ 334 more rows
+# ℹ 1 more variable: year &lt;int&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1082,18 +1082,18 @@ factor.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 9 × 8
-  species   island    bill_length_mm bill_depth_mm flipper…¹ body_…² sex    year
-  &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;     &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-1 Adelie    Dream               37.5          18.9       179    2975 &lt;NA&gt;   2007
-2 Adelie    Biscoe              34.5          18.1       187    2900 fema…  2008
-3 Adelie    Biscoe              36.5          16.6       181    2850 fema…  2008
-4 Adelie    Biscoe              36.4          17.1       184    2850 fema…  2008
-5 Adelie    Dream               33.1          16.1       178    2900 fema…  2008
-6 Adelie    Biscoe              37.9          18.6       193    2925 fema…  2009
-7 Adelie    Torgersen           38.6          17         188    2900 fema…  2009
-8 Chinstrap Dream               43.2          16.6       187    2900 fema…  2007
-9 Chinstrap Dream               46.9          16.6       192    2700 fema…  2008
-# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
+  species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie    Dream               37.5          18.9               179        2975
+2 Adelie    Biscoe              34.5          18.1               187        2900
+3 Adelie    Biscoe              36.5          16.6               181        2850
+4 Adelie    Biscoe              36.4          17.1               184        2850
+5 Adelie    Dream               33.1          16.1               178        2900
+6 Adelie    Biscoe              37.9          18.6               193        2925
+7 Adelie    Torgersen           38.6          17                 188        2900
+8 Chinstrap Dream               43.2          16.6               187        2900
+9 Chinstrap Dream               46.9          16.6               192        2700
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 <p>Here, we’ve filtered so that we only have observations where the body
 mass was less than 3 kilos. We can also filter for specific values, but
@@ -1109,13 +1109,13 @@ single equals (<code>=</code>) are for argument names in functions.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 4 × 8
-  species   island    bill_length_mm bill_depth_mm flipper…¹ body_…² sex    year
-  &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;     &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-1 Adelie    Biscoe              34.5          18.1       187    2900 fema…  2008
-2 Adelie    Dream               33.1          16.1       178    2900 fema…  2008
-3 Adelie    Torgersen           38.6          17         188    2900 fema…  2009
-4 Chinstrap Dream               43.2          16.6       187    2900 fema…  2007
-# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
+  species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie    Biscoe              34.5          18.1               187        2900
+2 Adelie    Dream               33.1          16.1               178        2900
+3 Adelie    Torgersen           38.6          17                 188        2900
+4 Chinstrap Dream               43.2          16.6               187        2900
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 <p>What is happening, is that R will check if the values in
 <code>body_mass_g</code> are the same as 2900 (<code>TRUE</code>) or not
@@ -1154,20 +1154,20 @@ island.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 124 × 8
-   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Dream            39.5          16.7           178    3250 fema…  2007
- 2 Adelie  Dream            37.2          18.1           178    3900 male   2007
- 3 Adelie  Dream            39.5          17.8           188    3300 fema…  2007
- 4 Adelie  Dream            40.9          18.9           184    3900 male   2007
- 5 Adelie  Dream            36.4          17             195    3325 fema…  2007
- 6 Adelie  Dream            39.2          21.1           196    4150 male   2007
- 7 Adelie  Dream            38.8          20             190    3950 male   2007
- 8 Adelie  Dream            42.2          18.5           180    3550 fema…  2007
- 9 Adelie  Dream            37.6          19.3           181    3300 fema…  2007
-10 Adelie  Dream            39.8          19.1           184    4650 male   2007
-# … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g</code></pre>
+   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Dream            39.5          16.7               178        3250
+ 2 Adelie  Dream            37.2          18.1               178        3900
+ 3 Adelie  Dream            39.5          17.8               188        3300
+ 4 Adelie  Dream            40.9          18.9               184        3900
+ 5 Adelie  Dream            36.4          17                 195        3325
+ 6 Adelie  Dream            39.2          21.1               196        4150
+ 7 Adelie  Dream            38.8          20                 190        3950
+ 8 Adelie  Dream            42.2          18.5               180        3550
+ 9 Adelie  Dream            37.6          19.3               181        3300
+10 Adelie  Dream            39.8          19.1               184        4650
+# ℹ 114 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1204,20 +1204,20 @@ island.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 234 × 8
-   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Biscoe           39.6          17.7           186    3500 fema…  2008
- 2 Adelie  Biscoe           40.1          18.9           188    4300 male   2008
- 3 Adelie  Biscoe           35            17.9           190    3450 fema…  2008
- 4 Adelie  Biscoe           42            19.5           200    4050 male   2008
- 5 Adelie  Biscoe           34.5          18.1           187    2900 fema…  2008
- 6 Adelie  Biscoe           41.4          18.6           191    3700 male   2008
- 7 Adelie  Biscoe           39            17.5           186    3550 fema…  2008
- 8 Adelie  Biscoe           40.6          18.8           193    3800 male   2008
- 9 Adelie  Biscoe           36.5          16.6           181    2850 fema…  2008
-10 Adelie  Biscoe           37.6          19.1           194    3750 male   2008
-# … with 224 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g</code></pre>
+   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Biscoe           39.6          17.7               186        3500
+ 2 Adelie  Biscoe           40.1          18.9               188        4300
+ 3 Adelie  Biscoe           35            17.9               190        3450
+ 4 Adelie  Biscoe           42            19.5               200        4050
+ 5 Adelie  Biscoe           34.5          18.1               187        2900
+ 6 Adelie  Biscoe           41.4          18.6               191        3700
+ 7 Adelie  Biscoe           39            17.5               186        3550
+ 8 Adelie  Biscoe           40.6          18.8               193        3800
+ 9 Adelie  Biscoe           36.5          16.6               181        2850
+10 Adelie  Biscoe           37.6          19.1               194        3750
+# ℹ 224 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1242,11 +1242,11 @@ them by adding commas (,) between each statement, and that will work as
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 2 × 8
-  species   island bill_length_mm bill_depth_mm flipper_le…¹ body_…² sex    year
-  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;        &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-1 Chinstrap Dream            43.2          16.6          187    2900 fema…  2007
-2 Chinstrap Dream            46.9          16.6          192    2700 fema…  2008
-# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
+  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Chinstrap Dream            43.2          16.6               187        2900
+2 Chinstrap Dream            46.9          16.6               192        2700
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 <p>You can also use the <code>&amp;</code> sign, which in R is the
 comparison character for ‘and’, like <code>==</code> is for
@@ -1263,11 +1263,11 @@ comparison character for ‘and’, like <code>==</code> is for
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 2 × 8
-  species   island bill_length_mm bill_depth_mm flipper_le…¹ body_…² sex    year
-  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;        &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-1 Chinstrap Dream            43.2          16.6          187    2900 fema…  2007
-2 Chinstrap Dream            46.9          16.6          192    2700 fema…  2008
-# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
+  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Chinstrap Dream            43.2          16.6               187        2900
+2 Chinstrap Dream            46.9          16.6               192        2700
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 <p>Here we are filtering the penguins data set keeping only the species
 “Chinstrap” <strong>and</strong> those below 3.5 kilos. And we can keep
@@ -1285,7 +1285,7 @@ going!</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="co"># A tibble: 0 × 8</span></span>
-<span><span class="co"># … with 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,</span></span>
+<span><span class="co"># ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,</span></span>
 <span><span class="co">#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,</span></span>
 <span><span class="co">#   year &lt;int&gt;</span></span></code></pre>
 </div>
@@ -1323,20 +1323,20 @@ going!</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 124 × 8
-   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Biscoe           39.6          17.7           186    3500 fema…  2008
- 2 Adelie  Biscoe           40.1          18.9           188    4300 male   2008
- 3 Adelie  Biscoe           35            17.9           190    3450 fema…  2008
- 4 Adelie  Biscoe           42            19.5           200    4050 male   2008
- 5 Adelie  Biscoe           34.5          18.1           187    2900 fema…  2008
- 6 Adelie  Biscoe           41.4          18.6           191    3700 male   2008
- 7 Adelie  Biscoe           39            17.5           186    3550 fema…  2008
- 8 Adelie  Biscoe           40.6          18.8           193    3800 male   2008
- 9 Adelie  Biscoe           36.5          16.6           181    2850 fema…  2008
-10 Adelie  Biscoe           37.6          19.1           194    3750 male   2008
-# … with 114 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g</code></pre>
+   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Biscoe           39.6          17.7               186        3500
+ 2 Adelie  Biscoe           40.1          18.9               188        4300
+ 3 Adelie  Biscoe           35            17.9               190        3450
+ 4 Adelie  Biscoe           42            19.5               200        4050
+ 5 Adelie  Biscoe           34.5          18.1               187        2900
+ 6 Adelie  Biscoe           41.4          18.6               191        3700
+ 7 Adelie  Biscoe           39            17.5               186        3550
+ 8 Adelie  Biscoe           40.6          18.8               193        3800
+ 9 Adelie  Biscoe           36.5          16.6               181        2850
+10 Adelie  Biscoe           37.6          19.1               194        3750
+# ℹ 114 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1376,20 +1376,20 @@ Chinstrap species</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 34 × 8
-   species   island bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year
-   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Chinstrap Dream            50            19.5         196    3900 male   2007
- 2 Chinstrap Dream            51.3          19.2         193    3650 male   2007
- 3 Chinstrap Dream            52.7          19.8         197    3725 male   2007
- 4 Chinstrap Dream            51.3          18.2         197    3750 male   2007
- 5 Chinstrap Dream            51.3          19.9         198    3700 male   2007
- 6 Chinstrap Dream            51.7          20.3         194    3775 male   2007
- 7 Chinstrap Dream            52            18.1         201    4050 male   2007
- 8 Chinstrap Dream            50.5          19.6         201    4050 male   2007
- 9 Chinstrap Dream            50.3          20           197    3300 male   2007
-10 Chinstrap Dream            49.2          18.2         195    4400 male   2007
-# … with 24 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g</code></pre>
+   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Chinstrap Dream            50            19.5               196        3900
+ 2 Chinstrap Dream            51.3          19.2               193        3650
+ 3 Chinstrap Dream            52.7          19.8               197        3725
+ 4 Chinstrap Dream            51.3          18.2               197        3750
+ 5 Chinstrap Dream            51.3          19.9               198        3700
+ 6 Chinstrap Dream            51.7          20.3               194        3775
+ 7 Chinstrap Dream            52            18.1               201        4050
+ 8 Chinstrap Dream            50.5          19.6               201        4050
+ 9 Chinstrap Dream            50.3          20                 197        3300
+10 Chinstrap Dream            49.2          18.2               195        4400
+# ℹ 24 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1416,20 +1416,20 @@ it so that <em>either</em> statement is true? Then we can use the
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 75 × 8
-   species   island    bill_length_mm bill_depth_mm flippe…¹ body_…² sex    year
-   &lt;fct&gt;     &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;    &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie    Dream               37.5          18.9      179    2975 &lt;NA&gt;   2007
- 2 Adelie    Biscoe              34.5          18.1      187    2900 fema…  2008
- 3 Adelie    Biscoe              36.5          16.6      181    2850 fema…  2008
- 4 Adelie    Biscoe              36.4          17.1      184    2850 fema…  2008
- 5 Adelie    Dream               33.1          16.1      178    2900 fema…  2008
- 6 Adelie    Biscoe              37.9          18.6      193    2925 fema…  2009
- 7 Adelie    Torgersen           38.6          17        188    2900 fema…  2009
- 8 Chinstrap Dream               46.5          17.9      192    3500 fema…  2007
- 9 Chinstrap Dream               50            19.5      196    3900 male   2007
-10 Chinstrap Dream               51.3          19.2      193    3650 male   2007
-# … with 65 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g</code></pre>
+   species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;     &lt;fct&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie    Dream              37.5          18.9               179        2975
+ 2 Adelie    Biscoe             34.5          18.1               187        2900
+ 3 Adelie    Biscoe             36.5          16.6               181        2850
+ 4 Adelie    Biscoe             36.4          17.1               184        2850
+ 5 Adelie    Dream              33.1          16.1               178        2900
+ 6 Adelie    Biscoe             37.9          18.6               193        2925
+ 7 Adelie    Torgers…           38.6          17                 188        2900
+ 8 Chinstrap Dream              46.5          17.9               192        3500
+ 9 Chinstrap Dream              50            19.5               196        3900
+10 Chinstrap Dream              51.3          19.2               193        3650
+# ℹ 65 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 <p>This now gives us both all chinstrap penguins, and the smallest
 Adelie penguins! By combining AND and OR statements this way, we can
@@ -1468,20 +1468,20 @@ or the Chinstrap species</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 202 × 8
-   species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;      &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
- 2 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
- 3 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
- 4 Adelie  Torgersen           38.6          21.2        191    3800 male   2007
- 5 Adelie  Torgersen           34.6          21.1        198    4400 male   2007
- 6 Adelie  Torgersen           42.5          20.7        197    4500 male   2007
- 7 Adelie  Torgersen           46            21.5        194    4200 male   2007
- 8 Adelie  Biscoe              37.7          18.7        180    3600 male   2007
- 9 Adelie  Biscoe              38.2          18.1        185    3950 male   2007
-10 Adelie  Biscoe              38.8          17.2        180    3800 male   2007
-# … with 192 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g</code></pre>
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.3          20.6               190        3650
+ 3 Adelie  Torgersen           39.2          19.6               195        4675
+ 4 Adelie  Torgersen           38.6          21.2               191        3800
+ 5 Adelie  Torgersen           34.6          21.1               198        4400
+ 6 Adelie  Torgersen           42.5          20.7               197        4500
+ 7 Adelie  Torgersen           46            21.5               194        4200
+ 8 Adelie  Biscoe              37.7          18.7               180        3600
+ 9 Adelie  Biscoe              38.2          18.1               185        3950
+10 Adelie  Biscoe              38.8          17.2               180        3800
+# ℹ 192 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1530,9 +1530,9 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.13" class="external-link">sandpaper (0.11.13)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.4.3" class="external-link">pegboard (0.4.3)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.15" class="external-link">varnish (0.2.15)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.15" class="external-link">sandpaper (0.11.15)</a>,
+        <a href="https://github.com/carpentries/pegboard/tree/0.5.2" class="external-link">pegboard (0.5.2)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1552,9 +1552,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/03-data-subsetting.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/03-data-subsetting.html",
-  "dateCreated": "2023-02-24",
-  "dateModified": "2023-03-14",
-  "datePublished": "2023-03-28"
+  "dateCreated": "2023-04-11",
+  "dateModified": "2023-04-11",
+  "datePublished": "2023-04-11"
 }
 
   </script><script>
