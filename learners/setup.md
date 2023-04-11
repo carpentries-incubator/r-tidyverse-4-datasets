@@ -14,6 +14,7 @@ You can watch the [YouTube video tutorial](https://www.youtube.com/watch?v=q0PjT
 - [ ] Install R by downloading and running [this .exe file](http://cran.r-project.org/bin/windows/base/release.htm") from [CRAN](http://cran.r-project.org/index.html).  
 - [ ] Please, also [install Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)
   - Note that if you have separate user and admin accounts, you should run the installers as administrator (right-click on `.exe` file and select "Run as administrator" instead of double-clicking). Otherwise problems may occur later,  for example when installing R packages.
+
 :::::::::::::::::::::::::
 
 :::::::::::::::: solution
@@ -46,6 +47,7 @@ sudo apt-get install r-base
 ```
 sudo dnf install R
 ```
+
 :::::::::::::::::::::::::
 
 
