@@ -446,12 +446,12 @@ value column</p>
 4 flipper_length_mm  201.   14.1   172    231  </code></pre>
 </div>
 <p>Now we have a pretty decent summary table of our data.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>In our code making the summary table. Add another summary column for
@@ -513,12 +513,12 @@ the number of records, giving it the name <code>n</code>.</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>Try grouping by more variables, like species and island, is the
@@ -589,12 +589,12 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>Create another summary table, with the same descriptive statistics
@@ -702,12 +702,12 @@ see. T</p>
 doing, is move the dts to each side a little, so they are not directly
 on top of each other, but you can still see them and which island they
 belong to clearly.</p>
-<div id="challenge4" class="callout challenge">
+<div id="challenge-4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
 </h3>
 <div class="callout-content">
 <p>Create a point plot based om the penguins summary data, where the
@@ -755,12 +755,12 @@ the different observational types</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="challenge-5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
 </h3>
 <div class="callout-content">
 <p>Change it so that species is both on the x-axis and the colour for
@@ -790,11 +790,12 @@ the subplots? Why is this plot misleading?</p>
 <span>  <span class="fu">geom_point</span><span class="op">(</span>position <span class="op">=</span> <span class="fu">position_dodge</span><span class="op">(</span>width <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">name</span>, scales <span class="op">=</span> <span class="st">"free"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+<p><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure">
 The last plot is misleading because the data we have summary data by
 species and island. Ignoring the island in the plot, means that the
 values for the different measurements cannot be distinguished from
-eachother.</figure></div>
+eachother.</p>
+</div>
 </div>
 </div>
 </div>
@@ -841,12 +842,12 @@ Perhaps we can dodge those too?</p>
 <span>  position <span class="op">=</span> <span class="fu">position_dodge</span><span class="op">(</span>width <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">name</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge6" class="callout challenge">
+<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge-6" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge6"></a>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
 </h3>
 <div class="callout-content">
 <p>The width of the top horizontal lines in the error bars are are
@@ -962,12 +963,12 @@ the summary, we have multiple means per species and island, for each of
 the measurement years. So we need to add something to the plot so we can
 tease those appart. We have added to variables to the facet before.
 Remember how we did that?</p>
-<div id="challenge7" class="callout challenge">
+<div id="challenge-7" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge7"></a>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
 </h3>
 <div class="callout-content">
 <p>The width of the top horizontal lines in the error bars are are
@@ -1027,11 +1028,12 @@ categories. Lets switch that up.</p>
 <span>  width <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">name</span> <span class="op">+</span> <span class="va">island</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+<p><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" class="figure">
 ok, so we got what we asked, the year part makes more sense, but its a
 very “busy” plot. Its really quite hard to compare everything from
 Bisoe, or all the Adelie’s, to each other. How can we make it
-easier?</figure><p>We will switch <code>facet_wrap()</code> to <code>facet_grid()</code>
+easier?</p>
+<p>We will switch <code>facet_wrap()</code> to <code>facet_grid()</code>
 which creates a grid of subplots. The formula for the grid is using both
 side of the <code>~</code> sign. And you can think of it like
 <code>rows ~ columns</code>. So here we are saying we want the
@@ -1054,12 +1056,12 @@ columns in the plot grid.</p>
 <span>  width <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_grid</span><span class="op">(</span><span class="va">island</span> <span class="op">~</span> <span class="va">name</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge8" class="callout challenge">
+<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge-8" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-8" class="callout-inner">
-<h3 class="callout-title">Challenge 8<a class="anchor" aria-label="anchor" href="#challenge8"></a>
+<h3 class="callout-title">Challenge 8<a class="anchor" aria-label="anchor" href="#challenge-8"></a>
 </h3>
 <div class="callout-content">
 <p>It is hard to see the different metrics in the subplots, because they
@@ -1099,12 +1101,12 @@ you expected?</p>
 </div>
 </div>
 </div>
-<div id="challenge9" class="callout challenge">
+<div id="challenge-9" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-9" class="callout-inner">
-<h3 class="callout-title">Challenge 9<a class="anchor" aria-label="anchor" href="#challenge9"></a>
+<h3 class="callout-title">Challenge 9<a class="anchor" aria-label="anchor" href="#challenge-9"></a>
 </h3>
 <div class="callout-content">
 <p>Try switching up what is plotted as rows and columns in the facet.
@@ -1138,12 +1140,13 @@ Does this help the plot?</p>
 <span>  width <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_grid</span><span class="op">(</span><span class="va">name</span> <span class="op">~</span> <span class="va">island</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-23-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"><code>facet_grid</code> is more complex than <code>facet_wrap</code> as
+<p><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-23-1.png" style="display: block; margin: auto;" class="figure"><code>facet_grid</code> is more complex than <code>facet_wrap</code> as
 it will always force the y-axis for rows, and x-axis for columns remain
 the same. So wile setting scales to free will help a little, it will
 only do so within each row and column, not each subplot. When the
 results do not look as you like, swapping what are rows and columns in
-the grid can often create better results.</figure></div>
+the grid can often create better results.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1195,18 +1198,20 @@ overall “look” of the plot.</p>
 <code class="sourceCode R"><span><span class="va">penguins_plot</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_classic</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+<p><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" class="figure">
 the classic theme is preferred by many journals, but for facet grid, its
-not super nice, since we loose grid information.</figure><div class="codewrapper sourceCode" id="cb38">
+not super nice, since we loose grid information.</p>
+<div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">penguins_plot</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_light</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+<p><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" class="figure">
 Theme light could be a nice option, but the white text of light grey
-makes the panel text hard to read.</figure><div class="codewrapper sourceCode" id="cb39">
+makes the panel text hard to read.</p>
+<div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1215,12 +1220,12 @@ makes the panel text hard to read.</figure><div class="codewrapper sourceCode" i
 </div>
 <figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Theme dark could theoretically be really nice, but then we’ll need
 other colours for the points and error bars!</p>
-<div id="challenge10" class="callout challenge">
+<div id="challenge-10" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-10" class="callout-inner">
-<h3 class="callout-title">Challenge 10<a class="anchor" aria-label="anchor" href="#challenge10"></a>
+<h3 class="callout-title">Challenge 10<a class="anchor" aria-label="anchor" href="#challenge-10"></a>
 </h3>
 <div class="callout-content">
 <p>Try different themes and find one you like.</p>
@@ -1286,12 +1291,12 @@ have a peak at all possible brewer palettes by typing</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu">display.brewer.all</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-31-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge11" class="callout challenge">
+<figure><img src="../fig/09-data-complex-pipelines-rendered-unnamed-chunk-31-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge-11" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-11" class="callout-inner">
-<h3 class="callout-title">Challenge 11<a class="anchor" aria-label="anchor" href="#challenge11"></a>
+<h3 class="callout-title">Challenge 11<a class="anchor" aria-label="anchor" href="#challenge-11"></a>
 </h3>
 <div class="callout-content">
 <p>Try another brewer palette by replacing the palette name with another
@@ -1320,12 +1325,12 @@ in the brewer list of palettes.</p>
 </div>
 </div>
 </div>
-<div id="challenge12" class="callout challenge">
+<div id="challenge-12" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-12" class="callout-inner">
-<h3 class="callout-title">Challenge 12<a class="anchor" aria-label="anchor" href="#challenge12"></a>
+<h3 class="callout-title">Challenge 12<a class="anchor" aria-label="anchor" href="#challenge-12"></a>
 </h3>
 <div class="callout-content">
 <p>Apply the dark theme in stead, and a pastel colour palette.</p>
@@ -1404,7 +1409,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1428,7 +1433,7 @@ any links that you are not going to use.
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/09-data-complex-pipelines.html",
   "dateCreated": "2023-05-02",
   "dateModified": "2023-05-02",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-24"
 }
 
   </script><script>

@@ -390,13 +390,13 @@ the data in the file we read it from. Everything we do with the penguins
 data in R from now on, only happens in R, and does not change the
 originating file. This way we cannot easily accidentally alter our raw
 data, which is a very good thing.</p>
-<div id="keypoints2" class="callout keypoints">
+<div id="tip-we-can-inspect-the-data-in-several-ways" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div id="tip-we-can-inspect-the-data-in-several-ways" class="callout-inner">
 <h3 class="callout-title">Tip: We can inspect the data in several
-ways<a class="anchor" aria-label="anchor" href="#keypoints2"></a>
+ways<a class="anchor" aria-label="anchor" href="#tip-we-can-inspect-the-data-in-several-ways"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>Click the data name in the Environment, and the data opens as a tab
@@ -499,12 +499,12 @@ function. In this case, we mapped <code>bill_depth_mm</code> and
 <code>bill_length_mm</code> variables from <code>penguins</code> dataset
 to x and y-axis, respectively (using <code>x</code> and <code>y</code>
 arguments of <code>aes()</code> function).</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge-1a" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1a" class="callout-inner">
-<h3 class="callout-title">Challenge 1a<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge 1a<a class="anchor" aria-label="anchor" href="#challenge-1a"></a>
 </h3>
 <div class="callout-content">
 <p>How has bill length changed over time? What do you observe?</p>
@@ -549,12 +549,12 @@ arguments of <code>aes()</code> function).</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1b" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1b" class="callout-inner">
-<h3 class="callout-title">Challenge 1b<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge 1b<a class="anchor" aria-label="anchor" href="#challenge-1b"></a>
 </h3>
 <div class="callout-content">
 <p>Try a different <code>geom_</code> function called
@@ -606,12 +606,12 @@ the plot. Let’s take a look:</p>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge3" class="callout challenge">
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>What will happen if you switch colour to also be by year? Is the
@@ -712,12 +712,12 @@ equally to all data points, therefore it is outside the
 <code>mapping</code> argument and is not wrapped into <code>aes()</code>
 function. Note that set colours are supplied as characters (in
 quotes).</p>
-<div id="challenge4" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>Change the transparency (alpha) of the data points by year.</p>
@@ -763,12 +763,12 @@ quotes).</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="challenge-4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
 </h3>
 <div class="callout-content">
 <p>Move the transparency outside the <code>aes()</code> and set it to
@@ -795,11 +795,12 @@ quotes).</p>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+<p><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure">
 Controlling the transparency can be a great way to “mute” the visual
 effect of certain data, while still keeping it visible. Its a great tool
 when you have many data points or if you have several geoms together,
-like we will see soon.</figure></div>
+like we will see soon.</p>
+</div>
 </div>
 </div>
 </div>
@@ -891,12 +892,12 @@ models, please refer to help (by typing <code>?geom_smooth</code>)</p>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge6" class="callout challenge">
+<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge-5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge6"></a>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
 </h3>
 <div class="callout-content">
 <p>Modify the plot so the the points are coloured by island, but there
@@ -926,7 +927,7 @@ is a single regression line.</p>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+<p><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure">
 In the graph above, each geom inherited all three mappings: x, y and
 colour. If we want only single linear model to be built, we would need
 to limit the effect of <code>colour</code> aesthetic to only
@@ -935,16 +936,17 @@ function to the layer where we want it to apply. Note, though, that
 because we want the <code>colour</code> to be still mapped to the
 <code>island</code> variable, it needs to be wrapped into
 <code>aes()</code> function and supplied to <code>mapping</code>
-argument.</figure></div>
+argument.</p>
 </div>
 </div>
 </div>
-<div id="challenge7" class="callout challenge">
+</div>
+<div id="challenge-6" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge7"></a>
+<h3 class="callout-title">Challenge 6<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
 </h3>
 <div class="callout-content">
 <p>Add a regression line to the plot that plots one line for each
@@ -993,13 +995,14 @@ species, while also plotting one across all species.</p>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
-<figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block">
+<p><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" class="figure">
 Look at that! The data actually reveals something called the “simpsons
 paradox”. It’s when a relationship looks to go in a specific direction,
 but when looking into groups within the data the relationship is the
 opposite. Here, the overall relationship between bill length and depths
 looks negative, but when we take into account that there are different
-species, the relationship is actually positive.</figure></div>
+species, the relationship is actually positive.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1049,12 +1052,12 @@ other way around. Let us swap the places of species and sex.</p>
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="../fig/02-data-visualisation-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The NA’s still look weird, but its definitely better, I think.</p>
-<div id="challenge8" class="callout challenge">
+<div id="challenge-7" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge8"></a>
+<h3 class="callout-title">Challenge 7<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
 </h3>
 <div class="callout-content">
 <p>To the plot we just made before, try adding another variable to facet
@@ -1147,7 +1150,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1171,7 +1174,7 @@ any links that you are not going to use.
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/02-data-visualisation.html",
   "dateCreated": "2023-05-02",
   "dateModified": "2023-05-02",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-24"
 }
 
   </script><script>
