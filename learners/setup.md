@@ -11,8 +11,8 @@ title: Setup
 
 You can watch the [YouTube video tutorial](https://www.youtube.com/watch?v=q0PjTAylwoU) for complete instructions.
 
-- [ ] Install R by downloading and running [this .exe file](http://cran.r-project.org/bin/windows/base/release.htm") from [CRAN](http://cran.r-project.org/index.html).  
-- [ ] Please, also [install Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)
+- Install R by downloading and running [this .exe file](http://cran.r-project.org/bin/windows/base/release.htm") from [CRAN](http://cran.r-project.org/index.html).  
+- Please, also [install Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)
   - Note that if you have separate user and admin accounts, you should run the installers as administrator (right-click on `.exe` file and select "Run as administrator" instead of double-clicking). Otherwise problems may occur later,  for example when installing R packages.
 :::::::::::::::::::::::::
 
@@ -22,7 +22,7 @@ You can watch the [YouTube video tutorial](https://www.youtube.com/watch?v=q0PjT
 
 Follow the [video tutorial](https://www.youtube.com/watch?v=5-ly3kyxwEg) for detailed instructions.
 
-- [ ] Install R by downloading and running [this .pkg file](http://cran.r-project.org/bin/macosx/R-latest.pkg) from [CRAN](http://cran.r-project.org/index.html)
+- Install R by downloading and running [this .pkg file](http://cran.r-project.org/bin/macosx/R-latest.pkg) from [CRAN](http://cran.r-project.org/index.html)
 
 :::::::::::::::::::::::::
 
@@ -31,18 +31,18 @@ Follow the [video tutorial](https://www.youtube.com/watch?v=5-ly3kyxwEg) for det
 
 ### Linux
 
-- [ ] You can download the binary files for your distribution
+- You can download the binary files for your distribution
         from [CRAN](http://cran.r-project.org/index.html
 
 **Or**
 
-- [ ] you can use your package manager (e.g. for Debian/Ubuntu
+- you can use your package manager (e.g. for Debian/Ubuntu
 
 ```
 sudo apt-get install r-base
 ```
 
-- [ ] for Fedora run
+- for Fedora run
 ```
 sudo dnf install R
 ```
