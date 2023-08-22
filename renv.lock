@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.0",
+    "Version": "4.3.1",
     "Repositories": [
       {
         "Name": "carpentries",
@@ -293,7 +293,6 @@
       "Package": "curl",
       "Version": "5.0.0",
       "Source": "Repository",
-      "Repository": "RSPM",
       "RemoteType": "repository",
       "RemoteUrl": "https://github.com/jeroen/curl",
       "RemoteRef": "v5.0.0",
@@ -902,7 +901,7 @@
       "Package": "openssl",
       "Version": "2.0.6",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "https://carpentries.r-universe.dev",
       "RemoteType": "repository",
       "RemoteUrl": "https://github.com/jeroen/openssl",
       "RemoteRef": "v2.0.6",
@@ -1013,15 +1012,11 @@
       "Version": "1.2.5",
       "Source": "Repository",
       "Repository": "RSPM",
-      "RemoteType": "repository",
-      "RemoteUrl": "https://github.com/r-lib/ragg",
-      "RemoteRef": "v1.2.5",
-      "RemoteSha": "dafb0d8e0308c4db56abed2290f32a1ca0719307",
       "Requirements": [
         "systemfonts",
         "textshaping"
       ],
-      "Hash": "fa83fe2ea7fc41d5033a0759a8172910"
+      "Hash": "690bc058ea2b1b8a407d3cfe3dce3ef9"
     },
     "rappdirs": {
       "Package": "rappdirs",
@@ -1232,17 +1227,13 @@
       "Version": "1.7.12",
       "Source": "Repository",
       "Repository": "RSPM",
-      "RemoteType": "repository",
-      "RemoteUrl": "https://github.com/gagolews/stringi",
-      "RemoteRef": "v1.7.12",
-      "RemoteSha": "e4cf3176bc3943e6c477885be3445cbbd7d4bab6",
       "Requirements": [
         "R",
         "stats",
         "tools",
         "utils"
       ],
-      "Hash": "832ef2a01603f8f5b4f2af024080d5d9"
+      "Hash": "ca8bd84263c77310739d2cf64d84d7c9"
     },
     "stringr": {
       "Package": "stringr",
@@ -1273,31 +1264,23 @@
       "Version": "1.0.4",
       "Source": "Repository",
       "Repository": "RSPM",
-      "RemoteType": "repository",
-      "RemoteUrl": "https://github.com/r-lib/systemfonts",
-      "RemoteRef": "v1.0.4",
-      "RemoteSha": "7cefacd49d39bb77e88f99d161a76a8cea28dc1b",
       "Requirements": [
         "R",
         "cpp11"
       ],
-      "Hash": "fd4f62a091a20ea96ecb9350b6f8d951"
+      "Hash": "90b28393209827327de889f49935140a"
     },
     "textshaping": {
       "Package": "textshaping",
       "Version": "0.3.6",
       "Source": "Repository",
       "Repository": "RSPM",
-      "RemoteType": "repository",
-      "RemoteUrl": "https://github.com/r-lib/textshaping",
-      "RemoteRef": "v0.3.6",
-      "RemoteSha": "0ae8e32a2dab09a920db4b6a60fc10380ba1c4bc",
       "Requirements": [
         "R",
         "cpp11",
         "systemfonts"
       ],
-      "Hash": "b0f9ff08a8a4885acc43248bf3e37541"
+      "Hash": "1ab6223d3670fac7143202cb6a2d43d5"
     },
     "tibble": {
       "Package": "tibble",
@@ -1527,7 +1510,7 @@
       "Package": "xml2",
       "Version": "1.3.4",
       "Source": "Repository",
-      "Repository": "https://carpentries.r-universe.dev",
+      "RemoteType": "repository",
       "RemoteUrl": "https://github.com/r-lib/xml2",
       "RemoteRef": "v1.3.4",
       "RemoteSha": "c64689836e7e610dff94687241113a4f5d86a174",
@@ -1535,7 +1518,7 @@
         "R",
         "methods"
       ],
-      "Hash": "7dc765ac9b909487326a7d471fdd3821"
+      "Hash": "6fa99d3c1ed845155a10aed3812ad92b"
     },
     "yaml": {
       "Package": "yaml",
