@@ -352,7 +352,7 @@
         
 <section id="aio-01-project-introduction"><p>Content from <a href="01-project-introduction.html">Introduction to R and RStudio</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/01-project-introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -774,7 +774,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-02-data-visualisation"><p>Content from <a href="02-data-visualisation.html">Visualisation with ggplot2</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/02-data-visualisation.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -923,11 +923,11 @@ get started!</p>
 <pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>── Attaching core tidyverse packages ──────────────────────── tidyverse <span class="dv">2</span>.<span class="fl">0.0</span> ──</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>✔ dplyr     <span class="dv">1</span>.<span class="fl">1.2</span>     ✔ readr     <span class="dv">2</span>.<span class="fl">1.4</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>✔ forcats   <span class="dv">1</span>.<span class="fl">0.0</span>     ✔ stringr   <span class="dv">1</span>.<span class="fl">5.0</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>✔ ggplot2   <span class="dv">3</span>.<span class="fl">4.2</span>     ✔ tibble    <span class="dv">3</span>.<span class="fl">2.1</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>✔ lubridate <span class="dv">1</span>.<span class="fl">9.2</span>     ✔ tidyr     <span class="dv">1</span>.<span class="fl">3.0</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>✔ purrr     <span class="dv">1</span>.<span class="fl">0.1</span>     </span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>✔ dplyr     <span class="dv">1</span>.<span class="fl">1.4</span>     ✔ readr     <span class="dv">2</span>.<span class="fl">1.5</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>✔ forcats   <span class="dv">1</span>.<span class="fl">0.0</span>     ✔ stringr   <span class="dv">1</span>.<span class="fl">5.1</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>✔ ggplot2   <span class="dv">3</span>.<span class="fl">5.0</span>     ✔ tibble    <span class="dv">3</span>.<span class="fl">2.1</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>✔ lubridate <span class="dv">1</span>.<span class="fl">9.3</span>     ✔ tidyr     <span class="dv">1</span>.<span class="fl">3.1</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>✔ purrr     <span class="dv">1</span>.<span class="fl">0.2</span>     </span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>── Conflicts ────────────────────────────────────────── <span class="fu">tidyverse_conflicts</span>() ──</span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
@@ -948,7 +948,8 @@ the x-axis and <code>bill_length_mm</code> on the y-axis:</p>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm,</span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm)</span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  )</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that we split the function into several lines. In R, any
 function has a name and is followed by parentheses. Inside the
@@ -1001,7 +1002,7 @@ arguments of <code>aes()</code> function).</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>The* <code>penguins</code> *dataset has a column called
 <code>year</code>, which should appear on the x-axis.</p>
@@ -1014,7 +1015,7 @@ arguments of <code>aes()</code> function).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1024,7 +1025,8 @@ arguments of <code>aes()</code> function).</p>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm)</span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  )</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
 </div>
@@ -1050,7 +1052,7 @@ arguments of <code>aes()</code> function).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1060,7 +1062,8 @@ arguments of <code>aes()</code> function).</p>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm)</span>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  )</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
 </div>
@@ -1086,7 +1089,8 @@ the plot. Let’s take a look:</p>
 <span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm, </span>
 <span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>                  <span class="at">colour =</span> island)</span>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>  )</span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge-2" class="callout challenge">
 <div class="callout-square">
@@ -1107,7 +1111,7 @@ between when you colour by island and when you colour by year?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1118,7 +1122,8 @@ between when you colour by island and when you colour by year?</p>
 <span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm,</span>
 <span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>                  <span class="at">colour =</span> year)</span>
 <span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  )</span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Island is categorical character variable with a discrete range of
 possible values. This, like the data type of factor, is represented with
@@ -1144,7 +1149,8 @@ Lets look at four dimensions at once!</p>
 <span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>                  <span class="at">colour =</span> species, </span>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>                  <span class="at">size =</span> year)</span>
 <span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  )</span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>It might be even better to try another type of aesthetic, like shape,
 for categorical data like species.</p>
@@ -1158,7 +1164,8 @@ for categorical data like species.</p>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>                  <span class="at">colour =</span> species, </span>
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>                  <span class="at">shape =</span> species)</span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  )</span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Playing around with different aesthetic mappings until you find
 something that really makes the data “pop” is a good idea. A plot is
@@ -1185,7 +1192,8 @@ our initial graph with all colours coloured in blue.</p>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm),</span>
 <span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"blue"</span></span>
 <span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>  )</span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Once more, observe that the colour is now not mapped to any
 particular variable from the <code>penguins</code> dataset and applies
@@ -1210,7 +1218,7 @@ quotes).</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2">Give me a hint</h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
 <p><code>alpha</code> takes a value from 0 (transparent) to 1
 (solid).</p>
@@ -1223,7 +1231,7 @@ quotes).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1234,7 +1242,8 @@ quotes).</p>
 <span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm, </span>
 <span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>                  <span class="at">alpha =</span> year)</span>
 <span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>  )</span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
 </div>
@@ -1259,7 +1268,7 @@ quotes).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1269,7 +1278,8 @@ quotes).</p>
 <span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_depth_mm, </span>
 <span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm),</span>
 <span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <p><img src="fig/02-data-visualisation-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure">
 Controlling the transparency can be a great way to “mute” the visual
@@ -1302,7 +1312,8 @@ the 95% confidence interval range) are shown separately.</p>
 <span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, </span>
 <span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm)</span>
 <span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>  )</span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_boxplot()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_boxplot()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Layers can be added on top of each other. In the following graph we
 will place the boxplots <strong>over</strong> jittered points to see the
@@ -1322,8 +1333,10 @@ for each island.</p>
 <span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species,</span>
 <span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>                  <span class="at">y =</span> bill_length_mm)</span>
 <span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>  )</span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_boxplot()</span><span class="st">`</span>).</span>
-<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_boxplot()</span><span class="st">`</span>).</span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Now, this was slightly inefficient due to duplication of code - we
 had to specify the same mappings for two layers. To avoid it, you can
@@ -1339,8 +1352,10 @@ the same arguments, specified in the “parent” function.</p>
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>) <span class="sc">+</span> </span>
 <span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">colour =</span> island)) <span class="sc">+</span></span>
 <span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> .<span class="dv">6</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_boxplot()</span><span class="st">`</span>).</span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_boxplot()</span><span class="st">`</span>).</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>You can still add layer-specific mappings or other arguments by
 specifying them within individual geoms. Here, we’ve set the
@@ -1366,8 +1381,10 @@ models, please refer to help (by typing <code>?geom_smooth</code>)</p>
 <span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
 <span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="st">`</span><span class="at">geom_smooth()</span><span class="st">`</span> using formula <span class="ot">=</span> <span class="st">'y ~ x'</span></span>
-<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
-<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge-5" class="callout challenge">
 <div class="callout-square">
@@ -1387,7 +1404,7 @@ is a single regression line.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1399,8 +1416,10 @@ is a single regression line.</p>
 <span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
 <span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="st">`</span><span class="at">geom_smooth()</span><span class="st">`</span> using formula <span class="ot">=</span> <span class="st">'y ~ x'</span></span>
-<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
-<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <p><img src="fig/02-data-visualisation-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure">
 In the graph above, each geom inherited all three mappings: x, y and
@@ -1434,7 +1453,7 @@ species, while also plotting one across all species.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
   <h4 class="accordion-header" id="headingHint3">Give me a hint</h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
 <div class="accordion-body">
 <p>Add another geom!</p>
 </div>
@@ -1446,7 +1465,7 @@ species, while also plotting one across all species.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1461,10 +1480,13 @@ species, while also plotting one across all species.</p>
 <span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
 <span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>              <span class="at">colour =</span> <span class="st">"black"</span>)</span>
 <span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="st">`</span><span class="at">geom_smooth()</span><span class="st">`</span> using formula <span class="ot">=</span> <span class="st">'y ~ x'</span></span>
-<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
-<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a><span class="st">`</span><span class="at">geom_smooth()</span><span class="st">`</span> using formula <span class="ot">=</span> <span class="st">'y ~ x'</span></span>
-<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
-<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a><span class="st">`</span><span class="at">geom_smooth()</span><span class="st">`</span> using formula <span class="ot">=</span> <span class="st">'y ~ x'</span></span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <p><img src="fig/02-data-visualisation-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" class="figure">
 Look at that! The data actually reveals something called the “simpsons
@@ -1499,8 +1521,10 @@ called a “facet”, and the function we use is called either
 <span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
 <span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex)</span>
 <span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a><span class="st">`</span><span class="at">geom_smooth()</span><span class="st">`</span> using formula <span class="ot">=</span> <span class="st">'y ~ x'</span></span>
-<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
-<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The facet’s take formula arguments, meaning they contain the
 <code>tilde</code> (~). The way often we think about it, trying to
@@ -1520,8 +1544,10 @@ other way around. Let us swap the places of species and sex.</p>
 <span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
 <span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species)</span>
 <span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a><span class="st">`</span><span class="at">geom_smooth()</span><span class="st">`</span> using formula <span class="ot">=</span> <span class="st">'y ~ x'</span></span>
-<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
-<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The NA’s still look weird, but its definitely better, I think.</p>
 <div id="challenge-7" class="callout challenge">
@@ -1542,7 +1568,7 @@ by. For instance, facet by species and island.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint4" aria-expanded="false" aria-controls="collapseHint4">
   <h4 class="accordion-header" id="headingHint4">Give me a hint</h4>
 </button>
-<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
+<div id="collapseHint4" class="accordion-collapse collapse" data-bs-parent="#accordionHint4" aria-labelledby="headingHint4">
 <div class="accordion-body">
 <p>Add another facet variable with the <code>+</code></p>
 </div>
@@ -1554,7 +1580,7 @@ by. For instance, facet by species and island.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1567,8 +1593,10 @@ by. For instance, facet by species and island.</p>
 <span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
 <span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species <span class="sc">+</span> island)</span>
 <span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a><span class="st">`</span><span class="at">geom_smooth()</span><span class="st">`</span> using formula <span class="ot">=</span> <span class="st">'y ~ x'</span></span>
-<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite <span class="fu">values</span> (<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
-<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing <span class="fu">values</span> (<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
+<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing non<span class="sc">-</span>finite outside the scale range</span>
+<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>(<span class="st">`</span><span class="at">stat_smooth()</span><span class="st">`</span>).</span>
+<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a>Warning<span class="sc">:</span> Removed <span class="dv">2</span> rows containing missing values or values outside the scale range</span>
+<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a>(<span class="st">`</span><span class="at">geom_point()</span><span class="st">`</span>).</span></code></pre>
 </div>
 <figure><img src="fig/02-data-visualisation-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
 </div>
@@ -1588,7 +1616,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-03-data-subsetting"><p>Content from <a href="03-data-subsetting.html">Subsetting data with dplyr</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/03-data-subsetting.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2780,7 +2808,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-04-data-sorting-pipes"><p>Content from <a href="04-data-sorting-pipes.html">Data sorting and pipes dplyr</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/04-data-sorting-pipes.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3527,7 +3555,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-05-data-plotting-scales"><p>Content from <a href="05-data-plotting-scales.html">Data visualisation and scales</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/05-data-plotting-scales.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3610,7 +3638,7 @@ length on the y-axis and species on the x-axis. Make it a box-plot.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Try geom_boxplot</p>
 </div>
@@ -3622,7 +3650,7 @@ length on the y-axis and species on the x-axis. Make it a box-plot.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3675,7 +3703,7 @@ the boxes to be coloured, rather than the edges?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Learning the difference between using <code>fill</code> and
 <code>colour</code>/<code>color</code> can take a little time, but in
@@ -3765,7 +3793,7 @@ to coral and cyan</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>“coral” and “cyan” are built in colour names, that you can call
 directly. There are lots of these names, <a href="https://www.datanovia.com/en/blog/awesome-list-of-657-r-color-names/" class="external-link">datanovia</a>
@@ -3803,7 +3831,7 @@ to the hexidecmial colours “#6597aa” and “#cc6882”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>hexidecimal colour codes are often use in webdesign, and are a way of
 coding red, blue and green. To explore colours in hexidecmial, there are
@@ -3841,7 +3869,7 @@ for the hexidecimal colours in the previous plot. what did that do?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>The order you provide the manual colours dictate which category gets
 which colour.</p>
@@ -3880,7 +3908,7 @@ changing the colour of the points. What types of scales can you use?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>There is not single answer here, there are many different options.
 The key difference between what we did before and this, is that the
@@ -3898,7 +3926,8 @@ colouring scale is continuous, rather than categorical, so we need
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3912,7 +3941,8 @@ colouring scale is continuous, rather than categorical, so we need
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
 </div>
@@ -3943,7 +3973,8 @@ from, that form a great basis for all you need.</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Here we have chosen <code>theme_minimal()</code> which strips axis
 lines and the grey background, its more minimal. Explore some different
@@ -3967,7 +3998,7 @@ the “classic theme</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>The classic theme is one often wanted by strict and old-school
 journals. Its very handy to have a short-cut to it.</p>
@@ -3984,7 +4015,8 @@ journals. Its very handy to have a short-cut to it.</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
 </div>
@@ -4009,7 +4041,7 @@ plots=</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>The void theme strips all axis and background, leaving the plot
 alone. This is generally not a meaningful theme to use for publication,
@@ -4028,7 +4060,8 @@ art</a>.</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
 </div>
@@ -4052,7 +4085,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-06-data-manipulation"><p>Content from <a href="06-data-manipulation.html">Data manipulation with dplyr</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/06-data-manipulation.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4300,7 +4333,7 @@ bill_length_cm.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4350,7 +4383,7 @@ to kilograms, divide the grams by 1000.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4441,7 +4474,8 @@ kilos.</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="fig/06-data-manipulation-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>That shows us clearly that we have grouped the penguins based on
 their size. But there is this strange <code>NA</code> in the plot
@@ -4589,7 +4623,8 @@ expression is <code>TRUE</code></p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="fig/06-data-manipulation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>That looks almost the same. The <code>NA</code>’s are gone! That’s
 not right. We cannot categorize values that are missing. It’s our last
@@ -4623,7 +4658,8 @@ values that are not <code>NA</code> should be given this category.</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="fig/06-data-manipulation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Here, we use the <code>is.na()</code>, which is a special function in
 R to detect <code>NA</code> values. But it also has an <code>!</code> in
@@ -4651,7 +4687,7 @@ natural logarithm (using the <code>log()</code> function) of
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4706,7 +4742,7 @@ else.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4761,7 +4797,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-07-data-reshaping"><p>Content from <a href="07-data-reshaping.html">Reshaping data with tidyr</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/07-data-reshaping.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4905,7 +4941,8 @@ column to create a sub-plot per measurement type!</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 8 rows containing non-finite values (`stat_boxplot()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 8 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
 </div>
 <figure><img src="fig/07-data-reshaping-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>That’s pretty neat. By pivoting the data into this longer shape we
 are able to create sub-plots for all measurements easily with the same
@@ -5421,9 +5458,9 @@ dataset, with column names in the “name” column, and values in the
 • Use `values_fn = list` to suppress this warning.
 • Use `values_fn = {summary_fun}` to summarise duplicates.
 • Use the following dplyr code to identify duplicates.
-  {data} %&gt;%
-  dplyr::group_by(species, island, sex, year, name) %&gt;%
-  dplyr::summarise(n = dplyr::n(), .groups = "drop") %&gt;%
+  {data} |&gt;
+  dplyr::summarise(n = dplyr::n(), .by = c(species, island, sex, year, name))
+  |&gt;
   dplyr::filter(n &gt; 1L)</code></pre>
 </div>
 <div class="codewrapper">
@@ -5664,7 +5701,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-08-data-summaries"><p>Content from <a href="08-data-summaries.html">Data summaries with dplyr</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/08-data-summaries.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -6598,7 +6635,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-09-data-complex-pipelines"><p>Content from <a href="09-data-complex-pipelines.html">Complex data pipelines</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/09-data-complex-pipelines.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -6773,7 +6810,7 @@ the number of records, giving it the name <code>n</code>.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1">Give me a hint</h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Try the <code>n()</code> function.</p>
 </div>
@@ -6785,7 +6822,7 @@ the number of records, giving it the name <code>n</code>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6836,7 +6873,7 @@ output what you would expect it to be?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6911,7 +6948,7 @@ by the variable names.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7024,7 +7061,7 @@ the different observational types</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2">Give me a hint</h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
 <p>Use facet_wrap()</p>
 </div>
@@ -7036,7 +7073,7 @@ the different observational types</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7074,7 +7111,7 @@ the subplots? Why is this plot misleading?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7158,7 +7195,7 @@ little too wide. Try adjusting them by setting the width argument to
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7279,7 +7316,7 @@ little too wide. Try adjusting them by setting the width argument to
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7372,7 +7409,7 @@ you expected?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7414,7 +7451,7 @@ Does this help the plot?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9">Show me the solution</h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7531,7 +7568,7 @@ other colours for the points and error bars!</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
   <h4 class="accordion-header" id="headingHint3">Give me a hint</h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
 <div class="accordion-body">
 <p>You can type “theme” and press the tab button, to look at all the
 possibilities.</p>
@@ -7544,7 +7581,7 @@ possibilities.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
   <h4 class="accordion-header" id="headingSolution10">Show me the solution</h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
 <div class="accordion-body">
 <p>What themes did you find that you liked?</p>
 </div>
@@ -7599,7 +7636,7 @@ in the brewer list of palettes.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution11" aria-expanded="false" aria-controls="collapseSolution11">
   <h4 class="accordion-header" id="headingSolution11">Show me the solution</h4>
 </button>
-<div id="collapseSolution11" class="accordion-collapse collapse" data-bs-parent="#accordionSolution11" aria-labelledby="headingSolution11">
+<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7631,7 +7668,7 @@ in the brewer list of palettes.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution12" aria-expanded="false" aria-controls="collapseSolution12">
   <h4 class="accordion-header" id="headingSolution12">Show me the solution</h4>
 </button>
-<div id="collapseSolution12" class="accordion-collapse collapse" data-bs-parent="#accordionSolution12" aria-labelledby="headingSolution12">
+<div id="collapseSolution12" class="accordion-collapse collapse" aria-labelledby="headingSolution12" data-bs-parent="#accordionSolution12">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7666,7 +7703,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-10-data-manipulation-across"><p>Content from <a href="10-data-manipulation-across.html">Data manipulation across columns</a></p>
 <hr>
-<p>Last updated on 2024-03-12 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/10-data-manipulation-across.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -8287,7 +8324,7 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/aio.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/aio.html",
-  "dateCreated": "2023-05-02",
+  "dateCreated": "2024-03-19",
   "dateModified": "2024-03-19",
   "datePublished": "2024-03-19"
 }

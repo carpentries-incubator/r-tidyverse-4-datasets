@@ -302,7 +302,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reshaping data with tidyr</h1>
-        <p>Last updated on 2024-03-12 |
+        <p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/07-data-reshaping.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -438,7 +438,8 @@ column to create a sub-plot per measurement type!</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 8 rows containing non-finite values (`stat_boxplot()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 8 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
 </div>
 <figure><img src="../fig/07-data-reshaping-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>That’s pretty neat. By pivoting the data into this longer shape we
 are able to create sub-plots for all measurements easily with the same
@@ -951,9 +952,9 @@ dataset, with column names in the “name” column, and values in the
 • Use `values_fn = list` to suppress this warning.
 • Use `values_fn = {summary_fun}` to summarise duplicates.
 • Use the following dplyr code to identify duplicates.
-  {data} %&gt;%
-  dplyr::group_by(species, island, sex, year, name) %&gt;%
-  dplyr::summarise(n = dplyr::n(), .groups = "drop") %&gt;%
+  {data} |&gt;
+  dplyr::summarise(n = dplyr::n(), .by = c(species, island, sex, year, name))
+  |&gt;
   dplyr::filter(n &gt; 1L)</code></pre>
 </div>
 <div class="codewrapper">
@@ -1251,8 +1252,8 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/07-data-reshaping.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/07-data-reshaping.html",
-  "dateCreated": "2023-05-02",
-  "dateModified": "2024-03-12",
+  "dateCreated": "2024-03-19",
+  "dateModified": "2024-03-19",
   "datePublished": "2024-03-19"
 }
 
