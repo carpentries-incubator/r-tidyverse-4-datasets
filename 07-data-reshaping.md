@@ -102,7 +102,8 @@ penguins |>
 ```
 
 ```{.warning}
-Warning: Removed 8 rows containing non-finite values (`stat_boxplot()`).
+Warning: Removed 8 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
 ```
 
 <img src="fig/07-data-reshaping-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
@@ -484,9 +485,9 @@ Warning: Values from `value` are not uniquely identified; output will contain li
 • Use `values_fn = list` to suppress this warning.
 • Use `values_fn = {summary_fun}` to summarise duplicates.
 • Use the following dplyr code to identify duplicates.
-  {data} %>%
-  dplyr::group_by(species, island, sex, year, name) %>%
-  dplyr::summarise(n = dplyr::n(), .groups = "drop") %>%
+  {data} |>
+  dplyr::summarise(n = dplyr::n(), .by = c(species, island, sex, year, name))
+  |>
   dplyr::filter(n > 1L)
 ```
 

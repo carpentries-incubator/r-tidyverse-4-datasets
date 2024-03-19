@@ -306,7 +306,8 @@ penguin_weight |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/06-data-manipulation-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
@@ -435,7 +436,8 @@ penguins_s |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/06-data-manipulation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
@@ -462,7 +464,8 @@ penguins |>
 ```
 
 ```{.warning}
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/06-data-manipulation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />

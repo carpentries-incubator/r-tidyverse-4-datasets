@@ -85,11 +85,11 @@ The dataset contains the following fields:
 # install.packages("tidyverse")
 library(tidyverse)
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.1     
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.0     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -107,7 +107,8 @@ ggplot(data = penguins) +
     mapping = aes(x = bill_depth_mm,
                   y = bill_length_mm)
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
@@ -143,7 +144,8 @@ ggplot(data = penguins) +
     mapping = aes(x = year, 
                   y = bill_length_mm)
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
@@ -164,7 +166,8 @@ ggplot(data = penguins) +
     mapping = aes(x = year, 
                   y = bill_length_mm)
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
@@ -186,7 +189,8 @@ ggplot(data = penguins) +
                   y = bill_length_mm, 
                   colour = island)
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
@@ -206,7 +210,8 @@ ggplot(data = penguins) +
                   y = bill_length_mm,
                   colour = year)
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
@@ -227,7 +232,8 @@ ggplot(data = penguins) +
                   colour = species, 
                   size = year)
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
@@ -243,7 +249,8 @@ ggplot(data = penguins) +
                   colour = species, 
                   shape = species)
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
@@ -264,7 +271,8 @@ ggplot(data = penguins) +
                   y = bill_length_mm),
     colour = "blue"
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
@@ -290,7 +298,8 @@ ggplot(data = penguins) +
                   y = bill_length_mm, 
                   alpha = year)
   )
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
@@ -312,7 +321,8 @@ ggplot(data = penguins) +
     mapping = aes(x = bill_depth_mm, 
                   y = bill_length_mm),
     alpha = 0.5)
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
@@ -335,7 +345,8 @@ ggplot(data = penguins) +
     mapping = aes(x = species, 
                   y = bill_length_mm)
   )
-Warning: Removed 2 rows containing non-finite values (`stat_boxplot()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
@@ -354,8 +365,10 @@ ggplot(data = penguins) +
     mapping = aes(x = species,
                   y = bill_length_mm)
   )
-Warning: Removed 2 rows containing non-finite values (`stat_boxplot()`).
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
@@ -370,8 +383,10 @@ ggplot(data = penguins,
 ) + 
   geom_jitter(aes(colour = island)) +
   geom_boxplot(alpha = .6)
-Warning: Removed 2 rows containing non-finite values (`stat_boxplot()`).
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
@@ -389,8 +404,10 @@ ggplot(data = penguins,
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm")
 `geom_smooth()` using formula = 'y ~ x'
-Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_smooth()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
@@ -413,8 +430,10 @@ ggplot(data = penguins,
              alpha = 0.5) +
   geom_smooth(method = "lm")
 `geom_smooth()` using formula = 'y ~ x'
-Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_smooth()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
@@ -446,10 +465,13 @@ ggplot(penguins,
   geom_smooth(method = "lm", 
               colour = "black")
 `geom_smooth()` using formula = 'y ~ x'
-Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_smooth()`).
 `geom_smooth()` using formula = 'y ~ x'
-Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_smooth()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
@@ -478,8 +500,10 @@ ggplot(penguins,
   geom_smooth(method = "lm") +
   facet_wrap(~ sex)
 `geom_smooth()` using formula = 'y ~ x'
-Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_smooth()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
@@ -500,8 +524,10 @@ ggplot(penguins,
   geom_smooth(method = "lm") +
   facet_wrap(~ species)
 `geom_smooth()` using formula = 'y ~ x'
-Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_smooth()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
@@ -531,8 +557,10 @@ ggplot(penguins,
   geom_smooth(method = "lm") +
   facet_wrap(~ species + island)
 `geom_smooth()` using formula = 'y ~ x'
-Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_smooth()`).
+Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/02-data-visualisation-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
