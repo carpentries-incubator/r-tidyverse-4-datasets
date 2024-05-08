@@ -68,7 +68,7 @@ penguins |>
   pivot_longer(contains("_")) 
 ```
 
-```{.output}
+```output
 # A tibble: 1,376 × 6
    species island    sex     year name               value
    <fct>   <fct>     <fct>  <int> <chr>              <dbl>
@@ -101,7 +101,7 @@ penguins |>
   facet_wrap(~name, scales = "free_y")
 ```
 
-```{.warning}
+```warning
 Warning: Removed 8 rows containing non-finite outside the scale range
 (`stat_boxplot()`).
 ```
@@ -123,7 +123,7 @@ penguins |>
   pivot_longer(ends_with("mm"))
 ```
 
-```{.output}
+```output
 # A tibble: 1,032 × 7
    species island    body_mass_g sex     year name              value
    <fct>   <fct>           <int> <fct>  <int> <chr>             <dbl>
@@ -156,7 +156,7 @@ penguins |>
   pivot_longer(starts_with("bill"))
 ```
 
-```{.output}
+```output
 # A tibble: 688 × 8
    species island    flipper_length_mm body_mass_g sex     year name       value
    <fct>   <fct>                 <int>       <int> <fct>  <int> <chr>      <dbl>
@@ -189,7 +189,7 @@ penguins |>
   pivot_longer(where(is.numeric))
 ```
 
-```{.output}
+```output
 # A tibble: 1,720 × 5
    species island    sex    name               value
    <fct>   <fct>     <fct>  <chr>              <dbl>
@@ -222,7 +222,7 @@ penguins |>
                values_to = "content")
 ```
 
-```{.output}
+```output
 # A tibble: 1,376 × 6
    species island    sex     year columns           content
    <fct>   <fct>     <fct>  <int> <chr>               <dbl>
@@ -251,7 +251,7 @@ penguins |>
                names_sep = "_")
 ```
 
-```{.output}
+```output
 # A tibble: 1,376 × 8
    species island    sex     year part    measure unit   value
    <fct>   <fct>     <fct>  <int> <chr>   <chr>   <chr>  <dbl>
@@ -285,7 +285,7 @@ penguins |>
                names_sep = "_")
 ```
 
-```{.output}
+```output
 # A tibble: 688 × 10
    species island  flipper_length_mm body_mass_g sex    year part  measure unit 
    <fct>   <fct>               <int>       <int> <fct> <int> <chr> <chr>   <chr>
@@ -320,7 +320,7 @@ penguins |>
                names_prefix = "bill_")
 ```
 
-```{.output}
+```output
 # A tibble: 688 × 8
    species island    flipper_length_mm body_mass_g sex     year name      value
    <fct>   <fct>                 <int>       <int> <fct>  <int> <chr>     <dbl>
@@ -356,7 +356,7 @@ penguins |>
               names_sep = "_")
 ```
 
-```{.output}
+```output
 # A tibble: 688 × 9
    species island   flipper_length_mm body_mass_g sex    year bill_measure unit 
    <fct>   <fct>                <int>       <int> <fct> <int> <chr>        <chr>
@@ -390,7 +390,7 @@ penguins |>
                values_drop_na = TRUE)
 ```
 
-```{.output}
+```output
 # A tibble: 684 × 8
    species island    flipper_length_mm body_mass_g sex     year name       value
    <fct>   <fct>                 <int>       <int> <fct>  <int> <chr>      <dbl>
@@ -421,7 +421,7 @@ penguins_long <- penguins |>
 penguins_long
 ```
 
-```{.output}
+```output
 # A tibble: 1,368 × 8
    species island    sex     year part    measure unit   value
    <fct>   <fct>     <fct>  <int> <chr>   <chr>   <chr>  <dbl>
@@ -452,7 +452,7 @@ penguins_long_simple <- penguins |>
 penguins_long_simple
 ```
 
-```{.output}
+```output
 # A tibble: 1,376 × 6
    species island    sex     year name               value
    <fct>   <fct>     <fct>  <int> <chr>              <dbl>
@@ -480,7 +480,7 @@ penguins_long_simple |>
               values_from = value)
 ```
 
-```{.warning}
+```warning
 Warning: Values from `value` are not uniquely identified; output will contain list-cols.
 • Use `values_fn = list` to suppress this warning.
 • Use `values_fn = {summary_fun}` to summarise duplicates.
@@ -491,7 +491,7 @@ Warning: Values from `value` are not uniquely identified; output will contain li
   dplyr::filter(n > 1L)
 ```
 
-```{.output}
+```output
 # A tibble: 35 × 8
    species island    sex     year bill_length_mm bill_depth_mm flipper_length_mm
    <fct>   <fct>     <fct>  <int> <list>         <list>        <list>           
@@ -520,7 +520,7 @@ yikes! That's super annoying. Let's go back to our penguins data set and see if 
 penguins
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -550,7 +550,7 @@ penguins_long_simple <- penguins |>
 penguins_long_simple
 ```
 
-```{.output}
+```output
 # A tibble: 1,376 × 7
    species island    sex     year sample name               value
    <fct>   <fct>     <fct>  <int>  <int> <chr>              <dbl>
@@ -583,7 +583,7 @@ penguins_long_simple |>
               values_from = value)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 9
    species island    sex     year sample bill_length_mm bill_depth_mm
    <fct>   <fct>     <fct>  <int>  <int>          <dbl>         <dbl>
@@ -621,7 +621,7 @@ penguins_long <- penguins |>
 penguins_long
 ```
 
-```{.output}
+```output
 # A tibble: 1,368 × 9
    species island    sex     year sample part    measure unit   value
    <fct>   <fct>     <fct>  <int>  <int> <chr>   <chr>   <chr>  <dbl>
@@ -649,7 +649,7 @@ penguins_long |>
               values_from = value)
 ```
 
-```{.output}
+```output
 # A tibble: 342 × 9
    species island    sex     year sample bill_length_mm bill_depth_mm
    <fct>   <fct>     <fct>  <int>  <int>          <dbl>         <dbl>

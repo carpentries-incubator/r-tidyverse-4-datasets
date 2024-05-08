@@ -69,7 +69,7 @@ To select data, we must first tell select which data set we are selecting from, 
 select(penguins, island, species, sex)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 3
    island    species sex   
    <fct>     <fct>   <fct> 
@@ -93,7 +93,7 @@ When we use `select()` we don't need to use quotations, we write in the names di
 select(penguins, 1:3, 6)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 4
    species island    bill_length_mm body_mass_g
    <fct>   <fct>              <dbl>       <int>
@@ -118,7 +118,7 @@ Select also allows for this by adding a minus (`-`)  sign in front of the column
 select(penguins, -bill_length_mm, -bill_depth_mm)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 6
    species island    flipper_length_mm body_mass_g sex     year
    <fct>   <fct>                 <int>       <int> <fct>  <int>
@@ -147,7 +147,7 @@ Select the columns sex, year, and species from the penguins dataset.
 select(penguins, sex, year, species)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 3
    sex     year species
    <fct>  <int> <fct>  
@@ -180,7 +180,7 @@ Change your selection so that species comes before sex. What is the difference i
 select(penguins, species, sex, year)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 3
    species sex     year
    <fct>   <fct>  <int>
@@ -216,7 +216,7 @@ Here, we use a tidy-selector `ends_with()`, can you guess what it does? yes, it 
 select(penguins, ends_with("mm"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 3
    bill_length_mm bill_depth_mm flipper_length_mm
             <dbl>         <dbl>             <int>
@@ -248,7 +248,7 @@ Lets only pick the measurements of the bill, we are not so interested in the fli
 select(penguins, starts_with("bill"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 2
    bill_length_mm bill_depth_mm
             <dbl>         <dbl>
@@ -272,7 +272,7 @@ The tidy selector can be combined with each other and other selectors. So you ca
 select(penguins, island, species, year, starts_with("bill"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    island    species  year bill_length_mm bill_depth_mm
    <fct>     <fct>   <int>          <dbl>         <dbl>
@@ -301,7 +301,7 @@ Select all columns containing an underscore ("_").
 select(penguins, contains("_"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 4
    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
             <dbl>         <dbl>             <int>       <int>
@@ -335,7 +335,7 @@ Select the species and sex columns, in addition to all columns ending with "mm"
 select(penguins, species, sex, ends_with("mm"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    species sex    bill_length_mm bill_depth_mm flipper_length_mm
    <fct>   <fct>           <dbl>         <dbl>             <int>
@@ -368,7 +368,7 @@ De-select all the columns with bill measurements
 select(penguins, -starts_with("bill"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 6
    species island    flipper_length_mm body_mass_g sex     year
    <fct>   <fct>                 <int>       <int> <fct>  <int>
@@ -399,7 +399,7 @@ Say you are running a correlation analysis. For correlations, you need all the c
 select(penguins, where(is.numeric))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
             <dbl>         <dbl>             <int>       <int> <int>
@@ -424,7 +424,7 @@ Magic! Let's break that down.
 is.numeric(5)
 ```
 
-```{.output}
+```output
 [1] TRUE
 ```
 
@@ -432,7 +432,7 @@ is.numeric(5)
 is.numeric("something")
 ```
 
-```{.output}
+```output
 [1] FALSE
 ```
 
@@ -442,7 +442,7 @@ Let us look at the penguins data set again
 penguins
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -471,7 +471,7 @@ Species and island are factors, while bill columns are "double" which is a decim
 select(penguins, where(is.numeric))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
             <dbl>         <dbl>             <int>       <int> <int>
@@ -500,7 +500,7 @@ Select only the columns that are factors from the `penguins` data set.
 select(penguins, where(is.factor))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 3
    species island    sex   
    <fct>   <fct>     <fct> 
@@ -533,7 +533,7 @@ Select the columns `island`, `species`, as well as all numeric columns from the 
 select(penguins, island, species, where(is.numeric))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 7
    island    species bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>            <dbl>         <dbl>             <int>       <int>
@@ -574,7 +574,7 @@ So what can we do? Well, we can check if the values meet certain criteria or not
 filter(penguins, body_mass_g < 3000)
 ```
 
-```{.output}
+```output
 # A tibble: 9 × 8
   species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
   <fct>     <fct>              <dbl>         <dbl>             <int>       <int>
@@ -598,7 +598,7 @@ We can also filter for specific values, but beware! you must use double equals (
 filter(penguins, body_mass_g == 2900)
 ```
 
-```{.output}
+```output
 # A tibble: 4 × 8
   species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
   <fct>     <fct>              <dbl>         <dbl>             <int>       <int>
@@ -624,7 +624,7 @@ Filter the data so you only have observations from the "Dream" island.
 filter(penguins, island == "Dream")
 ```
 
-```{.output}
+```output
 # A tibble: 124 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -657,7 +657,7 @@ Filter the data so you only have observations after 2008
 filter(penguins, year >= 2008)
 ```
 
-```{.output}
+```output
 # A tibble: 234 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -690,7 +690,7 @@ filter(penguins,
        body_mass_g < 3000)
 ```
 
-```{.output}
+```output
 # A tibble: 2 × 8
   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
   <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -707,7 +707,7 @@ filter(penguins,
          body_mass_g < 3000)
 ```
 
-```{.output}
+```output
 # A tibble: 2 × 8
   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
   <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -727,7 +727,7 @@ filter(penguins,
        sex == "male")
 ```
 
-```{.output}
+```output
 # A tibble: 0 × 8
 # ℹ 8 variables: species <fct>, island <fct>, bill_length_mm <dbl>,
 #   bill_depth_mm <dbl>, flipper_length_mm <int>, body_mass_g <int>, sex <fct>,
@@ -748,7 +748,7 @@ filter(penguins,
        island == "Biscoe")
 ```
 
-```{.output}
+```output
 # A tibble: 124 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -783,7 +783,7 @@ filter(penguins,
        species == "Chinstrap")
 ```
 
-```{.output}
+```output
 # A tibble: 34 × 8
    species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -815,7 +815,7 @@ filter(penguins,
          body_mass_g < 3000)
 ```
 
-```{.output}
+```output
 # A tibble: 75 × 8
    species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>             <dbl>         <dbl>             <int>       <int>
@@ -850,7 +850,7 @@ filter(penguins,
        species == "Chinstrap")
 ```
 
-```{.output}
+```output
 # A tibble: 202 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>

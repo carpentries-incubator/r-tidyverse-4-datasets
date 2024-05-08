@@ -37,7 +37,7 @@ penguins |>
   mutate(new_var = 1)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 9
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -72,7 +72,7 @@ penguins_s |>
   mutate(new_var = 1)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    species island    bill_length_mm bill_depth_mm new_var
    <fct>   <fct>              <dbl>         <dbl>   <dbl>
@@ -100,7 +100,7 @@ penguins_s |>
   mutate(var = 1:3)
 ```
 
-```{.error}
+```error
 Error in `mutate()`:
 ℹ In argument: `var = 1:3`.
 Caused by error:
@@ -116,7 +116,7 @@ penguins_s |>
   mutate(var = 1:344)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    species island    bill_length_mm bill_depth_mm   var
    <fct>   <fct>              <dbl>         <dbl> <int>
@@ -141,7 +141,7 @@ penguins_s |>
   mutate(bill_ratio = bill_length_mm / bill_depth_mm)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    species island    bill_length_mm bill_depth_mm bill_ratio
    <fct>   <fct>              <dbl>         <dbl>      <dbl>
@@ -169,7 +169,7 @@ penguins_s |>
          bill_length_mm_z = scale(bill_length_mm))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 6
    species island   bill_length_mm bill_depth_mm bill_ratio bill_length_mm_z[,1]
    <fct>   <fct>             <dbl>         <dbl>      <dbl>                <dbl>
@@ -199,7 +199,7 @@ penguins_s |>
   mutate(bill_length_cm = bill_length_mm / 10)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    species island    bill_length_mm bill_depth_mm bill_length_cm
    <fct>   <fct>              <dbl>         <dbl>          <dbl>
@@ -232,7 +232,7 @@ penguins |>
   mutate(body_mass_kg = body_mass_g / 1000)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 9
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -274,7 +274,7 @@ penguin_weight |>
                         false = "normal"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 3
     year body_mass_g size  
    <int>       <int> <chr> 
@@ -305,7 +305,7 @@ penguin_weight |>
   geom_jitter(mapping = aes(x = year, y = body_mass_g, colour = size))
 ```
 
-```{.warning}
+```warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -334,7 +334,7 @@ penguins_s |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 6
    species island    bill_length_mm bill_depth_mm bill_ratio bill_type
    <fct>   <fct>              <dbl>         <dbl>      <dbl> <chr>    
@@ -367,7 +367,7 @@ penguins_s |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 6
    species island    bill_length_mm bill_depth_mm bill_ratio bill_type
    <fct>   <fct>              <dbl>         <dbl>      <dbl> <chr>    
@@ -398,7 +398,7 @@ penguins_s |>
                                         false = "stumped")))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 6
    species island    bill_length_mm bill_depth_mm bill_ratio bill_type
    <fct>   <fct>              <dbl>         <dbl>      <dbl> <chr>    
@@ -435,7 +435,7 @@ penguins_s |>
   geom_point()
 ```
 
-```{.warning}
+```warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -463,7 +463,7 @@ penguins |>
   geom_point()
 ```
 
-```{.warning}
+```warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -485,7 +485,7 @@ penguins |>
   mutate(bill_ld_ratio_log = log(bill_length_mm / bill_depth_mm))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 9
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -527,7 +527,7 @@ penguins |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 10
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>

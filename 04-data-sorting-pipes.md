@@ -48,7 +48,7 @@ But you should be able to see the new chinstraps object in your environment, and
 chinstraps
 ```
 
-```{.output}
+```output
 # A tibble: 68 × 8
    species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -74,7 +74,7 @@ chinstraps <- select(chinstraps, -starts_with("bill"))
 chinstraps
 ```
 
-```{.output}
+```output
 # A tibble: 68 × 6
    species   island flipper_length_mm body_mass_g sex     year
    <fct>     <fct>              <int>       <int> <fct>  <int>
@@ -165,7 +165,7 @@ We can do the entire pipe chain step by step to see what is happening.
 penguins
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -196,7 +196,7 @@ penguins |>
   filter(species == "Chinstrap")
 ```
 
-```{.output}
+```output
 # A tibble: 68 × 8
    species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -229,7 +229,7 @@ penguins |>
   select(-starts_with("bill"))
 ```
 
-```{.output}
+```output
 # A tibble: 68 × 6
    species   island flipper_length_mm body_mass_g sex     year
    <fct>     <fct>              <int>       <int> <fct>  <int>
@@ -269,7 +269,7 @@ chinstraps <- penguins |>
 chinstraps
 ```
 
-```{.output}
+```output
 # A tibble: 68 × 6
    species   island flipper_length_mm body_mass_g sex     year
    <fct>     <fct>              <int>       <int> <fct>  <int>
@@ -300,7 +300,7 @@ penguins |>
   select(1:4)
 ```
 
-```{.output}
+```output
 # A tibble: 168 × 4
    species island bill_length_mm bill_depth_mm
    <fct>   <fct>           <dbl>         <dbl>
@@ -338,7 +338,7 @@ penguins |>
   arrange(island)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -375,7 +375,7 @@ penguins |>
   arrange(desc(island))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -407,7 +407,7 @@ penguins |>
   arrange(body_mass_g)
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>             <dbl>         <dbl>             <int>       <int>
@@ -440,7 +440,7 @@ penguins |>
   arrange(desc(flipper_length_mm))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -472,7 +472,7 @@ penguins |>
   arrange(island, desc(flipper_length_mm))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -515,7 +515,7 @@ penguins |>
   select(where(is.numeric)) 
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 5
    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
             <dbl>         <dbl>             <int>       <int> <int>
@@ -552,7 +552,7 @@ penguins |>
   filter(sex == "male")
 ```
 
-```{.error}
+```error
 Error in `filter()`:
 ℹ In argument: `sex == "male"`.
 Caused by error:
@@ -586,7 +586,7 @@ penguins |>
   filter(sex == "male")
 ```
 
-```{.output}
+```output
 # A tibble: 168 × 7
    sex   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
    <fct> <fct>           <dbl>         <dbl>             <int>       <int> <int>
@@ -610,7 +610,7 @@ penguins |>
   select(island, where(is.numeric))
 ```
 
-```{.output}
+```output
 # A tibble: 168 × 6
    island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
    <fct>           <dbl>         <dbl>             <int>       <int> <int>

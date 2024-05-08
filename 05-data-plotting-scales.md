@@ -275,7 +275,7 @@ penguins |>
   scale_colour_viridis_c()
 ```
 
-```{.warning}
+```warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -290,7 +290,7 @@ penguins |>
   scale_colour_gradientn(colours = c("#6597aa", "#cc6882"))
 ```
 
-```{.warning}
+```warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -317,7 +317,7 @@ penguins |>
   theme_minimal()
 ```
 
-```{.warning}
+```warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -348,7 +348,7 @@ penguins |>
   theme_classic()
 ```
 
-```{.warning}
+```warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -379,7 +379,7 @@ penguins |>
   theme_void()
 ```
 
-```{.warning}
+```warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```

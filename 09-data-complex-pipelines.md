@@ -39,7 +39,7 @@ penguins |>
   pivot_longer(contains("_"))
 ```
 
-```{.output}
+```output
 # A tibble: 1,376 × 6
    species island    sex     year name               value
    <fct>   <fct>     <fct>  <int> <chr>              <dbl>
@@ -67,7 +67,7 @@ penguins |>
   summarise(mean = mean(value, na.rm = TRUE))
 ```
 
-```{.output}
+```output
 # A tibble: 4 × 2
   name                mean
   <chr>              <dbl>
@@ -91,7 +91,7 @@ penguins |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 4 × 5
   name                mean     sd    min    max
   <chr>              <dbl>  <dbl>  <dbl>  <dbl>
@@ -117,7 +117,7 @@ penguins |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 4 × 5
   name                mean     sd    min    max
   <chr>              <dbl>  <dbl>  <dbl>  <dbl>
@@ -155,7 +155,7 @@ penguins |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 4 × 6
   name                mean     sd    min    max     n
   <chr>              <dbl>  <dbl>  <dbl>  <dbl> <int>
@@ -191,12 +191,12 @@ penguins |>
   )
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'name', 'species'. You can override using
 the `.groups` argument.
 ```
 
-```{.output}
+```output
 # A tibble: 20 × 8
 # Groups:   name, species [12]
    name              species   island      mean      sd    min    max     n
@@ -249,7 +249,7 @@ penguins |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 5 × 6
   name                mean      sd    min    max     n
   <chr>              <dbl>   <dbl>  <dbl>  <dbl> <int>
@@ -285,7 +285,7 @@ penguins_sum <- penguins |>
   ungroup()
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'name', 'species'. You can override using
 the `.groups` argument.
 ```
@@ -468,7 +468,7 @@ penguins_sum <- penguins |>
   ungroup()
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'name', 'species', 'island'. You can
 override using the `.groups` argument.
 ```
@@ -477,7 +477,7 @@ override using the `.groups` argument.
 penguins_sum
 ```
 
-```{.output}
+```output
 # A tibble: 60 × 9
    name          species   island     year  mean    sd   min   max     n
    <chr>         <fct>     <fct>     <int> <dbl> <dbl> <dbl> <dbl> <int>

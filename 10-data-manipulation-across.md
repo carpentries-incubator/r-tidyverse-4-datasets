@@ -41,7 +41,7 @@ penguins_s |>
     )
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 4
    species bill_length_mm bill_depth_mm bill_sum
    <fct>            <dbl>         <dbl>    <dbl>
@@ -70,7 +70,7 @@ penguins_s |>
     mutate(bill_sum = sum(c_across(starts_with("bill"))))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 4
    species bill_length_mm bill_depth_mm bill_sum
    <fct>            <dbl>         <dbl>    <dbl>
@@ -102,7 +102,7 @@ penguins_s |>
     mutate(bill_sum = sum(c_across(starts_with("bill"))))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 4
 # Rowwise: 
    species bill_length_mm bill_depth_mm bill_sum
@@ -131,7 +131,7 @@ penguins_s |>
     ungroup()
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 4
    species bill_length_mm bill_depth_mm bill_sum
    <fct>            <dbl>         <dbl>    <dbl>
@@ -164,7 +164,7 @@ penguins |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 9
 # Rowwise: 
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -206,7 +206,7 @@ penguins |>
   mutate(mm_mean_species = mean(mm_mean, na.rm = TRUE))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 10
 # Groups:   species [3]
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -252,7 +252,7 @@ penguins |>
 )
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 11
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -284,7 +284,7 @@ penguins |>
                 .fns = scale))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 8
    species island    bill_length_mm[,1] bill_depth_mm[,1] flipper_length_mm[,1]
    <fct>   <fct>                  <dbl>             <dbl>                 <dbl>
@@ -327,7 +327,7 @@ penguins |>
   select(contains("mm"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 6
    bill_length_mm bill_depth_mm flipper_length_mm bill_length_mm_sc[,1]
             <dbl>         <dbl>             <int>                 <dbl>
@@ -367,7 +367,7 @@ penguins |>
                 .names = "sc_{.col}"))
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 12
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -413,7 +413,7 @@ penguins |>
   )
 ```
 
-```{.output}
+```output
 # A tibble: 344 × 13
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>

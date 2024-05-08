@@ -46,7 +46,7 @@ penguins |>
   summarise(bill_length_mean = mean(bill_length_mm))
 ```
 
-```{.output}
+```output
 # A tibble: 1 × 1
   bill_length_mean
              <dbl>
@@ -66,7 +66,7 @@ penguins |>
   summarise(bill_length_mean = mean(bill_length_mm, na.rm = TRUE))
 ```
 
-```{.output}
+```output
 # A tibble: 1 × 1
   bill_length_mean
              <dbl>
@@ -82,7 +82,7 @@ penguins |>
   summarise(bill_length_mean = mean(bill_length_mm))
 ```
 
-```{.output}
+```output
 # A tibble: 1 × 1
   bill_length_mean
              <dbl>
@@ -99,7 +99,7 @@ penguins |>
             bill_length_max = max(bill_length_mm))
 ```
 
-```{.output}
+```output
 # A tibble: 1 × 3
   bill_length_mean bill_length_min bill_length_max
              <dbl>           <dbl>           <dbl>
@@ -120,7 +120,7 @@ penguins |>
   summarise(body_mass_kg_mean = mean(body_mass_g / 1000))
 ```
 
-```{.output}
+```output
 # A tibble: 1 × 1
   body_mass_kg_mean
               <dbl>
@@ -146,7 +146,7 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 # A tibble: 1 × 2
   body_mass_kg_mean body_mass_kg_sd
               <dbl>           <dbl>
@@ -176,7 +176,7 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 # A tibble: 1 × 4
   body_mass_kg_mean body_mass_kg_sd flipper_length_cm_mean flipper_length_cm_sd
               <dbl>           <dbl>                  <dbl>                <dbl>
@@ -208,7 +208,7 @@ penguins |>
   summarise(body_mass_g_mean = mean(body_mass_g))
 ```
 
-```{.output}
+```output
 # A tibble: 1 × 1
   body_mass_g_mean
              <dbl>
@@ -226,7 +226,7 @@ penguins |>
   summarise(body_mass_kg_mean = mean(body_mass_g / 1000))
 ```
 
-```{.output}
+```output
 # A tibble: 3 × 2
   species   body_mass_kg_mean
   <fct>                 <dbl>
@@ -250,7 +250,7 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 # A tibble: 3 × 4
   species   body_mass_kg_mean body_mass_kg_min body_mass_kg_max
   <fct>                 <dbl>            <dbl>            <dbl>
@@ -275,7 +275,7 @@ penguins |>
   summarise(n = n())
 ```
 
-```{.output}
+```output
 # A tibble: 3 × 2
   species       n
   <fct>     <int>
@@ -295,7 +295,7 @@ penguins |>
   tally()
 ```
 
-```{.output}
+```output
 # A tibble: 3 × 2
   species       n
   <fct>     <int>
@@ -310,7 +310,7 @@ penguins |>
   count()
 ```
 
-```{.output}
+```output
 # A tibble: 3 × 2
 # Groups:   species [3]
   species       n
@@ -340,7 +340,7 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 # A tibble: 3 × 3
   island    bill_length_mm_mean bill_length_mm_sd
   <fct>                   <dbl>             <dbl>
@@ -371,12 +371,12 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'island'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+```output
 # A tibble: 9 × 4
 # Groups:   island [3]
   island    sex    bill_length_mm_mean bill_length_mm_sd
@@ -410,7 +410,7 @@ penguins |>
   count()
 ```
 
-```{.output}
+```output
 # A tibble: 3 × 2
 # Groups:   species [3]
   species       n
@@ -431,7 +431,7 @@ penguins |>
   count()
 ```
 
-```{.output}
+```output
 # A tibble: 5 × 3
 # Groups:   species, island [5]
   species   island        n
@@ -456,7 +456,7 @@ penguins |>
   mutate(total = sum(n))
 ```
 
-```{.output}
+```output
 # A tibble: 5 × 4
 # Groups:   species, island [5]
   species   island        n total
@@ -479,7 +479,7 @@ penguins |>
   mutate(total = sum(n))
 ```
 
-```{.output}
+```output
 # A tibble: 5 × 4
   species   island        n total
   <fct>     <fct>     <int> <int>
@@ -511,12 +511,12 @@ penguins |>
     mutate(mean = mean(bill_length_mm_mean))
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'island'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+```output
 # A tibble: 9 × 5
   island    sex    bill_length_mm_mean bill_length_mm_sd  mean
   <fct>     <fct>                <dbl>             <dbl> <dbl>
@@ -555,12 +555,12 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+```output
 # A tibble: 8 × 5
 # Groups:   species [3]
   species   sex    body_mass_kg_mean body_mass_kg_min body_mass_kg_max
@@ -595,12 +595,12 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+```output
 # A tibble: 8 × 6
 # Groups:   species [3]
   species sex   body_mass_kg_mean body_mass_kg_min body_mass_kg_max species_mean
@@ -636,12 +636,12 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+```output
 # A tibble: 8 × 7
 # Groups:   species [3]
   species sex   body_mass_kg_mean body_mass_kg_min body_mass_kg_max species_mean
@@ -680,7 +680,7 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 # A tibble: 3 × 4
   species   flipper_mean species_mean flipper_species_diff
   <fct>            <dbl>        <dbl>                <dbl>
@@ -713,12 +713,12 @@ penguins |>
     )
 ```
 
-```{.output}
+```output
 `summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+```output
 # A tibble: 8 × 5
 # Groups:   species [3]
   species   sex    flipper_mean species_mean flipper_species_diff
