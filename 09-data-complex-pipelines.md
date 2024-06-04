@@ -34,12 +34,12 @@ We've learned about summaries and grouped summaries.
 Can you think of a way we can do that using the things we've learned?
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_"))
 ```
 
-```output
+``` output
 # A tibble: 1,376 × 6
    species island    sex     year name               value
    <fct>   <fct>     <fct>  <int> <chr>              <dbl>
@@ -60,14 +60,14 @@ We've done this before, why is it a clue now? Now that we have learned grouping 
 what if we now also group by the new name column to get summaries for each column as a row already here!
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_")) |> 
   group_by(name) |> 
   summarise(mean = mean(value, na.rm = TRUE))
 ```
 
-```output
+``` output
 # A tibble: 4 × 2
   name                mean
   <chr>              <dbl>
@@ -79,7 +79,7 @@ penguins |>
 Now we are talking! Now we have the mean of each of our observational columns! Lets add other common summary statistics.
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_")) |> 
   group_by(name) |> 
@@ -91,7 +91,7 @@ penguins |>
   )
 ```
 
-```output
+``` output
 # A tibble: 4 × 5
   name                mean     sd    min    max
   <chr>              <dbl>  <dbl>  <dbl>  <dbl>
@@ -104,7 +104,7 @@ penguins |>
 That's a pretty neat table! The repetition of `na.rm = TRUE` in all is a little tedious, though. Let us use an extra argument in the pivot longer to remove `NA`s in the value column
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_")) |>
   drop_na(value) |> 
@@ -117,7 +117,7 @@ penguins |>
   )
 ```
 
-```output
+``` output
 # A tibble: 4 × 5
   name                mean     sd    min    max
   <chr>              <dbl>  <dbl>  <dbl>  <dbl>
@@ -141,7 +141,7 @@ Try the `n()` function.
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_")) |> 
   drop_na(value) |> 
@@ -155,7 +155,7 @@ penguins |>
   )
 ```
 
-```output
+``` output
 # A tibble: 4 × 6
   name                mean     sd    min    max     n
   <chr>              <dbl>  <dbl>  <dbl>  <dbl> <int>
@@ -177,7 +177,7 @@ Try grouping by more variables, like species and island, is the output what you 
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_")) |> 
   drop_na(value) |> 
@@ -191,12 +191,12 @@ penguins |>
   )
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'name', 'species'. You can override using
 the `.groups` argument.
 ```
 
-```output
+``` output
 # A tibble: 20 × 8
 # Groups:   name, species [12]
    name              species   island      mean      sd    min    max     n
@@ -235,7 +235,7 @@ but for all numerical variables. Grouped only by the variable names.
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(where(is.numeric)) |> 
   drop_na(value) |> 
@@ -249,7 +249,7 @@ penguins |>
   )
 ```
 
-```output
+``` output
 # A tibble: 5 × 6
   name                mean      sd    min    max     n
   <chr>              <dbl>   <dbl>  <dbl>  <dbl> <int>
@@ -270,7 +270,7 @@ Now that we have the summaries, we can use them in plots too! But keep typing or
 So let us save the summary in its own object, and keep using that.
 
 
-```r
+``` r
 penguins_sum <- penguins |> 
   pivot_longer(contains("_")) |> 
   drop_na(value) |> 
@@ -285,7 +285,7 @@ penguins_sum <- penguins |>
   ungroup()
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'name', 'species'. You can override using
 the `.groups` argument.
 ```
@@ -293,7 +293,7 @@ the `.groups` argument.
 We can for instance make a bar chart with the values from the summary statistics.
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = island,
              y = mean,
@@ -308,7 +308,7 @@ oh, but the points are stacking on top of each other and are hard to see. T
 
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = island,
              y = mean,
@@ -336,7 +336,7 @@ Use facet_wrap()
 ## Solution
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = island, 
              y = sd,
@@ -360,7 +360,7 @@ Why is this plot misleading?
 ## Solution
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = species, 
              y = sd,
@@ -383,7 +383,7 @@ To do that, we add the `geom_errorbar()` function to the ggplot calls. `geom_err
 In our case, it would be the mean - sd, for minimum, and the mean + sd for the maximum.
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = island,
              y = mean,
@@ -402,7 +402,7 @@ Right, so now we have error bars, but they dont connect to the dots!
 Perhaps we can dodge those too?
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = island,
              y = mean,
@@ -427,7 +427,7 @@ Try adjusting them by setting the width argument to 0.3
 ## Solution
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = island,
              y = mean,
@@ -453,7 +453,7 @@ But we can get even more creative!
 Lets recreate our summary table, and add year as a grouping, so we can get an idea of how the measurements change over time.
 
 
-```r
+``` r
 penguins_sum <- penguins |> 
   pivot_longer(contains("_")) |> 
   drop_na(value) |> 
@@ -468,16 +468,16 @@ penguins_sum <- penguins |>
   ungroup()
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'name', 'species', 'island'. You can
 override using the `.groups` argument.
 ```
 
-```r
+``` r
 penguins_sum
 ```
 
-```output
+``` output
 # A tibble: 60 × 9
    name          species   island     year  mean    sd   min   max     n
    <chr>         <fct>     <fct>     <int> <dbl> <dbl> <dbl> <dbl> <int>
@@ -497,7 +497,7 @@ penguins_sum
 And then let us re-create our last plot with this new summary table.
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = island,
              y = mean,
@@ -529,7 +529,7 @@ Try adjusting them by setting the width argument to 0.3
 ## Solution
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = island,
              y = mean,
@@ -555,7 +555,7 @@ Lets switch that up.
 
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = year,
              y = mean,
@@ -581,7 +581,7 @@ And you can think of it like `rows ~ columns`.
 So here we are saying we want the `island` values as rows, and `name` values as columns in the plot grid.
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = year,
              y = mean,
@@ -608,7 +608,7 @@ Was this the effect you expected?
 ## Solution
 
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = year,
              y = mean,
@@ -635,7 +635,7 @@ Try switching up what is plotted as rows and columns in the facet. Does this hel
 :::::::::::::::::::::::::::::::::::::::: solution 
 ## Solution
 
-```r
+``` r
 penguins_sum |> 
   ggplot(aes(x = year,
              y = mean,
@@ -669,7 +669,7 @@ Saving a ggplot object is just like saving a dataset object.
 We have to assign it a name at the beginning.
 
 
-```r
+``` r
 penguins_plot <- penguins_sum |> 
   ggplot(aes(x = year,
              y = mean,
@@ -690,7 +690,7 @@ Just like when you assign a data set it wont show in the console, when you assig
 To re-initiate the plot in the plot pane, write its name in the console and press enter.
 
 
-```r
+``` r
 penguins_plot
 ```
 
@@ -700,7 +700,7 @@ From there, we can keep adding more ggplot geoms or facets etc.
 In this first version, we will add a "theme". A theme is a change of the overall "look" of the plot.
 
 
-```r
+``` r
 penguins_plot +
   theme_classic()
 ```
@@ -709,7 +709,7 @@ penguins_plot +
 the classic theme is preferred by many journals, but for facet grid, its not super nice, since we loose grid information.
 
 
-```r
+``` r
 penguins_plot +
   theme_light()
 ```
@@ -718,7 +718,7 @@ penguins_plot +
 Theme light could be a nice option, but the white text of light grey makes the panel text hard to read.
 
 
-```r
+``` r
 penguins_plot +
   theme_dark()
 ```
@@ -745,7 +745,7 @@ What themes did you find that you liked?
 We are going to have a go at `theme_linedraw` which has a simple but clear design.
 
 
-```r
+``` r
 penguins_plot +
   theme_linedraw()
 ```
@@ -756,7 +756,7 @@ Now that we have a theme, we can have a look at changing the colours of the poin
 We do this through something called "scales".
 
 
-```r
+``` r
 penguins_plot +
   theme_linedraw() +
   scale_colour_brewer(palette = "Dark2")
@@ -770,7 +770,7 @@ THe brewer palettes are a curated library of colour palettes to choose from in g
 You can have a peak at all possible brewer palettes by typing
 
 
-```r
+``` r
 RColorBrewer::display.brewer.all()
 ```
 
@@ -784,7 +784,7 @@ Try another brewer palette by replacing the palette name with another in the bre
 
 ## Solution
 
-```r
+``` r
 penguins_plot +
   theme_linedraw() +
   scale_colour_brewer(palette = "Accent")
@@ -801,7 +801,7 @@ Apply the dark theme in stead, and a pastel colour palette.
 :::::::::::::::::::::::::::::::::::::::: solution 
 ## Solution
 
-```r
+``` r
 penguins_plot +
   theme_dark() +
   scale_colour_brewer(palette = "Pastel2")

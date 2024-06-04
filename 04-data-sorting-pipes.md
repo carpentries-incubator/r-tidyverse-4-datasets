@@ -35,7 +35,7 @@ To store the changes, we have to "assign" the data to a new object in the R envi
 We will now store a filtered version including only the chinstrap penguins, in an object we call `chinstraps`.
 
 
-```r
+``` r
 chinstraps <- filter(penguins, species == "Chinstrap")
 ```
 
@@ -44,11 +44,11 @@ You will likely notice that when we execute this command, nothing is output to t
 But you should be able to see the new chinstraps object in your environment, and when we type `chinstraps` in the R console, it prints our chinstraps data.
 
 
-```r
+``` r
 chinstraps
 ```
 
-```output
+``` output
 # A tibble: 68 × 8
    species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -69,12 +69,12 @@ chinstraps
 Maybe in this chinstrap data we are also not interested in the bill measurements, so we want to remove them.
 
 
-```r
+``` r
 chinstraps <- select(chinstraps, -starts_with("bill"))
 chinstraps
 ```
 
-```output
+``` output
 # A tibble: 68 × 6
    species   island flipper_length_mm body_mass_g sex     year
    <fct>     <fct>              <int>       <int> <fct>  <int>
@@ -101,7 +101,7 @@ Create a new data set called "biscoe", where you only have data from "Biscoe" is
 ## Solution
 
 
-```r
+``` r
  biscoe <- filter(penguins, island == "Biscoe") 
  biscoe <- select(biscoe, 1:4)
 ```
@@ -121,7 +121,7 @@ The shortcut to insert the pipe operator is `Ctrl`+`Shift`+`M` for Windows/Linux
 In the `chinstraps` example, we had the following code to filter the rows and then select our columns.
 
 
-```r
+``` r
 chinstraps <- filter(penguins, species == "Chinstrap")
 chinstraps <- select(chinstraps, -starts_with("bill"))
 ```
@@ -140,7 +140,7 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 chinstraps <- penguins |> 
   filter(species == "Chinstrap") |> 
   select(-starts_with("bill"))
@@ -161,11 +161,11 @@ Learning to read pipes is a great skill, R is not the only programming language 
 We can do the entire pipe chain step by step to see what is happening. 
 
 
-```r
+``` r
 penguins
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -191,12 +191,12 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 penguins |> 
   filter(species == "Chinstrap")
 ```
 
-```output
+``` output
 # A tibble: 68 × 8
    species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -223,13 +223,13 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 penguins |> 
   filter(species == "Chinstrap") |> 
   select(-starts_with("bill"))
 ```
 
-```output
+``` output
 # A tibble: 68 × 6
    species   island flipper_length_mm body_mass_g sex     year
    <fct>     <fct>              <int>       <int> <fct>  <int>
@@ -261,7 +261,7 @@ And as before, we still are seeing the output of the command chain in the consol
 Let us do that, again using the assignment.
 
 
-```r
+``` r
 chinstraps <- penguins |> 
   filter(species == "Chinstrap") |> 
   select(-starts_with("bill"))
@@ -269,7 +269,7 @@ chinstraps <- penguins |>
 chinstraps
 ```
 
-```output
+``` output
 # A tibble: 68 × 6
    species   island flipper_length_mm body_mass_g sex     year
    <fct>     <fct>              <int>       <int> <fct>  <int>
@@ -294,13 +294,13 @@ Create a new data set called "biscoe", where you only have data from "Biscoe" is
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Biscoe") |> 
   select(1:4)
 ```
 
-```output
+``` output
 # A tibble: 168 × 4
    species island bill_length_mm bill_depth_mm
    <fct>   <fct>           <dbl>         <dbl>
@@ -333,12 +333,12 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 penguins |> 
   arrange(island)
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -370,12 +370,12 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 penguins |> 
   arrange(desc(island))
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -402,12 +402,12 @@ Arrange the penguins data set by `body_mass_g`.
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   arrange(body_mass_g)
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>             <dbl>         <dbl>             <int>       <int>
@@ -435,12 +435,12 @@ penguins |>
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   arrange(desc(flipper_length_mm))
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -467,12 +467,12 @@ You can arrange on multiple columns! Try arranging the penguins data set by asce
 :::::::::::::::::::::::::::::::::::::::: solution
 ## Solution
 
-```r
+``` r
 penguins |> 
   arrange(island, desc(flipper_length_mm))
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -509,13 +509,13 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 penguins |> 
   arrange(island) |>
   select(where(is.numeric)) 
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
             <dbl>         <dbl>             <int>       <int> <int>
@@ -545,14 +545,14 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 penguins |> 
   arrange(island) |>
   select(island, where(is.numeric)) |>
   filter(sex == "male")
 ```
 
-```error
+``` error
 Error in `filter()`:
 ℹ In argument: `sex == "male"`.
 Caused by error:
@@ -579,14 +579,14 @@ Fix the previous code bit by applying one of the two solutions suggested.
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   arrange(island) |>
   select(sex, island, where(is.numeric)) |>
   filter(sex == "male")
 ```
 
-```output
+``` output
 # A tibble: 168 × 7
    sex   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
    <fct> <fct>           <dbl>         <dbl>             <int>       <int> <int>
@@ -603,14 +603,14 @@ penguins |>
 # ℹ 158 more rows
 ```
 
-```r
+``` r
 penguins |> 
   filter(sex == "male") |>
   arrange(island) |>
   select(island, where(is.numeric))
 ```
 
-```output
+``` output
 # A tibble: 168 × 6
    island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
    <fct>           <dbl>         <dbl>             <int>       <int> <int>

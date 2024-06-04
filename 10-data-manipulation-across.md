@@ -31,7 +31,7 @@ Let us also make a subsetted sample with just the bill measurements so we cab ea
 We can do that in the following way.
 
 
-```r
+``` r
 penguins_s <- penguins |>
     select(species, starts_with("bill"))
 
@@ -41,7 +41,7 @@ penguins_s |>
     )
 ```
 
-```output
+``` output
 # A tibble: 344 × 4
    species bill_length_mm bill_depth_mm bill_sum
    <fct>            <dbl>         <dbl>    <dbl>
@@ -65,12 +65,12 @@ We have a special type of operations we can do to get that easily.
 We will use the function `sum` to calculate the sum of several variables when using this pipeline.
 
 
-```r
+``` r
 penguins_s |>
     mutate(bill_sum = sum(c_across(starts_with("bill"))))
 ```
 
-```output
+``` output
 # A tibble: 344 × 4
    species bill_length_mm bill_depth_mm bill_sum
    <fct>            <dbl>         <dbl>    <dbl>
@@ -96,13 +96,13 @@ We can apply a function called `rowwise()` which is a special type of `group_by`
 Then, `c_across()` will calculate the mean of the columns just for that group (i.e. row in this case).
 
 
-```r
+``` r
 penguins_s |>
     rowwise() |>
     mutate(bill_sum = sum(c_across(starts_with("bill"))))
 ```
 
-```output
+``` output
 # A tibble: 344 × 4
 # Rowwise: 
    species bill_length_mm bill_depth_mm bill_sum
@@ -124,14 +124,14 @@ Now we can see that we get the row sum of all the bill columns for each row, and
 To stop the data set being rowwise, we can use the `ungroup()` function we learned before.
 
 
-```r
+``` r
 penguins_s |>
     rowwise() |>
     mutate(bill_sum = sum(c_across(starts_with("bill")))) |>
     ungroup()
 ```
 
-```output
+``` output
 # A tibble: 344 × 4
    species bill_length_mm bill_depth_mm bill_sum
    <fct>            <dbl>         <dbl>    <dbl>
@@ -156,7 +156,7 @@ Calculate the mean of all the columns with millimeter measurements, an call it `
 ## Solution 
 
 
-```r
+``` r
 penguins |> 
   rowwise() |>
   mutate(
@@ -164,7 +164,7 @@ penguins |>
   )
 ```
 
-```output
+``` output
 # A tibble: 344 × 9
 # Rowwise: 
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -196,7 +196,7 @@ Ignore `NA`s in the last calculation
 ## Solution 
 
 
-```r
+``` r
 penguins |> 
   rowwise() |>
   mutate(
@@ -206,7 +206,7 @@ penguins |>
   mutate(mm_mean_species = mean(mm_mean, na.rm = TRUE))
 ```
 
-```output
+``` output
 # A tibble: 344 × 10
 # Groups:   species [3]
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -243,7 +243,7 @@ We've already used the `scale()` function once before, so we will do it again.
 In this simple example we might have done so:
 
 
-```r
+``` r
 penguins |> 
   mutate(
     bill_depth_sc = scale(bill_depth_mm),
@@ -252,7 +252,7 @@ penguins |>
 )
 ```
 
-```output
+``` output
 # A tibble: 344 × 11
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -278,13 +278,13 @@ We are only human, we easily make mistakes.
 With {dplyr}'s `across()` we can combine our knowledge of tidy-selectors and mutate to create the entire transformation for these columns at once.
 
 
-```r
+``` r
 penguins |> 
   mutate(across(.cols = ends_with("mm"), 
                 .fns = scale))
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species island    bill_length_mm[,1] bill_depth_mm[,1] flipper_length_mm[,1]
    <fct>   <fct>                  <dbl>             <dbl>                 <dbl>
@@ -310,7 +310,7 @@ But oh no! The columns have been overwritten. Rather than creating new ones, we 
 This might be your intention in some instances, or maybe you will just create a new data set with the scaled variables. 
 
 
-```r
+``` r
 penguins_mm_sc <- penguins |> 
   mutate(across(.cols = ends_with("mm"),
                 .fns = scale))
@@ -319,7 +319,7 @@ penguins_mm_sc <- penguins |>
 but often, we'd like to keep the original but add the new variants. We can do that to within the across!
 
 
-```r
+``` r
 penguins |> 
   mutate(across(.cols = ends_with("mm"),
                 .fns = scale, 
@@ -327,7 +327,7 @@ penguins |>
   select(contains("mm"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 6
    bill_length_mm bill_depth_mm flipper_length_mm bill_length_mm_sc[,1]
             <dbl>         <dbl>             <int>                 <dbl>
@@ -360,14 +360,14 @@ Transform all the colmns with an underscore in their name so they are scaled, an
 ## Solution 
 
 
-```r
+``` r
 penguins |> 
   mutate(across(.cols = contains("_"),
                 .fns = scale, 
                 .names = "sc_{.col}"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 12
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -403,7 +403,7 @@ You can add a standard mutate within the same mutate as across
 ## Solution 
 
 
-```r
+``` r
 penguins |> 
   mutate(
     across(.cols = contains("_"),
@@ -413,7 +413,7 @@ penguins |>
   )
 ```
 
-```output
+``` output
 # A tibble: 344 × 13
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>

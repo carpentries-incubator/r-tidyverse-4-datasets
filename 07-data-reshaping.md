@@ -63,12 +63,12 @@ As before, we need to start off by making sure we have the tidyverse package loa
 In tidyverse, there is a single function to create longer data sets, called `pivot_longer`. Those of you who might have some prior experience with tidyverse, or you might encounter it when googling for help,  might have seen the `gather` function. This is an older function of similar capabilities which we will not cover here, as the `pivot_longer` function supersedes it. 
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_")) 
 ```
 
-```output
+``` output
 # A tibble: 1,376 × 6
    species island    sex     year name               value
    <fct>   <fct>     <fct>  <int> <chr>              <dbl>
@@ -91,7 +91,7 @@ So before, the data was wider, in that each of the columns with `_` had their ow
 Why would we want to do that? Well, perhaps we want to plot all the variables in a single ggplot call? Now that the measurement types are collected in these two ways, we can facet over the `name` column to create a sub-plot per measurement type!
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_")) |> 
   ggplot(aes(y = value, 
@@ -101,7 +101,7 @@ penguins |>
   facet_wrap(~name, scales = "free_y")
 ```
 
-```warning
+``` warning
 Warning: Removed 8 rows containing non-finite outside the scale range
 (`stat_boxplot()`).
 ```
@@ -118,12 +118,12 @@ Pivot longer all columns ending with "mm" .
 ## Solution
 
 
-```r
+``` r
 penguins |>
   pivot_longer(ends_with("mm"))
 ```
 
-```output
+``` output
 # A tibble: 1,032 × 7
    species island    body_mass_g sex     year name              value
    <fct>   <fct>           <int> <fct>  <int> <chr>             <dbl>
@@ -151,12 +151,12 @@ Pivot the penguins data so that all the bill measurements are in the same column
 ## Solution
 
 
-```r
+``` r
 penguins |>
   pivot_longer(starts_with("bill"))
 ```
 
-```output
+``` output
 # A tibble: 688 × 8
    species island    flipper_length_mm body_mass_g sex     year name       value
    <fct>   <fct>                 <int>       <int> <fct>  <int> <chr>      <dbl>
@@ -184,12 +184,12 @@ As mentioned, pivot_longer accepts tidy-selectors. Pivot longer all numerical co
 ## Solution
 
 
-```r
+``` r
 penguins |>
   pivot_longer(where(is.numeric))
 ```
 
-```output
+``` output
 # A tibble: 1,720 × 5
    species island    sex    name               value
    <fct>   <fct>     <fct>  <chr>              <dbl>
@@ -215,14 +215,14 @@ penguins |>
 While often you can get away with leaving the default naming of the two columns as is, especially if you are just doing something quick like making a plot, most times you will likely want to control the names of your two new columns.
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_"),
                names_to = "columns",
                values_to = "content")
 ```
 
-```output
+``` output
 # A tibble: 1,376 × 6
    species island    sex     year columns           content
    <fct>   <fct>     <fct>  <int> <chr>               <dbl>
@@ -244,14 +244,14 @@ Here, we change the "names" to "columns" and "values" to "content". The pivot de
 But we have even more power in the renaming of columns. Pivots actually have quite a lot of options, making it possible for us to create outputs looking just like we want. Notice how the names of the columns we pivoted follow a specific structure. First is the name of the body part, then the type of measurement, then the unit of the measurement. This clear logic we can use to our advantage.
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(contains("_"),
                names_to = c("part", "measure" , "unit"),
                names_sep = "_")
 ```
 
-```output
+``` output
 # A tibble: 1,376 × 8
    species island    sex     year part    measure unit   value
    <fct>   <fct>     <fct>  <int> <chr>   <chr>   <chr>  <dbl>
@@ -278,14 +278,14 @@ Pivot longer all the bill measurements, and alter the names in one go, so that t
 ## Solution
 
 
-```r
+``` r
 penguins |>
     pivot_longer(starts_with("bill"),
                names_to = c("part", "measure" , "unit"),
                names_sep = "_")
 ```
 
-```output
+``` output
 # A tibble: 688 × 10
    species island  flipper_length_mm body_mass_g sex    year part  measure unit 
    <fct>   <fct>               <int>       <int> <fct> <int> <chr> <chr>   <chr>
@@ -314,13 +314,13 @@ Pivot longer all the bill measurements, and use the `names_prefix` argument. Giv
 ## Solution
 
 
-```r
+``` r
 penguins |>
     pivot_longer(starts_with("bill"),
                names_prefix = "bill_")
 ```
 
-```output
+``` output
 # A tibble: 688 × 8
    species island    flipper_length_mm body_mass_g sex     year name      value
    <fct>   <fct>                 <int>       <int> <fct>  <int> <chr>     <dbl>
@@ -348,7 +348,7 @@ Pivot longer all the bill measurements, and use the `names_prefix`, `names_to` a
 ## Solution
 
 
-```r
+``` r
 penguins |>
     pivot_longer(starts_with("bill"),
               names_prefix = "bill_",
@@ -356,7 +356,7 @@ penguins |>
               names_sep = "_")
 ```
 
-```output
+``` output
 # A tibble: 688 × 9
    species island   flipper_length_mm body_mass_g sex    year bill_measure unit 
    <fct>   <fct>                <int>       <int> <fct> <int> <chr>        <chr>
@@ -384,13 +384,13 @@ When pivoting, it is common that quite some `NA` values appear in the values col
 We can remove these immediately by making the argument `values_drop_na` be  `TRUE`
 
 
-```r
+``` r
 penguins |> 
   pivot_longer(starts_with("bill"),
                values_drop_na = TRUE)
 ```
 
-```output
+``` output
 # A tibble: 684 × 8
    species island    flipper_length_mm body_mass_g sex     year name       value
    <fct>   <fct>                 <int>       <int> <fct>  <int> <chr>      <dbl>
@@ -412,7 +412,7 @@ This extra argument will ensure that all `NA` values in the `value` column are r
 We should put everything together and create a new object that is our long formatted penguin data set.
 
 
-```r
+``` r
 penguins_long <- penguins |> 
   pivot_longer(contains("_"),
                names_to = c("part", "measure" , "unit"),
@@ -421,7 +421,7 @@ penguins_long <- penguins |>
 penguins_long
 ```
 
-```output
+``` output
 # A tibble: 1,368 × 8
    species island    sex     year part    measure unit   value
    <fct>   <fct>     <fct>  <int> <chr>   <chr>   <chr>  <dbl>
@@ -446,13 +446,13 @@ You will also experience that this skill can be convenient when creating data su
 Before we start using the penguins_longer dataset we made, let us make another simpler longer data set, for the first look a the pivor wider function.
 
 
-```r
+``` r
 penguins_long_simple <- penguins |> 
   pivot_longer(contains("_"))
 penguins_long_simple
 ```
 
-```output
+``` output
 # A tibble: 1,376 × 6
    species island    sex     year name               value
    <fct>   <fct>     <fct>  <int> <chr>              <dbl>
@@ -474,13 +474,13 @@ penguins_long_simple
 If we want to make this wider again we can try the following:
 
 
-```r
+``` r
 penguins_long_simple |> 
   pivot_wider(names_from = name, 
               values_from = value)
 ```
 
-```warning
+``` warning
 Warning: Values from `value` are not uniquely identified; output will contain list-cols.
 • Use `values_fn = list` to suppress this warning.
 • Use `values_fn = {summary_fun}` to summarise duplicates.
@@ -491,7 +491,7 @@ Warning: Values from `value` are not uniquely identified; output will contain li
   dplyr::filter(n > 1L)
 ```
 
-```output
+``` output
 # A tibble: 35 × 8
    species island    sex     year bill_length_mm bill_depth_mm flipper_length_mm
    <fct>   <fct>     <fct>  <int> <list>         <list>        <list>           
@@ -516,11 +516,11 @@ Lets look at the warning message our code gave us and see if we can figure it ou
 yikes! That's super annoying. Let's go back to our penguins data set and see if we can do something to help.
 
 
-```r
+``` r
 penguins
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -543,14 +543,14 @@ We can remedy that by adding row numbers to the original data before we pivot. T
 By doing a mutate adding the row number to the data set, we should then have a clear variable identifying each observation.
 
 
-```r
+``` r
 penguins_long_simple <- penguins |> 
   mutate(sample = row_number()) |> 
   pivot_longer(contains("_"))
 penguins_long_simple
 ```
 
-```output
+``` output
 # A tibble: 1,376 × 7
    species island    sex     year sample name               value
    <fct>   <fct>     <fct>  <int>  <int> <chr>              <dbl>
@@ -577,13 +577,13 @@ Turn the penguins_long_simple dataset back to its original state
 ## Solution
 
 
-```r
+``` r
 penguins_long_simple |> 
   pivot_wider(names_from = name,
               values_from = value)
 ```
 
-```output
+``` output
 # A tibble: 344 × 9
    species island    sex     year sample bill_length_mm bill_depth_mm
    <fct>   <fct>     <fct>  <int>  <int>          <dbl>         <dbl>
@@ -611,7 +611,7 @@ And now it worked! Now, the remaining columns were able to uniquely identify whi
 We should re-create our penguins long data set, to make sure we don't have this problem again.
 
 
-```r
+``` r
 penguins_long <- penguins |> 
   mutate(sample = row_number()) |> 
   pivot_longer(contains("_"),
@@ -621,7 +621,7 @@ penguins_long <- penguins |>
 penguins_long
 ```
 
-```output
+``` output
 # A tibble: 1,368 × 9
    species island    sex     year sample part    measure unit   value
    <fct>   <fct>     <fct>  <int>  <int> <chr>   <chr>   <chr>  <dbl>
@@ -642,14 +642,14 @@ Much as the first example of pivot_longer, pivot_wider in its simplest form is r
 Like pivot_longer, pivot_wider has arguments that will let us get back to the original state, with much of the same syntax as with pivot_longer!
 
 
-```r
+``` r
 penguins_long |> 
   pivot_wider(names_from = c("part", "measure", "unit"),
               names_sep = "_",
               values_from = value)
 ```
 
-```output
+``` output
 # A tibble: 342 × 9
    species island    sex     year sample bill_length_mm bill_depth_mm
    <fct>   <fct>     <fct>  <int>  <int>          <dbl>         <dbl>

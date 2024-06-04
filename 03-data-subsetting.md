@@ -57,7 +57,7 @@ Let us first talk about selecting columns. In {dplyr}, the function name for sel
 
 We first need to make sure we have the tidyverse loaded and the penguins data set at hand.
 
-```r
+``` r
 library(tidyverse)
 penguins <- read_csv("data/penguins.csv")
 ```
@@ -65,11 +65,11 @@ penguins <- read_csv("data/penguins.csv")
 To select data, we must first tell select which data set we are selecting from, and then give it our selection. Here, we are asking R to `select()` from the `penguins` data set the `island`, `species` and `sex` columns
 
 
-```r
+``` r
 select(penguins, island, species, sex)
 ```
 
-```output
+``` output
 # A tibble: 344 × 3
    island    species sex   
    <fct>     <fct>   <fct> 
@@ -89,11 +89,11 @@ select(penguins, island, species, sex)
 When we use `select()` we don't need to use quotations, we write in the names directly. We can also use the numeric indexes for the column, if we are 100% certain of the order of the columns:
 
 
-```r
+``` r
 select(penguins, 1:3, 6)
 ```
 
-```output
+``` output
 # A tibble: 344 × 4
    species island    bill_length_mm body_mass_g
    <fct>   <fct>              <dbl>       <int>
@@ -114,11 +114,11 @@ In some cases, we want to remove columns, and not necessarily state all columns 
 Select also allows for this by adding a minus (`-`)  sign in front of the column name you don't want.
 
 
-```r
+``` r
 select(penguins, -bill_length_mm, -bill_depth_mm)
 ```
 
-```output
+``` output
 # A tibble: 344 × 6
    species island    flipper_length_mm body_mass_g sex     year
    <fct>   <fct>                 <int>       <int> <fct>  <int>
@@ -143,11 +143,11 @@ Select the columns sex, year, and species from the penguins dataset.
 ## Solution
 
 
-```r
+``` r
 select(penguins, sex, year, species)
 ```
 
-```output
+``` output
 # A tibble: 344 × 3
    sex     year species
    <fct>  <int> <fct>  
@@ -176,11 +176,11 @@ Change your selection so that species comes before sex. What is the difference i
 ## Solution
 
 
-```r
+``` r
 select(penguins, species, sex, year)
 ```
 
-```output
+``` output
 # A tibble: 344 × 3
    species sex     year
    <fct>   <fct>  <int>
@@ -212,11 +212,11 @@ We could of course type them all out, but the penguins data set has names that m
 Here, we use a tidy-selector `ends_with()`, can you guess what it does? yes, it looks for columns that end with the string you provide it, here `"mm"`.
 
 
-```r
+``` r
 select(penguins, ends_with("mm"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 3
    bill_length_mm bill_depth_mm flipper_length_mm
             <dbl>         <dbl>             <int>
@@ -244,11 +244,11 @@ If you are working with a well named data set, these functions should make your 
 Lets only pick the measurements of the bill, we are not so interested in the flipper. Then we might want to change to `starts_with()` in stead.
 
 
-```r
+``` r
 select(penguins, starts_with("bill"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 2
    bill_length_mm bill_depth_mm
             <dbl>         <dbl>
@@ -268,11 +268,11 @@ select(penguins, starts_with("bill"))
 The tidy selector can be combined with each other and other selectors. So you can build exactly the data you want!
 
 
-```r
+``` r
 select(penguins, island, species, year, starts_with("bill"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    island    species  year bill_length_mm bill_depth_mm
    <fct>     <fct>   <int>          <dbl>         <dbl>
@@ -297,11 +297,11 @@ Select all columns containing an underscore ("_").
 ## Solution 
 
 
-```r
+``` r
 select(penguins, contains("_"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 4
    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
             <dbl>         <dbl>             <int>       <int>
@@ -331,11 +331,11 @@ Select the species and sex columns, in addition to all columns ending with "mm"
 ## Solution 
 
 
-```r
+``` r
 select(penguins, species, sex, ends_with("mm"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    species sex    bill_length_mm bill_depth_mm flipper_length_mm
    <fct>   <fct>           <dbl>         <dbl>             <int>
@@ -364,11 +364,11 @@ De-select all the columns with bill measurements
 ## Solution 
 
 
-```r
+``` r
 select(penguins, -starts_with("bill"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 6
    species island    flipper_length_mm body_mass_g sex     year
    <fct>   <fct>                 <int>       <int> <fct>  <int>
@@ -395,11 +395,11 @@ The last tidy-selector we'll mention is `where()`. `where()` is a very special t
 Say you are running a correlation analysis. For correlations, you need all the columns in your data to be numeric, as you cannot correlate strings or categories. Going through each individual column and seeing if it is numeric is a bit of a chore. That is where `where()` comes in!
 
 
-```r
+``` r
 select(penguins, where(is.numeric))
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
             <dbl>         <dbl>             <int>       <int> <int>
@@ -420,29 +420,29 @@ Magic! Let's break that down.
 `is.numeric()` is a function in R that checks if a vector is numeric. If the vector is numeric, it returns `TRUE` if not it returns `FALSE`.
 
 
-```r
+``` r
 is.numeric(5)
 ```
 
-```output
+``` output
 [1] TRUE
 ```
 
-```r
+``` r
 is.numeric("something")
 ```
 
-```output
+``` output
 [1] FALSE
 ```
 
 Let us look at the penguins data set again
 
-```r
+``` r
 penguins
 ```
 
-```output
+``` output
 # A tibble: 344 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -467,11 +467,11 @@ Species and island are factors, while bill columns are "double" which is a decim
 `where()` goes through all the columns and checks if they are numeric, and returns the ones that are. 
 
 
-```r
+``` r
 select(penguins, where(is.numeric))
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
             <dbl>         <dbl>             <int>       <int> <int>
@@ -496,11 +496,11 @@ Select only the columns that are factors from the `penguins` data set.
 ## Solution 
 
 
-```r
+``` r
 select(penguins, where(is.factor))
 ```
 
-```output
+``` output
 # A tibble: 344 × 3
    species island    sex   
    <fct>   <fct>     <fct> 
@@ -529,11 +529,11 @@ Select the columns `island`, `species`, as well as all numeric columns from the 
 ## Solution 
 
 
-```r
+``` r
 select(penguins, island, species, where(is.numeric))
 ```
 
-```output
+``` output
 # A tibble: 344 × 7
    island    species bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>            <dbl>         <dbl>             <int>       <int>
@@ -570,11 +570,11 @@ Now, using `is.numeric` on a row won't help, because every row-value in a column
 So what can we do? Well, we can check if the values meet certain criteria or not. Like values being above 20, or factors being a specific factor. 
 
 
-```r
+``` r
 filter(penguins, body_mass_g < 3000)
 ```
 
-```output
+``` output
 # A tibble: 9 × 8
   species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
   <fct>     <fct>              <dbl>         <dbl>             <int>       <int>
@@ -594,11 +594,11 @@ Here, we've filtered so that we only have observations where the body mass was l
 We can also filter for specific values, but beware! you must use double equals (`==`) for comparisons, as single equals (`=`) are for argument names in functions. 
 
 
-```r
+``` r
 filter(penguins, body_mass_g == 2900)
 ```
 
-```output
+``` output
 # A tibble: 4 × 8
   species   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
   <fct>     <fct>              <dbl>         <dbl>             <int>       <int>
@@ -620,11 +620,11 @@ Filter the data so you only have observations from the "Dream" island.
 ## Solution 
 
 
-```r
+``` r
 filter(penguins, island == "Dream")
 ```
 
-```output
+``` output
 # A tibble: 124 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -653,11 +653,11 @@ Filter the data so you only have observations after 2008
 ## Solution 
 
 
-```r
+``` r
 filter(penguins, year >= 2008)
 ```
 
-```output
+``` output
 # A tibble: 234 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -684,13 +684,13 @@ Many times, we will want to have several filters applied at once. What if you on
 `filter()` can take as many statements as you want! Combine them by adding commas (,) between each statement, and that will work as 'and'.
 
 
-```r
+``` r
 filter(penguins, 
        species == "Chinstrap",
        body_mass_g < 3000)
 ```
 
-```output
+``` output
 # A tibble: 2 × 8
   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
   <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -701,13 +701,13 @@ filter(penguins,
 
 You can also use the `&` sign, which in R is the comparison character for 'and', like `==` is for 'equals'.
 
-```r
+``` r
 filter(penguins, 
        species == "Chinstrap" &
          body_mass_g < 3000)
 ```
 
-```output
+``` output
 # A tibble: 2 × 8
   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
   <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -720,14 +720,14 @@ Here we are filtering the penguins data set keeping only the species "Chinstrap"
 And we can keep going!
 
 
-```r
+``` r
 filter(penguins, 
        species == "Chinstrap",
        body_mass_g < 3000,
        sex == "male")
 ```
 
-```output
+``` output
 # A tibble: 0 × 8
 # ℹ 8 variables: species <fct>, island <fct>, bill_length_mm <dbl>,
 #   bill_depth_mm <dbl>, flipper_length_mm <int>, body_mass_g <int>, sex <fct>,
@@ -742,13 +742,13 @@ Filter the data so you only have observations after 2008, and from "Biscoe" isla
 ## Solution 
 
 
-```r
+``` r
 filter(penguins, 
        year >= 2008,
        island == "Biscoe")
 ```
 
-```output
+``` output
 # A tibble: 124 × 8
    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>           <dbl>         <dbl>             <int>       <int>
@@ -777,13 +777,13 @@ Filter the data so you only have observations of male penguins of the Chinstrap 
 ## Solution 
 
 
-```r
+``` r
 filter(penguins, 
        sex == "male",
        species == "Chinstrap")
 ```
 
-```output
+``` output
 # A tibble: 34 × 8
    species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>           <dbl>         <dbl>             <int>       <int>
@@ -809,13 +809,13 @@ filter(penguins,
 But what if we want all the Chinstrap penguins **or** if body mass is below 3 kilos? When we use the comma (or the &), we make sure that all statements are `TRUE`. But what if we want it so that _either_ statement is true? Then we can use the **or** character `|` .
 
 
-```r
+``` r
 filter(penguins, 
        species == "Chinstrap" | 
          body_mass_g < 3000)
 ```
 
-```output
+``` output
 # A tibble: 75 × 8
    species   island   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>     <fct>             <dbl>         <dbl>             <int>       <int>
@@ -844,13 +844,13 @@ Filter the data so you only have observations of either male penguins or the Chi
 ## Solution 
 
 
-```r
+``` r
 filter(penguins, 
        sex == "male" |
        species == "Chinstrap")
 ```
 
-```output
+``` output
 # A tibble: 202 × 8
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>

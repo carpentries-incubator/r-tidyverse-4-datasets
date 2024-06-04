@@ -42,7 +42,7 @@ The advantage of `ggplot2` is that it allows R users to create publication quali
 We will start by reading the data into R, from the `data` folder you placed them in the last part of the introduction.
 
 
-```r
+``` r
 penguins <- read.csv("data/penguins.csv")
 ```
 
@@ -81,7 +81,7 @@ The dataset contains the following fields:
 `ggplot2` is a core member of `tidyverse` family of packages. Installing and loading the package under the same name will load all of the packages we will need for this workshop. Lets get started!
 
 
-```r
+``` r
 # install.packages("tidyverse")
 library(tidyverse)
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -101,7 +101,7 @@ Here's a question that we would like to answer using `penguins` data: _Do pengui
 To plot `penguins`, run the following code in the R-chunk or in console. The following code will put `bill_depth_mm` on the x-axis and `bill_length_mm` on the y-axis:
 
 
-```r
+``` r
 ggplot(data = penguins) +
   geom_point(
     mapping = aes(x = bill_depth_mm,
@@ -138,7 +138,7 @@ The* `penguins` *dataset has a column called `year`, which should appear on the 
 ## Solution 
 
 
-```r
+``` r
 ggplot(data = penguins) +
   geom_point(
     mapping = aes(x = year, 
@@ -160,7 +160,7 @@ Try a different `geom_` function called `geom_jitter`. How is that different fro
 ## Solution
 
 
-```r
+``` r
 ggplot(data = penguins) +
   geom_jitter(
     mapping = aes(x = year, 
@@ -182,7 +182,7 @@ What if we want to combine graphs from the previous two challenges and show the 
 The following graph maps `island` variable from `penguins` dataset to the `colour` aesthetic of the plot. Let's take a look:
 
 
-```r
+``` r
 ggplot(data = penguins) + 
   geom_jitter(
     mapping = aes(x = bill_depth_mm, 
@@ -203,7 +203,7 @@ What will happen if you switch colour to also be by year? Is the graph still use
 ## Solution
 
 
-```r
+``` r
 ggplot(data = penguins) +
   geom_jitter(
     mapping = aes(x = bill_depth_mm, 
@@ -224,7 +224,7 @@ Island is categorical character variable with a discrete range of possible value
 There are other aesthetics that can come handy. One of them is `size`. The idea is that we can vary the size of data points to illustrate another continuous variable, such as species bill depth. Lets look at four dimensions at once! 
 
 
-```r
+``` r
 ggplot(data = penguins) + 
   geom_jitter(
     mapping = aes(x = bill_depth_mm, 
@@ -241,7 +241,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 It might be even better to try another type of aesthetic, like shape, for categorical data like species.
 
 
-```r
+``` r
 ggplot(data = penguins) + 
   geom_jitter(
     mapping = aes(x = bill_depth_mm, 
@@ -264,7 +264,7 @@ This is called "setting" in the ggplot2-world. We "map" aesthetics to data colum
 Here's our initial graph with all colours coloured in blue.
 
 
-```r
+``` r
 ggplot(data = penguins) + 
   geom_point(
     mapping = aes(x = bill_depth_mm, 
@@ -291,7 +291,7 @@ Change the transparency (alpha) of the data points by year.
 ## Solution
 
 
-```r
+``` r
 ggplot(data = penguins) + 
   geom_point(
     mapping = aes(x = bill_depth_mm, 
@@ -315,7 +315,7 @@ Move the transparency outside the `aes()` and set it to `0.5`. What can we benef
 ## Solution
 
 
-```r
+``` r
 ggplot(data = penguins) + 
   geom_point(
     mapping = aes(x = bill_depth_mm, 
@@ -339,7 +339,7 @@ Next, we will consider different options for `geoms`. Using different `geom_` fu
 A useful geom function is `geom_boxplot()`. It adds a layer with the "box and whiskers" plot illustrating the distribution of values within categories. The following chart breaks down bill length by island, where the box represents first and third quartile (the 25th and 75th percentiles), the middle bar signifies the median value and the whiskers extent to cover 95% confidence interval. Outliers (outside of the 95% confidence interval range) are shown separately.
 
 
-```r
+``` r
 ggplot(data = penguins) + 
   geom_boxplot(
     mapping = aes(x = species, 
@@ -354,7 +354,7 @@ Warning: Removed 2 rows containing non-finite outside the scale range
 Layers can be added on top of each other. In the following graph we will place the boxplots **over** jittered points to see the distribution of outliers more clearly. We can map two aesthetic properties to the same variable. Here we will also use different colour for each island.
 
 
-```r
+``` r
 ggplot(data = penguins) + 
   geom_jitter(
     mapping = aes(x = species, 
@@ -376,7 +376,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 Now, this was slightly inefficient due to duplication of code - we had to specify the same mappings for two layers. To avoid it, you can move common arguments of `geom_` functions to the main `ggplot()` function. In this case every layer will "inherit" the same arguments, specified in the "parent" function.
 
 
-```r
+``` r
 ggplot(data = penguins,
        mapping = aes(x = island, 
                      y = bill_length_mm)
@@ -396,7 +396,7 @@ You can still add layer-specific mappings or other arguments by specifying them 
 We can use linear models to highlight differences in dependency between bill length and body mass by island. Notice that we added a separate argument to the `geom_smooth()` function to specify the type of model we want `ggplot2` to built using the data (linear model). The `geom_smooth()` function has also helpfully provided confidence intervals, indicating "goodness of fit" for each model (shaded gray area). For more information on statistical models, please refer to help (by typing `?geom_smooth`)
 
 
-```r
+``` r
 ggplot(data = penguins, 
        mapping = aes(x = bill_depth_mm, 
                      y = bill_length_mm)
@@ -422,7 +422,7 @@ Modify the plot so the the points are coloured by island, but there is a single 
 ## Solution 
 
 
-```r
+``` r
 ggplot(data = penguins, 
        mapping = aes(x = bill_depth_mm, 
                      y = bill_length_mm)) +
@@ -454,7 +454,7 @@ Add another geom!
 ## Solution 
 
 
-```r
+``` r
 ggplot(penguins, 
        aes(x = bill_depth_mm, 
            y = bill_length_mm)) +
@@ -491,7 +491,7 @@ Lets say, the last plot we made, we want to understand if there are also differe
 In ggplot2, this is called a "facet", and the function we use is called either `facet_wrap` or `facet_grid`. 
 
 
-```r
+``` r
 ggplot(penguins, 
       aes(x = bill_depth_mm, 
           y = bill_length_mm,
@@ -515,7 +515,7 @@ This plot looks a little crazy though, as we have penguins with missing sex info
 Let us swap the places of species and sex.
 
 
-```r
+``` r
 ggplot(penguins, 
       aes(x = bill_depth_mm, 
           y = bill_length_mm,
@@ -548,7 +548,7 @@ Add another facet variable with the `+`
 ## Solution 
 
 
-```r
+``` r
 ggplot(penguins, 
       aes(x = bill_depth_mm, 
           y = bill_length_mm,

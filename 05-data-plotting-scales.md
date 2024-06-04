@@ -44,7 +44,7 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 penguins |> 
   filter(sex == "male") |>
   ggplot(aes(bill_length_mm)) +
@@ -68,7 +68,7 @@ Try geom_boxplot
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Dream") |> 
   ggplot(aes(x = species, y = flipper_length_mm)) + 
@@ -96,7 +96,7 @@ When reading this part, read it as follows when typing:
 ::::::::::::::::::::::::::::::
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Dream") |> 
   ggplot(aes(x = species, y = flipper_length_mm)) + 
@@ -119,7 +119,7 @@ Learning the difference between using `fill` and `colour`/`color` can take a lit
 but in general colour gives colour to edges, while fill floods elements.
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Dream") |> 
   ggplot(aes(x = species, y = flipper_length_mm)) + 
@@ -148,7 +148,7 @@ We get lots of preview options, "brewer", "continuous", "gradient", too many opt
 There's one called `scale_fill_grey()` let us try that one for convenience!
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Dream") |> 
   ggplot(aes(x = species, y = flipper_length_mm)) + 
@@ -164,7 +164,7 @@ That won't do. Let us try something else.
 
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Dream") |> 
   ggplot(aes(x = species, y = flipper_length_mm)) + 
@@ -190,7 +190,7 @@ Change the colours to coral and cyan
 There are lots of these names, [datanovia](https://www.datanovia.com/en/blog/awesome-list-of-657-r-color-names/) has a great list of them
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Dream") |> 
   ggplot(aes(x = species, y = flipper_length_mm)) + 
@@ -215,7 +215,7 @@ red, blue and green. To explore colours in hexidecmial, there are lots of we res
 like [color-hex.com](https://www.color-hex.com/)
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Dream") |> 
   ggplot(aes(x = species, y = flipper_length_mm)) + 
@@ -239,7 +239,7 @@ what did that do?
 The order you provide the manual colours dictate which category gets which colour.
 
 
-```r
+``` r
 penguins |> 
   filter(island == "Dream") |> 
   ggplot(aes(x = species, y = flipper_length_mm)) + 
@@ -268,14 +268,14 @@ The key difference between what we did before and this, is that the colouring sc
 is continuous, rather than categorical, so we need _slightly_ different versions.
 
 
-```r
+``` r
 penguins |> 
   ggplot(aes(x = bill_depth_mm, y = bill_length_mm)) + 
   geom_point(aes(colour = bill_length_mm)) +
   scale_colour_viridis_c()
 ```
 
-```warning
+``` warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -283,14 +283,14 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 <img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
 
 
-```r
+``` r
 penguins |> 
   ggplot(aes(x = bill_depth_mm, y = bill_length_mm)) + 
   geom_point(aes(colour = bill_length_mm)) +
   scale_colour_gradientn(colours = c("#6597aa", "#cc6882"))
 ```
 
-```warning
+``` warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -309,7 +309,7 @@ The `theme()` functions are there to help you get control over how a plot looks.
 There are lots of different themes to choose from, that form a great basis for all you need.
 
 
-```r
+``` r
 penguins |> 
   ggplot(aes(x = bill_depth_mm, y = bill_length_mm)) + 
   geom_point(aes(colour = bill_length_mm)) +
@@ -317,7 +317,7 @@ penguins |>
   theme_minimal()
 ```
 
-```warning
+``` warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -340,7 +340,7 @@ Its very handy to have a short-cut to it.
 
 
 
-```r
+``` r
 penguins |> 
   ggplot(aes(x = bill_depth_mm, y = bill_length_mm)) + 
   geom_point(aes(colour = bill_length_mm)) +
@@ -348,7 +348,7 @@ penguins |>
   theme_classic()
 ```
 
-```warning
+``` warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -371,7 +371,7 @@ be good to use if you ever dwelve into the world of [generative art](https://blo
 
 
 
-```r
+``` r
 penguins |> 
   ggplot(aes(x = bill_depth_mm, y = bill_length_mm)) + 
   geom_point(aes(colour = bill_length_mm)) +
@@ -379,7 +379,7 @@ penguins |>
   theme_void()
 ```
 
-```warning
+``` warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```

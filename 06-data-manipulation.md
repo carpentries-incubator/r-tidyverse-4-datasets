@@ -32,12 +32,12 @@ Often, the data we have do not contain exactly what we need. We might need to ch
 In {tidyverse}, when we add new variables, we use the `mutate()` function. Just like the other {tidyverse} functions, mutate work specifically with data sets, and provides a nice shorthand for working directly with the columns in the data set. 
 
 
-```r
+``` r
 penguins |> 
   mutate(new_var = 1)
 ```
 
-```output
+``` output
 # A tibble: 344 × 9
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -59,7 +59,7 @@ The output of this can be hard to spot, depending on the size of the screen.
 Let us for convenience create a subsetted data set to work on so we can easily see what we are doing.
 
 
-```r
+``` r
 penguins_s <- penguins |> 
   select(1:3, starts_with("bill"))
 ```
@@ -67,12 +67,12 @@ penguins_s <- penguins |>
 Lets try our command again on this new data.
 
 
-```r
+``` r
 penguins_s |> 
   mutate(new_var = 1)
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    species island    bill_length_mm bill_depth_mm new_var
    <fct>   <fct>              <dbl>         <dbl>   <dbl>
@@ -95,12 +95,12 @@ This is what we told `mutate()` to do! We specified a new column by name, and ga
 This works because its easy to assigning a single value to all rows. What if we try to give it three values? What would we expect?
 
 
-```r
+``` r
 penguins_s |> 
   mutate(var = 1:3)
 ```
 
-```error
+``` error
 Error in `mutate()`:
 ℹ In argument: `var = 1:3`.
 Caused by error:
@@ -111,12 +111,12 @@ Here, it's failing with a mysterious message. The error is telling us that input
 
 So now we know the premises for mutate, it takes inputs that are either of the same length as there are rows in the data set or length 1. 
 
-```r
+``` r
 penguins_s |> 
   mutate(var = 1:344)
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    species island    bill_length_mm bill_depth_mm   var
    <fct>   <fct>              <dbl>         <dbl> <int>
@@ -136,12 +136,12 @@ penguins_s |>
 But generally, we create new columns based on other data in the data set. So let's do a more useful example. For instance, perhaps we want to use the ratio between the bill length and depth as a measurement for a model.
 
 
-```r
+``` r
 penguins_s |> 
   mutate(bill_ratio = bill_length_mm / bill_depth_mm)
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    species island    bill_length_mm bill_depth_mm bill_ratio
    <fct>   <fct>              <dbl>         <dbl>      <dbl>
@@ -163,13 +163,13 @@ So, here we have asked for the ratio between bill length and depth to be calcula
 We can do almost anything within a `mutate()` to get the values as we want them, also use functions that exist in R to transform the data. For instance, perhaps we want to scale the variables of interest to have a mean of 0 and standard deviation of 1, which is quite common to improve statistical modelling. We can do that with the `scale()` function.
 
 
-```r
+``` r
 penguins_s |> 
   mutate(bill_ratio = bill_length_mm / bill_depth_mm,
          bill_length_mm_z = scale(bill_length_mm))
 ```
 
-```output
+``` output
 # A tibble: 344 × 6
    species island   bill_length_mm bill_depth_mm bill_ratio bill_length_mm_z[,1]
    <fct>   <fct>             <dbl>         <dbl>      <dbl>                <dbl>
@@ -194,12 +194,12 @@ Create a column where bill length is transformed to cm. To transform mm to cm, y
 ## Solution
 
 
-```r
+``` r
 penguins_s |>
   mutate(bill_length_cm = bill_length_mm / 10)
 ```
 
-```output
+``` output
 # A tibble: 344 × 5
    species island    bill_length_mm bill_depth_mm bill_length_cm
    <fct>   <fct>              <dbl>         <dbl>          <dbl>
@@ -227,12 +227,12 @@ Create a column for body mass in kilos, rather than grams, in the main penguins 
 ## Solution
 
 
-```r
+``` r
 penguins |>
   mutate(body_mass_kg = body_mass_g / 1000)
 ```
 
-```output
+``` output
 # A tibble: 344 × 9
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -264,7 +264,7 @@ The `if_else()` function takes expressions, much like `filter()`.
 The first value after the expression is the value assigned if the expression is `TRUE`, while the second is if the expression is `FALSE`
 
 
-```r
+``` r
 penguin_weight <- penguins |> 
   select(year, body_mass_g)
 
@@ -274,7 +274,7 @@ penguin_weight |>
                         false = "normal"))
 ```
 
-```output
+``` output
 # A tibble: 344 × 3
     year body_mass_g size  
    <int>       <int> <chr> 
@@ -296,7 +296,7 @@ Now we have a column with two values, `large` and `normal` based on whether the 
 We can for instance use that in a plot.
 
 
-```r
+``` r
 penguin_weight |> 
   mutate(size = if_else(condition = body_mass_g > 4500, 
                         true = "large", 
@@ -305,7 +305,7 @@ penguin_weight |>
   geom_jitter(mapping = aes(x = year, y = body_mass_g, colour = size))
 ```
 
-```warning
+``` warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -324,7 +324,7 @@ Oh, it's starting to sound complicated, but it does not have to be!
 `mutate()` is so-called lazy-evaluated. This sounds weird, but it means that each new column you make is made in the sequence you make them. So as long as you think about the order of your `mutate()` creations, you can do that in a single mutate call.
 
 
-```r
+``` r
 penguins_s |> 
   mutate(
     bill_ratio = bill_depth_mm / bill_length_mm,
@@ -334,7 +334,7 @@ penguins_s |>
   )
 ```
 
-```output
+``` output
 # A tibble: 344 × 6
    species island    bill_length_mm bill_depth_mm bill_ratio bill_type
    <fct>   <fct>              <dbl>         <dbl>      <dbl> <chr>    
@@ -356,7 +356,7 @@ Now you've created two variables. One for `bill_ratio`, and then another one con
 If you switched the order of these two, R would produce an error, because there would be no bill ratio to create the other column.
 
 
-```r
+``` r
 penguins_s |> 
   mutate(
     bill_ratio = bill_depth_mm / bill_length_mm,
@@ -367,7 +367,7 @@ penguins_s |>
   )
 ```
 
-```output
+``` output
 # A tibble: 344 × 6
    species island    bill_length_mm bill_depth_mm bill_ratio bill_type
    <fct>   <fct>              <dbl>         <dbl>      <dbl> <chr>    
@@ -387,7 +387,7 @@ penguins_s |>
 But what if we want to categorize based on more than one condition? Nested `if_else()`?
 
 
-```r
+``` r
 penguins_s |> 
   mutate(
     bill_ratio = bill_depth_mm / bill_length_mm,
@@ -398,7 +398,7 @@ penguins_s |>
                                         false = "stumped")))
 ```
 
-```output
+``` output
 # A tibble: 344 × 6
    species island    bill_length_mm bill_depth_mm bill_ratio bill_type
    <fct>   <fct>              <dbl>         <dbl>      <dbl> <chr>    
@@ -420,7 +420,7 @@ Thankfully, {dplyr} has a smarter way of doing this, called `case_when()`. This 
 On the left you have the logical expression, and the on the right of the tilde (`~`) is the value to be assigned if that expression is `TRUE`
 
 
-```r
+``` r
 penguins_s |> 
   mutate(
     bill_ratio = bill_depth_mm / bill_length_mm,
@@ -435,7 +435,7 @@ penguins_s |>
   geom_point()
 ```
 
-```warning
+``` warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -448,7 +448,7 @@ That looks almost the same. The `NA`'s are gone! That's not right. We cannot cat
 `case_when()`, like the `mutate()`, evaluates the expressions in sequence. Which is why we can have two statements evaluating the same column with similar expressions (below 0.35 and then below 0.45). All values that are below 0.45 are also below 0.35. Since we first assign everything below 0.35, and then below 0.45, they do not collide. We can do the same for our last statement, saying that all values that are not `NA` should be given this category.
 
 
-```r
+``` r
 penguins |> 
   mutate(
     bill_ratio = bill_depth_mm / bill_length_mm,
@@ -463,7 +463,7 @@ penguins |>
   geom_point()
 ```
 
-```warning
+``` warning
 Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).
 ```
@@ -480,12 +480,12 @@ Create a column named `bill_ld_ratio_log` that is the natural logarithm (using t
 ## Solution
 
 
-```r
+``` r
 penguins |>
   mutate(bill_ld_ratio_log = log(bill_length_mm / bill_depth_mm))
 ```
 
-```output
+``` output
 # A tibble: 344 × 9
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
@@ -514,7 +514,7 @@ Create a new column called `body_type`, where animals below 3 kg are `small`, an
 ## Solution
 
 
-```r
+``` r
 penguins |>
   mutate(
     body_type = case_when(
@@ -527,7 +527,7 @@ penguins |>
   )
 ```
 
-```output
+``` output
 # A tibble: 344 × 10
    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>

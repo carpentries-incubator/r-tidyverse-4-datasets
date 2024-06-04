@@ -33,7 +33,7 @@ Let us start from the beginning with summaries, and work our way up to the more 
 First, we must again prepare our workspace with our packages and data.
 
 
-```r
+``` r
 library(tidyverse)
 penguins <- palmerpenguins::penguins
 ```
@@ -41,12 +41,12 @@ penguins <- palmerpenguins::penguins
 We should start to feel quite familiar with our penguins by now. Let us start by finding the mean of the bill length
 
 
-```r
+``` r
 penguins |> 
   summarise(bill_length_mean = mean(bill_length_mm))
 ```
 
-```output
+``` output
 # A tibble: 1 × 1
   bill_length_mean
              <dbl>
@@ -61,12 +61,12 @@ Right now, we will ignore those.
 We can omit these by adding the `na.rm = TRUE` argument, which will remove all `NA`'s before calculating the mean.
 
 
-```r
+``` r
 penguins |> 
   summarise(bill_length_mean = mean(bill_length_mm, na.rm = TRUE))
 ```
 
-```output
+``` output
 # A tibble: 1 × 1
   bill_length_mean
              <dbl>
@@ -76,13 +76,13 @@ penguins |>
 An alternative way to remove missing values from a column is to pass the column to {tidyr}'s `drop_na()` function. 
 
 
-```r
+``` r
 penguins |> 
   drop_na(bill_length_mm) |> 
   summarise(bill_length_mean = mean(bill_length_mm))
 ```
 
-```output
+``` output
 # A tibble: 1 × 1
   bill_length_mean
              <dbl>
@@ -91,7 +91,7 @@ penguins |>
 
 
 
-```r
+``` r
 penguins |> 
   drop_na(bill_length_mm) |> 
   summarise(bill_length_mean = mean(bill_length_mm),
@@ -99,7 +99,7 @@ penguins |>
             bill_length_max = max(bill_length_mm))
 ```
 
-```output
+``` output
 # A tibble: 1 × 3
   bill_length_mean bill_length_min bill_length_max
              <dbl>           <dbl>           <dbl>
@@ -114,13 +114,13 @@ penguins |>
 ## Solution
 
 
-```r
+``` r
 penguins |> 
   drop_na(body_mass_g) |> 
   summarise(body_mass_kg_mean = mean(body_mass_g / 1000))
 ```
 
-```output
+``` output
 # A tibble: 1 × 1
   body_mass_kg_mean
               <dbl>
@@ -137,7 +137,7 @@ penguins |>
 :::::::::::::::::::::::::::::::::::::::: solution 
 ## Solution
 
-```r
+``` r
 penguins |> 
     drop_na(body_mass_g) |> 
     summarise(
@@ -146,7 +146,7 @@ penguins |>
     )
 ```
 
-```output
+``` output
 # A tibble: 1 × 2
   body_mass_kg_mean body_mass_kg_sd
               <dbl>           <dbl>
@@ -165,7 +165,7 @@ penguins |>
 ## Solution
 
 
-```r
+``` r
 penguins |> 
     drop_na(body_mass_g, flipper_length_mm) |> 
     summarise(
@@ -176,7 +176,7 @@ penguins |>
     )
 ```
 
-```output
+``` output
 # A tibble: 1 × 4
   body_mass_kg_mean body_mass_kg_sd flipper_length_cm_mean flipper_length_cm_sd
               <dbl>           <dbl>                  <dbl>                <dbl>
@@ -202,13 +202,13 @@ Because, once we know how to summarize data, summarizing data by groups is as si
 Let us start with our first example of getting the mean of a single column.
 
 
-```r
+``` r
 penguins |> 
   drop_na(body_mass_g) |> 
   summarise(body_mass_g_mean = mean(body_mass_g))
 ```
 
-```output
+``` output
 # A tibble: 1 × 1
   body_mass_g_mean
              <dbl>
@@ -219,14 +219,14 @@ Here, we are getting a single mean for the entire data set.
 In order to get, for instance the means of each of the species, we can group the data set by species before we summarize.
 
 
-```r
+``` r
 penguins |> 
   drop_na(body_mass_g) |> 
   group_by(species) |> 
   summarise(body_mass_kg_mean = mean(body_mass_g / 1000))
 ```
 
-```output
+``` output
 # A tibble: 3 × 2
   species   body_mass_kg_mean
   <fct>                 <dbl>
@@ -239,7 +239,7 @@ And now we suddenly have three means! And they are tidily collected in each thei
 To this we can keep adding as we did before.
 
 
-```r
+``` r
 penguins |> 
     drop_na(body_mass_g) |> 
     group_by(species) |>
@@ -250,7 +250,7 @@ penguins |>
     )
 ```
 
-```output
+``` output
 # A tibble: 3 × 4
   species   body_mass_kg_mean body_mass_kg_min body_mass_kg_max
   <fct>                 <dbl>            <dbl>            <dbl>
@@ -269,13 +269,13 @@ But what if you want a really quick count of all the records in different groups
 One way, would be to use the summarise function together with the `n()` function, which counts the number of rows in each group.
 
 
-```r
+``` r
 penguins |> 
   group_by(species) |> 
   summarise(n = n())
 ```
 
-```output
+``` output
 # A tibble: 3 × 2
   species       n
   <fct>     <int>
@@ -289,13 +289,13 @@ But if all you want is the frequency table, we would suggest using the functions
 They are synonymous in what they do, so you can choose the one that feels more appropriate.
 
 
-```r
+``` r
 penguins |> 
   group_by(species) |> 
   tally()
 ```
 
-```output
+``` output
 # A tibble: 3 × 2
   species       n
   <fct>     <int>
@@ -304,13 +304,13 @@ penguins |>
 3 Gentoo      124
 ```
 
-```r
+``` r
 penguins |> 
   group_by(species) |> 
   count()
 ```
 
-```output
+``` output
 # A tibble: 3 × 2
 # Groups:   species [3]
   species       n
@@ -330,7 +330,7 @@ These are two really nice convenience functions for getting a quick frequency ta
 ## Solution
 
 
-```r
+``` r
 penguins |> 
     drop_na(bill_length_mm) |> 
     group_by(island) |>
@@ -340,7 +340,7 @@ penguins |>
     )
 ```
 
-```output
+``` output
 # A tibble: 3 × 3
   island    bill_length_mm_mean bill_length_mm_sd
   <fct>                   <dbl>             <dbl>
@@ -361,7 +361,7 @@ penguins |>
 ## Solution
 
 
-```r
+``` r
 penguins |> 
     drop_na(bill_length_mm) |> 
     group_by(island, sex) |>
@@ -371,12 +371,12 @@ penguins |>
     )
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'island'. You can override using the
 `.groups` argument.
 ```
 
-```output
+``` output
 # A tibble: 9 × 4
 # Groups:   island [3]
   island    sex    bill_length_mm_mean bill_length_mm_sd
@@ -404,13 +404,13 @@ But in many cases we might continue our merry data handling way and do lots more
 preserving of the grouping can give us some unexpected results. Let us explore that a little.
 
 
-```r
+``` r
 penguins |> 
   group_by(species) |> 
   count()
 ```
 
-```output
+``` output
 # A tibble: 3 × 2
 # Groups:   species [3]
   species       n
@@ -425,13 +425,13 @@ In a way, the `summarize()` uses up one group while summarizing, as based on spe
 When we group by two columns, it actually has the same behavior. 
 
 
-```r
+``` r
 penguins |> 
   group_by(species, island) |> 
   count()
 ```
 
-```output
+``` output
 # A tibble: 5 × 3
 # Groups:   species, island [5]
   species   island        n
@@ -449,14 +449,14 @@ Lets say we want a column now, that counts the total number of penguins observat
 That would be the sum of the "n" column.
 
 
-```r
+``` r
 penguins |> 
   group_by(species, island) |> 
   count() |> 
   mutate(total = sum(n))
 ```
 
-```output
+``` output
 # A tibble: 5 × 4
 # Groups:   species, island [5]
   species   island        n total
@@ -471,7 +471,7 @@ penguins |>
 But that is not what we are expecting! why? Because the data is still grouped by species, it is now taking the sum within each species, rather than the whole. To get the whole we need first to `ungroup()`, and then try again.
 
 
-```r
+``` r
 penguins |> 
   group_by(species, island) |> 
   count() |> 
@@ -479,7 +479,7 @@ penguins |>
   mutate(total = sum(n))
 ```
 
-```output
+``` output
 # A tibble: 5 × 4
   species   island        n total
   <fct>     <fct>     <int> <int>
@@ -499,7 +499,7 @@ then add another column that has the mean for all the data
 ## Solution
 
 
-```r
+``` r
 penguins |> 
     drop_na(bill_length_mm) |> 
     group_by(island, sex) |>
@@ -511,12 +511,12 @@ penguins |>
     mutate(mean = mean(bill_length_mm_mean))
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'island'. You can override using the
 `.groups` argument.
 ```
 
-```output
+``` output
 # A tibble: 9 × 5
   island    sex    bill_length_mm_mean bill_length_mm_sd  mean
   <fct>     <fct>                <dbl>             <dbl> <dbl>
@@ -544,7 +544,7 @@ But, often, grouping before data manipulation can unlock great new possibilities
 Let us use the data we made where we summarised the body mass of penguins in kilograms, and let us group by species and sex.
 
 
-```r
+``` r
 penguins |> 
     drop_na(body_mass_g) |> 
     group_by(species, sex) |>
@@ -555,12 +555,12 @@ penguins |>
     )
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.
 ```
 
-```output
+``` output
 # A tibble: 8 × 5
 # Groups:   species [3]
   species   sex    body_mass_kg_mean body_mass_kg_min body_mass_kg_max
@@ -581,7 +581,7 @@ We would need the species mean, in addition to the species sex means.
 We can add this, as the data is already grouped by sex, with a mutate.
 
 
-```r
+``` r
 penguins |> 
     drop_na(body_mass_g) |> 
     group_by(species, sex) |>
@@ -595,12 +595,12 @@ penguins |>
     )
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.
 ```
 
-```output
+``` output
 # A tibble: 8 × 6
 # Groups:   species [3]
   species sex   body_mass_kg_mean body_mass_kg_min body_mass_kg_max species_mean
@@ -621,7 +621,7 @@ So, in the same data set, we have everything we need to calculate the relative d
 
 
 
-```r
+``` r
 penguins |> 
     drop_na(body_mass_g) |> 
     group_by(species, sex) |>
@@ -636,12 +636,12 @@ penguins |>
     )
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.
 ```
 
-```output
+``` output
 # A tibble: 8 × 7
 # Groups:   species [3]
   species sex   body_mass_kg_mean body_mass_kg_min body_mass_kg_max species_mean
@@ -667,7 +667,7 @@ Calculate the difference in flipper length between the different species of peng
 ## Solution
 
 
-```r
+``` r
 penguins |> 
     drop_na(flipper_length_mm) |> 
     group_by(species) |> 
@@ -680,7 +680,7 @@ penguins |>
     )
 ```
 
-```output
+``` output
 # A tibble: 3 × 4
   species   flipper_mean species_mean flipper_species_diff
   <fct>            <dbl>        <dbl>                <dbl>
@@ -700,7 +700,7 @@ Calculate the difference in flipper length between the different species of peng
 ## Solution
 
 
-```r
+``` r
 penguins |> 
     drop_na(flipper_length_mm) |> 
     group_by(species, sex) |> 
@@ -713,12 +713,12 @@ penguins |>
     )
 ```
 
-```output
+``` output
 `summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.
 ```
 
-```output
+``` output
 # A tibble: 8 × 5
 # Groups:   species [3]
   species   sex    flipper_mean species_mean flipper_species_diff
