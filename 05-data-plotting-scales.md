@@ -51,7 +51,7 @@ penguins |>
   geom_bar()
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-2-1.png" alt="" style="display: block; margin: auto;" />
 
 Now we only plot data from the male penguins, if we are particularly interested in those.
 This can be quite convenient if you have particularly large data and need to reduce it to get a proper idea of what the variables really look like.
@@ -75,7 +75,7 @@ penguins |>
   geom_boxplot()
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
@@ -103,7 +103,7 @@ penguins |>
   geom_boxplot(aes(colour = species))
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" />
 
 Did that look as you expected? 
 Maybe you expected the rectangles of the boxes to be coloured, rather than the edges?
@@ -126,7 +126,7 @@ penguins |>
   geom_boxplot(aes(fill = species))
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-5-1.png" alt="" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
@@ -156,7 +156,7 @@ penguins |>
   scale_fill_grey()
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-6-1.png" alt="" style="display: block; margin: auto;" />
 
 Ok! The colours are now changed, and the legend with it, quite convenient.
 But, the grey used is the same as for the lines, masking the median line for the Adelie box.
@@ -172,7 +172,7 @@ penguins |>
   scale_fill_manual(values = c("black", "white"))
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" />
 
 This is maybe a little stark, but the difference is clear between the two, and that's what we are after right now.
 Using the `manual` version of scales means you manually add the colours you want to use. 
@@ -198,7 +198,7 @@ penguins |>
   scale_fill_manual(values = c("coral", "cyan"))
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-8-1.png" alt="" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
@@ -223,7 +223,7 @@ penguins |>
   scale_fill_manual(values = c("#6597aa", "#cc6882"))
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-9-1.png" alt="" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
@@ -247,7 +247,7 @@ penguins |>
   scale_fill_manual(values = c("#cc6882", "#6597aa"))
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-10-1.png" alt="" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
@@ -280,7 +280,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-11-1.png" alt="" style="display: block; margin: auto;" />
 
 
 ``` r
@@ -295,7 +295,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-12-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -322,7 +322,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-13-1.png" alt="" style="display: block; margin: auto;" />
 
 Here we have chosen `theme_minimal()` which strips axis lines and the grey background, its more minimal. 
 Explore some different options by typing `theme_` and pressing the `tab` key to see what options there are.
@@ -353,7 +353,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -384,7 +384,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="fig/05-data-plotting-scales-rendered-unnamed-chunk-15-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 

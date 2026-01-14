@@ -53,7 +53,7 @@ We're going to cover 6 of the most commonly used functions as well as using pipe
 
 Let us first talk about selecting columns. In {dplyr}, the function name for selecting columns is `select()`! Most {tidyverse} function names for functions are inspired by English grammar, which will help us when we are writing our code.
 
-<img src="fig/03-selecting.gif" style="display: block; margin: auto;" />
+<img src="fig/03-selecting.gif" alt="" style="display: block; margin: auto;" />
 
 We first need to make sure we have the tidyverse loaded and the penguins data set at hand.
 
@@ -560,7 +560,7 @@ select(penguins, island, species, where(is.numeric))
 Now that we know how to select the columns we want, we should take a look at how we filter the rows. 
 Row filtering is done with the function `filter()`, which takes statements that can be evaluated to `TRUE` or `FALSE`. 
 
-<img src="fig/03-filtering.gif" style="display: block; margin: auto;" />
+<img src="fig/03-filtering.gif" alt="" style="display: block; margin: auto;" />
 
 What do we mean with statements that can be evaluated to `TRUE` or `FALSE`?
 In the example with `where()` we used the `is.numeric` function to evaluate if the columns where numeric or not. We will be doing the same for rows!

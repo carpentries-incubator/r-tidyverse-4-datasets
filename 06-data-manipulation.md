@@ -310,7 +310,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/06-data-manipulation-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="fig/06-data-manipulation-rendered-unnamed-chunk-12-1.png" alt="" style="display: block; margin: auto;" />
 
 That shows us clearly that we have grouped the penguins based on their size. But there is this strange `NA` in the plot legend. what is that? 
 
@@ -440,7 +440,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/06-data-manipulation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/06-data-manipulation-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" />
 
 
 That looks almost the same. The `NA`'s are gone! That's not right. We cannot categorize values that are missing. It's our last statement that does this, which just says "make the remainder this value". Which is not what we want. We need the `NA`s to stay `NA`'s. 
@@ -468,7 +468,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/06-data-manipulation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="fig/06-data-manipulation-rendered-unnamed-chunk-17-1.png" alt="" style="display: block; margin: auto;" />
 
 Here, we use the `is.na()`, which is a special function in R to detect `NA` values. But it also has an `!` in front, what does that mean? In R's logical expressions, the `!` is a negation specifier. It means it flips the logical so the `TRUE` becomes `FALSE`, and *vice versa*. So here, it means the `bill_ratio` is **not** `NA`.
 

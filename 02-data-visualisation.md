@@ -85,11 +85,11 @@ The dataset contains the following fields:
 # install.packages("tidyverse")
 library(tidyverse)
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.1     ✔ stringr   1.5.2
-✔ ggplot2   4.0.0     ✔ tibble    3.3.0
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.1.0     
+✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.1     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.0     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -111,7 +111,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" />
 
 Note that we split the function into several lines.
 In R, any function has a name and is followed by parentheses. Inside the parentheses we place any information the function needs to run.
@@ -148,7 +148,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-5-1.png" alt="" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
@@ -170,7 +170,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-6-1.png" alt="" style="display: block; margin: auto;" />
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
 
@@ -193,7 +193,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 2
@@ -214,7 +214,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-8-1.png" alt="" style="display: block; margin: auto;" />
 
 Island is categorical character variable with a discrete range of possible values. This, like the data type of factor, is represented with colours by assigning a specific colour to each member of the discrete set. `year` is a continuous numeric variable in which any number of potential values can exist between known values. To represent this, R uses a colour bar with a continuous gradient.
 :::::::::::::::::::::::::::::::::::::::: 
@@ -236,7 +236,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-9-1.png" alt="" style="display: block; margin: auto;" />
 
 It might be even better to try another type of aesthetic, like shape, for categorical data like species.
 
@@ -253,7 +253,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-10-1.png" alt="" style="display: block; margin: auto;" />
 
 Playing around with different aesthetic mappings until you find something that really makes the data "pop" is a good idea. A plot is rarely made nice on the first try, we all try different configurations until we find the one we like.
 
@@ -275,7 +275,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-11-1.png" alt="" style="display: block; margin: auto;" />
 
 Once more, observe that the colour is now not mapped to any particular variable from the `penguins` dataset and applies equally to all data points, therefore it is outside the `mapping` argument and is not wrapped into `aes()` function. Note that set colours are supplied as characters (in quotes). 
 
@@ -302,7 +302,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-12-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -325,7 +325,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-13-1.png" alt="" style="display: block; margin: auto;" />
 Controlling the transparency can be a great way to "mute" the visual effect of certain data, while still keeping it visible. Its a great tool when you have many data points or if you have several geoms together, like we will see soon.
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -349,7 +349,7 @@ Warning: Removed 2 rows containing non-finite outside the scale range
 (`stat_boxplot()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" />
 
 Layers can be added on top of each other. In the following graph we will place the boxplots **over** jittered points to see the distribution of outliers more clearly. We can map two aesthetic properties to the same variable. Here we will also use different colour for each island.
 
@@ -371,7 +371,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-15-1.png" alt="" style="display: block; margin: auto;" />
 
 Now, this was slightly inefficient due to duplication of code - we had to specify the same mappings for two layers. To avoid it, you can move common arguments of `geom_` functions to the main `ggplot()` function. In this case every layer will "inherit" the same arguments, specified in the "parent" function.
 
@@ -389,7 +389,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" />
 
 You can still add layer-specific mappings or other arguments by specifying them within individual geoms. Here, we've set the transparency of the boxplot to .6, so we can see the points behind it, and also mapped colour to island in the points. We would recommend building each layer separately and then moving common arguments up to the "parent" function.
 
@@ -410,7 +410,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-17-1.png" alt="" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -436,7 +436,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-18-1.png" alt="" style="display: block; margin: auto;" />
 In the graph above, each geom inherited all three mappings: x, y and colour. If we want only single linear model to be built, we would need to limit the effect of `colour` aesthetic to only `geom_point()` function, by moving it from the "parent" function to the layer where we want it to apply. Note, though, that because we want the `colour` to be still mapped to the `island` variable, it needs to be wrapped into `aes()` function and supplied to `mapping` argument.
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
@@ -474,7 +474,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-19-1.png" alt="" style="display: block; margin: auto;" />
 Look at that! The data actually reveals something called the "simpsons paradox". It's when a relationship looks to go in a specific direction, but when looking into groups within the data the relationship is the opposite. Here, the overall relationship between bill length and depths looks negative, but when we take into account that there are different species, the relationship is actually positive.
 
 :::::::::::::::::::::::::::::::::::::::: 
@@ -506,7 +506,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-20-1.png" alt="" style="display: block; margin: auto;" />
 
 The facet's take formula arguments, meaning they contain the `tilde` (~).
 The way often we think about it, trying to "read" the code, is that we facet "over" sex (in this case). 
@@ -530,7 +530,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-21-1.png" alt="" style="display: block; margin: auto;" />
 
 The NA's still look weird, but its definitely better, I think. 
 
@@ -563,7 +563,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 ```
 
-<img src="fig/02-data-visualisation-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="fig/02-data-visualisation-rendered-unnamed-chunk-22-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::: 
 ::::::::::::::::::::::::::::::::::::: 
