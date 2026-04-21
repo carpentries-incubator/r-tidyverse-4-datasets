@@ -192,8 +192,12 @@ penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'name', 'species'. You can override using
-the `.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by name, species, and island.
+ℹ Output is grouped by name and species.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(name, species, island))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -286,8 +290,12 @@ penguins_sum <- penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'name', 'species'. You can override using
-the `.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by name, species, and island.
+ℹ Output is grouped by name and species.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(name, species, island))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 We can for instance make a bar chart with the values from the summary statistics.
@@ -469,8 +477,12 @@ penguins_sum <- penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'name', 'species', 'island'. You can
-override using the `.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by name, species, island, and year.
+ℹ Output is grouped by name, species, and island.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(name, species, island, year))` for per-operation
+  grouping (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` r

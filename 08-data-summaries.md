@@ -372,8 +372,12 @@ penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'island'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by island and sex.
+ℹ Output is grouped by island.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(island, sex))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -512,8 +516,12 @@ penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'island'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by island and sex.
+ℹ Output is grouped by island.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(island, sex))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -556,8 +564,12 @@ penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'species'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by species and sex.
+ℹ Output is grouped by species.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(species, sex))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -596,8 +608,12 @@ penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'species'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by species and sex.
+ℹ Output is grouped by species.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(species, sex))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -637,8 +653,12 @@ penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'species'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by species and sex.
+ℹ Output is grouped by species.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(species, sex))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -714,8 +734,12 @@ penguins |>
 ```
 
 ``` output
-`summarise()` has grouped output by 'species'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by species and sex.
+ℹ Output is grouped by species.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(species, sex))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
