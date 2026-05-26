@@ -68,7 +68,7 @@
         </ul></div>
     </div>
   </div>
-  <hr></header><nav class="navbar navbar-expand-xl bottom-nav incubator" aria-label="Main Navigation"><div class="container-fluid nav-container">
+</header><nav class="navbar navbar-expand-xl bottom-nav incubator" aria-label="Main Navigation"><div class="container-fluid nav-container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="menu-title">Menu</span>
@@ -116,12 +116,8 @@
     -->
     <a id="search-button" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
-</nav><aside class="col-md-12 lesson-progress"><div style="width: 8%" class="percentage">
-    8%
-  </div>
-  <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="8" style="width: 8%">
-    </div>
+</nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
+    <div class="progress-bar incubator" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">8%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -177,7 +173,7 @@
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
 
-            <hr></div><!--/div.mobile-row -->
+          </div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordion-chapters-toggle">
             <div class="accordion-item">
@@ -344,8 +340,8 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/01-project-introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/03-data-subsetting.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="../instructor/01-project-introduction.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="../instructor/03-data-subsetting.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -358,9 +354,9 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
-      <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
+    </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Visualisation with ggplot2</h1>
-        <p>Last updated on 2026-04-21 |
+        <p>Last updated on 2026-05-26 |
 
         <a href="https://github.com/athanasiamo/r-tidyverse-4-datasets/edit/main/episodes/02-data-visualisation.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -498,11 +494,11 @@ get started!</p>
 <pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co"># install.packages("tidyverse")</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a>── Attaching core tidyverse packages ──────────────────────── tidyverse <span class="dv">2</span>.<span class="fl">0.0</span> ──</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a>✔ dplyr     <span class="dv">1</span>.<span class="fl">2.0</span>     ✔ readr     <span class="dv">2</span>.<span class="fl">2.0</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a>✔ dplyr     <span class="dv">1</span>.<span class="fl">2.1</span>     ✔ readr     <span class="dv">2</span>.<span class="fl">2.0</span></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a>✔ forcats   <span class="dv">1</span>.<span class="fl">0.1</span>     ✔ stringr   <span class="dv">1</span>.<span class="fl">6.0</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a>✔ ggplot2   <span class="dv">4</span>.<span class="fl">0.2</span>     ✔ tibble    <span class="dv">3</span>.<span class="fl">3.1</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a>✔ ggplot2   <span class="dv">4</span>.<span class="fl">0.3</span>     ✔ tibble    <span class="dv">3</span>.<span class="fl">3.1</span></span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a>✔ lubridate <span class="dv">1</span>.<span class="fl">9.5</span>     ✔ tidyr     <span class="dv">1</span>.<span class="fl">3.2</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a>✔ purrr     <span class="dv">1</span>.<span class="fl">2.1</span>     </span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a>✔ purrr     <span class="dv">1</span>.<span class="fl">2.2</span>     </span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a>── Conflicts ────────────────────────────────────────── <span class="fu">tidyverse_conflicts</span>() ──</span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a>✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a>✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
@@ -1221,7 +1217,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.0)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.1)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1242,9 +1238,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/02-data-visualisation.html",
   "identifier": "https://athanasiamo.github.io/r-tidyverse-4-datasets/instructor/02-data-visualisation.html",
-  "dateCreated": "2026-05-05",
-  "dateModified": "2026-04-21",
-  "datePublished": "2026-05-19"
+  "dateCreated": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "datePublished": "2026-05-26"
 }
 
   </script><script>
